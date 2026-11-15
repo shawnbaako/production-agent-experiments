@@ -7,7 +7,7 @@ yes-no question per item and rank the set well enough that the agent reads only 
 And how do the available scorers compare on the same items?
 
 **Status.** In progress. Jev 1.13 and 1.14, Clef, Clef Flash and the keyword, BM25 and embedding
-baselines are scored, with every per-item answer in `results/answers/`. Still to come: Laya, a local
+baselines and Laya are scored, with every per-item answer in `results/answers/`. Still to come: a local
 LLM read through its answer probabilities, and harder items.
 
 ## What is here
@@ -66,6 +66,7 @@ Held-out half. Each cell is positives found in the top 10 out of positives, with
 | Jev 1.14 (`typesafe/jev-1.14`) | 6/6 (1.000) | 5/5 (1.000) | 3/3 (1.000) | 2/2 (0.996) | 1/2 (0.968) | 2/2 (0.999) | 6/6 (1.000) | **25/26** | 26/26 |
 | Jev 1.13 (`typesafe/jev-1.13`) | 6/6 (1.000) | 5/5 (1.000) | 3/3 (1.000) | 2/2 (0.997) | 1/2 (0.973) | 2/2 (1.000) | 6/6 (1.000) | **25/26** | 26/26 |
 | Clef Flash (`cloudflare/clef-flash`) | 6/6 (1.000) | 5/5 (1.000) | 3/3 (1.000) | 2/2 (0.987) | 2/2 (0.997) | 2/2 (0.998) | 5/6 (0.970) | **25/26** | 25/26 |
+| Laya `typed-decisions` (local CPU) | 6/6 (1.000) | 3/5 (0.986) | 0/3 (0.970) | 1/2 (0.799) | 2/2 (0.990) | 0/2 (0.481) | 6/6 (0.999) | **18/26** | 21/26 |
 | EmbeddingGemma 2 (local) | 6/6 (1.000) | 2/5 (0.976) | 2/3 (0.692) | 1/2 (0.967) | 1/2 (0.954) | 1/2 (0.970) | 5/6 (0.990) | **18/26** | 22/26 |
 | BM25 | 3/6 (0.689) | 4/5 (0.968) | 1/3 (0.743) | 1/2 (0.982) | 2/2 (1.000) | 1/2 (0.972) | 4/6 (0.830) | **16/26** | 18/26 |
 | Keyword substring | 1/6 | 1/5 | 1/3 | 2/2 | 2/2 | 2/2 | 0/6 | **9/26** | 9/26 |
@@ -79,6 +80,7 @@ Hosted models were called through OpenRouter on 2026-11-15, one `noul` question 
 | Jev 1.14 | 188 / 268 ms | 373 | $0.17 | 26 |
 | Jev 1.13 | 186 / 254 ms | 373 | $0.17 | 22 |
 | Clef Flash | 273 / 522 ms | 239 | $0.05 | 37 |
+| Laya, local CPU (4 threads) | 408 / 565 ms | 130 | no fee | 54 |
 
 What these runs show:
 
@@ -87,9 +89,15 @@ What these runs show:
 - **They differ in how stable a cut-off is.** Thresholds fitted on `dev` ranged from 0.19 to 0.99 across questions and models. Rewording one question (competitor mentioned) moved 20 answers across the threshold for Jev 1.14 and 23 for Clef Flash, and 1 for Clef, while AUROC stayed at 0.998 or above for all three. The ranking survives rewording; a fixed cut-off does not.
 - **The keyword row is not a ranking.** A substring match gives 0 or 1, and ties are broken against the scorer, so a common term such as "lab" places no positive in the top 10.
 
-The Laya run (the open `typed-decisions` checkpoint, on a local CPU server) was still in progress when
-this was written and is not in the tables yet. A local LLM read through its answer probabilities has
-not been run.
+- **Laya, the open checkpoint, does as well as the hosted models on direct factual questions** (renewal
+  price, clinical lab) and falls behind on judgement and on comparing two texts. It found none of the
+  three at-risk clients in its top 10, and on one of the promise questions its ranking was no better
+  than chance (AUROC 0.48). Overall it sits level with the embedding model (18 against 18 in the top 10).
+- **Laya's scores are the least stable under rewording**: 54 answers crossed the fitted threshold, and
+  its fitted thresholds sat between 0.24 and 0.60, much closer together than the hosted models'.
+  Laya's own model card warns that it ships over-confident and needs a temperature refit.
+
+A local LLM read through its answer probabilities has not been run.
 <!-- results:end -->
 
 ### First run (2026-10-18)
