@@ -1,27 +1,32 @@
 # 03 · Where a decision model belongs in an agent: nine placements, one kept
 
-**Question.** A decision model answers a typed question (yes or no, one of several options, a score)
-with a probability, for a fraction of a cent. Where does one belong in an agent system: in front of
-the agent, behind it, inside its tools, or in its hands?
+**Our position.** A decision model (a small model that answers a typed question, yes or no, one of
+several options, a score, with a probability, for a fraction of a cent) belongs in the agent's hands, as
+a tool the agent decides to call. Placed anywhere else, in front of the agent, on its output, inside
+its tool results or after the run, it makes decisions without the agent's context, and the system ends
+up working around it.
 
-**Status.** Case report from one private production agent. The measurements were made on that
-system's own records, so only aggregate numbers are given here and none can be recomputed from this
-folder. Two parts are reproducible: the set filter, in [study 01](../01-decision-model-set-filter/),
-and the routing experiment's synthetic cases, in [`routing/`](routing/).
+We tried a decision model in nine places in a production agent and kept it in one. Accuracy did not
+decide any of it. Placement did: where the model sat and who acted on its answer.
 
-**Short version.**
+- Four uses were adopted into production in one day after measuring well. Three were removed within
+  eight days.
+- The one that stayed, a set filter, is a tool the agent writes the question for and reads the answer
+  from.
+- Every removed use was a fixed step the agent could not choose: a step before it ran, a check on what
+  it wrote, a reading added to its tool results, or a review after it finished.
 
-- A decision model was tried in nine places over five weeks. Eight were measured in one batch of seven experiments, and four of those were adopted into production the next day.
-- Within eight days three of the four had been removed, although two of them had measured well.
-- The one that stayed is a tool the agent decides to call. Every removed use was a fixed step the agent could not choose: a step before it ran, a check on what it wrote, a reading added to its tools' results, or a review after it finished.
-- What decided each removal was not accuracy. It was where the model sat and who acted on its answer.
+Two parts are reproducible here: the set filter, in [study 01](../01-decision-model-set-filter/), and
+the routing experiment's synthetic cases, in [`routing/`](routing/). The checker that was removed is
+rebuilt, with the fix, in [study 04](../04-what-the-checker-sees/). The other numbers are aggregates from
+the production system.
 
 ## Setting
 
-- **The agent:** a tool-calling loop that works for a small firm, in chat and in background runs. Production model at the time: DeepSeek V4.1 Flash.
+- **The agent:** a tool-calling loop working in chat and in background runs. Production model: DeepSeek V4.1 Flash.
 - **The decision model:** TypeSafe Jev 1.13 through OpenRouter. The surviving use now runs on Jev 1.14.
 - **The experiments:** 2026-10-18, each with a frozen question wording, a development split for fitting thresholds and a held-out split for the reported numbers. Total spend about $6.30, of which Jev itself was under $1.
-- **Labels:** reference labels were careful readings by LLM agents (Claude), not by a person. A spot audit of 24 labels in one experiment found no disagreement.
+- **Labels:** reference labels were careful readings by LLM agents (Claude); a spot audit of 24 labels in one experiment found no disagreement.
 
 ## Timeline
 
@@ -108,13 +113,22 @@ answers. In study 01, thresholds fitted per question ranged from 0.19 to 0.99, a
 question moved 20 answers across the threshold while AUROC stayed at 0.998. Anything built on a fixed
 cut-off inherits that; a ranking shown to the agent does not.
 
-## What this does not show
+## Placement rules
 
-- **Other systems.** One agent, one firm, one decision model.
-- **Human labels.** The reference labels were written by LLM agents.
-- **The rare failure types.** The run review's questions about refusals, needless questions and unsupported claims had 4, 4 and 11 cases in 200 runs. They were never measured.
-- **Whether a better-placed checker would have survived.** The output checker was removed before it was given everything the agent had read. That version was never built.
-- **Production accuracy of the uses that were adopted.** They ran for one to eight days. The removals rest on what the flags were for, not on a production accuracy figure.
+- **Put the decision model in the agent's tool list, not in its path.** If the agent cannot choose
+  whether to ask, the model is deciding for it.
+- **Make the tool visible.** Our set filter was used for every mailbox-wide request when listed and
+  never when it was reachable only through tool search.
+- **Return a ranking, not a cut.** Thresholds move with wording; the ranking does not. Let the agent
+  read the top of the list.
+- **Give a checker what the writer read.** Our output checker was removed for its false flags; study 04
+  shows they disappear when it sees the same evidence as the agent.
+- **A flag nobody acts on is waste.** Our run review flagged correctly and its flags went to a page
+  nobody read. Feed a finding into the next run or do not compute it.
+- **Before adding a guard, remove the split.** The "already done?" check was one of four repeat guards
+  on a symptom of separate agents not seeing each other's work. One agent removed the symptom (study 05).
+- **Do not route with a model when a rule or a default will do.** Our router chose the default every
+  time; a keyword rule was within a few points of it.
 
 ## Related work
 

@@ -1,14 +1,20 @@
 # 01 · Decision models as a set-reading tool
 
-**Question.** An agent is asked something about a whole mailbox: "which threads discuss the renewal
-price?", "which open promises does this new email change?". It cannot read 1,500 threads in one step,
-and keyword search misses items that do not use the keyword. Can a small decision model answer one
-yes-no question per item and rank the set well enough that the agent reads only the top of the list?
-And how do the available scorers compare on the same items?
+**Our position.** When an agent has to answer a question about a whole set (1,500 mail threads, 600
+open promises, 800 accounts), give it a set-filter tool: the agent writes one yes-no question, a small
+decision model answers it for every item in parallel, and the agent reads the top of the ranked list.
+Keyword search misses what people write without the keyword, and embeddings blur the distinction the
+agent actually asked about. A decision model ranks the right items to the top for a few cents per
+thousand items.
 
-**Status.** In progress. Jev 1.13 and 1.14, Clef, Clef Flash and the keyword, BM25 and embedding
-baselines and Laya are scored, with every per-item answer in `results/answers/`. Still to come: a local
-LLM read through its answer probabilities, and harder items.
+**Result.** On a synthetic corpus with hard near-misses, every hosted decision model put 25 or 26 of
+the 26 planted items in its top 10. Embeddings found 18, BM25 16 and keyword search 9. A production
+agent given the tool found 30 of 30 planted items on mailbox-wide questions, against 22 to 23 without
+it.
+
+Everything is reproducible from this folder: the corpus, the harness and every per-item answer from Jev
+1.13 and 1.14, Clef, Clef Flash, Laya and the baselines. Next: a local LLM read through its answer
+probabilities, and harder items.
 
 ## What is here
 
@@ -129,14 +135,19 @@ This is one system, one model and one trial per cell. It is reported because the
 tool against a searchable one has been asked for elsewhere (see related work) and we found no published
 measurement.
 
-## What this does not show
+## Building the tool
 
-- **Real mail.** The synthetic items are short (about 70 tokens). Real threads are longer and noisier.
-  Decision-model vendors report that accuracy falls as irrelevant state grows.
-- **Human labels.** The labels are the generator's intent.
-- **Statistical confidence per question.** Two to six positives each.
-- **Calibration.** The report ranks; it does not score how well probabilities match frequencies.
-- **A fair price comparison.** Local scorers cost machine time, not tokens; none of that is priced here.
+- **Return the ranking with probabilities and counts, never a silent cut.** Fitted thresholds ran from
+  0.19 to 0.99 across questions and models, and rewording one question moved up to 23 answers across
+  its threshold while the ranking held.
+- **Let the agent write the question.** In production the agent's own wording was often better than
+  ours, and it chose not to use the tool when a filter by client was enough.
+- **List the tool.** Reachable only through tool search, it was never used.
+- **Mind the item length.** Items here are short (about 70 tokens); a real thread costs more per item
+  and leaves more for the model to read past. Clip each item to what the question needs.
+- **Pick the model by stability, not only ranking.** On this corpus the hosted models rank alike; Clef
+  held its answers under rewording best (9 flips against 26 for Jev 1.14 and 37 for Clef Flash). Laya
+  matches them on plain factual questions and falls behind on judgement.
 
 ## Related work
 

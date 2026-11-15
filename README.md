@@ -6,11 +6,11 @@ with the code and per-item results needed to check it.
 
 ## Studies
 
-| # | Study | Question | Status |
+| # | Study | What it argues | Kind |
 |---|---|---|---|
-| 01 | [Decision models as a set-reading tool](studies/01-decision-model-set-filter/) | Can one yes-no question per item, answered by a small decision model, find the few relevant items in a set of 1,500? How do Jev, Laya, a local LLM and keyword search compare on the same items? | Results in; local LLM and harder items to come |
-| 02 | [Deleting the test suite: proofs on real seams instead of tests](studies/02-deleting-the-test-suite/) | A product built by coding agents deleted 895 test files and banned new ones. What changed, what did it cost, and what does the evidence say against it? | Draft case report |
-| 03 | [Where a decision model belongs in an agent](studies/03-where-a-decision-model-belongs/) | A decision model was tried in nine places in a production agent and kept in one. What decided each removal? | Case report |
+| 01 | [Decision models as a set-reading tool](studies/01-decision-model-set-filter/) | Give the agent a set-filter tool: one yes-no question per item, answered by a decision model. Jev, Clef, Laya, embeddings, BM25 and keyword search on the same 2,900 items | Reproducible |
+| 02 | [Deleting the test suite: proofs on real seams instead of tests](studies/02-deleting-the-test-suite/) | Why we deleted an agent-written test suite and prove every change on the real seam instead: restored production copies, real services, a browser, outcome evals | Design position, with production data |
+| 03 | [Where a decision model belongs in an agent](studies/03-where-a-decision-model-belongs/) | A decision model belongs in the agent's hands as a tool; nine placements in a production agent, and why only that one survived | Design position, with production data |
 | 04 | [What the checker sees](studies/04-what-the-checker-sees/) | A sentence checker given only the cited sources flags almost every true sentence taken from other records. Given everything the agent read, the false flags disappear and the errors are still caught | Reproducible |
 | 05 | [One agent loop](studies/05-one-agent-loop/) | Why we replaced sub-agents and specialised background agents with one loop, one context and one set of permissions, and what it did to duplicate work, cost and coherence | Design position, with production data |
 
@@ -18,14 +18,14 @@ Related, in its own repository: [Tool calls, stop tokens and missing issue text:
 
 ## What a study here contains
 
-- **A question and a result**, stated first, including results that came out null or against expectation.
-- **Data anyone can use.** Synthetic or public data only. No private or client data, and no outputs derived from it.
-- **Code that reruns it.** Every model answer is cached and committed, so the report can be recomputed without paying for a single call.
-- **The simple baseline.** Keyword search, BM25, a linear model on embeddings, or whatever the cheap alternative is.
-- **What it does not show.** Sample sizes, single runs, label provenance and anything left unmeasured.
-- **Related work.** Prior work the study builds on or replicates, with links that were opened and read.
+- **Our position first.** What we think builders should do, and the result that backs it.
+- **Real numbers.** From a production agent, or from a reproducible experiment with the code, the data
+  and every model answer committed, so the numbers can be recomputed without paying for a call.
+- **The simple alternative.** Keyword search, BM25, a rule, a default: whatever a builder would try first.
+- **Pitfalls.** The mistakes we made, so others can skip them.
+- **Related work.** Who said it before, who disagrees, with links that were opened and read.
 
-Some studies began as measurements on a private production system. Where a number comes from that system and cannot be reproduced from this repository, the study says so and gives the sample size.
+Reproducible experiments use synthetic or public data only. Production figures are aggregates.
 
 ## Licence
 
