@@ -136,7 +136,7 @@ and the author of the tests are now the same agent.
 **Testing against production state, and outcome evals**
 
 - Majors, "I test in prod", 2019. https://increment.com/testing/i-test-in-production/
-- GoReplay, https://github.com/buger/goreplay, and Diffy, https://github.com/opendiffy/diffy: replay of
+- GoReplay, https://github.com/buger/goreplay, and Diffy, https://github.com/opendiffy/diffy, for replay of
   real traffic and response comparison.
 - Grace, Hadfield, Olivares, De Jonghe (Anthropic), "Demystifying evals for AI agents", 2026.
   https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents. Grade the final state, not the path.
