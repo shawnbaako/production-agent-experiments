@@ -1,7 +1,8 @@
-# AI field notes
+# Production agent experiments
 
-Small, reproducible studies from building and running LLM agents and local inference. Each one
-answers a question that came up in real work, with the code and per-item results needed to check it.
+Experiments from building and running an LLM agent in production: what was tried, what the numbers
+were, what was kept and what was removed. Each study answers a question that came up in real work,
+with the code and per-item results needed to check it.
 
 ## Studies
 
