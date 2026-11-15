@@ -271,7 +271,7 @@ What the series shows, and what it does not:
 
 None of these follows from the design; each is an implementation error made while carrying it out.
 
-| Regression | How long | Cause |
+| Defect | How long | Cause |
 |---|---|---|
 | The agent found tools it could not call, and looped on search: six turns made 36 to 133 searches, one searching the same exact name 124 times | 2026-10-21 to fixes on 10-27, 10-28 and 10-29 | To shrink prompts, tool-search results stopped carrying input schemas, on the assumption that found tools would join the tool list. Earlier turns' tools often filled the list's space first, so they never joined. The change had been measured on a replay (last prompt 376k to 267k bytes) and still shipped the defect |
 | A retry after a cut-off reply asked for the whole output budget; one chat write reasoned through 131,072 tokens in 251 s without writing | 2026-10-21 to 10-22 | A fix for a worse defect: the old retry switched reasoning off and, twice on a copy, then said a meeting record had been saved when nothing was. The fix now doubles the room on each retry |
@@ -303,7 +303,7 @@ Still failing at the end:
   - a fix for tool-call text leaking into replies.
 - **Person use fell,** from 133 person turns a week to 35, for reasons unrelated to the
   architecture. It does not enter the background comparison. One partner was without background
-  turns for some days (a regression, listed above).
+  turns for some days (an implementation defect, listed above).
 - **The eval itself changed.** Its harness, triggers and two pass checks were revised during the
   steps.
 
