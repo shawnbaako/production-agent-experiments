@@ -1,13 +1,34 @@
-# 02 · Deleting the test suite: proofs on real seams instead of tests
+# 02 · Proofs, not tests: verifying software that coding agents write
 
-**Our position.** When coding agents write most of the code, they also write most of the tests, and
-those tests describe what the code does rather than what it should do. A green suite becomes the
-measure of done while the defects that matter happen under production conditions the tests never
-reach. We deleted the suite, banned new tests, and now prove every change on the real seam it touches:
-a replay on a restored copy of production, the real outside service, a browser used the way a person
-uses it, and evals that judge outcomes.
+**Our position.** Unit tests and hosted CI were built for human teams, where running the real system
+was slow and expensive and a cheap proxy was the best you could afford. Coding agents change that
+trade. An agent can restore a copy of production, replay a real request against its branch, drive a
+browser, call the real service and read the result in minutes, so the proxy is no longer the cheap
+option, and it was never the accurate one. Worse, when the same agent writes the code and the tests,
+the tests describe what the code does, a green suite becomes the agent's stop condition, and the
+suite defends the implementation against every later change.
 
-## Why we stopped testing
+So we deleted the test suite, banned new tests, and moved CI off hosted runners onto the machine that
+can see production. Every change is proved on the real seam it touches: a replay on a restored copy of
+production with the production models, the real outside service, a browser used the way a person uses
+it, and outcome evals. Rehearsals with stand-ins are allowed as a fast inner loop and are never counted
+as proof.
+
+## Why the old practices stop fitting
+
+| Practice | Why it made sense for people | What it does with coding agents |
+|---|---|---|
+| Unit tests beside every change | Running the whole system was slow, so check the parts | The agent can run the whole system on a production copy in minutes; the parts passing says little about the whole |
+| Tests written with the code | A second look by the author, then a reviewer | The same agent writes both. The tests encode its own reading, bugs included, and agree with it by construction |
+| Green suite as "done" | A shared, visible signal for a team | An agent optimises for the signal it is given. It stops when the suite is green, and edits or mocks until it is |
+| A large suite as a safety net | Changes are expensive, so pin behaviour | Agents restructure and delete constantly. The suite pins the machinery you are trying to remove, and every removal starts with rewriting tests |
+| Hosted CI on every push | A clean, neutral machine nobody can tamper with | It cannot see a production copy, the production models or the real accounts, so it can only run proxies. Its 48–55 minute loop is longer than most agent tasks |
+| Mocks for outside services | Real calls were slow, costly or risky to set up | The mock is written by the same agent that writes the integration, so it agrees with the agent's assumptions about the service, which is where integration bugs live |
+
+What agents make cheap is exactly what the old practices worked around: setting up realistic state,
+exercising the real path end to end, and reading the result. Spend the effort there.
+
+## What the suite looked like
 
 The suite grew from 125 test files to 895 in eight weeks, almost all of it written by coding agents
 alongside their own changes. By the end:
@@ -41,27 +62,43 @@ described it, so the suite defended the machinery it was meant to check.
 
 ## What we do instead
 
-A change is proved by its effect on the seam it changes:
+### The verification ladder
+
+| Rung | What it is | Counts as proof? | Typical time |
+|---|---|---|---|
+| Rehearsal | The change run with part of the seam replaced: a scripted model, a stub, a synthetic row, a test client | No. Reported as "rehearsed", with what was replaced named | Seconds |
+| Local gate | Lint, type checks, the web build, every migration on an empty database in a throwaway server, and a check that no test file or runner has appeared | For source and schema only | About a minute |
+| Replay on a restored copy | The branch's code against a fresh copy of production, under real roles and row security, with the production models | Yes, for what the agent and the service do | Minutes |
+| Real service and browser | The real integration within what was authorised, with calls recorded and cleaned up; the page used as a person would | Yes, for integrations and pages | Minutes |
+| Outcome eval | Cases judged on what happened, what was asked and what reached a person, never on wording or tool order; run once against the stored result of the previous step | Yes, and it is the regression guard | Minutes to an hour |
 
 | What changed | Proof |
 |---|---|
-| What the agent does | A replay on a restored copy of production, under real roles and row security, with the production models. The outcome is judged against the intended behaviour; any sound approach passes. |
-| An integration | The real service, within what was authorised. Record what was called; clean up. |
-| A deterministic guarantee (access, ledgers, money, migrations) | Source checks run against the restored copy, plus one pass as each affected role. |
-| A page | The page in a browser, used as a person would use it. |
+| What the agent does | A replay on a restored copy, judged against the intended behaviour; any sound approach passes |
+| An integration | The real service, within what was authorised |
+| A deterministic guarantee (access, ledgers, money, migrations, data writes) | Source checks against the restored copy, plus one pass as each affected role |
+| A page | The page in a browser, at the sizes and themes people use |
 
-Three rules hold it together:
+Every change records what ran, against what, the result, the cleanup and what is still unproved.
 
-1. **A rehearsal is not a proof.** Anything that replaces part of the seam (a scripted model, a patched
-   function, a test client instead of the route, a stub, a synthetic row) is reported as rehearsed,
-   with what was replaced named. It never counts as a pass.
-2. **Evals judge outcomes.** A case checks which effect happened, what was asked and how often a person
-   was interrupted. It never asserts wording, tool order or the current implementation.
-3. **Evidence is written down.** Every change records what ran, against what, the result, the cleanup
-   and what is still unproved.
+### CI on the machine that can see production
 
-CI still runs lint, type checks, the web build, every migration on an empty database, and a check that
-fails if a test file or test runner appears. It takes about a minute.
+Hosted CI's one real advantage is a machine the code under test cannot tamper with. We keep it for
+exactly that case: code from outside, and work orders from coding agents that run without a person,
+still run on hosted runners and never on the production host. Everything else runs locally:
+
+- **The gate runs on the exact commit being pushed** and records the result as a commit status naming
+  the checked tree. Hosted CI skips a tree that carries that record, so nothing is run twice and
+  nothing is skipped on trust.
+- **It refuses to record a dirty tree,** so the record always describes exactly what was pushed.
+- **It starts and removes its own database server,** so a run never touches a shared database.
+- **The proof kit runs on the same machine:** it restores a copy of production into a private server,
+  runs a branch against it with the production models only when asked, serves the app for a browser,
+  and drops the copy afterwards. None of that is possible on a hosted runner without moving production
+  data and credentials onto it.
+
+We had already decided to stop running the same checks twice before hosted CI minutes ran out; the
+local gate was merged the day they did.
 
 ## What changed
 
@@ -94,16 +131,19 @@ calculation that returned 0.3547 and reported it as 35.47%.
 
 - **Deterministic writes still need a check on a real database.** After the deletion, a change wrote an
   explicit null into a non-null column and contact saves failed for about a day. A deleted
-  database-backed test had covered exactly that write. Our rule already keeps checks for access,
-  ledgers and money; data writes belong on the same list, run against the restored copy.
+  database-backed test had covered exactly that write. Data writes belong with access, ledgers and money
+  on the list of deterministic guarantees checked against the restored copy.
 - **A proof covers what you ran, not what you didn't.** A change that removed input schemas from
   tool-search results was proved on a replay and still shipped a defect, because the replay never
   filled the tool list. When a change removes something, prove the case where its absence matters.
-- **Stand-ins creep back.** Workers under pressure reach for fakes and call the result a proof. An audit
-  after the change found stand-ins in every category. Name the rule ("rehearsed, not proved") and check
-  for it in review.
-- **A proof is not a regression guard.** It is run once and written up. Behaviour that must never
-  regress belongs in an outcome eval that is rerun, or in a deterministic check.
+- **Stand-ins creep back.** Agents under pressure reach for fakes and call the result a proof. Name the
+  rung ("rehearsed, not proved") in every report, and check for it in review.
+- **A one-off proof is not a regression guard.** Behaviour that must not regress belongs in an outcome
+  eval that is rerun, or in a deterministic check.
+- **Local CI needs provenance.** A status that says "passed" without the tree it checked is a claim, not
+  a record. Tie the record to the tree and refuse uncommitted changes.
+- **Keep untrusted code off the machine with production access.** Only code your own sessions wrote runs
+  locally. Anything from outside runs on hosted runners.
 
 ## Related work
 
