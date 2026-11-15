@@ -16,6 +16,10 @@ with the code and per-item results needed to check it.
 
 Related, in its own repository: [Tool calls, stop tokens and missing issue text: Gemma 4 as a coding agent](https://github.com/shawnbaako/gemma4-agent-failure-analysis).
 
+## Hardware notes
+
+- [Tesla P40 speed against temperature](hardware/p40-thermals/): ten weeks of clock, power and request timings from one P40 serving a 27B model at 125 W, with the watchdog and idle downclock that kept it running.
+
 ## What a study here contains
 
 - **Our position first.** What we think builders should do, and the result that backs it.
