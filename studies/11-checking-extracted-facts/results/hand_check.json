@@ -1,0 +1,542 @@
+{
+ "method": "40 scored facts drawn with random.Random(40): 5 of each injected error type and 25 labelled correct. Each was read against its listing by the study author (an LLM agent, Claude), not by a person.",
+ "ground_truth": [
+  {
+   "id": "wv-078:inj0:price_minor",
+   "field": "price_minor",
+   "error_type": "number_swap",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-106:inj0:price_minor",
+   "field": "price_minor",
+   "error_type": "number_swap",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-097:inj0:price_minor",
+   "field": "price_minor",
+   "error_type": "number_swap",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-005:inj0:price_minor",
+   "field": "price_minor",
+   "error_type": "number_swap",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-040:inj0:price_minor",
+   "field": "price_minor",
+   "error_type": "number_swap",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-037:inj1:duration_minutes",
+   "field": "duration_minutes",
+   "error_type": "invented",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-091:inj0:capacity",
+   "field": "capacity",
+   "error_type": "invented",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": "The target listing gives only address and check-in times, so any capacity is unsupported."
+  },
+  {
+   "id": "wv-130:inj1:cancellation_wording",
+   "field": "cancellation_wording",
+   "error_type": "invented",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-085:inj1:cancellation_wording",
+   "field": "cancellation_wording",
+   "error_type": "invented",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-027:inj1:includes",
+   "field": "includes",
+   "error_type": "invented",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-033:inj1:schedule_wording",
+   "field": "schedule_wording",
+   "error_type": "other_offering",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-093:inj1:schedule_wording",
+   "field": "schedule_wording",
+   "error_type": "other_offering",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-071:inj2:schedule_wording",
+   "field": "schedule_wording",
+   "error_type": "other_offering",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-109:inj1:duration_minutes",
+   "field": "duration_minutes",
+   "error_type": "other_offering",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-009:inj1:schedule_wording",
+   "field": "schedule_wording",
+   "error_type": "other_offering",
+   "label": false,
+   "hand_label": false,
+   "agree": true,
+   "note": "The target listing says only 'Free'; the hours belong to another listing."
+  },
+  {
+   "id": "wv-119:o6:kind",
+   "field": "kind",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-029:o3:schedule_wording",
+   "field": "schedule_wording",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-014:o3:description",
+   "field": "description",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-042:o7:location",
+   "field": "location",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-101:o17:description",
+   "field": "description",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-011:o17:location",
+   "field": "location",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-037:o0:price_minor",
+   "field": "price_minor",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": "Listing gives bunks from $27 and rooms from $60; either is a fair standard price."
+  },
+  {
+   "id": "wv-068:o18:location",
+   "field": "location",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-027:o5:price_wording",
+   "field": "price_wording",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-054:o2:description",
+   "field": "description",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-072:o0:schedule_wording",
+   "field": "schedule_wording",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-030:o0:price_minor",
+   "field": "price_minor",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-115:o1:description",
+   "field": "description",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-118:o6:title",
+   "field": "title",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-025:o4:title",
+   "field": "title",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-093:o5:title",
+   "field": "title",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-011:o11:description",
+   "field": "description",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-069:o2:price_minor",
+   "field": "price_minor",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-074:o6:schedule_wording",
+   "field": "schedule_wording",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": "The extractor split the business into tours and rentals; the hours are the business's and hold for both."
+  },
+  {
+   "id": "wv-049:o0:price_wording",
+   "field": "price_wording",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": "'Varies' is the listing's whole price field."
+  },
+  {
+   "id": "wv-032:o5:includes",
+   "field": "includes",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-068:o12:description",
+   "field": "description",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-034:o1:title",
+   "field": "title",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-118:o1:description",
+   "field": "description",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  },
+  {
+   "id": "wv-068:o9:description",
+   "field": "description",
+   "error_type": null,
+   "label": true,
+   "hand_label": true,
+   "agree": true,
+   "note": ""
+  }
+ ],
+ "verdicts_method": "Facts where an arm disagreed with the label, drawn with random.Random(42): 10 of Jev's (B_1 @0.5) downgrades of facts labelled correct (6 'includes', 4 other fields), all 3 wrong facts Jev kept, and 5 of the DeepSeek judge's (C_1) downgrades outside 'includes'. Then, with random.Random(43), 7 of D_1's downgrades of facts labelled correct outside price and duration, and 4 wrong facts D_1 kept. Judgement: arm_wrong (label right), label_wrong (arm right) or ambiguous.",
+ "verdicts": [
+  {
+   "id": "wv-115:o0:includes",
+   "arm": "B",
+   "judgement": "arm_wrong",
+   "note": "The listing says the suites include these items."
+  },
+  {
+   "id": "wv-035:o6:includes",
+   "arm": "B",
+   "judgement": "ambiguous",
+   "note": "Facilities the hotel offers; whether the room price covers them is not stated."
+  },
+  {
+   "id": "wv-004:o11:includes",
+   "arm": "B",
+   "judgement": "ambiguous",
+   "note": "Facility of the hotel; not stated as included in the price."
+  },
+  {
+   "id": "wv-056:o5:includes",
+   "arm": "B",
+   "judgement": "label_wrong",
+   "note": "A restaurant and a pub are not included in the room price; the label rule only checks the words appear."
+  },
+  {
+   "id": "wv-053:o2:includes",
+   "arm": "B",
+   "judgement": "arm_wrong",
+   "note": "Suites with kitchens and baths: part of what is booked."
+  },
+  {
+   "id": "wv-049:o2:includes",
+   "arm": "B",
+   "judgement": "label_wrong",
+   "note": "A swim-up bar is not covered by the price."
+  },
+  {
+   "id": "wv-029:o11:price_basis",
+   "arm": "B",
+   "judgement": "arm_wrong",
+   "note": "$18/night for a campsite is per unit."
+  },
+  {
+   "id": "wv-015:o0:price_minor",
+   "arm": "B",
+   "judgement": "ambiguous",
+   "note": "Two prices ($1.75 ticket, $38.50 day pass); which is standard is a judgement."
+  },
+  {
+   "id": "wv-112:o5:price_wording",
+   "arm": "B",
+   "judgement": "label_wrong",
+   "note": "$2 is the park's parking fee, not the camping price."
+  },
+  {
+   "id": "wv-029:o14:price_basis",
+   "arm": "B",
+   "judgement": "arm_wrong",
+   "note": "$12/night for a campsite is per unit."
+  },
+  {
+   "id": "wv-064:inj0:capacity",
+   "arm": "B",
+   "judgement": "arm_wrong",
+   "note": "Injected 61 for 16; Jev kept it (0.85)."
+  },
+  {
+   "id": "wv-118:inj0:capacity",
+   "arm": "B",
+   "judgement": "arm_wrong",
+   "note": "Injected 40 for 4; Jev kept it (0.56)."
+  },
+  {
+   "id": "wv-120:inj0:capacity",
+   "arm": "B",
+   "judgement": "arm_wrong",
+   "note": "Injected 81 for 18; Jev kept it (0.78)."
+  },
+  {
+   "id": "wv-080:o2:price_basis",
+   "arm": "C",
+   "judgement": "arm_wrong",
+   "note": "$450-500 per night for a hotel room is per unit."
+  },
+  {
+   "id": "wv-002:o6:description",
+   "arm": "C",
+   "judgement": "arm_wrong",
+   "note": "Joined fragments of the listing's own words, as the prompt allows."
+  },
+  {
+   "id": "wv-002:o6:title",
+   "arm": "C",
+   "judgement": "ambiguous",
+   "note": "The extractor named a sub-offering 'Lodge and Cabins'; the material does not use that name."
+  },
+  {
+   "id": "wv-002:o6:location",
+   "arm": "C",
+   "judgement": "arm_wrong",
+   "note": "The address is the listing's."
+  },
+  {
+   "id": "wv-038:o6:location",
+   "arm": "C",
+   "judgement": "arm_wrong",
+   "note": "The listing states this service area."
+  },
+  {
+   "id": "wv-008:o5:location",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "The value adds 'center of Homer', which the listing says; the excerpt holds only the street."
+  },
+  {
+   "id": "wv-071:o13:location",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "The cross street is in the listing, not in the excerpt."
+  },
+  {
+   "id": "wv-035:o6:location",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "The city is the article's; the street is quoted."
+  },
+  {
+   "id": "wv-104:o0:includes",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "Several items, each in the listing; the excerpt quotes one."
+  },
+  {
+   "id": "wv-090:o1:kind",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "Vacation homes are a stay; kind is a classification no excerpt states."
+  },
+  {
+   "id": "wv-028:o3:kind",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "A ski area is an experience; no excerpt states the category."
+  },
+  {
+   "id": "wv-102:o0:kind",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "A mine tour is an experience."
+  },
+  {
+   "id": "wv-125:inj2:schedule_wording",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "A rental agency's terms moved to a hotel; the quote is real. Jev 0.04."
+  },
+  {
+   "id": "wv-003:inj2:includes",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "Another operator's pick-up moved to a zipline. Jev 0.03."
+  },
+  {
+   "id": "wv-130:inj2:price_minor",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "The aquarium's price moved to the wax museum. Jev 0.03."
+  },
+  {
+   "id": "wv-115:inj2:includes",
+   "arm": "D",
+   "judgement": "arm_wrong",
+   "note": "A ranch's cabins moved to a lodge. Jev 0.02."
+  }
+ ]
+}

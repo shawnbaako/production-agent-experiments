@@ -1,0 +1,12 @@
+[project]
+name = "checking-extracted-facts"
+version = "1.0.0"
+description = "Study 11: checking facts an agent extracts from source material"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic==2.12.5",
+    "rapidfuzz==3.14.3",
+]
+
+[tool.uv]
+package = false
