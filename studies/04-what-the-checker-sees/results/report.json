@@ -1,0 +1,462 @@
+{
+ "clef": {
+  "all": {
+   "auroc_errors_vs_other": 0.992,
+   "auroc_errors_vs_true": 0.989,
+   "cited_flagged_share": 0.011,
+   "errors": 53,
+   "errors_caught": 49,
+   "errors_caught_by_type": {
+    "claim_not_made": "10/10",
+    "invented_price": "6/6",
+    "invented_promise": "7/8",
+    "reversed_fact": "6/6",
+    "wrong_date": "9/9",
+    "wrong_number": "7/8",
+    "wrong_person": "4/6"
+   },
+   "false_flags_per_output": 0.08,
+   "flagged_by_label": {
+    "cited": 1,
+    "contradicted": 26,
+    "not_a_claim": 3,
+    "other": 1,
+    "unsupported": 23
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.011,
+   "precision": 0.907,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.3442
+  },
+  "all_reworded": {
+   "auroc_errors_vs_other": 0.992,
+   "auroc_errors_vs_true": 0.991,
+   "cited_flagged_share": 0.0,
+   "errors": 53,
+   "errors_caught": 49,
+   "errors_caught_by_type": {
+    "claim_not_made": "10/10",
+    "invented_price": "6/6",
+    "invented_promise": "7/8",
+    "reversed_fact": "6/6",
+    "wrong_date": "9/9",
+    "wrong_number": "7/8",
+    "wrong_person": "4/6"
+   },
+   "false_flags_per_output": 0.04,
+   "flagged_by_label": {
+    "contradicted": 26,
+    "not_a_claim": 2,
+    "other": 1,
+    "unsupported": 23
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.011,
+   "precision": 0.942,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.3442
+  },
+  "calls": {
+   "answers": 1605,
+   "cost_usd": 0.1688,
+   "input_tokens_mean": 548,
+   "latency_ms_p50": 319
+  },
+  "cited": {
+   "auroc_errors_vs_other": 0.78,
+   "auroc_errors_vs_true": 0.884,
+   "cited_flagged_share": 0.0,
+   "errors": 53,
+   "errors_caught": 47,
+   "errors_caught_by_type": {
+    "claim_not_made": "10/10",
+    "invented_price": "6/6",
+    "invented_promise": "7/8",
+    "reversed_fact": "5/6",
+    "wrong_date": "9/9",
+    "wrong_number": "6/8",
+    "wrong_person": "4/6"
+   },
+   "false_flags_per_output": 2.08,
+   "flagged_by_label": {
+    "contradicted": 24,
+    "not_a_claim": 4,
+    "other": 50,
+    "unsupported": 23
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.562,
+   "precision": 0.465,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.0937
+  }
+ },
+ "clef-flash": {
+  "all": {
+   "auroc_errors_vs_other": 0.979,
+   "auroc_errors_vs_true": 0.977,
+   "cited_flagged_share": 0.023,
+   "errors": 53,
+   "errors_caught": 46,
+   "errors_caught_by_type": {
+    "claim_not_made": "10/10",
+    "invented_price": "5/6",
+    "invented_promise": "8/8",
+    "reversed_fact": "4/6",
+    "wrong_date": "9/9",
+    "wrong_number": "7/8",
+    "wrong_person": "3/6"
+   },
+   "false_flags_per_output": 0.08,
+   "flagged_by_label": {
+    "cited": 2,
+    "contradicted": 23,
+    "not_a_claim": 40,
+    "unsupported": 23
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.0,
+   "precision": 0.523,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.499
+  },
+  "all_reworded": {
+   "auroc_errors_vs_other": 0.986,
+   "auroc_errors_vs_true": 0.986,
+   "cited_flagged_share": 0.011,
+   "errors": 53,
+   "errors_caught": 45,
+   "errors_caught_by_type": {
+    "claim_not_made": "10/10",
+    "invented_price": "5/6",
+    "invented_promise": "6/8",
+    "reversed_fact": "4/6",
+    "wrong_date": "9/9",
+    "wrong_number": "7/8",
+    "wrong_person": "4/6"
+   },
+   "false_flags_per_output": 0.04,
+   "flagged_by_label": {
+    "cited": 1,
+    "contradicted": 24,
+    "not_a_claim": 23,
+    "unsupported": 21
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.0,
+   "precision": 0.652,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.499
+  },
+  "calls": {
+   "answers": 1605,
+   "cost_usd": 0.0167,
+   "input_tokens_mean": 548,
+   "latency_ms_p50": 304
+  },
+  "cited": {
+   "auroc_errors_vs_other": 0.617,
+   "auroc_errors_vs_true": 0.8,
+   "cited_flagged_share": 0.092,
+   "errors": 53,
+   "errors_caught": 51,
+   "errors_caught_by_type": {
+    "claim_not_made": "10/10",
+    "invented_price": "6/6",
+    "invented_promise": "8/8",
+    "reversed_fact": "6/6",
+    "wrong_date": "9/9",
+    "wrong_number": "7/8",
+    "wrong_person": "5/6"
+   },
+   "false_flags_per_output": 3.92,
+   "flagged_by_label": {
+    "cited": 8,
+    "contradicted": 27,
+    "not_a_claim": 38,
+    "other": 86,
+    "unsupported": 24
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.966,
+   "precision": 0.279,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.3065
+  }
+ },
+ "jev-1.14": {
+  "all": {
+   "auroc_errors_vs_other": 0.988,
+   "auroc_errors_vs_true": 0.987,
+   "cited_flagged_share": 0.011,
+   "errors": 53,
+   "errors_caught": 49,
+   "errors_caught_by_type": {
+    "claim_not_made": "10/10",
+    "invented_price": "6/6",
+    "invented_promise": "8/8",
+    "reversed_fact": "6/6",
+    "wrong_date": "9/9",
+    "wrong_number": "6/8",
+    "wrong_person": "4/6"
+   },
+   "false_flags_per_output": 0.08,
+   "flagged_by_label": {
+    "cited": 1,
+    "contradicted": 25,
+    "not_a_claim": 24,
+    "other": 1,
+    "unsupported": 24
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.011,
+   "precision": 0.653,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.42
+  },
+  "all_reworded": {
+   "auroc_errors_vs_other": 0.988,
+   "auroc_errors_vs_true": 0.987,
+   "cited_flagged_share": 0.011,
+   "errors": 53,
+   "errors_caught": 48,
+   "errors_caught_by_type": {
+    "claim_not_made": "10/10",
+    "invented_price": "6/6",
+    "invented_promise": "8/8",
+    "reversed_fact": "5/6",
+    "wrong_date": "9/9",
+    "wrong_number": "6/8",
+    "wrong_person": "4/6"
+   },
+   "false_flags_per_output": 0.08,
+   "flagged_by_label": {
+    "cited": 1,
+    "contradicted": 24,
+    "not_a_claim": 25,
+    "other": 1,
+    "unsupported": 24
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.011,
+   "precision": 0.64,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.42
+  },
+  "calls": {
+   "answers": 1605,
+   "cost_usd": 0.0457,
+   "input_tokens_mean": 677,
+   "latency_ms_p50": 206
+  },
+  "cited": {
+   "auroc_errors_vs_other": 0.672,
+   "auroc_errors_vs_true": 0.828,
+   "cited_flagged_share": 0.046,
+   "errors": 53,
+   "errors_caught": 49,
+   "errors_caught_by_type": {
+    "claim_not_made": "10/10",
+    "invented_price": "6/6",
+    "invented_promise": "8/8",
+    "reversed_fact": "5/6",
+    "wrong_date": "9/9",
+    "wrong_number": "7/8",
+    "wrong_person": "4/6"
+   },
+   "false_flags_per_output": 3.67,
+   "flagged_by_label": {
+    "cited": 4,
+    "contradicted": 25,
+    "not_a_claim": 6,
+    "other": 84,
+    "unsupported": 24
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.944,
+   "precision": 0.343,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.25
+  }
+ },
+ "laya-typed-decisions": {
+  "all": {
+   "auroc_errors_vs_other": 0.735,
+   "auroc_errors_vs_true": 0.763,
+   "cited_flagged_share": 0.103,
+   "errors": 53,
+   "errors_caught": 22,
+   "errors_caught_by_type": {
+    "claim_not_made": "5/10",
+    "invented_price": "3/6",
+    "invented_promise": "3/8",
+    "reversed_fact": "2/6",
+    "wrong_date": "5/9",
+    "wrong_number": "4/8",
+    "wrong_person": "0/6"
+   },
+   "false_flags_per_output": 1.12,
+   "flagged_by_label": {
+    "cited": 9,
+    "contradicted": 11,
+    "not_a_claim": 15,
+    "other": 18,
+    "unsupported": 11
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.202,
+   "precision": 0.344,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.4767
+  },
+  "all_reworded": {
+   "auroc_errors_vs_other": 0.748,
+   "auroc_errors_vs_true": 0.762,
+   "cited_flagged_share": 0.23,
+   "errors": 53,
+   "errors_caught": 31,
+   "errors_caught_by_type": {
+    "claim_not_made": "8/10",
+    "invented_price": "5/6",
+    "invented_promise": "5/8",
+    "reversed_fact": "3/6",
+    "wrong_date": "5/9",
+    "wrong_number": "5/8",
+    "wrong_person": "0/6"
+   },
+   "false_flags_per_output": 1.88,
+   "flagged_by_label": {
+    "cited": 20,
+    "contradicted": 13,
+    "not_a_claim": 22,
+    "other": 25,
+    "unsupported": 18
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.281,
+   "precision": 0.316,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.4767
+  },
+  "calls": {
+   "answers": 1605,
+   "cost_usd": 0.0,
+   "input_tokens_mean": 423,
+   "latency_ms_p50": 1336
+  },
+  "cited": {
+   "auroc_errors_vs_other": 0.515,
+   "auroc_errors_vs_true": 0.713,
+   "cited_flagged_share": 0.149,
+   "errors": 53,
+   "errors_caught": 45,
+   "errors_caught_by_type": {
+    "claim_not_made": "9/10",
+    "invented_price": "6/6",
+    "invented_promise": "8/8",
+    "reversed_fact": "4/6",
+    "wrong_date": "8/9",
+    "wrong_number": "6/8",
+    "wrong_person": "4/6"
+   },
+   "false_flags_per_output": 3.58,
+   "flagged_by_label": {
+    "cited": 13,
+    "contradicted": 22,
+    "not_a_claim": 20,
+    "other": 73,
+    "unsupported": 23
+   },
+   "held_outputs": 24,
+   "held_sentences": 271,
+   "other_flagged_share": 0.82,
+   "precision": 0.298,
+   "sentences_by_label": {
+    "cited": 87,
+    "contradicted": 29,
+    "not_a_claim": 42,
+    "other": 89,
+    "unsupported": 24
+   },
+   "threshold": 0.4387
+  }
+ }
+}
