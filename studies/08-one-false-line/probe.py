@@ -40,9 +40,9 @@ import cases as C  # noqa: E402
 
 RESULTS = HERE / "results"
 URL = "https://openrouter.ai/api/v1/chat/completions"
-CANNOT = re.compile(r"\b(can(?:no|')?t|cannot|unable|no tool|not able|(?:don't|do not|doesn't|does not) have|"
+CANNOT = re.compile(r"\b(can(?:no|['’])?t|cannot|unable|no tool|not able|(?:don['’]t|do not|doesn['’]t|does not) have|"
                     r"not one I have|"
-                    r"(?:isn't|is not|not) available|unavailable|no way)\b", re.I)
+                    r"(?:isn['’]t|is not|not) available|unavailable|no way)\b", re.I)
 OUTCOMES = ("called", "other_tool", "refused", "other_text")
 
 
@@ -74,9 +74,8 @@ def classify(tool_calls: list[dict], text: str) -> str:
     return "refused" if CANNOT.search(text or "") else "other_text"
 
 
-def ask(args, key: str, condition: str, trial: int) -> dict:
-    body = {"model": args.model, "messages": C.messages(condition, args.setup.split()[0]),
-            "tools": C.tools(args.setup.split()[0]),
+def complete(args, key: str, messages: list[dict], tools: list[dict]) -> tuple[int, dict, int]:
+    body = {"model": args.model, "messages": messages, "tools": tools,
             "tool_choice": "auto", "max_tokens": args.max_tokens, "usage": {"include": True}}
     if args.reasoning != "default":
         body["reasoning"] = {"enabled": args.reasoning == "on"}
@@ -94,6 +93,10 @@ def ask(args, key: str, condition: str, trial: int) -> dict:
         if status == 200 and payload.get("choices"):
             break
         time.sleep(2 + 2 * attempt)
+    return status, payload, round((time.perf_counter() - t0) * 1000)
+
+
+def step(status: int, payload: dict, ms: int) -> dict:
     choice = (payload.get("choices") or [{}])[0]
     msg = choice.get("message") or {}
     calls = [{"name": (t.get("function") or {}).get("name"), "arguments": (t.get("function") or {}).get("arguments")}
@@ -101,12 +104,73 @@ def ask(args, key: str, condition: str, trial: int) -> dict:
     text = msg.get("content") or ""
     usage = payload.get("usage") or {}
     ok = status == 200 and bool(payload.get("choices")) and (bool(calls) or bool(text.strip()))
-    return {"model": args.model, "setup": args.setup, "condition": condition, "trial": trial, "ok": ok, "status": status,
-            "outcome": classify(calls, text) if ok else None, "tool_calls": calls, "text": text,
+    return {"ok": ok, "status": status, "tool_calls": calls, "text": text, "message": msg,
             "reasoning": (msg.get("reasoning") or "")[:3000], "finish": choice.get("finish_reason"),
             "provider": payload.get("provider"), "input_tokens": usage.get("prompt_tokens"),
-            "output_tokens": usage.get("completion_tokens"), "cost": float(usage.get("cost") or 0),
-            "ms": round((time.perf_counter() - t0) * 1000)}
+            "output_tokens": usage.get("completion_tokens"), "cost": float(usage.get("cost") or 0), "ms": ms}
+
+
+def ask(args, key: str, condition: str, trial: int) -> dict:
+    setup = args.setup.split()[0]
+    if setup == "disclosed":
+        return ask_disclosed(args, key, condition, trial)
+    st = step(*complete(args, key, C.messages(condition, setup), C.tools(setup)))
+    st.pop("message")
+    return {"model": args.model, "setup": args.setup, "condition": condition, "trial": trial, **st,
+            "outcome": classify(st["tool_calls"], st["text"]) if st["ok"] else None}
+
+
+def ask_disclosed(args, key: str, condition: str, trial: int) -> dict:
+    """Two steps: if the first searches the catalogue, answer with the canned FOUND and take one more."""
+    messages = C.disclosed_messages(condition)
+    first = step(*complete(args, key, messages, C.DISCLOSED_TOOLS))
+    row = {"model": args.model, "setup": args.setup, "condition": condition, "trial": trial,
+           "ok": first["ok"], "status": first["status"], "second": None}
+    msg = first.pop("message")
+    if first["ok"] and any(t["name"] == "find_tools" for t in first["tool_calls"]):
+        reply = {"role": "assistant", "content": msg.get("content") or "", "tool_calls": msg["tool_calls"]}
+        for k in ("reasoning", "reasoning_details"):
+            if msg.get(k):
+                reply[k] = msg[k]
+        results = [{"role": "tool", "tool_call_id": t["id"],
+                    "content": json.dumps(C.FOUND if t["function"]["name"] == "find_tools" else {"ok": True})}
+                   for t in msg["tool_calls"]]
+        second = step(*complete(args, key, messages + [reply, *results], C.DISCLOSED_TOOLS))
+        second.pop("message")
+        row["second"] = second
+        row["ok"] = second["ok"]
+    row["first"] = first
+    row["cost"] = first["cost"] + ((row["second"] or {}).get("cost") or 0)
+    row["outcome"] = classify_disclosed(row) if row["ok"] else None
+    return row
+
+
+def _runs_pipeline(calls: list[dict]) -> bool:
+    for t in calls:
+        if t["name"] == "list_pipeline":
+            return True
+        if t["name"] == "run_tool":
+            try:
+                if json.loads(t["arguments"] or "{}").get("name") == "list_pipeline":
+                    return True
+            except json.JSONDecodeError:
+                pass
+    return False
+
+
+DISCLOSED_OUTCOMES = ("called_direct", "searched_called", "searched_not_called", "refused_no_search",
+                      "other_tool", "other_text")
+
+
+def classify_disclosed(row: dict) -> str:
+    first = row["first"]
+    if _runs_pipeline(first["tool_calls"]):
+        return "called_direct"
+    if row["second"] is not None:
+        return "searched_called" if _runs_pipeline(row["second"]["tool_calls"]) else "searched_not_called"
+    if first["tool_calls"]:
+        return "other_tool"
+    return "refused_no_search" if CANNOT.search(first["text"] or "") else "other_text"
 
 
 def run(args) -> int:
@@ -116,7 +180,8 @@ def run(args) -> int:
     RESULTS.mkdir(exist_ok=True)
     args.setup = f"{args.setup} {args.reasoning}"
     seen = load(args.model, args.setup)
-    conds = args.conditions.split(",") if args.conditions else list(C.CONDITIONS)
+    every = C.DISCLOSED_CONDITIONS if args.setup.startswith("disclosed") else C.CONDITIONS
+    conds = args.conditions.split(",") if args.conditions else list(every)
     todo = [(c, t) for c in conds for t in range(1, args.trials + 1) if (c, t) not in seen]
     spent = spent_total()
     if spent >= args.max_cost:
@@ -140,6 +205,18 @@ def run(args) -> int:
 def summarize(model: str, setup: str) -> dict:
     rows = load(model, setup)
     out = {}
+    if setup.startswith("disclosed"):
+        for cond in C.DISCLOSED_CONDITIONS:
+            rs = [r for (c, _), r in rows.items() if c == cond]
+            if rs:
+                n = Counter(classify_disclosed(r) for r in rs)
+                out[cond] = {"trials": len(rs), **{k: n[k] for k in DISCLOSED_OUTCOMES},
+                             "searched": sum(r["second"] is not None for r in rs),
+                             "called": n["called_direct"] + n["searched_called"]}
+        vals = list(rows.values())
+        if vals:
+            out["calls"] = {"responses": len(vals), "cost_usd": round(sum(r["cost"] for r in vals), 4)}
+        return out
     for cond in C.CONDITIONS:
         rs = [r for (c, _), r in rows.items() if c == cond]
         if not rs:
@@ -164,14 +241,19 @@ def report(_args) -> int:
     (RESULTS / "report.json").write_text(json.dumps(full, indent=1, sort_keys=True) + "\n")
     models = list(full)
     models.sort(key=lambda m: (m.split(" ")[0], m.split(" ")[1] != "off", m))
-    print("| condition | " + " | ".join(" ".join(m.split(" ")[:2]) + " " + m.split("/")[-1] for m in models) + " |")
-    print("|---|" + "---|" * len(models))
+    tables = [m for m in models if not m.startswith("disclosed")]
+    print("| condition | " + " | ".join(" ".join(m.split(" ")[:2]) + " " + m.split("/")[-1] for m in tables) + " |")
+    print("|---|" + "---|" * len(tables))
     for cond in C.CONDITIONS:
         cells = []
-        for m in models:
+        for m in tables:
             q = full[m].get(cond)
             cells.append(f"{q['called']}/{q['trials']}" if q else "")
         print(f"| {cond} | " + " | ".join(cells) + " |")
+    print("\nDisclosed setup: called (direct + after a search) / searched / refused without searching")
+    for m in [m for m in models if m.startswith("disclosed")]:
+        print(m, {c: f"{q['called']}/{q['searched']}/{q['refused_no_search']}" for c, q in full[m].items()
+                  if c != "calls"})
     print()
     for m in models:
         c = full[m].get("calls", {})
@@ -186,7 +268,7 @@ def main() -> int:
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("run")
     r.add_argument("--model", required=True)
-    r.add_argument("--setup", choices=("small", "wide"), default="wide")
+    r.add_argument("--setup", choices=("small", "wide", "disclosed"), default="wide")
     r.add_argument("--reasoning", choices=("on", "off", "default"), default="on")
     r.add_argument("--trials", type=int, default=15)
     r.add_argument("--conditions", help="comma-separated subset; default all")

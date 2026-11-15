@@ -4,10 +4,14 @@
 When one of them says a tool is unavailable, that sentence can outweigh the tool list, the tool's
 description and a system prompt that says otherwise. Do not leave stale failures in the working context:
 drop the line, rewrite it, or put a real tool result after it. A note saying "tools are available now"
-is not a substitute, and on the model where we first saw this it made things worse.
+is not a substitute, and on the model where we first saw this it made things worse. Under progressive
+disclosure this matters more: a tool the agent did not search for becomes, in its own words, a tool
+that does not exist. A claim of absence should come from a search that returned nothing, not from the
+agent's prose.
 
 **Status.** Design position with production data, and a reproducible experiment: synthetic
-conversations, every response committed, $0.37 for the 2,340 calls reported here.
+conversations, every response committed, $0.59 for the 2,340 single-step probes and 900 two-step
+probes reported here.
 
 **Short version.**
 
@@ -24,9 +28,20 @@ conversations, every response committed, $0.37 for the 2,340 calls reported here
 - **Changing the history fixed it every time.** With the line removed, rewritten as a correction, or
   followed by an exchange where the agent used the tool, the default model called it 15/15. So did the
   others, to within one trial.
-- **Reasoning on removed the effect.** Every model called the tool 15/15 in every condition with
-  reasoning on. The two comparison models (Claude Haiku 5.5, GPT-5.6 Luna) barely showed it even with
+- **With the tool listed, reasoning on removed the effect.** Every model called the tool 15/15 in
+  every condition with reasoning on. With the tool behind a search, V4 Flash 0731 still refused 3
+  times in 15 after the repeated claim. The two comparison models (Claude Haiku 5.5, GPT-5.6 Luna) barely showed it even with
   reasoning off.
+- **When the tool has to be found first, the claim is near absolute.** With `list_pipeline` reachable
+  only through `find_tools`, one false line stopped the search outright: 0, 3 and 1 of 15 on the three
+  production models with reasoning off, and 0 of 15 for Haiku, which had ignored the same line when
+  the tool was listed. Every model that searched went on to call the tool.
+- **Disclosure writes the first false line itself.** With no false claim at all, just two earlier turns
+  answered from the listed tools, Haiku said it had no pipeline tool 14 times in 15 without searching,
+  and the default production model 4 times.
+- **A recorded search miss sticks less than prose on the production models.** An earlier
+  `find_tools` result of "no tool matches 'pipeline report'" left the default model searching again
+  10 times in 15, against 0 after the prose claim. Haiku refused 15 of 15 after either.
 
 ## What happened in production
 
@@ -67,6 +82,33 @@ later the completed tool calls and results that backed them were put back too. C
 Start fresh boundary stayed. The experiment below is a way to see which of those choices carries the
 weight.
 
+## How disclosure produced it
+
+The agent used progressive disclosure: a short list of tools on every turn, the rest found on demand.
+Before the repair an ordinary turn listed the discovery pair (`find_tools`, `run_tool`) and fifteen app
+tools, most of them view and form commands. The everyday reads, `list_pipeline` among them, were not
+listed; they were reachable only through `find_tools`. The first refusal came from that. The model
+answered from the list in front of it, without searching, and wrote that no such tool existed.
+
+The primary-tool repair then listed `list_pipeline` on every turn, and the refusal still reproduced,
+now from history. That is the "moved into the short list" fix above. Listing more tools did not undo
+the claim, because by then the claim was the agent's own words.
+
+This is the general shape:
+
+- **Under disclosure a miss is written into history as the agent's claim.** The model did not search,
+  so it did not find, so it said the tool does not exist. The next turn reads that as a fact.
+- **Capability claims go stale by design.** The offered set changes from turn to turn. Anything the
+  agent says about what it can do is true at most for the turn it said it in.
+- **A claim of absence should come from a search result.** An explicit "no tool matches" is an event
+  in history, with its query attached, and a later turn can see that it was about other words. The
+  agent's "I have no tool for that" carries no query and no time.
+- **Listing more tools is not the fix.** It removes the first miss for one tool and leaves every
+  stale claim in place.
+
+[Study 06](../06-tool-search-results/) looks at what a tool search should return, including an explicit
+"no such tool" result. The `disclosed` setup below measures the history side.
+
 ## The experiment
 
 Synthetic conversations with an assistant for an invented consulting firm. Every condition ends with
@@ -95,6 +137,20 @@ count". We read the model's first step: did it call `list_pipeline`?
 the production prompt's wording on tools ("Earlier statements, including yours, do not prove what is
 available now or what was done; tool results do"; "State capability gaps plainly"), and 40 tools.
 `small` is a 120-word prompt with six tools.
+
+`disclosed` is `wide` with progressive disclosure, the pattern production used: 15 primary tools plus
+`find_tools` and `run_tool`, 17 in all, and `list_pipeline` not among them. `find_tools` returns
+matching tools with their descriptions and schemas; `run_tool` runs one by name. (The other common
+pattern loads a found tool straight into the tool list; we used the one production ran.) The system
+prompt adds the production wording: "Your listed tools are a starting point. When the capability you
+need is not listed, find it with find_tools and run it with run_tool." The probe takes two steps. If the
+first step calls `find_tools`, whatever the query, it is answered with a fixed result listing
+`list_pipeline` with its full schema, and the second step is recorded. A trial counts as a call when
+either step runs `list_pipeline`. Its conditions are `fresh`, `clean`, `false_claim`,
+`false_claim_twice`, `claim_then_tool_result` (where the earlier use went through `find_tools` and
+`run_tool`) and one new one, `earlier_search_miss`: an earlier "Can you pull the pipeline report?",
+a `find_tools` call for "pipeline report" that returned `{"matches": [], "note": "no tool matches
+'pipeline report'"}`, and the reply "No tool matches "pipeline report", so I can't pull that report."
 
 **Models.** The three production chat models, all DeepSeek: V4.1 Flash (the default), V4 Flash 0731
 (fast) and V4.1 Flash 1017 (strong). For comparison, Claude Haiku 5.5 and GPT-5.6 Luna. Reasoning was
@@ -136,6 +192,33 @@ Calls to `list_pipeline` out of 15, `wide` setup:
 A short prompt with six tools did not protect the model: the default model called the tool 3 times in
 15 after one false line, against 7 in the production-sized setup.
 
+`disclosed` setup, `list_pipeline` behind `find_tools`, out of 15. Each cell is calls / trials that
+searched / trials that refused without searching:
+
+| Condition | V4.1 Flash, off | V4 Flash 0731, off | V4.1 Flash 1017, off | Haiku 5.5, off | Luna, off |
+|---|---|---|---|---|---|
+| `fresh` | 15 / 15 / 0 | 15 / 15 / 0 | 15 / 15 / 0 | 14 / 14 / 0 | 15 / 15 / 0 |
+| `clean` | 11 / 11 / **4** | 15 / 14 / 0 | 14 / 14 / 1 | 1 / 1 / **14** | 15 / 15 / 0 |
+| `false_claim` | **0** / 0 / 15 | **3** / 3 / 12 | **1** / 1 / 14 | **0** / 0 / 15 | 14 / 14 / 1 |
+| `false_claim_twice` | 0 / 0 / 15 | 0 / 0 / 15 | 0 / 0 / 15 | 0 / 0 / 15 | 15 / 15 / 0 |
+| `earlier_search_miss` | 10 / 10 / 5 | 15 / 15 / 0 | 14 / 14 / 1 | 0 / 0 / 15 | 15 / 15 / 0 |
+| `claim_then_tool_result` | 15 / 0 / 0 | 15 / 0 / 0 | 15 / 0 / 0 | 15 / 0 / 0 | 15 / 9 / 0 |
+
+With reasoning on, every model called the tool 15/15 in every `disclosed` condition except V4 Flash
+0731: 14/15 after `false_claim` and 12/15 after `false_claim_twice`, each miss a refusal without a
+search. Haiku's one miss in `fresh` called another tool.
+
+Three things in this table:
+
+- **No model that searched failed to call.** Across all 900 two-step trials, every search was followed
+  by `run_tool` on `list_pipeline`. The failure is entirely in deciding not to look.
+- **`clean` has no false line and still fails.** Two earlier turns answered from the listed tools were
+  enough for Haiku to treat the list as complete: "I can only look up accounts by name, and I don't
+  have a tool that lists the whole pipeline." That is the production first refusal, reproduced. `fresh`,
+  with no earlier turns, searched every time.
+- **`claim_then_tool_result` is answered without a search.** Every model ran `list_pipeline` through
+  `run_tool` by name, taken from the earlier result. The history held a true fact and it was used.
+
 **What the refusals say.** Every miss but one was a refusal with no tool call: 193 of 194. The model
 repeats its history rather than its tools. From the default model, reasoning off, after
 `false_claim`:
@@ -170,8 +253,17 @@ many steps it is not free, and the reason a chat path runs with reasoning off is
 - **Changing the history works on every model.** Removed, rewritten or answered by a later tool result,
   the line lost its effect: 15/15 on the default model in all three, and at least 14/15 on every model.
   The person saying "you were wrong, check again" worked as well, but it needs a person who knows.
-- **Reasoning masks the problem rather than fixing it.** With reasoning on, every model read its tool
-  list and ignored the line. Treat that as a margin, not a guarantee: the production prompt was
+- **Disclosure turns a miss into a fact.** With the tool listed, Haiku ignored one false line 15
+  times in 15. With the tool behind a search it obeyed it 15 times in 15, and with no false line at
+  all it wrote its own 14 times. A model reading a short list and its own past answers has nothing in
+  front of it that contradicts "I have no tool for that".
+- **A search result is better evidence than a sentence, on most models.** The recorded "no tool
+  matches 'pipeline report'" carries its query, and the production models mostly searched again for
+  different words (10, 15 and 14 of 15, against 0, 3 and 1 after the prose claim). Haiku did not tell
+  them apart. The agent's reply in that condition also said "I can't pull that report", so this is a
+  search result plus prose, not a search result alone.
+- **Reasoning masks the problem rather than fixing it.** With reasoning on, almost every model read
+  its tool list, or searched, and ignored the line. Treat that as a margin, not a guarantee: the production prompt was
   longer, the history longer, and the claim plausible in ways a synthetic case is not.
 
 ## The simple alternative
@@ -194,6 +286,9 @@ cheaper than touching history and neither does the job.
   what the agent believed. A summary would carry the same false claim in fewer words.
 - **Report a tool failure as an event, with its time.** "The reader returned 503 at 10:42" ages well;
   "I can't read the pipeline" does not.
+- **Under progressive disclosure, never let the agent declare a tool absent without searching.** Make
+  the discovery result the record: "no tool matches 'pipeline report'" with its query, not "I have no
+  tool for that". Capability claims in the agent's prose go stale the turn the offered set changes.
 - **If a path runs with reasoning off, test it with poisoned history.** Seed a false capability claim
   and check the next turn still calls the tool. It is a two-line eval.
 
@@ -212,15 +307,17 @@ cheaper than touching history and neither does the job.
 
 ## Files
 
-- `cases.py`: the system prompts, the 6 and 40 tools, the twelve conversations.
+- `cases.py`: the system prompts, the 6, 40 and 17 (disclosed) tools, the twelve conversations and
+  the six disclosed ones, and the fixed `find_tools` result.
 - `probe.py`: sends each conversation, caches every response and computes the report. Standard library
   only. `python3 probe.py report` recomputes everything from the cache.
 - `results/<setup>__<reasoning>__<model>.jsonl`: every response, with tool calls, text, the first
   3,000 characters of reasoning where the provider returned it, tokens and cost.
   `results/report.json`: the counts.
 
-Responses are first steps only; nothing was executed. Pilot runs on earlier versions of the prompts
-($0.02) are not included.
+Responses are first steps only, except the `disclosed` probes' second step after a search; no tool
+was executed, and the search result is the same whatever the query. Pilot runs on earlier versions
+of the prompts ($0.02) are not included.
 
 ## Related work
 

@@ -306,3 +306,73 @@ _EXTRA = [
      {"days": {"type": "integer"}}, []),
 ]
 WIDE_TOOLS = TOOLS[:3] + [_fn(*t) for t in _EXTRA[:12]] + TOOLS[3:] + [_fn(*t) for t in _EXTRA[12:]]
+
+
+# ── the disclosed setup: the tool is found on demand ────────────────────
+#
+# Progressive disclosure, the pattern the production agent used: every turn lists a short set of
+# primary tools plus a discovery pair. `find_tools` searches the full catalogue and returns names,
+# descriptions and schemas; `run_tool` runs a found tool by name. `list_pipeline` is not listed.
+# When a probe's first step calls find_tools, it is answered with FOUND (whatever the query), and the
+# second step is recorded.
+
+DISCLOSED_SYSTEM = WIDE_SYSTEM + """
+
+## Finding tools
+
+Your listed tools are a starting point. When the capability you need is not listed, find it with
+find_tools and run it with run_tool; its own permissions and approvals still apply."""
+
+_PRIMARY = {"get_account", "resolve_account", "create_task", "search_mail", "read_calendar", "list_tasks",
+            "update_task", "read_work", "assign_work", "draft_reply", "search_meetings", "search_documents",
+            "search_memory", "show_form", "open_page"}
+
+DISCOVERY = [
+    _fn("find_tools", "Search the full tool catalogue by what you need. Returns matching tools with their "
+                      "descriptions and argument schemas, to run with run_tool.",
+        {"query": {"type": "string"}}, ["query"]),
+    _fn("run_tool", "Run a tool found with find_tools, by its exact name.",
+        {"name": {"type": "string"}, "arguments": {"type": "object"}}, ["name"]),
+]
+DISCLOSED_TOOLS = [t for t in WIDE_TOOLS if t["function"]["name"] in _PRIMARY] + DISCOVERY
+
+_PIPELINE_SCHEMA = TOOLS[0]["function"]
+FOUND = {"matches": [
+    {"name": _PIPELINE_SCHEMA["name"], "description": _PIPELINE_SCHEMA["description"],
+     "parameters": _PIPELINE_SCHEMA["parameters"]},
+    {"name": "update_account", "description": "Change fields on an account: stage, owner, notes.",
+     "parameters": {"type": "object", "properties": {"account_id": {"type": "string"},
+                                                     "stage": {"type": "string"}}, "required": ["account_id"]}}]}
+
+SEARCH_MISS = [
+    {"role": "user", "content": "Can you pull the pipeline report?"},
+    _call("call_05", "find_tools", {"query": "pipeline report"}),
+    _result("call_05", {"matches": [], "note": "no tool matches 'pipeline report'"}),
+    {"role": "assistant", "content": "No tool matches \"pipeline report\", so I can't pull that report."},
+]
+
+DISCLOSED_CORRECTION = [
+    {"role": "user", "content": "Which accounts are at proposal stage right now?"},
+    _call("call_06", "find_tools", {"query": "pipeline accounts by stage"}),
+    _result("call_06", FOUND),
+    _call("call_07", "run_tool", {"name": "list_pipeline", "arguments": {"stage": "proposal"}}),
+    CORRECTION[2] | {"tool_call_id": "call_07"},
+    CORRECTION[3],
+]
+
+DISCLOSED_CONDITIONS: dict[str, tuple[bool, list[dict], str, str]] = {
+    "fresh": CONDITIONS["fresh"],
+    "clean": CONDITIONS["clean"],
+    "false_claim": CONDITIONS["false_claim"],
+    "false_claim_twice": CONDITIONS["false_claim_twice"],
+    "earlier_search_miss": (False, OPENING + SEARCH_MISS + TASK, REQUEST,
+                            "An earlier find_tools for other words returned an explicit no-match, and "
+                            "the agent said so."),
+    "claim_then_tool_result": (False, OPENING + claim_reply() + DISCLOSED_CORRECTION + TASK, REQUEST,
+                               "The claim, then a later turn where the agent found and ran list_pipeline."),
+}
+
+
+def disclosed_messages(condition: str) -> list[dict]:
+    note, history, request, _ = DISCLOSED_CONDITIONS[condition]
+    return [{"role": "system", "content": DISCLOSED_SYSTEM + (TOOL_NOTE if note else "")}, *history, *user(request)]

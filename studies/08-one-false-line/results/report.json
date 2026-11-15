@@ -1,4 +1,724 @@
 {
+ "disclosed off anthropic/claude-haiku-5.5": {
+  "calls": {
+   "cost_usd": 0.0432,
+   "responses": 90
+  },
+  "claim_then_tool_result": {
+   "called": 15,
+   "called_direct": 15,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "clean": {
+   "called": 1,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 14,
+   "searched": 1,
+   "searched_called": 1,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "earlier_search_miss": {
+   "called": 0,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 15,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim": {
+   "called": 0,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 15,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim_twice": {
+   "called": 0,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 15,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "fresh": {
+   "called": 14,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 1,
+   "refused_no_search": 0,
+   "searched": 14,
+   "searched_called": 14,
+   "searched_not_called": 0,
+   "trials": 15
+  }
+ },
+ "disclosed off deepseek/deepseek-v4-flash-0731": {
+  "calls": {
+   "cost_usd": 0.0156,
+   "responses": 90
+  },
+  "claim_then_tool_result": {
+   "called": 15,
+   "called_direct": 15,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "clean": {
+   "called": 15,
+   "called_direct": 1,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 14,
+   "searched_called": 14,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "earlier_search_miss": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim": {
+   "called": 3,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 12,
+   "searched": 3,
+   "searched_called": 3,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim_twice": {
+   "called": 0,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 15,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "fresh": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  }
+ },
+ "disclosed off deepseek/deepseek-v4.1-flash": {
+  "calls": {
+   "cost_usd": 0.0105,
+   "responses": 90
+  },
+  "claim_then_tool_result": {
+   "called": 15,
+   "called_direct": 15,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "clean": {
+   "called": 11,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 4,
+   "searched": 11,
+   "searched_called": 11,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "earlier_search_miss": {
+   "called": 10,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 5,
+   "searched": 10,
+   "searched_called": 10,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim": {
+   "called": 0,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 15,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim_twice": {
+   "called": 0,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 15,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "fresh": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  }
+ },
+ "disclosed off deepseek/deepseek-v4.1-flash-1017": {
+  "calls": {
+   "cost_usd": 0.0034,
+   "responses": 90
+  },
+  "claim_then_tool_result": {
+   "called": 15,
+   "called_direct": 15,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "clean": {
+   "called": 14,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 1,
+   "searched": 14,
+   "searched_called": 14,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "earlier_search_miss": {
+   "called": 14,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 1,
+   "searched": 14,
+   "searched_called": 14,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim": {
+   "called": 1,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 14,
+   "searched": 1,
+   "searched_called": 1,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim_twice": {
+   "called": 0,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 15,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "fresh": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  }
+ },
+ "disclosed off openai/gpt-5.6-luna": {
+  "calls": {
+   "cost_usd": 0.0141,
+   "responses": 90
+  },
+  "claim_then_tool_result": {
+   "called": 15,
+   "called_direct": 6,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 9,
+   "searched_called": 9,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "clean": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "earlier_search_miss": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim": {
+   "called": 14,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 1,
+   "searched": 14,
+   "searched_called": 14,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim_twice": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "fresh": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  }
+ },
+ "disclosed on anthropic/claude-haiku-5.5": {
+  "calls": {
+   "cost_usd": 0.0728,
+   "responses": 90
+  },
+  "claim_then_tool_result": {
+   "called": 15,
+   "called_direct": 15,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "clean": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "earlier_search_miss": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim_twice": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "fresh": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  }
+ },
+ "disclosed on deepseek/deepseek-v4-flash-0731": {
+  "calls": {
+   "cost_usd": 0.0199,
+   "responses": 90
+  },
+  "claim_then_tool_result": {
+   "called": 15,
+   "called_direct": 15,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "clean": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "earlier_search_miss": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim": {
+   "called": 14,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 1,
+   "searched": 14,
+   "searched_called": 14,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim_twice": {
+   "called": 12,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 3,
+   "searched": 12,
+   "searched_called": 12,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "fresh": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  }
+ },
+ "disclosed on deepseek/deepseek-v4.1-flash": {
+  "calls": {
+   "cost_usd": 0.0168,
+   "responses": 90
+  },
+  "claim_then_tool_result": {
+   "called": 15,
+   "called_direct": 15,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "clean": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "earlier_search_miss": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim_twice": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "fresh": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  }
+ },
+ "disclosed on deepseek/deepseek-v4.1-flash-1017": {
+  "calls": {
+   "cost_usd": 0.0049,
+   "responses": 90
+  },
+  "claim_then_tool_result": {
+   "called": 15,
+   "called_direct": 15,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 0,
+   "searched_called": 0,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "clean": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "earlier_search_miss": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim_twice": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "fresh": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  }
+ },
+ "disclosed on openai/gpt-5.6-luna": {
+  "calls": {
+   "cost_usd": 0.0187,
+   "responses": 90
+  },
+  "claim_then_tool_result": {
+   "called": 15,
+   "called_direct": 10,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 5,
+   "searched_called": 5,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "clean": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "earlier_search_miss": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "false_claim_twice": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  },
+  "fresh": {
+   "called": 15,
+   "called_direct": 0,
+   "other_text": 0,
+   "other_tool": 0,
+   "refused_no_search": 0,
+   "searched": 15,
+   "searched_called": 15,
+   "searched_not_called": 0,
+   "trials": 15
+  }
+ },
  "small off deepseek/deepseek-v4-flash-0731": {
   "calls": {
    "cost_usd": 0.0095,
