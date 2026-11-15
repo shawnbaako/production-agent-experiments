@@ -6,8 +6,8 @@ the agent, behind it, inside its tools, or in its hands?
 
 **Status.** Case report from one private production agent. The measurements were made on that
 system's own records, so only aggregate numbers are given here and none can be recomputed from this
-folder. The one experiment that used synthetic data is reproducible in
-[study 01](../01-decision-model-set-filter/).
+folder. Two parts are reproducible: the set filter, in [study 01](../01-decision-model-set-filter/),
+and the routing experiment's synthetic cases, in [`routing/`](routing/).
 
 **Short version.**
 
@@ -40,7 +40,7 @@ folder. The one experiment that used synthetic data is reproducible in
 | Use | Where it sat | What was measured (held-out) | Outcome |
 |---|---|---|---|
 | Pick the subject before the agent runs | Fixed step in front of the agent | Accuracy never recorded | Removed after nine days |
-| Route a delegated task to a model profile | Fixed step in front of a sub-task | 85 synthetic cases: 91.8% as deployed, 100% reworded; a keyword rule 97.6% | Removed. In production it chose the default 9 times out of 9 |
+| Route a delegated task to a model profile | Fixed step in front of a sub-task | 85 cases (76 synthetic, 9 from production): 91.8% with the deployed question, 100% with a second question; a keyword rule 97.6% | Removed. In production it chose the default 9 times out of 9 |
 | Review each finished run | Fixed step after the agent | 120 runs: repeated work precision 0.92, recall 0.95; ended-without-a-result 0.86, 0.86 | Adopted, then removed after eight days |
 | Check each sentence of the agent's output against its sources | Fixed step on the agent's writes | 36 outputs, 941 sentences: precision 0.87, recall 0.81; 46 of 49 planted errors caught | Adopted, then deleted the next day |
 | "Has this already been done?" | Fixed reading inside three tools | 86 issued items: 51 of 65 real repeats found, against 15 for an exact-id rule | Adopted, then deleted the next day |
@@ -71,8 +71,9 @@ next run of the same work as a recorded fact, or to delete the review. It was de
 
 **Model routing** was accurate and pointless. In production only two of the profiles were eligible
 for a tool-using sub-task, so the only decision it could make was between the default and one costlier
-alternative, and it chose the default every time. With every profile offered, a reworded question
-reached 98.8% and a keyword rule on the required output reached 94.1%.
+alternative, and it chose the default every time. With every profile offered, a second question
+reached 98.8% and a keyword rule on the required output reached 94.1%. The synthetic cases and a
+fresh run on current models are in [`routing/`](routing/).
 
 ## What stayed, and what was different about it
 
