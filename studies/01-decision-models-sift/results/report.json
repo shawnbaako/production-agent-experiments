@@ -1,0 +1,1140 @@
+{
+ "bm25": {
+  "pooled_held": {
+   "found@10": 16,
+   "found@25": 18,
+   "positives": 26,
+   "unanswered": 0
+  },
+  "questions": {
+   "at_risk": {
+    "ap": 0.339,
+    "at_dev_threshold": {
+     "flagged": 220,
+     "precision": 0.009,
+     "recall": 0.667,
+     "threshold": 0.0007
+    },
+    "auroc": 0.743,
+    "distinct_scores": 40,
+    "found@10": 1,
+    "found@25": 1,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 3,
+    "reworded": {
+     "auroc": 0.768,
+     "flagged": 159,
+     "flips_at_dev_threshold": 113,
+     "found@10": 0
+    }
+   },
+   "clinical_lab": {
+    "ap": 0.558,
+    "at_dev_threshold": {
+     "flagged": 7,
+     "precision": 0.571,
+     "recall": 0.667,
+     "threshold": 4.9924
+    },
+    "auroc": 0.83,
+    "distinct_scores": 7,
+    "found@10": 4,
+    "found@25": 4,
+    "held_answered": 411,
+    "held_items": 411,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 0.879,
+     "flagged": 19,
+     "flips_at_dev_threshold": 20,
+     "found@10": 1
+    }
+   },
+   "competitor": {
+    "ap": 0.807,
+    "at_dev_threshold": {
+     "flagged": 3,
+     "precision": 1.0,
+     "recall": 0.6,
+     "threshold": 5.9603
+    },
+    "auroc": 0.968,
+    "distinct_scores": 39,
+    "found@10": 4,
+    "found@25": 4,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 5,
+    "reworded": {
+     "auroc": 0.968,
+     "flagged": 2,
+     "flips_at_dev_threshold": 1,
+     "found@10": 4
+    }
+   },
+   "promise_e1": {
+    "ap": 0.577,
+    "at_dev_threshold": {
+     "flagged": 1,
+     "precision": 1.0,
+     "recall": 0.5,
+     "threshold": 12.7692
+    },
+    "auroc": 0.982,
+    "distinct_scores": 48,
+    "found@10": 1,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.982,
+     "flagged": 1,
+     "flips_at_dev_threshold": 0,
+     "found@10": 1
+    }
+   },
+   "promise_e2": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 2,
+     "precision": 1.0,
+     "recall": 1.0,
+     "threshold": 13.6485
+    },
+    "auroc": 1.0,
+    "distinct_scores": 11,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 2,
+     "flips_at_dev_threshold": 0,
+     "found@10": 2
+    }
+   },
+   "promise_e3": {
+    "ap": 0.306,
+    "at_dev_threshold": {
+     "flagged": 3,
+     "precision": 0.333,
+     "recall": 0.5,
+     "threshold": 12.1358
+    },
+    "auroc": 0.972,
+    "distinct_scores": 72,
+    "found@10": 1,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.972,
+     "flagged": 3,
+     "flips_at_dev_threshold": 0,
+     "found@10": 1
+    }
+   },
+   "renewal_price": {
+    "ap": 0.385,
+    "at_dev_threshold": {
+     "flagged": 43,
+     "precision": 0.07,
+     "recall": 0.5,
+     "threshold": 2.5352
+    },
+    "auroc": 0.689,
+    "distinct_scores": 51,
+    "found@10": 3,
+    "found@25": 3,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 0.822,
+     "flagged": 46,
+     "flips_at_dev_threshold": 7,
+     "found@10": 4
+    }
+   }
+  }
+ },
+ "clef": {
+  "calls": {
+   "answered": 10700,
+   "cost_usd": 0.4915,
+   "failed": 0,
+   "input_tokens_mean": 239,
+   "latency_ms_p50": 328,
+   "latency_ms_p95": 826
+  },
+  "pooled_held": {
+   "found@10": 26,
+   "found@25": 26,
+   "positives": 26,
+   "unanswered": 0
+  },
+  "questions": {
+   "at_risk": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 3,
+     "precision": 1.0,
+     "recall": 1.0,
+     "threshold": 0.7264
+    },
+    "auroc": 1.0,
+    "distinct_scores": 60,
+    "found@10": 3,
+    "found@25": 3,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 3,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 4,
+     "flips_at_dev_threshold": 1,
+     "found@10": 3
+    }
+   },
+   "clinical_lab": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 6,
+     "precision": 1.0,
+     "recall": 1.0,
+     "threshold": 0.9143
+    },
+    "auroc": 1.0,
+    "distinct_scores": 160,
+    "found@10": 6,
+    "found@25": 6,
+    "held_answered": 411,
+    "held_items": 411,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 6,
+     "flips_at_dev_threshold": 0,
+     "found@10": 6
+    }
+   },
+   "competitor": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 5,
+     "precision": 1.0,
+     "recall": 1.0,
+     "threshold": 0.8164
+    },
+    "auroc": 1.0,
+    "distinct_scores": 58,
+    "found@10": 5,
+    "found@25": 5,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 5,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 4,
+     "flips_at_dev_threshold": 1,
+     "found@10": 5
+    }
+   },
+   "promise_e1": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 3,
+     "precision": 0.667,
+     "recall": 1.0,
+     "threshold": 0.8832
+    },
+    "auroc": 1.0,
+    "distinct_scores": 149,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.997,
+     "flagged": 4,
+     "flips_at_dev_threshold": 1,
+     "found@10": 2
+    }
+   },
+   "promise_e2": {
+    "ap": 0.833,
+    "at_dev_threshold": {
+     "flagged": 1,
+     "precision": 1.0,
+     "recall": 0.5,
+     "threshold": 0.9173
+    },
+    "auroc": 0.998,
+    "distinct_scores": 140,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.998,
+     "flagged": 2,
+     "flips_at_dev_threshold": 1,
+     "found@10": 2
+    }
+   },
+   "promise_e3": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 3,
+     "precision": 0.667,
+     "recall": 1.0,
+     "threshold": 0.7058
+    },
+    "auroc": 1.0,
+    "distinct_scores": 128,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 4,
+     "flips_at_dev_threshold": 3,
+     "found@10": 2
+    }
+   },
+   "renewal_price": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 4,
+     "precision": 1.0,
+     "recall": 0.667,
+     "threshold": 0.986
+    },
+    "auroc": 1.0,
+    "distinct_scores": 125,
+    "found@10": 6,
+    "found@25": 6,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 6,
+     "flips_at_dev_threshold": 2,
+     "found@10": 6
+    }
+   }
+  }
+ },
+ "clef-flash": {
+  "calls": {
+   "answered": 10700,
+   "cost_usd": 0.0486,
+   "failed": 0,
+   "input_tokens_mean": 239,
+   "latency_ms_p50": 273,
+   "latency_ms_p95": 522
+  },
+  "pooled_held": {
+   "found@10": 25,
+   "found@25": 25,
+   "positives": 26,
+   "unanswered": 0
+  },
+  "questions": {
+   "at_risk": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 1,
+     "precision": 1.0,
+     "recall": 0.333,
+     "threshold": 0.9315
+    },
+    "auroc": 1.0,
+    "distinct_scores": 182,
+    "found@10": 3,
+    "found@25": 3,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 3,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 1,
+     "flips_at_dev_threshold": 0,
+     "found@10": 3
+    }
+   },
+   "clinical_lab": {
+    "ap": 0.846,
+    "at_dev_threshold": {
+     "flagged": 4,
+     "precision": 1.0,
+     "recall": 0.667,
+     "threshold": 0.884
+    },
+    "auroc": 0.97,
+    "distinct_scores": 142,
+    "found@10": 5,
+    "found@25": 5,
+    "held_answered": 411,
+    "held_items": 411,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 0.959,
+     "flagged": 3,
+     "flips_at_dev_threshold": 1,
+     "found@10": 4
+    }
+   },
+   "competitor": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 4,
+     "precision": 1.0,
+     "recall": 0.8,
+     "threshold": 0.1871
+    },
+    "auroc": 1.0,
+    "distinct_scores": 79,
+    "found@10": 5,
+    "found@25": 5,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 5,
+    "reworded": {
+     "auroc": 0.999,
+     "flagged": 27,
+     "flips_at_dev_threshold": 23,
+     "found@10": 5
+    }
+   },
+   "promise_e1": {
+    "ap": 0.268,
+    "at_dev_threshold": {
+     "flagged": 6,
+     "precision": 0.167,
+     "recall": 0.5,
+     "threshold": 0.4494
+    },
+    "auroc": 0.987,
+    "distinct_scores": 215,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.997,
+     "flagged": 7,
+     "flips_at_dev_threshold": 3,
+     "found@10": 2
+    }
+   },
+   "promise_e2": {
+    "ap": 0.583,
+    "at_dev_threshold": {
+     "flagged": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "threshold": 0.3739
+    },
+    "auroc": 0.997,
+    "distinct_scores": 190,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.998,
+     "flagged": 4,
+     "flips_at_dev_threshold": 4,
+     "found@10": 2
+    }
+   },
+   "promise_e3": {
+    "ap": 0.833,
+    "at_dev_threshold": {
+     "flagged": 5,
+     "precision": 0.4,
+     "recall": 1.0,
+     "threshold": 0.3141
+    },
+    "auroc": 0.998,
+    "distinct_scores": 215,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.993,
+     "flagged": 8,
+     "flips_at_dev_threshold": 5,
+     "found@10": 2
+    }
+   },
+   "renewal_price": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 6,
+     "precision": 1.0,
+     "recall": 1.0,
+     "threshold": 0.6926
+    },
+    "auroc": 1.0,
+    "distinct_scores": 132,
+    "found@10": 6,
+    "found@25": 6,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 5,
+     "flips_at_dev_threshold": 1,
+     "found@10": 6
+    }
+   }
+  }
+ },
+ "embeddinggemma-2": {
+  "pooled_held": {
+   "found@10": 18,
+   "found@25": 22,
+   "positives": 26,
+   "unanswered": 0
+  },
+  "questions": {
+   "at_risk": {
+    "ap": 0.557,
+    "at_dev_threshold": {
+     "flagged": 1,
+     "precision": 1.0,
+     "recall": 0.333,
+     "threshold": 0.7203
+    },
+    "auroc": 0.692,
+    "distinct_scores": 758,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 3,
+    "reworded": {
+     "auroc": 0.803,
+     "flagged": 26,
+     "flips_at_dev_threshold": 27,
+     "found@10": 0
+    }
+   },
+   "clinical_lab": {
+    "ap": 0.664,
+    "at_dev_threshold": {
+     "flagged": 5,
+     "precision": 0.4,
+     "recall": 0.333,
+     "threshold": 0.7388
+    },
+    "auroc": 0.99,
+    "distinct_scores": 411,
+    "found@10": 5,
+    "found@25": 6,
+    "held_answered": 411,
+    "held_items": 411,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 0.993,
+     "flagged": 10,
+     "flips_at_dev_threshold": 5,
+     "found@10": 5
+    }
+   },
+   "competitor": {
+    "ap": 0.308,
+    "at_dev_threshold": {
+     "flagged": 4,
+     "precision": 0.5,
+     "recall": 0.4,
+     "threshold": 0.73
+    },
+    "auroc": 0.976,
+    "distinct_scores": 758,
+    "found@10": 2,
+    "found@25": 3,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 5,
+    "reworded": {
+     "auroc": 0.952,
+     "flagged": 8,
+     "flips_at_dev_threshold": 4,
+     "found@10": 2
+    }
+   },
+   "promise_e1": {
+    "ap": 0.129,
+    "at_dev_threshold": {
+     "flagged": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "threshold": 0.7618
+    },
+    "auroc": 0.967,
+    "distinct_scores": 304,
+    "found@10": 1,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.967,
+     "flagged": 0,
+     "flips_at_dev_threshold": 0,
+     "found@10": 1
+    }
+   },
+   "promise_e2": {
+    "ap": 0.533,
+    "at_dev_threshold": {
+     "flagged": 1,
+     "precision": 1.0,
+     "recall": 0.5,
+     "threshold": 0.7677
+    },
+    "auroc": 0.954,
+    "distinct_scores": 304,
+    "found@10": 1,
+    "found@25": 1,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.954,
+     "flagged": 1,
+     "flips_at_dev_threshold": 0,
+     "found@10": 1
+    }
+   },
+   "promise_e3": {
+    "ap": 0.55,
+    "at_dev_threshold": {
+     "flagged": 2,
+     "precision": 0.5,
+     "recall": 0.5,
+     "threshold": 0.7384
+    },
+    "auroc": 0.97,
+    "distinct_scores": 304,
+    "found@10": 1,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.97,
+     "flagged": 2,
+     "flips_at_dev_threshold": 0,
+     "found@10": 1
+    }
+   },
+   "renewal_price": {
+    "ap": 0.958,
+    "at_dev_threshold": {
+     "flagged": 9,
+     "precision": 0.667,
+     "recall": 1.0,
+     "threshold": 0.7209
+    },
+    "auroc": 1.0,
+    "distinct_scores": 758,
+    "found@10": 6,
+    "found@25": 6,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 0.999,
+     "flagged": 2,
+     "flips_at_dev_threshold": 7,
+     "found@10": 6
+    }
+   }
+  }
+ },
+ "jev-1.13": {
+  "calls": {
+   "answered": 10700,
+   "cost_usd": 0.1677,
+   "failed": 0,
+   "input_tokens_mean": 373,
+   "latency_ms_p50": 186,
+   "latency_ms_p95": 254
+  },
+  "pooled_held": {
+   "found@10": 25,
+   "found@25": 26,
+   "positives": 26,
+   "unanswered": 0
+  },
+  "questions": {
+   "at_risk": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 4,
+     "precision": 0.75,
+     "recall": 1.0,
+     "threshold": 0.75
+    },
+    "auroc": 1.0,
+    "distinct_scores": 22,
+    "found@10": 3,
+    "found@25": 3,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 3,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 3,
+     "flips_at_dev_threshold": 1,
+     "found@10": 3
+    }
+   },
+   "clinical_lab": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 6,
+     "precision": 1.0,
+     "recall": 1.0,
+     "threshold": 0.49
+    },
+    "auroc": 1.0,
+    "distinct_scores": 35,
+    "found@10": 6,
+    "found@25": 6,
+    "held_answered": 411,
+    "held_items": 411,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 9,
+     "flips_at_dev_threshold": 3,
+     "found@10": 6
+    }
+   },
+   "competitor": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 5,
+     "precision": 1.0,
+     "recall": 1.0,
+     "threshold": 0.35
+    },
+    "auroc": 1.0,
+    "distinct_scores": 16,
+    "found@10": 5,
+    "found@25": 5,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 5,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 17,
+     "flips_at_dev_threshold": 12,
+     "found@10": 5
+    }
+   },
+   "promise_e1": {
+    "ap": 0.75,
+    "at_dev_threshold": {
+     "flagged": 4,
+     "precision": 0.5,
+     "recall": 1.0,
+     "threshold": 0.86
+    },
+    "auroc": 0.997,
+    "distinct_scores": 30,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.999,
+     "flagged": 3,
+     "flips_at_dev_threshold": 1,
+     "found@10": 2
+    }
+   },
+   "promise_e2": {
+    "ap": 0.55,
+    "at_dev_threshold": {
+     "flagged": 1,
+     "precision": 1.0,
+     "recall": 0.5,
+     "threshold": 0.89
+    },
+    "auroc": 0.973,
+    "distinct_scores": 33,
+    "found@10": 1,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.998,
+     "flagged": 1,
+     "flips_at_dev_threshold": 0,
+     "found@10": 2
+    }
+   },
+   "promise_e3": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 5,
+     "precision": 0.4,
+     "recall": 1.0,
+     "threshold": 0.72
+    },
+    "auroc": 1.0,
+    "distinct_scores": 36,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 2,
+     "flips_at_dev_threshold": 3,
+     "found@10": 2
+    }
+   },
+   "renewal_price": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 5,
+     "precision": 1.0,
+     "recall": 0.833,
+     "threshold": 0.97
+    },
+    "auroc": 1.0,
+    "distinct_scores": 24,
+    "found@10": 6,
+    "found@25": 6,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 3,
+     "flips_at_dev_threshold": 2,
+     "found@10": 6
+    }
+   }
+  }
+ },
+ "jev-1.14": {
+  "calls": {
+   "answered": 10700,
+   "cost_usd": 0.1677,
+   "failed": 0,
+   "input_tokens_mean": 373,
+   "latency_ms_p50": 188,
+   "latency_ms_p95": 268
+  },
+  "pooled_held": {
+   "found@10": 25,
+   "found@25": 26,
+   "positives": 26,
+   "unanswered": 0
+  },
+  "questions": {
+   "at_risk": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 4,
+     "precision": 0.75,
+     "recall": 1.0,
+     "threshold": 0.72
+    },
+    "auroc": 1.0,
+    "distinct_scores": 21,
+    "found@10": 3,
+    "found@25": 3,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 3,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 3,
+     "flips_at_dev_threshold": 1,
+     "found@10": 3
+    }
+   },
+   "clinical_lab": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 5,
+     "precision": 1.0,
+     "recall": 0.833,
+     "threshold": 0.86
+    },
+    "auroc": 1.0,
+    "distinct_scores": 41,
+    "found@10": 6,
+    "found@25": 6,
+    "held_answered": 411,
+    "held_items": 411,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 4,
+     "flips_at_dev_threshold": 1,
+     "found@10": 6
+    }
+   },
+   "competitor": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 5,
+     "precision": 1.0,
+     "recall": 1.0,
+     "threshold": 0.25
+    },
+    "auroc": 1.0,
+    "distinct_scores": 13,
+    "found@10": 5,
+    "found@25": 5,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 5,
+    "reworded": {
+     "auroc": 0.998,
+     "flagged": 25,
+     "flips_at_dev_threshold": 20,
+     "found@10": 4
+    }
+   },
+   "promise_e1": {
+    "ap": 0.5,
+    "at_dev_threshold": {
+     "flagged": 4,
+     "precision": 0.5,
+     "recall": 1.0,
+     "threshold": 0.89
+    },
+    "auroc": 0.996,
+    "distinct_scores": 23,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.998,
+     "flagged": 3,
+     "flips_at_dev_threshold": 1,
+     "found@10": 2
+    }
+   },
+   "promise_e2": {
+    "ap": 0.545,
+    "at_dev_threshold": {
+     "flagged": 1,
+     "precision": 1.0,
+     "recall": 0.5,
+     "threshold": 0.9
+    },
+    "auroc": 0.968,
+    "distinct_scores": 39,
+    "found@10": 1,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.988,
+     "flagged": 1,
+     "flips_at_dev_threshold": 0,
+     "found@10": 2
+    }
+   },
+   "promise_e3": {
+    "ap": 0.833,
+    "at_dev_threshold": {
+     "flagged": 3,
+     "precision": 0.667,
+     "recall": 1.0,
+     "threshold": 0.82
+    },
+    "auroc": 0.999,
+    "distinct_scores": 37,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2,
+    "reworded": {
+     "auroc": 0.998,
+     "flagged": 1,
+     "flips_at_dev_threshold": 2,
+     "found@10": 2
+    }
+   },
+   "renewal_price": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 5,
+     "precision": 1.0,
+     "recall": 0.833,
+     "threshold": 0.97
+    },
+    "auroc": 1.0,
+    "distinct_scores": 26,
+    "found@10": 6,
+    "found@25": 6,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 6,
+    "reworded": {
+     "auroc": 1.0,
+     "flagged": 4,
+     "flips_at_dev_threshold": 1,
+     "found@10": 6
+    }
+   }
+  }
+ },
+ "keyword": {
+  "pooled_held": {
+   "found@10": 9,
+   "found@25": 9,
+   "positives": 26,
+   "unanswered": 0
+  },
+  "questions": {
+   "at_risk": {
+    "ap": 0.336,
+    "at_dev_threshold": {
+     "flagged": 758,
+     "precision": 0.004,
+     "recall": 1.0,
+     "threshold": 0.0
+    },
+    "auroc": 0.667,
+    "distinct_scores": 2,
+    "found@10": 1,
+    "found@25": 1,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 3
+   },
+   "clinical_lab": {
+    "ap": 0.053,
+    "at_dev_threshold": {
+     "flagged": 51,
+     "precision": 0.098,
+     "recall": 0.833,
+     "threshold": 1.0
+    },
+    "auroc": 0.86,
+    "distinct_scores": 2,
+    "found@10": 0,
+    "found@25": 0,
+    "held_answered": 411,
+    "held_items": 411,
+    "held_positives": 6
+   },
+   "competitor": {
+    "ap": 0.054,
+    "at_dev_threshold": {
+     "flagged": 4,
+     "precision": 0.25,
+     "recall": 0.2,
+     "threshold": 1.0
+    },
+    "auroc": 0.598,
+    "distinct_scores": 2,
+    "found@10": 1,
+    "found@25": 1,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 5
+   },
+   "promise_e1": {
+    "ap": 1.0,
+    "at_dev_threshold": {
+     "flagged": 2,
+     "precision": 1.0,
+     "recall": 1.0,
+     "threshold": 1.0
+    },
+    "auroc": 1.0,
+    "distinct_scores": 2,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2
+   },
+   "promise_e2": {
+    "ap": 0.583,
+    "at_dev_threshold": {
+     "flagged": 3,
+     "precision": 0.667,
+     "recall": 1.0,
+     "threshold": 1.0
+    },
+    "auroc": 0.998,
+    "distinct_scores": 2,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2
+   },
+   "promise_e3": {
+    "ap": 0.583,
+    "at_dev_threshold": {
+     "flagged": 3,
+     "precision": 0.667,
+     "recall": 1.0,
+     "threshold": 1.0
+    },
+    "auroc": 0.998,
+    "distinct_scores": 2,
+    "found@10": 2,
+    "found@25": 2,
+    "held_answered": 306,
+    "held_items": 306,
+    "held_positives": 2
+   },
+   "renewal_price": {
+    "ap": 0.06,
+    "at_dev_threshold": {
+     "flagged": 3,
+     "precision": 0.333,
+     "recall": 0.167,
+     "threshold": 1.0
+    },
+    "auroc": 0.582,
+    "distinct_scores": 2,
+    "found@10": 1,
+    "found@25": 1,
+    "held_answered": 758,
+    "held_items": 758,
+    "held_positives": 6
+   }
+  }
+ }
+}
