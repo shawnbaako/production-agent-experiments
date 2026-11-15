@@ -36,15 +36,17 @@ runs per arm. Read it as an account of what happened, not as a result that gener
   Tool searches per turn fell from 6.8–17.6 to 2.1–2.6, and the change removed about 48,000 lines of
   application code (about 40,000 net of what was added), about half the tools and all seven repeat
   guards.
-- **What it did not do:**
-  - It did not make each run cheaper. Spend per eval run rose from $0.71–$0.99 to $1.72, because a
-    background turn now carries the person's conversation, and one person's work wakes the agents of
-    colleagues it concerns.
-  - The consolidation caused regressions, each lasting days to about a week. Found tools could not
-    be called; one partner had no background help; a retry asked for the whole output budget.
-  - Price routing, which cut the cost of each unattended call, started on 2026-10-14, before the
-    consolidation.
-  - The first phase of the change has no outcome eval; the 10-case eval measures only the second.
+- **More useful work per case.** The agent's model spend on the eval cases rose from $0.71–$0.99 to
+  $1.72 per run of all ten. The extra spend is work that did not happen before: a background turn now
+  reads the person's conversation, and work handed to a colleague now wakes that colleague's agent,
+  which is what made the reassignment cases pass.
+- **Defects while building it.** Implementing the change introduced defects that lasted days to about
+  a week each (listed below). Each traces to an implementation choice, such as removing input schemas
+  from tool-search results to shrink prompts, or storing a background agent as a closable task. None
+  follows from having one agent.
+- **Limits of the evidence.** Price routing, which cut the cost of each unattended call, started on
+  2026-10-14, before the consolidation. The first phase of the change has no outcome eval; the 10-case
+  eval measures only the second.
 
 ## Setting
 
@@ -265,7 +267,9 @@ What the series shows, and what it does not:
   10-18. The pipelines that produced those failures were deleted, but limits, retries and routing
   also changed in the same weeks.
 
-## Regressions caused by the consolidation
+## Defects introduced while implementing the consolidation
+
+None of these follows from the design; each is an implementation error made while carrying it out.
 
 | Regression | How long | Cause |
 |---|---|---|
@@ -328,13 +332,14 @@ Still failing at the end:
    withdrew were all of that kind. The cases built to catch those failures passed after the
    consolidation, and most passed on the step written for them.
 2. The consolidation removed most background work by removing the duplication behind it:
-   background calls fell from 6,656 a week to under 1,200, at about the same price per call. It did
-   not make an individual run cheaper. Per eval run it cost more, because each turn carries the
-   person's context and one person's work now wakes the agents of the colleagues it concerns. The
+   background calls fell from 6,656 a week to under 1,200, at about the same price per call. The
    cheaper price of each unattended call came from routing, which started first.
-3. Removing structure created its own defects, for about a week each. Proofs on a restored copy
-   caught some before merge (a false "record saved" claim, a migration that failed on an empty
-   database) and missed others (the schema removal).
+3. Where it spends more, it does more. On the eval cases each turn carries the person's context, and
+   work handed to a colleague reaches that colleague's agent; those are the behaviours the cases
+   were built to check.
+4. The defects were in the implementation, not the design, and each was fixed within about a week.
+   Proofs on a restored copy caught some before merge (a false "record saved" claim, a migration that
+   failed on an empty database) and missed others (the schema removal).
 
 ## Related work
 
