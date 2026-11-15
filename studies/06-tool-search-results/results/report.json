@@ -1,0 +1,7925 @@
+{
+ "deepseek-v4.1-flash": {
+  "cached_calls": 2142,
+  "cost_usd": 1.019,
+  "model": "deepseek/deepseek-v4.1-flash",
+  "names": {
+   "all": {
+    "completion_tokens_mean": 2136,
+    "cost": 0.1324,
+    "cost_per_run": 0.00221,
+    "cut_off": 13,
+    "failed_calls_mean": 0.95,
+    "outcomes": {
+     "CANNOT": 11,
+     "DONE": 36,
+     "unclear": 13
+    },
+    "paged_searches_mean": 4.85,
+    "prompt_tokens_mean": 32496,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 60,
+    "runs_with_repeated_search": 0,
+    "searches_max": 61,
+    "searches_mean": 17.35,
+    "stand_in_writes": 0,
+    "steps_mean": 9.87,
+    "success": 47,
+    "success_rate": 0.783,
+    "unknown_tool_calls": 6
+   },
+   "exists": {
+    "completion_tokens_mean": 1355,
+    "cost": 0.0467,
+    "cost_per_run": 0.0013,
+    "cut_off": 0,
+    "failed_calls_mean": 1.33,
+    "outcomes": {
+     "DONE": 36
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 14258,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 18,
+    "searches_mean": 3.61,
+    "stand_in_writes": 0,
+    "steps_mean": 7.31,
+    "success": 36,
+    "success_rate": 1.0,
+    "unknown_tool_calls": 3
+   },
+   "missing": {
+    "completion_tokens_mean": 3309,
+    "cost": 0.0857,
+    "cost_per_run": 0.00357,
+    "cut_off": 13,
+    "failed_calls_mean": 0.38,
+    "outcomes": {
+     "CANNOT": 11,
+     "unclear": 13
+    },
+    "paged_searches_mean": 12.12,
+    "prompt_tokens_mean": 59855,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 24,
+    "runs_with_repeated_search": 0,
+    "searches_max": 61,
+    "searches_mean": 37.96,
+    "stand_in_writes": 0,
+    "steps_mean": 13.71,
+    "success": 11,
+    "success_rate": 0.458,
+    "unknown_tool_calls": 3
+   },
+   "runs": 60
+  },
+  "paged": {
+   "all": {
+    "completion_tokens_mean": 3677,
+    "cost": 0.2568,
+    "cost_per_run": 0.00428,
+    "cut_off": 17,
+    "failed_calls_mean": 0.35,
+    "outcomes": {
+     "CANNOT": 8,
+     "DONE": 35,
+     "unclear": 17
+    },
+    "paged_searches_mean": 7.07,
+    "prompt_tokens_mean": 87387,
+    "repeated_failed_calls_mean": 0.03,
+    "repeated_searches_mean": 0.0,
+    "runs": 60,
+    "runs_with_repeated_search": 0,
+    "searches_max": 209,
+    "searches_mean": 18.85,
+    "stand_in_writes": 0,
+    "steps_mean": 9.67,
+    "success": 42,
+    "success_rate": 0.7,
+    "unknown_tool_calls": 15
+   },
+   "exists": {
+    "completion_tokens_mean": 4070,
+    "cost": 0.1408,
+    "cost_per_run": 0.00391,
+    "cut_off": 2,
+    "failed_calls_mean": 0.58,
+    "outcomes": {
+     "DONE": 34,
+     "unclear": 2
+    },
+    "paged_searches_mean": 4.28,
+    "prompt_tokens_mean": 58845,
+    "repeated_failed_calls_mean": 0.06,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 209,
+    "searches_mean": 9.36,
+    "stand_in_writes": 0,
+    "steps_mean": 7.08,
+    "success": 34,
+    "success_rate": 0.944,
+    "unknown_tool_calls": 15
+   },
+   "missing": {
+    "completion_tokens_mean": 3087,
+    "cost": 0.116,
+    "cost_per_run": 0.00484,
+    "cut_off": 15,
+    "failed_calls_mean": 0.0,
+    "outcomes": {
+     "CANNOT": 8,
+     "DONE": 1,
+     "unclear": 15
+    },
+    "paged_searches_mean": 11.25,
+    "prompt_tokens_mean": 130199,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 24,
+    "runs_with_repeated_search": 0,
+    "searches_max": 60,
+    "searches_mean": 33.08,
+    "stand_in_writes": 0,
+    "steps_mean": 13.54,
+    "success": 8,
+    "success_rate": 0.333,
+    "unknown_tool_calls": 0
+   },
+   "runs": 60
+  },
+  "per_task": {
+   "names": {
+    "e01": [
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 18,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 1,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 32,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 43,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 34,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 14,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 41,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 10,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 43,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 43,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 53,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 35,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 53,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 48,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 55,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 3,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 61,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 42,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 46,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 2,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 31,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 37,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 60,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 48,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 45,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   },
+   "paged": {
+    "e01": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 10,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 17,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 17,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 209,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 41,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 45,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 34,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 33,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 36,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 34,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 38,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 32,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 56,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 60,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 49,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 42,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 24,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 31,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 26,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 27,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 42,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 41,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 46,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   },
+   "plain": {
+    "e01": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 10,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 33,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 21,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 26,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 18,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 48,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 51,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 19,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 44,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 22,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 10,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   },
+   "schemas": {
+    "e01": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 14,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 14,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 12,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 14,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 39,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 36,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 29,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 28,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 15,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 41,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 1,
+      "searches": 53,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 38,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 39,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 45,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 32,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 32,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 10,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 33,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 42,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 1,
+      "searches": 39,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   }
+  },
+  "plain": {
+   "all": {
+    "completion_tokens_mean": 4296,
+    "cost": 0.2538,
+    "cost_per_run": 0.00423,
+    "cut_off": 6,
+    "failed_calls_mean": 0.05,
+    "outcomes": {
+     "CANNOT": 21,
+     "DONE": 33,
+     "unclear": 6
+    },
+    "paged_searches_mean": 0.58,
+    "prompt_tokens_mean": 68297,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 60,
+    "runs_with_repeated_search": 0,
+    "searches_max": 51,
+    "searches_mean": 8.08,
+    "stand_in_writes": 0,
+    "steps_mean": 7.37,
+    "success": 53,
+    "success_rate": 0.883,
+    "unknown_tool_calls": 1
+   },
+   "exists": {
+    "completion_tokens_mean": 5881,
+    "cost": 0.1882,
+    "cost_per_run": 0.00523,
+    "cut_off": 2,
+    "failed_calls_mean": 0.08,
+    "outcomes": {
+     "CANNOT": 1,
+     "DONE": 33,
+     "unclear": 2
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 75515,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 10,
+    "searches_mean": 2.61,
+    "stand_in_writes": 0,
+    "steps_mean": 6.67,
+    "success": 33,
+    "success_rate": 0.917,
+    "unknown_tool_calls": 1
+   },
+   "missing": {
+    "completion_tokens_mean": 1918,
+    "cost": 0.0656,
+    "cost_per_run": 0.00273,
+    "cut_off": 4,
+    "failed_calls_mean": 0.0,
+    "outcomes": {
+     "CANNOT": 20,
+     "unclear": 4
+    },
+    "paged_searches_mean": 1.46,
+    "prompt_tokens_mean": 57471,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 24,
+    "runs_with_repeated_search": 0,
+    "searches_max": 51,
+    "searches_mean": 16.29,
+    "stand_in_writes": 0,
+    "steps_mean": 8.42,
+    "success": 20,
+    "success_rate": 0.833,
+    "unknown_tool_calls": 0
+   },
+   "runs": 60
+  },
+  "requests_not_matching_cache": 0,
+  "schemas": {
+   "all": {
+    "completion_tokens_mean": 6617,
+    "cost": 0.376,
+    "cost_per_run": 0.00627,
+    "cut_off": 11,
+    "failed_calls_mean": 0.07,
+    "outcomes": {
+     "CANNOT": 17,
+     "DONE": 32,
+     "unclear": 11
+    },
+    "paged_searches_mean": 2.25,
+    "prompt_tokens_mean": 97055,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.03,
+    "runs": 60,
+    "runs_with_repeated_search": 2,
+    "searches_max": 53,
+    "searches_mean": 12.23,
+    "stand_in_writes": 0,
+    "steps_mean": 8.8,
+    "success": 48,
+    "success_rate": 0.8,
+    "unknown_tool_calls": 3
+   },
+   "exists": {
+    "completion_tokens_mean": 9218,
+    "cost": 0.2798,
+    "cost_per_run": 0.00777,
+    "cut_off": 5,
+    "failed_calls_mean": 0.06,
+    "outcomes": {
+     "DONE": 31,
+     "unclear": 5
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 97597,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 14,
+    "searches_mean": 2.97,
+    "stand_in_writes": 0,
+    "steps_mean": 7.03,
+    "success": 31,
+    "success_rate": 0.861,
+    "unknown_tool_calls": 2
+   },
+   "missing": {
+    "completion_tokens_mean": 2716,
+    "cost": 0.0962,
+    "cost_per_run": 0.00401,
+    "cut_off": 6,
+    "failed_calls_mean": 0.08,
+    "outcomes": {
+     "CANNOT": 17,
+     "DONE": 1,
+     "unclear": 6
+    },
+    "paged_searches_mean": 5.62,
+    "prompt_tokens_mean": 96244,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.08,
+    "runs": 24,
+    "runs_with_repeated_search": 2,
+    "searches_max": 53,
+    "searches_mean": 26.12,
+    "stand_in_writes": 0,
+    "steps_mean": 11.46,
+    "success": 17,
+    "success_rate": 0.708,
+    "unknown_tool_calls": 1
+   },
+   "runs": 60
+  }
+ },
+ "deepseek-v4.1-flash-1017": {
+  "cached_calls": 2044,
+  "cost_usd": 0.3034,
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "names": {
+   "all": {
+    "completion_tokens_mean": 1636,
+    "cost": 0.0791,
+    "cost_per_run": 0.00132,
+    "cut_off": 12,
+    "failed_calls_mean": 1.1,
+    "outcomes": {
+     "CANNOT": 13,
+     "DONE": 35,
+     "unclear": 12
+    },
+    "paged_searches_mean": 0.72,
+    "prompt_tokens_mean": 23498,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.02,
+    "runs": 60,
+    "runs_with_repeated_search": 1,
+    "searches_max": 37,
+    "searches_mean": 8.87,
+    "stand_in_writes": 1,
+    "steps_mean": 9.57,
+    "success": 47,
+    "success_rate": 0.783,
+    "unknown_tool_calls": 4
+   },
+   "exists": {
+    "completion_tokens_mean": 1100,
+    "cost": 0.0314,
+    "cost_per_run": 0.00087,
+    "cut_off": 0,
+    "failed_calls_mean": 1.36,
+    "outcomes": {
+     "CANNOT": 1,
+     "DONE": 35
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 13129,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 11,
+    "searches_mean": 2.86,
+    "stand_in_writes": 0,
+    "steps_mean": 7.33,
+    "success": 35,
+    "success_rate": 0.972,
+    "unknown_tool_calls": 0
+   },
+   "missing": {
+    "completion_tokens_mean": 2439,
+    "cost": 0.0476,
+    "cost_per_run": 0.00198,
+    "cut_off": 12,
+    "failed_calls_mean": 0.71,
+    "outcomes": {
+     "CANNOT": 12,
+     "unclear": 12
+    },
+    "paged_searches_mean": 1.79,
+    "prompt_tokens_mean": 39053,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.04,
+    "runs": 24,
+    "runs_with_repeated_search": 1,
+    "searches_max": 37,
+    "searches_mean": 17.88,
+    "stand_in_writes": 1,
+    "steps_mean": 12.92,
+    "success": 12,
+    "success_rate": 0.5,
+    "unknown_tool_calls": 4
+   },
+   "runs": 60
+  },
+  "paged": {
+   "all": {
+    "completion_tokens_mean": 1631,
+    "cost": 0.0888,
+    "cost_per_run": 0.00148,
+    "cut_off": 10,
+    "failed_calls_mean": 0.02,
+    "outcomes": {
+     "CANNOT": 15,
+     "DONE": 35,
+     "unclear": 10
+    },
+    "paged_searches_mean": 2.08,
+    "prompt_tokens_mean": 43130,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 60,
+    "runs_with_repeated_search": 0,
+    "searches_max": 38,
+    "searches_mean": 8.82,
+    "stand_in_writes": 0,
+    "steps_mean": 9.15,
+    "success": 50,
+    "success_rate": 0.833,
+    "unknown_tool_calls": 0
+   },
+   "exists": {
+    "completion_tokens_mean": 1076,
+    "cost": 0.0324,
+    "cost_per_run": 0.0009,
+    "cut_off": 1,
+    "failed_calls_mean": 0.0,
+    "outcomes": {
+     "DONE": 35,
+     "unclear": 1
+    },
+    "paged_searches_mean": 0.22,
+    "prompt_tokens_mean": 17761,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 8,
+    "searches_mean": 2.97,
+    "stand_in_writes": 0,
+    "steps_mean": 6.69,
+    "success": 35,
+    "success_rate": 0.972,
+    "unknown_tool_calls": 0
+   },
+   "missing": {
+    "completion_tokens_mean": 2464,
+    "cost": 0.0564,
+    "cost_per_run": 0.00235,
+    "cut_off": 9,
+    "failed_calls_mean": 0.04,
+    "outcomes": {
+     "CANNOT": 15,
+     "unclear": 9
+    },
+    "paged_searches_mean": 4.88,
+    "prompt_tokens_mean": 81184,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 24,
+    "runs_with_repeated_search": 0,
+    "searches_max": 38,
+    "searches_mean": 17.58,
+    "stand_in_writes": 0,
+    "steps_mean": 12.83,
+    "success": 15,
+    "success_rate": 0.625,
+    "unknown_tool_calls": 0
+   },
+   "runs": 60
+  },
+  "per_task": {
+   "names": {
+    "e01": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 4,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 20,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 12,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 2,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 24,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 1,
+      "searches": 10,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 12,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 1,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 3,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 21,
+      "stand_in_writes": 1,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 26,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 1,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 27,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 23,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 25,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 1,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 20,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 2,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 20,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 12,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 31,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 37,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 24,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   },
+   "paged": {
+    "e01": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 12,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 19,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 23,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 23,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 14,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 14,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 23,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 22,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 1,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 17,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 21,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 22,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 23,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 22,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 38,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 33,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   },
+   "plain": {
+    "e01": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 19,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   },
+   "schemas": {
+    "e01": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 14,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 32,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 12,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 28,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 27,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 12,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 1,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 12,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 22,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 24,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   }
+  },
+  "plain": {
+   "all": {
+    "completion_tokens_mean": 1120,
+    "cost": 0.0583,
+    "cost_per_run": 0.00097,
+    "cut_off": 2,
+    "failed_calls_mean": 0.0,
+    "outcomes": {
+     "CANNOT": 25,
+     "DONE": 33,
+     "unclear": 2
+    },
+    "paged_searches_mean": 0.05,
+    "prompt_tokens_mean": 21260,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 60,
+    "runs_with_repeated_search": 0,
+    "searches_max": 19,
+    "searches_mean": 4.37,
+    "stand_in_writes": 0,
+    "steps_mean": 6.8,
+    "success": 57,
+    "success_rate": 0.95,
+    "unknown_tool_calls": 0
+   },
+   "exists": {
+    "completion_tokens_mean": 1123,
+    "cost": 0.0335,
+    "cost_per_run": 0.00093,
+    "cut_off": 2,
+    "failed_calls_mean": 0.0,
+    "outcomes": {
+     "CANNOT": 1,
+     "DONE": 33,
+     "unclear": 2
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 18297,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 8,
+    "searches_mean": 2.47,
+    "stand_in_writes": 0,
+    "steps_mean": 6.89,
+    "success": 33,
+    "success_rate": 0.917,
+    "unknown_tool_calls": 0
+   },
+   "missing": {
+    "completion_tokens_mean": 1116,
+    "cost": 0.0249,
+    "cost_per_run": 0.00104,
+    "cut_off": 0,
+    "failed_calls_mean": 0.0,
+    "outcomes": {
+     "CANNOT": 24
+    },
+    "paged_searches_mean": 0.12,
+    "prompt_tokens_mean": 25705,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 24,
+    "runs_with_repeated_search": 0,
+    "searches_max": 19,
+    "searches_mean": 7.21,
+    "stand_in_writes": 0,
+    "steps_mean": 6.67,
+    "success": 24,
+    "success_rate": 1.0,
+    "unknown_tool_calls": 0
+   },
+   "runs": 60
+  },
+  "requests_not_matching_cache": 0,
+  "schemas": {
+   "all": {
+    "completion_tokens_mean": 1453,
+    "cost": 0.0772,
+    "cost_per_run": 0.00129,
+    "cut_off": 6,
+    "failed_calls_mean": 0.02,
+    "outcomes": {
+     "CANNOT": 18,
+     "DONE": 36,
+     "unclear": 6
+    },
+    "paged_searches_mean": 0.62,
+    "prompt_tokens_mean": 32644,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 60,
+    "runs_with_repeated_search": 0,
+    "searches_max": 32,
+    "searches_mean": 6.93,
+    "stand_in_writes": 0,
+    "steps_mean": 8.55,
+    "success": 54,
+    "success_rate": 0.9,
+    "unknown_tool_calls": 1
+   },
+   "exists": {
+    "completion_tokens_mean": 1209,
+    "cost": 0.036,
+    "cost_per_run": 0.001,
+    "cut_off": 0,
+    "failed_calls_mean": 0.0,
+    "outcomes": {
+     "DONE": 36
+    },
+    "paged_searches_mean": 0.03,
+    "prompt_tokens_mean": 18945,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 9,
+    "searches_mean": 2.89,
+    "stand_in_writes": 0,
+    "steps_mean": 7.31,
+    "success": 36,
+    "success_rate": 1.0,
+    "unknown_tool_calls": 0
+   },
+   "missing": {
+    "completion_tokens_mean": 1820,
+    "cost": 0.0411,
+    "cost_per_run": 0.00171,
+    "cut_off": 6,
+    "failed_calls_mean": 0.04,
+    "outcomes": {
+     "CANNOT": 18,
+     "unclear": 6
+    },
+    "paged_searches_mean": 1.5,
+    "prompt_tokens_mean": 53191,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 24,
+    "runs_with_repeated_search": 0,
+    "searches_max": 32,
+    "searches_mean": 13.0,
+    "stand_in_writes": 0,
+    "steps_mean": 10.42,
+    "success": 18,
+    "success_rate": 0.75,
+    "unknown_tool_calls": 1
+   },
+   "runs": 60
+  }
+ },
+ "gemma-4-26b-a4b": {
+  "cached_calls": 1933,
+  "cost_usd": 0.0273,
+  "model": "google/gemma-4-26b-a4b-it",
+  "names": {
+   "all": {
+    "completion_tokens_mean": 293,
+    "cost": 0.0059,
+    "cost_per_run": 0.0001,
+    "cut_off": 18,
+    "failed_calls_mean": 1.4,
+    "outcomes": {
+     "CANNOT": 13,
+     "DONE": 29,
+     "unclear": 18
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 14818,
+    "repeated_failed_calls_mean": 0.47,
+    "repeated_searches_mean": 0.92,
+    "runs": 60,
+    "runs_with_repeated_search": 15,
+    "searches_max": 16,
+    "searches_mean": 6.03,
+    "stand_in_writes": 0,
+    "steps_mean": 10.17,
+    "success": 36,
+    "success_rate": 0.6,
+    "unknown_tool_calls": 45
+   },
+   "exists": {
+    "completion_tokens_mean": 318,
+    "cost": 0.0023,
+    "cost_per_run": 6e-05,
+    "cut_off": 3,
+    "failed_calls_mean": 2.25,
+    "outcomes": {
+     "CANNOT": 4,
+     "DONE": 29,
+     "unclear": 3
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 8598,
+    "repeated_failed_calls_mean": 0.78,
+    "repeated_searches_mean": 0.11,
+    "runs": 36,
+    "runs_with_repeated_search": 1,
+    "searches_max": 10,
+    "searches_mean": 1.89,
+    "stand_in_writes": 0,
+    "steps_mean": 7.33,
+    "success": 27,
+    "success_rate": 0.75,
+    "unknown_tool_calls": 43
+   },
+   "missing": {
+    "completion_tokens_mean": 255,
+    "cost": 0.0036,
+    "cost_per_run": 0.00015,
+    "cut_off": 15,
+    "failed_calls_mean": 0.12,
+    "outcomes": {
+     "CANNOT": 9,
+     "unclear": 15
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 24149,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 2.12,
+    "runs": 24,
+    "runs_with_repeated_search": 14,
+    "searches_max": 16,
+    "searches_mean": 12.25,
+    "stand_in_writes": 0,
+    "steps_mean": 14.42,
+    "success": 9,
+    "success_rate": 0.375,
+    "unknown_tool_calls": 2
+   },
+   "runs": 60
+  },
+  "paged": {
+   "all": {
+    "completion_tokens_mean": 196,
+    "cost": 0.0098,
+    "cost_per_run": 0.00016,
+    "cut_off": 20,
+    "failed_calls_mean": 0.07,
+    "outcomes": {
+     "CANNOT": 8,
+     "DONE": 32,
+     "unclear": 20
+    },
+    "paged_searches_mean": 0.03,
+    "prompt_tokens_mean": 23628,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.88,
+    "runs": 60,
+    "runs_with_repeated_search": 11,
+    "searches_max": 16,
+    "searches_mean": 4.6,
+    "stand_in_writes": 0,
+    "steps_mean": 8.43,
+    "success": 40,
+    "success_rate": 0.667,
+    "unknown_tool_calls": 0
+   },
+   "exists": {
+    "completion_tokens_mean": 158,
+    "cost": 0.0017,
+    "cost_per_run": 5e-05,
+    "cut_off": 4,
+    "failed_calls_mean": 0.11,
+    "outcomes": {
+     "DONE": 32,
+     "unclear": 4
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 6678,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 3,
+    "searches_mean": 1.19,
+    "stand_in_writes": 0,
+    "steps_mean": 4.97,
+    "success": 32,
+    "success_rate": 0.889,
+    "unknown_tool_calls": 0
+   },
+   "missing": {
+    "completion_tokens_mean": 253,
+    "cost": 0.0081,
+    "cost_per_run": 0.00034,
+    "cut_off": 16,
+    "failed_calls_mean": 0.0,
+    "outcomes": {
+     "CANNOT": 8,
+     "unclear": 16
+    },
+    "paged_searches_mean": 0.08,
+    "prompt_tokens_mean": 49052,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 2.21,
+    "runs": 24,
+    "runs_with_repeated_search": 11,
+    "searches_max": 16,
+    "searches_mean": 9.71,
+    "stand_in_writes": 0,
+    "steps_mean": 13.62,
+    "success": 8,
+    "success_rate": 0.333,
+    "unknown_tool_calls": 0
+   },
+   "runs": 60
+  },
+  "per_task": {
+   "names": {
+    "e01": [
+     {
+      "failed_calls": 11,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 7,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 4,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 3,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 4,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 14,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 2,
+      "outcome": "unclear",
+      "repeated_searches": 4,
+      "searches": 10,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 1,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 4,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 3,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 6,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 1,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 1,
+      "outcome": "unclear",
+      "repeated_searches": 1,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "unclear",
+      "repeated_searches": 5,
+      "searches": 14,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "unclear",
+      "repeated_searches": 3,
+      "searches": 10,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 3,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 2,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 5,
+      "searches": 15,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 3,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 5,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 9,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   },
+   "paged": {
+    "e01": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 6,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 2,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 7,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 7,
+      "searches": 15,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 10,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 1,
+      "searches": 15,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 1,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 1,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 6,
+      "searches": 11,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 6,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 8,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 4,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   },
+   "plain": {
+    "e01": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   },
+   "schemas": {
+    "e01": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e02": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e03": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e04": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e05": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e06": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e07": [
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 1,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e08": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 2,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e09": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "e10": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m01": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m02": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "m03": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 3,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 1,
+      "searches": 13,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 8,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m04": [
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 9,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "CANNOT",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 8,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m05": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 1,
+      "searches": 15,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 1,
+      "searches": 15,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 1,
+      "searches": 15,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m06": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 2,
+      "searches": 7,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 1,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 1,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m07": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 6,
+      "searches": 15,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 5,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 0,
+      "searches": 4,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "m08": [
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 9,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 4,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "unclear",
+      "repeated_searches": 4,
+      "searches": 16,
+      "stand_in_writes": 0,
+      "status": "cut_off",
+      "success": false
+     }
+    ],
+    "p1": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ],
+    "p2": [
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     },
+     {
+      "failed_calls": 0,
+      "outcome": "DONE",
+      "repeated_searches": 0,
+      "searches": 0,
+      "stand_in_writes": 0,
+      "status": "done",
+      "success": true
+     }
+    ]
+   }
+  },
+  "plain": {
+   "all": {
+    "completion_tokens_mean": 134,
+    "cost": 0.0032,
+    "cost_per_run": 5e-05,
+    "cut_off": 8,
+    "failed_calls_mean": 0.03,
+    "outcomes": {
+     "CANNOT": 26,
+     "DONE": 26,
+     "unclear": 8
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 7658,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 60,
+    "runs_with_repeated_search": 0,
+    "searches_max": 4,
+    "searches_mean": 1.37,
+    "stand_in_writes": 0,
+    "steps_mean": 5.22,
+    "success": 48,
+    "success_rate": 0.8,
+    "unknown_tool_calls": 0
+   },
+   "exists": {
+    "completion_tokens_mean": 149,
+    "cost": 0.0019,
+    "cost_per_run": 5e-05,
+    "cut_off": 6,
+    "failed_calls_mean": 0.06,
+    "outcomes": {
+     "CANNOT": 4,
+     "DONE": 26,
+     "unclear": 6
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 7574,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 2,
+    "searches_mean": 1.08,
+    "stand_in_writes": 0,
+    "steps_mean": 5.22,
+    "success": 26,
+    "success_rate": 0.722,
+    "unknown_tool_calls": 0
+   },
+   "missing": {
+    "completion_tokens_mean": 112,
+    "cost": 0.0013,
+    "cost_per_run": 5e-05,
+    "cut_off": 2,
+    "failed_calls_mean": 0.0,
+    "outcomes": {
+     "CANNOT": 22,
+     "unclear": 2
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 7785,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 24,
+    "runs_with_repeated_search": 0,
+    "searches_max": 4,
+    "searches_mean": 1.79,
+    "stand_in_writes": 0,
+    "steps_mean": 5.21,
+    "success": 22,
+    "success_rate": 0.917,
+    "unknown_tool_calls": 0
+   },
+   "runs": 60
+  },
+  "requests_not_matching_cache": 0,
+  "schemas": {
+   "all": {
+    "completion_tokens_mean": 197,
+    "cost": 0.0084,
+    "cost_per_run": 0.00014,
+    "cut_off": 22,
+    "failed_calls_mean": 0.05,
+    "outcomes": {
+     "CANNOT": 7,
+     "DONE": 31,
+     "unclear": 22
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 21841,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.63,
+    "runs": 60,
+    "runs_with_repeated_search": 11,
+    "searches_max": 16,
+    "searches_mean": 4.1,
+    "stand_in_writes": 0,
+    "steps_mean": 8.4,
+    "success": 38,
+    "success_rate": 0.633,
+    "unknown_tool_calls": 0
+   },
+   "exists": {
+    "completion_tokens_mean": 159,
+    "cost": 0.0018,
+    "cost_per_run": 5e-05,
+    "cut_off": 5,
+    "failed_calls_mean": 0.08,
+    "outcomes": {
+     "DONE": 31,
+     "unclear": 5
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 7086,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 0.0,
+    "runs": 36,
+    "runs_with_repeated_search": 0,
+    "searches_max": 2,
+    "searches_mean": 1.14,
+    "stand_in_writes": 0,
+    "steps_mean": 5.17,
+    "success": 31,
+    "success_rate": 0.861,
+    "unknown_tool_calls": 0
+   },
+   "missing": {
+    "completion_tokens_mean": 255,
+    "cost": 0.0066,
+    "cost_per_run": 0.00028,
+    "cut_off": 17,
+    "failed_calls_mean": 0.0,
+    "outcomes": {
+     "CANNOT": 7,
+     "unclear": 17
+    },
+    "paged_searches_mean": 0.0,
+    "prompt_tokens_mean": 43974,
+    "repeated_failed_calls_mean": 0.0,
+    "repeated_searches_mean": 1.58,
+    "runs": 24,
+    "runs_with_repeated_search": 11,
+    "searches_max": 16,
+    "searches_mean": 8.54,
+    "stand_in_writes": 0,
+    "steps_mean": 13.25,
+    "success": 7,
+    "success_rate": 0.292,
+    "unknown_tool_calls": 0
+   },
+   "runs": 60
+  }
+ }
+}
