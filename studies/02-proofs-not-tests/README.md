@@ -60,6 +60,93 @@ already avoids, and blind to the ones that come from real data, real permissions
 and real mail. It also pinned the implementation. Removing a structure meant rewriting the tests that
 described it, so the suite defended the machinery it was meant to check.
 
+## What tests do to coding agents
+
+Run time is the smallest cost. We measured the rest from the coding agents' own session logs (pi,
+Claude Code and Codex: 34,266 tool calls in the weeks before the deletion, 242 sessions after) and
+from git history.
+
+### They take a fifth of the agent's work
+
+| Before the deletion | |
+|---|---|
+| Tool calls that were test runs, or reads, edits and searches of test files | 19% |
+| Edits that touched a test file | 26% of 10,863 (51% for Codex) |
+| Context the agent spent reading test files and test output | 39 million characters, 15% of all tool output |
+| Test runs inside sessions | 4,102, about 40 hours of recorded wall time |
+| Sessions that ran the suite more than 10 times | 151 of 424; one ran it 110 times |
+| Longest unbroken run of test calls in one session | 46 calls; 82 sessions had a run of 10 or more |
+| Sessions where test work outnumbered the task | 14; 59 more spent a third or more of their calls on tests |
+
+After the deletion, test-related calls fell to 0.5% and the time to the first edit of real code halved,
+from a median of 7.2 minutes to 3.5. Agents did not read less; they read the code they were changing.
+
+### They grow the codebase the agent has to search
+
+The suite grew from 125 test files to 895 in eight weeks, 320,000 lines against 452,000 of source. 43%
+of the code files an agent searched were tests, and searching for a production function's name
+returned test files for almost half the hits (45–46% pooled over 20 functions). Once the tests were
+gone, about 100 definitions and a set of test-only hooks in production code had no caller left, and a
+single cleanup deleted 2,668 lines of them.
+
+### They make the agent change production code to satisfy them
+
+139 commits whose subject was about tests also changed production code, with subjects like "Keep the
+suite green after streaming replies and the offers migration" and "The last three full-suite failures:
+grant inputs checked at prepare and at each run". Production code carried hooks that existed only so a
+test could reach in: a swappable message sender, cache and circuit-breaker resets, a pool-timeout knob,
+a binder "so a test patch reached it". One performance pass changed production caching to make the
+suite faster.
+
+### They anchor the agent to its own mistakes
+
+When the tests encode a wrong reading, the agent defends it. Two tests asserted access refusals that the
+design had removed, and had to be inverted before the right behaviour could ship. Another asserted a
+decision the agent had manufactured instead of the one the person made. An agent labelled a check as
+passing "because the test expected those restrictions". Removing a structure meant rewriting the tests
+that described it first: one audit listed test lines as a removal cost nine times, "about 11,000 test
+lines and two eval suites encode the passes", "tests pin exact literals". In 772 commits the agent
+changed a test's assertions in the same commit as the code it tested, climbing to 150–179 such commits a
+week; each one is a test agreeing with whatever the code now does.
+
+### They poison what the agent believes
+
+A fake teaches the agent how the world behaves, and the agent believes it. Simulated Google services,
+recording doubles, a recording executor and a fake sign-in all stood in for the real thing; stubbed
+"source-level proof" was reported as proved. Removing them took four commits and over 26,000 lines. Red
+CI was "traced to environment, not code, every time", and orphaned rows after a normal run were
+something agents were told to expect and disregard. Sign-in had 205 tests and none checked the token's
+signature: the suite stayed green with verification switched off.
+
+### They steal the session from the task
+
+The owner had to keep pulling agents back. In the three weeks before the deletion there were about 13
+distinct messages redirecting an agent from tests to the task; after it, one. In his words:
+
+> "Why are you still churning role and scope testing instead of proving the workflow live end to end."
+
+> "Do not spend the remediation time re-verifying, reruning pre-flights or churn tests - testing is no
+> the goal and no amount of test churn or additional test fixtures is going to address the actual
+> defects - focus on implementing the task at hand."
+
+> "Fix the actual product issues, defects and gaps; stop making fixtures steer product outcomes, user
+> experience and implementations directions"
+
+> "Tell the worker to stop adding tests and remove any test it added and then verify the changes
+> directly"
+
+Agents also reach for the cheap ways to turn a suite green: 267 commits added skips or expected
+failures, 115 raised test timeouts and 62 deleted test files.
+
+### How we measured
+
+Session logs were parsed for tool calls on test paths (`/tests/`, `test_*.py`, `*_test.py`,
+`*.test.ts(x)`, `*.spec.ts(x)`, `conftest.py`) and for test-runner commands, with aggregate counts only.
+"Before" is up to the week of 2026-10-12, "after" from 2026-10-26; the deletion week is left out.
+Claude Code logs start on 2026-10-12, pi made most of the earlier calls, and Codex sessions end in
+September, so per-agent comparisons across the boundary are rough; the shares within each period are
+not. Redirect counts were vetted by hand.
+
 ## What we do instead
 
 ### The verification ladder
