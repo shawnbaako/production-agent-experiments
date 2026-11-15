@@ -13,6 +13,7 @@ with the code and per-item results needed to check it.
 | 03 | [Where a decision model belongs in an agent](studies/03-where-a-decision-model-belongs/) | A decision model belongs in the agent's hands as a tool; nine placements in a production agent, and why only that one survived | Design position, with production data |
 | 04 | [What the checker sees](studies/04-what-the-checker-sees/) | A sentence checker given only the cited sources flags almost every true sentence taken from other records. Given everything the agent read, the false flags disappear and the errors are still caught | Reproducible |
 | 05 | [One agent loop](studies/05-one-agent-loop/) | Why we replaced sub-agents and specialised background agents with one loop, one context and one set of permissions, and what it did to duplicate work, cost and coherence | Design position, with production data |
+| 08 | [One false line](studies/08-one-false-line/) | An agent's own earlier "that tool is unavailable" outweighs its tool list and system prompt; a "tools are available" note makes it worse; removing, rewriting or following the line with a real tool result fixes it | Reproducible, with production data |
 
 Related, in its own repository: [Tool calls, stop tokens and missing issue text: Gemma 4 as a coding agent](https://github.com/shawnbaako/gemma4-agent-failure-analysis).
 
