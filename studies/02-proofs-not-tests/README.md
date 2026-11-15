@@ -71,7 +71,7 @@ from git history.
 | Before the deletion | |
 |---|---|
 | Tool calls that were test runs, or reads, edits and searches of test files | 19% |
-| Edits that touched a test file | 26% of 10,863 (51% for Codex) |
+| Edits that touched a test file | 26% of 10,863 (51% in the Codex CLI) |
 | Context the agent spent reading test files and test output | 39 million characters, 15% of all tool output |
 | Test runs inside sessions | 4,102, about 40 hours of recorded wall time |
 | Sessions that ran the suite more than 10 times | 151 of 424; one ran it 110 times |
@@ -125,12 +125,12 @@ distinct messages redirecting an agent from tests to the task; after it, one. In
 
 > "Why are you still churning role and scope testing instead of proving the workflow live end to end."
 
-> "Do not spend the remediation time re-verifying, reruning pre-flights or churn tests - testing is no
+> "Do not spend the remediation time re-verifying, rerunning pre-flights or churning tests - testing is not
 > the goal and no amount of test churn or additional test fixtures is going to address the actual
 > defects - focus on implementing the task at hand."
 
 > "Fix the actual product issues, defects and gaps; stop making fixtures steer product outcomes, user
-> experience and implementations directions"
+> experience and implementation directions"
 
 > "Tell the worker to stop adding tests and remove any test it added and then verify the changes
 > directly"
@@ -143,8 +143,9 @@ failures, 115 raised test timeouts and 62 deleted test files.
 Session logs were parsed for tool calls on test paths (`/tests/`, `test_*.py`, `*_test.py`,
 `*.test.ts(x)`, `*.spec.ts(x)`, `conftest.py`) and for test-runner commands, with aggregate counts only.
 "Before" is up to the week of 2026-10-12, "after" from 2026-10-26; the deletion week is left out.
-Claude Code logs start on 2026-10-12, pi made most of the earlier calls, and Codex sessions end in
-September, so per-agent comparisons across the boundary are rough; the shares within each period are
+pi ran on OpenAI Codex models about 90% of the time, so most of the "pi" work is Codex models in a
+different harness. Claude Code logs start on 2026-10-12, pi made most of the earlier calls, and Codex
+CLI sessions end in September, so per-agent comparisons across the boundary are rough; the shares within each period are
 not. Redirect counts were vetted by hand.
 
 ## What we do instead
