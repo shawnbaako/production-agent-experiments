@@ -457,7 +457,7 @@ def _eg2_document(candidate: dict) -> str:
 
 
 def _patch_nomic(model: Any) -> None:
-    """Nomic's remote code calls get_extended_attention_mask, which transformers 5.18 removed.
+    """Nomic's remote code calls get_extended_attention_mask, which transformers 5.17 removed.
     This restores the removed upstream body (2D/3D mask to additive mask)."""
     import torch
 

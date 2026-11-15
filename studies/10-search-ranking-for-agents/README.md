@@ -326,7 +326,7 @@ $0.190.
   the requests asked what a place looks like. A test set can only reward what its requests ask for: add
   requests about appearance before deciding a photo signal is worthless. Details in
   [study 13](../13-photo-facts/).
-- **Library versions.** Nomic's remote code calls `get_extended_attention_mask`, which transformers 5.18
+- **Library versions.** Nomic's remote code calls `get_extended_attention_mask`, which transformers 5.17
   removed; `run.py` restores the removed body. EmbeddingGemma 2 needs torchvision and Pillow installed
   even for text-only use.
 
