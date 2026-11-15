@@ -1,0 +1,2502 @@
+{
+ "version": "2026.10.17+3afd94926",
+ "engines": [
+  {
+   "name": "360search",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "360search videos",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "500px",
+   "enabled": true,
+   "categories": [
+    "stock images",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "9gag",
+   "enabled": false,
+   "categories": [
+    "social media"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "abcnyheter",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "acfun",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "alpine linux packages",
+   "enabled": false,
+   "categories": [
+    "packages",
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "andisearch",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "andisearch news",
+   "enabled": false,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "andisearch images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "annas archive",
+   "enabled": false,
+   "categories": [
+    "files",
+    "books"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "ansa",
+   "enabled": false,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "apk mirror",
+   "enabled": false,
+   "categories": [
+    "it",
+    "apps"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "apple app store",
+   "enabled": false,
+   "categories": [
+    "it",
+    "apps"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "anaconda",
+   "enabled": false,
+   "categories": [
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "arch linux wiki",
+   "enabled": true,
+   "categories": [
+    "it",
+    "software wikis"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "nixos wiki",
+   "enabled": false,
+   "categories": [
+    "it",
+    "software wikis"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "artic",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "artstation",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "arxiv",
+   "enabled": true,
+   "categories": [
+    "science",
+    "scientific publications"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "ayo",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "bandcamp",
+   "enabled": true,
+   "categories": [
+    "music"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "baidu",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "baidu images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "baidu kaifa",
+   "enabled": false,
+   "categories": [
+    "it"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "wikipedia",
+   "enabled": true,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "bilibili",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "bing",
+   "enabled": false,
+   "categories": [
+    "general",
+    "web"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "bing images",
+   "enabled": true,
+   "categories": [
+    "images",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "bing news",
+   "enabled": true,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "bing videos",
+   "enabled": true,
+   "categories": [
+    "videos",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "bitchute",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "bitbucket",
+   "enabled": false,
+   "categories": [
+    "it",
+    "repos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "boardreader",
+   "enabled": false,
+   "categories": [
+    "general",
+    "social media"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "bpb",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "btdigg",
+   "enabled": false,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "openverse",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "media.ccc.de",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "cachy os packages",
+   "enabled": false,
+   "categories": [
+    "packages",
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "chefkoch",
+   "enabled": true,
+   "categories": [
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "crossref",
+   "enabled": false,
+   "categories": [
+    "science",
+    "scientific publications"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "crowdview",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "yep",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "currency",
+   "enabled": true,
+   "categories": [
+    "currency",
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "deezer",
+   "enabled": false,
+   "categories": [
+    "music"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "destatis",
+   "enabled": false,
+   "categories": [
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "devicons",
+   "enabled": false,
+   "categories": [
+    "images",
+    "icons"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "ddg definitions",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "docker hub",
+   "enabled": true,
+   "categories": [
+    "it",
+    "packages"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "encyclosearch",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "europepmc",
+   "enabled": true,
+   "categories": [
+    "science",
+    "scientific publications"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "erowid",
+   "enabled": false,
+   "categories": [
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikidata",
+   "enabled": true,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "duckduckgo",
+   "enabled": true,
+   "categories": [
+    "general",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "duckduckgo web",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "duckduckgo images",
+   "enabled": true,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "duckduckgo videos",
+   "enabled": true,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "duckduckgo news",
+   "enabled": true,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "duckduckgo weather",
+   "enabled": false,
+   "categories": [
+    "weather",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "apple maps",
+   "enabled": false,
+   "categories": [
+    "map"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "emojipedia",
+   "enabled": false,
+   "categories": [
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "tineye",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "etymonline",
+   "enabled": true,
+   "categories": [
+    "dictionaries",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "1x",
+   "enabled": true,
+   "categories": [
+    "stock images",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "fastbot",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "fdroid",
+   "enabled": false,
+   "categories": [
+    "it",
+    "apps"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "findfiles",
+   "enabled": false,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "findfiles images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "findfiles videos",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "findfiles music",
+   "enabled": false,
+   "categories": [
+    "music"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "findthatmeme",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "fireball",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "fireball news",
+   "enabled": false,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "fireball videos",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "flaticon",
+   "enabled": false,
+   "categories": [
+    "images",
+    "icons"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "flickr",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "free software directory",
+   "enabled": false,
+   "categories": [
+    "it",
+    "software wikis"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "frinkiac",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "fynd",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "fyyd",
+   "enabled": false,
+   "categories": [
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "gabanza",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "geizhals",
+   "enabled": false,
+   "categories": [
+    "shopping",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "genius",
+   "enabled": true,
+   "categories": [
+    "music",
+    "lyrics"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "gentoo",
+   "enabled": true,
+   "categories": [
+    "it",
+    "software wikis"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "giphy",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "gitlab",
+   "enabled": false,
+   "categories": [
+    "it",
+    "repos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "github",
+   "enabled": true,
+   "categories": [
+    "it",
+    "repos"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "codeberg",
+   "enabled": false,
+   "categories": [
+    "it",
+    "repos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "gitea.com",
+   "enabled": false,
+   "categories": [
+    "it",
+    "repos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "gmx",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "goodreads",
+   "enabled": false,
+   "categories": [
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "google",
+   "enabled": false,
+   "categories": [
+    "general",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "google images",
+   "enabled": false,
+   "categories": [
+    "images",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "google news",
+   "enabled": true,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "google videos",
+   "enabled": true,
+   "categories": [
+    "videos",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "google cse",
+   "enabled": true,
+   "categories": [
+    "general",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "google cse images",
+   "enabled": true,
+   "categories": [
+    "images",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "google scholar",
+   "enabled": true,
+   "categories": [
+    "science",
+    "scientific publications"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "google play apps",
+   "enabled": false,
+   "categories": [
+    "it",
+    "apps"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "google play movies",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "material icons",
+   "enabled": false,
+   "categories": [
+    "images",
+    "icons"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "habrahabr",
+   "enabled": false,
+   "categories": [
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "hackernews",
+   "enabled": false,
+   "categories": [
+    "it"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "hex",
+   "enabled": false,
+   "categories": [
+    "it",
+    "packages"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "crates.io",
+   "enabled": false,
+   "categories": [
+    "it",
+    "packages",
+    "cargo"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "hoogle",
+   "enabled": true,
+   "categories": [
+    "it",
+    "packages"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "iconify",
+   "enabled": false,
+   "categories": [
+    "images",
+    "icons"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "il post",
+   "enabled": false,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "huggingface",
+   "enabled": false,
+   "categories": [
+    "it",
+    "repos"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "huggingface datasets",
+   "enabled": false,
+   "categories": [
+    "it",
+    "repos"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "huggingface spaces",
+   "enabled": false,
+   "categories": [
+    "it",
+    "repos"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "imdb",
+   "enabled": false,
+   "categories": [
+    "movies",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "imgur",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "ina",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "ipernity",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "iqiyi",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "jisho",
+   "enabled": false,
+   "categories": [
+    "dictionaries",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "kickass",
+   "enabled": true,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "lemmy communities",
+   "enabled": true,
+   "categories": [
+    "social media"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "lemmy users",
+   "enabled": true,
+   "categories": [
+    "social media"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "lemmy posts",
+   "enabled": true,
+   "categories": [
+    "social media"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "lemmy comments",
+   "enabled": true,
+   "categories": [
+    "social media"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "library genesis",
+   "enabled": false,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "lingva",
+   "enabled": true,
+   "categories": [
+    "general",
+    "translate"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "lobste.rs",
+   "enabled": false,
+   "categories": [
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "lucide",
+   "enabled": false,
+   "categories": [
+    "images",
+    "icons"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "magnific",
+   "enabled": false,
+   "categories": [
+    "stock images",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "mastodon users",
+   "enabled": true,
+   "categories": [
+    "social media"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "mastodon hashtags",
+   "enabled": true,
+   "categories": [
+    "social media"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "mdn",
+   "enabled": true,
+   "categories": [
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "metacpan",
+   "enabled": false,
+   "categories": [
+    "it",
+    "packages"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "microsoft learn",
+   "enabled": false,
+   "categories": [
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "mixcloud",
+   "enabled": true,
+   "categories": [
+    "music"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "mozhi",
+   "enabled": false,
+   "categories": [
+    "general",
+    "translate"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "mwmbl",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "niconico",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "npm",
+   "enabled": false,
+   "categories": [
+    "it",
+    "packages"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "nyaa",
+   "enabled": false,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "mankier",
+   "enabled": true,
+   "categories": [
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "odysee",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "ollama",
+   "enabled": false,
+   "categories": [
+    "it",
+    "repos"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "openairedatasets",
+   "enabled": true,
+   "categories": [
+    "science"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "openairepublications",
+   "enabled": true,
+   "categories": [
+    "science"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "openalex",
+   "enabled": false,
+   "categories": [
+    "science",
+    "scientific publications"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "openlibrary",
+   "enabled": false,
+   "categories": [
+    "general",
+    "books"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "openmeteo",
+   "enabled": false,
+   "categories": [
+    "weather",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "openstreetmap",
+   "enabled": true,
+   "categories": [
+    "map"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "openrepos",
+   "enabled": false,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "packagist",
+   "enabled": false,
+   "categories": [
+    "it",
+    "packages"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "pdbe",
+   "enabled": true,
+   "categories": [
+    "science"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "pexels",
+   "enabled": true,
+   "categories": [
+    "stock images",
+    "other"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "photon",
+   "enabled": true,
+   "categories": [
+    "map"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "picjumbo",
+   "enabled": true,
+   "categories": [
+    "stock images",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "pinterest",
+   "enabled": true,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "piratebay",
+   "enabled": true,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "pixabay images",
+   "enabled": false,
+   "categories": [
+    "stock images",
+    "other"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "pixabay videos",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "podchaser",
+   "enabled": false,
+   "categories": [
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "pub.dev",
+   "enabled": false,
+   "categories": [
+    "packages",
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "public domain image archive",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "pubmed",
+   "enabled": true,
+   "categories": [
+    "science",
+    "scientific publications"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "pypi",
+   "enabled": true,
+   "categories": [
+    "it",
+    "packages"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "quark",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "quark images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "qwant",
+   "enabled": false,
+   "categories": [
+    "general",
+    "web"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "qwant news",
+   "enabled": false,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "qwant images",
+   "enabled": false,
+   "categories": [
+    "images",
+    "web"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "qwant videos",
+   "enabled": false,
+   "categories": [
+    "videos",
+    "web"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "radio browser",
+   "enabled": true,
+   "categories": [
+    "music",
+    "radio"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "reuters",
+   "enabled": true,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "rottentomatoes",
+   "enabled": false,
+   "categories": [
+    "movies",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "searchmysite",
+   "enabled": false,
+   "categories": [
+    "general",
+    "blogs"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "selfhst icons",
+   "enabled": false,
+   "categories": [
+    "images",
+    "icons"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "sepiasearch",
+   "enabled": true,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "shopify stock",
+   "enabled": true,
+   "categories": [
+    "stock images",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "sogou",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "sogou images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "sogou videos",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "sogou wechat",
+   "enabled": false,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "soundcloud",
+   "enabled": true,
+   "categories": [
+    "music"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "stackoverflow",
+   "enabled": true,
+   "categories": [
+    "it",
+    "q&a"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "stocksnap",
+   "enabled": true,
+   "categories": [
+    "stock images",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "askubuntu",
+   "enabled": true,
+   "categories": [
+    "it",
+    "q&a"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "superuser",
+   "enabled": true,
+   "categories": [
+    "it",
+    "q&a"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "discuss.python",
+   "enabled": false,
+   "categories": [
+    "it",
+    "q&a"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "caddy.community",
+   "enabled": false,
+   "categories": [
+    "it",
+    "q&a"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "pi-hole.community",
+   "enabled": false,
+   "categories": [
+    "it",
+    "q&a"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "privacywall",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": true,
+   "paging": false
+  },
+  {
+   "name": "privacywall images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "privacywall videos",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "semantic scholar",
+   "enabled": true,
+   "categories": [
+    "science",
+    "scientific publications"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "steam",
+   "enabled": false,
+   "categories": [
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "tokyotoshokan",
+   "enabled": false,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "solidtorrents",
+   "enabled": true,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "tagesschau",
+   "enabled": false,
+   "categories": [
+    "general",
+    "news"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "tmdb",
+   "enabled": false,
+   "categories": [
+    "movies",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "tusksearch",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "tusksearch images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "tusksearch videos",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "tusksearch news",
+   "enabled": false,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "unsplash",
+   "enabled": true,
+   "categories": [
+    "stock images",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "yandex",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "yandex images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "yandex music",
+   "enabled": false,
+   "categories": [
+    "music"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "yahoo",
+   "enabled": false,
+   "categories": [
+    "general",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "youtube",
+   "enabled": true,
+   "categories": [
+    "videos",
+    "music"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "dailymotion",
+   "enabled": true,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "vimeo",
+   "enabled": true,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wiby",
+   "enabled": false,
+   "categories": [
+    "general",
+    "blogs"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikibooks",
+   "enabled": false,
+   "categories": [
+    "general",
+    "wikimedia"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikinews",
+   "enabled": true,
+   "categories": [
+    "news",
+    "wikimedia"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikiquote",
+   "enabled": false,
+   "categories": [
+    "general",
+    "wikimedia"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikisource",
+   "enabled": false,
+   "categories": [
+    "general",
+    "wikimedia"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikispecies",
+   "enabled": false,
+   "categories": [
+    "general",
+    "science",
+    "wikimedia"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wiktionary",
+   "enabled": true,
+   "categories": [
+    "dictionaries",
+    "wikimedia",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikiversity",
+   "enabled": false,
+   "categories": [
+    "general",
+    "wikimedia"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikivoyage",
+   "enabled": false,
+   "categories": [
+    "general",
+    "wikimedia"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikicommons.images",
+   "enabled": true,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikicommons.videos",
+   "enabled": true,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikicommons.audio",
+   "enabled": true,
+   "categories": [
+    "music"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikicommons.files",
+   "enabled": true,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wolframalpha",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "dictzone",
+   "enabled": true,
+   "categories": [
+    "general",
+    "translate"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "mymemory translated",
+   "enabled": true,
+   "categories": [
+    "general",
+    "translate"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "1337x",
+   "enabled": false,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "duden",
+   "enabled": false,
+   "categories": [
+    "dictionaries",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "seznam",
+   "enabled": false,
+   "categories": [
+    "general",
+    "web"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "moviepilot",
+   "enabled": false,
+   "categories": [
+    "movies",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "national vulnerability database",
+   "enabled": false,
+   "categories": [
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "naver",
+   "enabled": false,
+   "categories": [
+    "general",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "naver images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "naver news",
+   "enabled": false,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "naver videos",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "rubygems",
+   "enabled": false,
+   "categories": [
+    "it",
+    "packages"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "peertube",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "mediathekviewweb",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "yacy",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "yacy images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "rumble",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "reloado",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "resulthunter",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "resulthunter images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "searchch",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wordnik",
+   "enabled": true,
+   "categories": [
+    "dictionaries",
+    "define",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "woxikon.de synonyme",
+   "enabled": false,
+   "categories": [
+    "dictionaries",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "tootfinder",
+   "enabled": true,
+   "categories": [
+    "social media"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "uxwing",
+   "enabled": false,
+   "categories": [
+    "images",
+    "icons"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "voidlinux",
+   "enabled": false,
+   "categories": [
+    "packages",
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "vuhuv",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "vuhuv images",
+   "enabled": false,
+   "categories": [
+    "images"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "vuhuv videos",
+   "enabled": false,
+   "categories": [
+    "videos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "wikimini",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "wttr.in",
+   "enabled": true,
+   "categories": [
+    "weather",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "zapmeta",
+   "enabled": false,
+   "categories": [
+    "general"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "brave",
+   "enabled": true,
+   "categories": [
+    "general",
+    "web"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "brave.images",
+   "enabled": true,
+   "categories": [
+    "images",
+    "web"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "brave.videos",
+   "enabled": true,
+   "categories": [
+    "videos",
+    "web"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "brave.news",
+   "enabled": true,
+   "categories": [
+    "news"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "lib.rs",
+   "enabled": false,
+   "categories": [
+    "it",
+    "packages"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "sourcehut",
+   "enabled": false,
+   "categories": [
+    "it",
+    "repos"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "bt4g",
+   "enabled": true,
+   "categories": [
+    "files"
+   ],
+   "time_range_support": true,
+   "paging": true
+  },
+  {
+   "name": "pkg.go.dev",
+   "enabled": false,
+   "categories": [
+    "packages",
+    "it"
+   ],
+   "time_range_support": false,
+   "paging": false
+  },
+  {
+   "name": "senscritique",
+   "enabled": false,
+   "categories": [
+    "movies",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  },
+  {
+   "name": "minecraft wiki",
+   "enabled": false,
+   "categories": [
+    "software wikis",
+    "other"
+   ],
+   "time_range_support": false,
+   "paging": true
+  }
+ ]
+}

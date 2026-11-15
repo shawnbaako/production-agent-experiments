@@ -1,0 +1,1980 @@
+{
+ "version": [
+  "2026.10.17+3afd94926"
+ ],
+ "top": 5,
+ "fetched": [
+  "2026-11-15T17:20:03+00:00",
+  "2026-11-15T17:41:46+00:00"
+ ],
+ "by_mix": {
+  "bing | none": {
+   "searches": 20,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 100,
+   "on_topic_top": 42,
+   "on_topic_pct": 42.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing | month": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 20,
+   "skipped_by_engine": {
+    "bing": 20
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo web | none": {
+   "searches": 20,
+   "empty": 8,
+   "mean_engines_answering": 0.6,
+   "answered_by_two_or_more": 0,
+   "top_results": 60,
+   "on_topic_top": 60,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo web: parsing error": 8
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo web | month": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 20,
+   "skipped_by_engine": {
+    "duckduckgo web": 20
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo | none": {
+   "searches": 20,
+   "empty": 5,
+   "mean_engines_answering": 0.75,
+   "answered_by_two_or_more": 0,
+   "top_results": 75,
+   "on_topic_top": 75,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo: CAPTCHA": 5
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo | month": {
+   "searches": 20,
+   "empty": 5,
+   "mean_engines_answering": 0.75,
+   "answered_by_two_or_more": 0,
+   "top_results": 75,
+   "on_topic_top": 74,
+   "on_topic_pct": 98.7,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo: CAPTCHA": 5
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yandex | none": {
+   "searches": 20,
+   "empty": 5,
+   "mean_engines_answering": 0.75,
+   "answered_by_two_or_more": 0,
+   "top_results": 75,
+   "on_topic_top": 72,
+   "on_topic_pct": 96.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: timeout": 5
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yandex | month": {
+   "searches": 20,
+   "empty": 5,
+   "mean_engines_answering": 0.75,
+   "answered_by_two_or_more": 0,
+   "top_results": 75,
+   "on_topic_top": 70,
+   "on_topic_pct": 93.3,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: Suspended: timeout": 5
+   },
+   "dated_top": 75,
+   "dated_in_range": 75
+  },
+  "google | none": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "google: Suspended: access denied": 15,
+    "google: access denied": 5
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google | month": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "google: Suspended: access denied": 19,
+    "google: access denied": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google cse | none": {
+   "searches": 20,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 100,
+   "on_topic_top": 95,
+   "on_topic_pct": 95.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google cse | month": {
+   "searches": 20,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 100,
+   "on_topic_top": 90,
+   "on_topic_pct": 90.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "brave | none": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 16,
+    "brave: too many requests": 4
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "brave | month": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 20
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "qwant | none": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "qwant: Suspended: access denied": 15,
+    "qwant: access denied": 5
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "qwant | month": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 1,
+   "skipped_by_engine": {
+    "qwant": 1
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "qwant: Suspended: access denied": 19
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yahoo | none": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yahoo: HTTP error": 20
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yahoo | month": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yahoo: Suspended: HTTP error": 20
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "wikipedia | none": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {
+    "wikipedia": 20
+   },
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "wikipedia | month": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 20,
+   "skipped_by_engine": {
+    "wikipedia": 20
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "stock general | none": {
+   "searches": 20,
+   "empty": 15,
+   "mean_engines_answering": 0.25,
+   "answered_by_two_or_more": 0,
+   "top_results": 25,
+   "on_topic_top": 25,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {
+    "wikipedia": 20,
+    "wikidata": 14
+   },
+   "unresponsive": {
+    "brave: Suspended: too many requests": 19,
+    "google cse: Suspended: too many requests": 19,
+    "duckduckgo: CAPTCHA": 15,
+    "wikidata: timeout": 5,
+    "google cse: too many requests": 1,
+    "brave: too many requests": 1,
+    "wikidata: HTTP error": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "stock general | month": {
+   "searches": 20,
+   "empty": 15,
+   "mean_engines_answering": 0.25,
+   "answered_by_two_or_more": 0,
+   "top_results": 25,
+   "on_topic_top": 24,
+   "on_topic_pct": 96.0,
+   "searches_with_engine_skipped": 20,
+   "skipped_by_engine": {
+    "wikipedia": 20,
+    "wikidata": 14
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 20,
+    "google cse: Suspended: too many requests": 20,
+    "duckduckgo: CAPTCHA": 15,
+    "wikidata: Suspended: timeout": 5,
+    "wikidata: Suspended: HTTP error": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web | none": {
+   "searches": 20,
+   "empty": 0,
+   "mean_engines_answering": 1.6,
+   "answered_by_two_or_more": 12,
+   "top_results": 100,
+   "on_topic_top": 88,
+   "on_topic_pct": 88.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo web: parsing error": 8
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web | month": {
+   "searches": 20,
+   "empty": 20,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 20,
+   "skipped_by_engine": {
+    "bing": 20,
+    "duckduckgo web": 20
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "ddg web + yandex | none": {
+   "searches": 20,
+   "empty": 2,
+   "mean_engines_answering": 1.3,
+   "answered_by_two_or_more": 8,
+   "top_results": 90,
+   "on_topic_top": 87,
+   "on_topic_pct": 96.7,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo web: parsing error": 8,
+    "yandex: timeout": 6
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "ddg web + yandex | month": {
+   "searches": 20,
+   "empty": 6,
+   "mean_engines_answering": 0.7,
+   "answered_by_two_or_more": 0,
+   "top_results": 70,
+   "on_topic_top": 66,
+   "on_topic_pct": 94.3,
+   "searches_with_engine_skipped": 20,
+   "skipped_by_engine": {
+    "duckduckgo web": 20
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: Suspended: timeout": 6
+   },
+   "dated_top": 70,
+   "dated_in_range": 70
+  },
+  "bing + ddg web + yandex | none": {
+   "searches": 20,
+   "empty": 0,
+   "mean_engines_answering": 2.3,
+   "answered_by_two_or_more": 18,
+   "top_results": 100,
+   "on_topic_top": 91,
+   "on_topic_pct": 91.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo web: parsing error": 8,
+    "yandex: Suspended: timeout": 6
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web + yandex | month": {
+   "searches": 20,
+   "empty": 6,
+   "mean_engines_answering": 0.7,
+   "answered_by_two_or_more": 0,
+   "top_results": 70,
+   "on_topic_top": 65,
+   "on_topic_pct": 92.9,
+   "searches_with_engine_skipped": 20,
+   "skipped_by_engine": {
+    "bing": 20,
+    "duckduckgo web": 20
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: timeout": 6
+   },
+   "dated_top": 70,
+   "dated_in_range": 70
+  }
+ },
+ "by_mix_and_kind": {
+  "bing | none | named": {
+   "searches": 8,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 40,
+   "on_topic_top": 12,
+   "on_topic_pct": 30.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing | none | recent": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 20,
+   "on_topic_pct": 66.7,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing | none | tech": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 10,
+   "on_topic_pct": 33.3,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing | month | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 8,
+   "skipped_by_engine": {
+    "bing": 8
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing | month | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "bing": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing | month | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "bing": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo web | none | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo web: parsing error": 8
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo web | none | recent": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo web | none | tech": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo web | month | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 8,
+   "skipped_by_engine": {
+    "duckduckgo web": 8
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo web | month | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "duckduckgo web": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo web | month | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "duckduckgo web": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo | none | named": {
+   "searches": 8,
+   "empty": 5,
+   "mean_engines_answering": 0.38,
+   "answered_by_two_or_more": 0,
+   "top_results": 15,
+   "on_topic_top": 15,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo: CAPTCHA": 5
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo | none | recent": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo | none | tech": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo | month | named": {
+   "searches": 8,
+   "empty": 5,
+   "mean_engines_answering": 0.38,
+   "answered_by_two_or_more": 0,
+   "top_results": 15,
+   "on_topic_top": 15,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo: CAPTCHA": 5
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo | month | recent": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "duckduckgo | month | tech": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 29,
+   "on_topic_pct": 96.7,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yandex | none | named": {
+   "searches": 8,
+   "empty": 1,
+   "mean_engines_answering": 0.88,
+   "answered_by_two_or_more": 0,
+   "top_results": 35,
+   "on_topic_top": 32,
+   "on_topic_pct": 91.4,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: timeout": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yandex | none | recent": {
+   "searches": 6,
+   "empty": 1,
+   "mean_engines_answering": 0.83,
+   "answered_by_two_or_more": 0,
+   "top_results": 25,
+   "on_topic_top": 25,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: timeout": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yandex | none | tech": {
+   "searches": 6,
+   "empty": 3,
+   "mean_engines_answering": 0.5,
+   "answered_by_two_or_more": 0,
+   "top_results": 15,
+   "on_topic_top": 15,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: timeout": 3
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yandex | month | named": {
+   "searches": 8,
+   "empty": 1,
+   "mean_engines_answering": 0.88,
+   "answered_by_two_or_more": 0,
+   "top_results": 35,
+   "on_topic_top": 31,
+   "on_topic_pct": 88.6,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: Suspended: timeout": 1
+   },
+   "dated_top": 35,
+   "dated_in_range": 35
+  },
+  "yandex | month | recent": {
+   "searches": 6,
+   "empty": 1,
+   "mean_engines_answering": 0.83,
+   "answered_by_two_or_more": 0,
+   "top_results": 25,
+   "on_topic_top": 25,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: Suspended: timeout": 1
+   },
+   "dated_top": 25,
+   "dated_in_range": 25
+  },
+  "yandex | month | tech": {
+   "searches": 6,
+   "empty": 3,
+   "mean_engines_answering": 0.5,
+   "answered_by_two_or_more": 0,
+   "top_results": 15,
+   "on_topic_top": 14,
+   "on_topic_pct": 93.3,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: Suspended: timeout": 3
+   },
+   "dated_top": 15,
+   "dated_in_range": 15
+  },
+  "google | none | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "google: Suspended: access denied": 6,
+    "google: access denied": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google | none | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "google: Suspended: access denied": 5,
+    "google: access denied": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google | none | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "google: Suspended: access denied": 4,
+    "google: access denied": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google | month | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "google: Suspended: access denied": 8
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google | month | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "google: Suspended: access denied": 5,
+    "google: access denied": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google | month | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "google: Suspended: access denied": 6
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google cse | none | named": {
+   "searches": 8,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 40,
+   "on_topic_top": 39,
+   "on_topic_pct": 97.5,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google cse | none | recent": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 29,
+   "on_topic_pct": 96.7,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google cse | none | tech": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 27,
+   "on_topic_pct": 90.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google cse | month | named": {
+   "searches": 8,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 40,
+   "on_topic_top": 40,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google cse | month | recent": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 28,
+   "on_topic_pct": 93.3,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "google cse | month | tech": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 22,
+   "on_topic_pct": 73.3,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "brave | none | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 6,
+    "brave: too many requests": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "brave | none | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 5,
+    "brave: too many requests": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "brave | none | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 5,
+    "brave: too many requests": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "brave | month | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 8
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "brave | month | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 6
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "brave | month | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 6
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "qwant | none | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "qwant: Suspended: access denied": 6,
+    "qwant: access denied": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "qwant | none | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "qwant: Suspended: access denied": 5,
+    "qwant: access denied": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "qwant | none | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "qwant: Suspended: access denied": 4,
+    "qwant: access denied": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "qwant | month | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "qwant: Suspended: access denied": 8
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "qwant | month | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 1,
+   "skipped_by_engine": {
+    "qwant": 1
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "qwant: Suspended: access denied": 5
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "qwant | month | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "qwant: Suspended: access denied": 6
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yahoo | none | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yahoo: HTTP error": 8
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yahoo | none | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yahoo: HTTP error": 6
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yahoo | none | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yahoo: HTTP error": 6
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yahoo | month | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yahoo: Suspended: HTTP error": 8
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yahoo | month | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yahoo: Suspended: HTTP error": 6
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "yahoo | month | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yahoo: Suspended: HTTP error": 6
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "wikipedia | none | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {
+    "wikipedia": 8
+   },
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "wikipedia | none | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {
+    "wikipedia": 6
+   },
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "wikipedia | none | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {
+    "wikipedia": 6
+   },
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "wikipedia | month | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 8,
+   "skipped_by_engine": {
+    "wikipedia": 8
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "wikipedia | month | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "wikipedia": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "wikipedia | month | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "wikipedia": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "stock general | none | named": {
+   "searches": 8,
+   "empty": 3,
+   "mean_engines_answering": 0.62,
+   "answered_by_two_or_more": 0,
+   "top_results": 25,
+   "on_topic_top": 25,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {
+    "wikipedia": 8,
+    "wikidata": 7
+   },
+   "unresponsive": {
+    "brave: Suspended: too many requests": 8,
+    "google cse: Suspended: too many requests": 7,
+    "duckduckgo: CAPTCHA": 3,
+    "google cse: too many requests": 1,
+    "wikidata: timeout": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "stock general | none | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {
+    "wikipedia": 6,
+    "wikidata": 3
+   },
+   "unresponsive": {
+    "brave: Suspended: too many requests": 6,
+    "duckduckgo: CAPTCHA": 6,
+    "google cse: Suspended: too many requests": 6,
+    "wikidata: timeout": 2,
+    "wikidata: HTTP error": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "stock general | none | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {
+    "wikipedia": 6,
+    "wikidata": 4
+   },
+   "unresponsive": {
+    "duckduckgo: CAPTCHA": 6,
+    "google cse: Suspended: too many requests": 6,
+    "brave: Suspended: too many requests": 5,
+    "wikidata: timeout": 2,
+    "brave: too many requests": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "stock general | month | named": {
+   "searches": 8,
+   "empty": 3,
+   "mean_engines_answering": 0.62,
+   "answered_by_two_or_more": 0,
+   "top_results": 25,
+   "on_topic_top": 24,
+   "on_topic_pct": 96.0,
+   "searches_with_engine_skipped": 8,
+   "skipped_by_engine": {
+    "wikipedia": 8,
+    "wikidata": 7
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 8,
+    "google cse: Suspended: too many requests": 8,
+    "duckduckgo: CAPTCHA": 3,
+    "wikidata: Suspended: timeout": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "stock general | month | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "wikipedia": 6,
+    "wikidata": 3
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 6,
+    "duckduckgo: CAPTCHA": 6,
+    "google cse: Suspended: too many requests": 6,
+    "wikidata: Suspended: timeout": 2,
+    "wikidata: Suspended: HTTP error": 1
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "stock general | month | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "wikipedia": 6,
+    "wikidata": 4
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "brave: Suspended: too many requests": 6,
+    "duckduckgo: CAPTCHA": 6,
+    "google cse: Suspended: too many requests": 6,
+    "wikidata: Suspended: timeout": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web | none | named": {
+   "searches": 8,
+   "empty": 0,
+   "mean_engines_answering": 1.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 40,
+   "on_topic_top": 28,
+   "on_topic_pct": 70.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo web: parsing error": 8
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web | none | recent": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 2.0,
+   "answered_by_two_or_more": 6,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web | none | tech": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 2.0,
+   "answered_by_two_or_more": 6,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web | month | named": {
+   "searches": 8,
+   "empty": 8,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 8,
+   "skipped_by_engine": {
+    "bing": 8,
+    "duckduckgo web": 8
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web | month | recent": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "bing": 6,
+    "duckduckgo web": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web | month | tech": {
+   "searches": 6,
+   "empty": 6,
+   "mean_engines_answering": 0.0,
+   "answered_by_two_or_more": 0,
+   "top_results": 0,
+   "on_topic_top": 0,
+   "on_topic_pct": null,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "bing": 6,
+    "duckduckgo web": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {},
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "ddg web + yandex | none | named": {
+   "searches": 8,
+   "empty": 2,
+   "mean_engines_answering": 0.75,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 27,
+   "on_topic_pct": 90.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo web: parsing error": 8,
+    "yandex: timeout": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "ddg web + yandex | none | recent": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.67,
+   "answered_by_two_or_more": 4,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: timeout": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "ddg web + yandex | none | tech": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 1.67,
+   "answered_by_two_or_more": 4,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: timeout": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "ddg web + yandex | month | named": {
+   "searches": 8,
+   "empty": 2,
+   "mean_engines_answering": 0.75,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 27,
+   "on_topic_pct": 90.0,
+   "searches_with_engine_skipped": 8,
+   "skipped_by_engine": {
+    "duckduckgo web": 8
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: Suspended: timeout": 2
+   },
+   "dated_top": 30,
+   "dated_in_range": 30
+  },
+  "ddg web + yandex | month | recent": {
+   "searches": 6,
+   "empty": 2,
+   "mean_engines_answering": 0.67,
+   "answered_by_two_or_more": 0,
+   "top_results": 20,
+   "on_topic_top": 20,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "duckduckgo web": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: Suspended: timeout": 2
+   },
+   "dated_top": 20,
+   "dated_in_range": 20
+  },
+  "ddg web + yandex | month | tech": {
+   "searches": 6,
+   "empty": 2,
+   "mean_engines_answering": 0.67,
+   "answered_by_two_or_more": 0,
+   "top_results": 20,
+   "on_topic_top": 19,
+   "on_topic_pct": 95.0,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "duckduckgo web": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: Suspended: timeout": 2
+   },
+   "dated_top": 20,
+   "dated_in_range": 20
+  },
+  "bing + ddg web + yandex | none | named": {
+   "searches": 8,
+   "empty": 0,
+   "mean_engines_answering": 1.75,
+   "answered_by_two_or_more": 6,
+   "top_results": 40,
+   "on_topic_top": 31,
+   "on_topic_pct": 77.5,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "duckduckgo web: parsing error": 8,
+    "yandex: Suspended: timeout": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web + yandex | none | recent": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 2.67,
+   "answered_by_two_or_more": 6,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: Suspended: timeout": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web + yandex | none | tech": {
+   "searches": 6,
+   "empty": 0,
+   "mean_engines_answering": 2.67,
+   "answered_by_two_or_more": 6,
+   "top_results": 30,
+   "on_topic_top": 30,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 0,
+   "skipped_by_engine": {},
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: Suspended: timeout": 2
+   },
+   "dated_top": 0,
+   "dated_in_range": 0
+  },
+  "bing + ddg web + yandex | month | named": {
+   "searches": 8,
+   "empty": 2,
+   "mean_engines_answering": 0.75,
+   "answered_by_two_or_more": 0,
+   "top_results": 30,
+   "on_topic_top": 26,
+   "on_topic_pct": 86.7,
+   "searches_with_engine_skipped": 8,
+   "skipped_by_engine": {
+    "bing": 8,
+    "duckduckgo web": 8
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: timeout": 2
+   },
+   "dated_top": 30,
+   "dated_in_range": 30
+  },
+  "bing + ddg web + yandex | month | recent": {
+   "searches": 6,
+   "empty": 2,
+   "mean_engines_answering": 0.67,
+   "answered_by_two_or_more": 0,
+   "top_results": 20,
+   "on_topic_top": 20,
+   "on_topic_pct": 100.0,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "bing": 6,
+    "duckduckgo web": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: timeout": 2
+   },
+   "dated_top": 20,
+   "dated_in_range": 20
+  },
+  "bing + ddg web + yandex | month | tech": {
+   "searches": 6,
+   "empty": 2,
+   "mean_engines_answering": 0.67,
+   "answered_by_two_or_more": 0,
+   "top_results": 20,
+   "on_topic_top": 19,
+   "on_topic_pct": 95.0,
+   "searches_with_engine_skipped": 6,
+   "skipped_by_engine": {
+    "bing": 6,
+    "duckduckgo web": 6
+   },
+   "empty_without_error_by_engine": {},
+   "unresponsive": {
+    "yandex: timeout": 2
+   },
+   "dated_top": 20,
+   "dated_in_range": 20
+  }
+ }
+}
