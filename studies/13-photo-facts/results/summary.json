@@ -1,0 +1,8172 @@
+{
+ "photos": 1446,
+ "groups": 1359,
+ "test_a": 360,
+ "test_b": 363,
+ "human_counts": {
+  "subject": {
+   "bathroom": 30,
+   "bedroom": 30,
+   "boat": 30,
+   "dining": 30,
+   "exterior": 30,
+   "gym": 30,
+   "interior": 30,
+   "meeting": 30,
+   "other": 30,
+   "pool": 30,
+   "scenery": 30,
+   "spa": 30
+  },
+  "setting": {
+   "indoor": 227,
+   "on_water": 30,
+   "outdoor": 73,
+   "underwater": 30
+  },
+  "people": {
+   "1": 545,
+   "0": 166
+  },
+  "equip:boat": {
+   "0": 27,
+   "1": 64
+  },
+  "equip:kayak": {
+   "1": 33,
+   "0": 12
+  },
+  "equip:bicycle": {
+   "1": 45,
+   "0": 45
+  },
+  "equip:helmet": {
+   "0": 26,
+   "1": 61
+  },
+  "equip:bus": {
+   "1": 32,
+   "0": 17
+  },
+  "equip:car": {
+   "0": 121,
+   "1": 83
+  },
+  "equip:train": {
+   "0": 17,
+   "1": 35
+  },
+  "equip:paraglider": {
+   "0": 12,
+   "1": 30
+  },
+  "equip:ski": {
+   "1": 31,
+   "0": 12
+  },
+  "equip:surfboard": {
+   "1": 35,
+   "0": 18
+  },
+  "equip:horse": {
+   "0": 18,
+   "1": 40
+  },
+  "equip:camel": {
+   "1": 30,
+   "0": 13
+  },
+  "equip:backpack": {
+   "1": 32,
+   "0": 12
+  },
+  "equip:gym_machine": {
+   "1": 30,
+   "0": 13
+  },
+  "equip:bed": {
+   "1": 39,
+   "0": 25
+  },
+  "equip:bathtub": {
+   "0": 12,
+   "1": 31
+  },
+  "equip:desk": {
+   "1": 35,
+   "0": 21
+  },
+  "access:stairs": {
+   "0": 54,
+   "1": 101
+  },
+  "access:handrail": {
+   "1": 70,
+   "0": 35
+  },
+  "access:wheelchair": {
+   "1": 71,
+   "0": 33
+  },
+  "access:ramp": {
+   "1": 7
+  },
+  "access:elevator": {
+   "1": 4
+  }
+ },
+ "agent_sample": 324,
+ "agreement_claude": {
+  "subject": {
+   "n": 73,
+   "agree": 57,
+   "kappa": 0.7573743248857499,
+   "confusions": [
+    [
+     "spa->pool",
+     3
+    ],
+    [
+     "other->activity",
+     2
+    ],
+    [
+     "exterior->scenery",
+     2
+    ],
+    [
+     "scenery->animal",
+     1
+    ],
+    [
+     "meeting->interior",
+     1
+    ],
+    [
+     "bedroom->interior",
+     1
+    ]
+   ]
+  },
+  "setting": {
+   "n": 73,
+   "agree": 66,
+   "kappa": 0.820260288427717,
+   "confusions": [
+    [
+     "on_water->outdoor",
+     4
+    ],
+    [
+     "indoor->outdoor",
+     2
+    ],
+    [
+     "underwater->indoor",
+     1
+    ]
+   ]
+  },
+  "people": {
+   "n": 164,
+   "agree": 154,
+   "kappa": 0.8404669260700388,
+   "agent_yes": 118,
+   "human_yes": 126,
+   "both_yes": 117,
+   "agent_precision": 0.9915254237288136,
+   "agent_recall": 0.9285714285714286
+  },
+  "equip:boat": {
+   "n": 24,
+   "agree": 16,
+   "kappa": 0.3513513513513513,
+   "agent_yes": 10,
+   "human_yes": 14,
+   "both_yes": 8,
+   "agent_precision": 0.8,
+   "agent_recall": 0.5714285714285714
+  },
+  "equip:kayak": {
+   "n": 11,
+   "agree": 10,
+   "kappa": 0.7441860465116279,
+   "agent_yes": 8,
+   "human_yes": 9,
+   "both_yes": 8,
+   "agent_precision": 1.0,
+   "agent_recall": 0.8888888888888888
+  },
+  "equip:bicycle": {
+   "n": 22,
+   "agree": 18,
+   "kappa": 0.6480000000000001,
+   "agent_yes": 13,
+   "human_yes": 9,
+   "both_yes": 9,
+   "agent_precision": 0.6923076923076923,
+   "agent_recall": 1.0
+  },
+  "equip:helmet": {
+   "n": 22,
+   "agree": 21,
+   "kappa": 0.8791208791208792,
+   "agent_yes": 17,
+   "human_yes": 16,
+   "both_yes": 16,
+   "agent_precision": 0.9411764705882353,
+   "agent_recall": 1.0
+  },
+  "equip:bus": {
+   "n": 10,
+   "agree": 9,
+   "kappa": 0.782608695652174,
+   "agent_yes": 3,
+   "human_yes": 4,
+   "both_yes": 3,
+   "agent_precision": 1.0,
+   "agent_recall": 0.75
+  },
+  "equip:car": {
+   "n": 49,
+   "agree": 43,
+   "kappa": 0.7541806020066889,
+   "agent_yes": 20,
+   "human_yes": 24,
+   "both_yes": 19,
+   "agent_precision": 0.95,
+   "agent_recall": 0.7916666666666666
+  },
+  "equip:train": {
+   "n": 20,
+   "agree": 16,
+   "kappa": 0.5876288659793816,
+   "agent_yes": 13,
+   "human_yes": 11,
+   "both_yes": 10,
+   "agent_precision": 0.7692307692307693,
+   "agent_recall": 0.9090909090909091
+  },
+  "equip:paraglider": {
+   "n": 6,
+   "agree": 5,
+   "kappa": 0.5714285714285715,
+   "agent_yes": 4,
+   "human_yes": 5,
+   "both_yes": 4,
+   "agent_precision": 1.0,
+   "agent_recall": 0.8
+  },
+  "equip:ski": {
+   "n": 11,
+   "agree": 8,
+   "kappa": 0.37735849056603776,
+   "agent_yes": 7,
+   "human_yes": 8,
+   "both_yes": 6,
+   "agent_precision": 0.8571428571428571,
+   "agent_recall": 0.75
+  },
+  "equip:surfboard": {
+   "n": 15,
+   "agree": 13,
+   "kappa": 0.7000000000000001,
+   "agent_yes": 5,
+   "human_yes": 5,
+   "both_yes": 4,
+   "agent_precision": 0.8,
+   "agent_recall": 0.8
+  },
+  "equip:horse": {
+   "n": 22,
+   "agree": 21,
+   "kappa": 0.8910891089108912,
+   "agent_yes": 15,
+   "human_yes": 16,
+   "both_yes": 15,
+   "agent_precision": 1.0,
+   "agent_recall": 0.9375
+  },
+  "equip:camel": {
+   "n": 8,
+   "agree": 8,
+   "kappa": 1.0,
+   "agent_yes": 5,
+   "human_yes": 5,
+   "both_yes": 5,
+   "agent_precision": 1.0,
+   "agent_recall": 1.0
+  },
+  "equip:backpack": {
+   "n": 9,
+   "agree": 6,
+   "kappa": 0.3720930232558139,
+   "agent_yes": 4,
+   "human_yes": 7,
+   "both_yes": 4,
+   "agent_precision": 1.0,
+   "agent_recall": 0.5714285714285714
+  },
+  "equip:gym_machine": {
+   "n": 8,
+   "agree": 7,
+   "kappa": 0.75,
+   "agent_yes": 4,
+   "human_yes": 5,
+   "both_yes": 4,
+   "agent_precision": 1.0,
+   "agent_recall": 0.8
+  },
+  "equip:bed": {
+   "n": 11,
+   "agree": 9,
+   "kappa": 0.6206896551724138,
+   "agent_yes": 6,
+   "human_yes": 8,
+   "both_yes": 6,
+   "agent_precision": 1.0,
+   "agent_recall": 0.75
+  },
+  "equip:bathtub": {
+   "n": 9,
+   "agree": 8,
+   "kappa": 0.7692307692307692,
+   "agent_yes": 5,
+   "human_yes": 6,
+   "both_yes": 5,
+   "agent_precision": 1.0,
+   "agent_recall": 0.8333333333333334
+  },
+  "equip:desk": {
+   "n": 13,
+   "agree": 7,
+   "kappa": 0.048780487804878064,
+   "agent_yes": 4,
+   "human_yes": 6,
+   "both_yes": 2,
+   "agent_precision": 0.5,
+   "agent_recall": 0.3333333333333333
+  },
+  "access:stairs": {
+   "n": 35,
+   "agree": 24,
+   "kappa": 0.384,
+   "agent_yes": 15,
+   "human_yes": 20,
+   "both_yes": 12,
+   "agent_precision": 0.8,
+   "agent_recall": 0.6
+  },
+  "access:handrail": {
+   "n": 23,
+   "agree": 17,
+   "kappa": 0.4850746268656716,
+   "agent_yes": 11,
+   "human_yes": 15,
+   "both_yes": 10,
+   "agent_precision": 0.9090909090909091,
+   "agent_recall": 0.6666666666666666
+  },
+  "access:wheelchair": {
+   "n": 20,
+   "agree": 19,
+   "kappa": 0.8936170212765956,
+   "agent_yes": 12,
+   "human_yes": 13,
+   "both_yes": 12,
+   "agent_precision": 1.0,
+   "agent_recall": 0.9230769230769231
+  },
+  "access:ramp": {
+   "n": 1,
+   "agree": 0,
+   "kappa": 0.0,
+   "agent_yes": 0,
+   "human_yes": 1,
+   "both_yes": 0,
+   "agent_precision": 0.0,
+   "agent_recall": 0.0
+  },
+  "access:elevator": {
+   "n": 2,
+   "agree": 1,
+   "kappa": 0.0,
+   "agent_yes": 1,
+   "human_yes": 2,
+   "both_yes": 1,
+   "agent_precision": 1.0,
+   "agent_recall": 0.5
+  }
+ },
+ "agreement_api": {
+  "subject": {
+   "n": 73,
+   "agree": 56,
+   "kappa": 0.7430641821946169,
+   "confusions": [
+    [
+     "spa->pool",
+     3
+    ],
+    [
+     "other->animal",
+     2
+    ],
+    [
+     "other->activity",
+     2
+    ],
+    [
+     "pool->spa",
+     1
+    ],
+    [
+     "boat->activity",
+     1
+    ],
+    [
+     "scenery->animal",
+     1
+    ]
+   ]
+  },
+  "setting": {
+   "n": 73,
+   "agree": 65,
+   "kappa": 0.796657381615599,
+   "confusions": [
+    [
+     "on_water->outdoor",
+     4
+    ],
+    [
+     "indoor->outdoor",
+     3
+    ],
+    [
+     "underwater->indoor",
+     1
+    ]
+   ]
+  },
+  "people": {
+   "n": 164,
+   "agree": 160,
+   "kappa": 0.9327317473338802,
+   "agent_yes": 124,
+   "human_yes": 126,
+   "both_yes": 123,
+   "agent_precision": 0.9919354838709677,
+   "agent_recall": 0.9761904761904762
+  },
+  "equip:boat": {
+   "n": 24,
+   "agree": 16,
+   "kappa": 0.3142857142857143,
+   "agent_yes": 14,
+   "human_yes": 14,
+   "both_yes": 10,
+   "agent_precision": 0.7142857142857143,
+   "agent_recall": 0.7142857142857143
+  },
+  "equip:kayak": {
+   "n": 11,
+   "agree": 10,
+   "kappa": 0.7441860465116279,
+   "agent_yes": 8,
+   "human_yes": 9,
+   "both_yes": 8,
+   "agent_precision": 1.0,
+   "agent_recall": 0.8888888888888888
+  },
+  "equip:bicycle": {
+   "n": 22,
+   "agree": 18,
+   "kappa": 0.6480000000000001,
+   "agent_yes": 13,
+   "human_yes": 9,
+   "both_yes": 9,
+   "agent_precision": 0.6923076923076923,
+   "agent_recall": 1.0
+  },
+  "equip:helmet": {
+   "n": 22,
+   "agree": 21,
+   "kappa": 0.8910891089108912,
+   "agent_yes": 15,
+   "human_yes": 16,
+   "both_yes": 15,
+   "agent_precision": 1.0,
+   "agent_recall": 0.9375
+  },
+  "equip:bus": {
+   "n": 10,
+   "agree": 9,
+   "kappa": 0.782608695652174,
+   "agent_yes": 3,
+   "human_yes": 4,
+   "both_yes": 3,
+   "agent_precision": 1.0,
+   "agent_recall": 0.75
+  },
+  "equip:car": {
+   "n": 49,
+   "agree": 47,
+   "kappa": 0.9181969949916526,
+   "agent_yes": 22,
+   "human_yes": 24,
+   "both_yes": 22,
+   "agent_precision": 1.0,
+   "agent_recall": 0.9166666666666666
+  },
+  "equip:train": {
+   "n": 20,
+   "agree": 16,
+   "kappa": 0.5876288659793816,
+   "agent_yes": 13,
+   "human_yes": 11,
+   "both_yes": 10,
+   "agent_precision": 0.7692307692307693,
+   "agent_recall": 0.9090909090909091
+  },
+  "equip:paraglider": {
+   "n": 6,
+   "agree": 5,
+   "kappa": 0.5714285714285715,
+   "agent_yes": 4,
+   "human_yes": 5,
+   "both_yes": 4,
+   "agent_precision": 1.0,
+   "agent_recall": 0.8
+  },
+  "equip:ski": {
+   "n": 11,
+   "agree": 9,
+   "kappa": 0.6206896551724138,
+   "agent_yes": 6,
+   "human_yes": 8,
+   "both_yes": 6,
+   "agent_precision": 1.0,
+   "agent_recall": 0.75
+  },
+  "equip:surfboard": {
+   "n": 15,
+   "agree": 13,
+   "kappa": 0.7000000000000001,
+   "agent_yes": 5,
+   "human_yes": 5,
+   "both_yes": 4,
+   "agent_precision": 0.8,
+   "agent_recall": 0.8
+  },
+  "equip:horse": {
+   "n": 22,
+   "agree": 22,
+   "kappa": 1.0,
+   "agent_yes": 16,
+   "human_yes": 16,
+   "both_yes": 16,
+   "agent_precision": 1.0,
+   "agent_recall": 1.0
+  },
+  "equip:camel": {
+   "n": 8,
+   "agree": 8,
+   "kappa": 1.0,
+   "agent_yes": 5,
+   "human_yes": 5,
+   "both_yes": 5,
+   "agent_precision": 1.0,
+   "agent_recall": 1.0
+  },
+  "equip:backpack": {
+   "n": 9,
+   "agree": 8,
+   "kappa": 0.608695652173913,
+   "agent_yes": 8,
+   "human_yes": 7,
+   "both_yes": 7,
+   "agent_precision": 0.875,
+   "agent_recall": 1.0
+  },
+  "equip:gym_machine": {
+   "n": 8,
+   "agree": 7,
+   "kappa": 0.75,
+   "agent_yes": 4,
+   "human_yes": 5,
+   "both_yes": 4,
+   "agent_precision": 1.0,
+   "agent_recall": 0.8
+  },
+  "equip:bed": {
+   "n": 11,
+   "agree": 9,
+   "kappa": 0.6206896551724138,
+   "agent_yes": 6,
+   "human_yes": 8,
+   "both_yes": 6,
+   "agent_precision": 1.0,
+   "agent_recall": 0.75
+  },
+  "equip:bathtub": {
+   "n": 9,
+   "agree": 8,
+   "kappa": 0.7692307692307692,
+   "agent_yes": 5,
+   "human_yes": 6,
+   "both_yes": 5,
+   "agent_precision": 1.0,
+   "agent_recall": 0.8333333333333334
+  },
+  "equip:desk": {
+   "n": 13,
+   "agree": 7,
+   "kappa": 0.07142857142857136,
+   "agent_yes": 6,
+   "human_yes": 6,
+   "both_yes": 3,
+   "agent_precision": 0.5,
+   "agent_recall": 0.5
+  },
+  "access:stairs": {
+   "n": 35,
+   "agree": 30,
+   "kappa": 0.6956521739130433,
+   "agent_yes": 25,
+   "human_yes": 20,
+   "both_yes": 20,
+   "agent_precision": 0.8,
+   "agent_recall": 1.0
+  },
+  "access:handrail": {
+   "n": 23,
+   "agree": 20,
+   "kappa": 0.7206477732793521,
+   "agent_yes": 14,
+   "human_yes": 15,
+   "both_yes": 13,
+   "agent_precision": 0.9285714285714286,
+   "agent_recall": 0.8666666666666667
+  },
+  "access:wheelchair": {
+   "n": 20,
+   "agree": 19,
+   "kappa": 0.8936170212765956,
+   "agent_yes": 12,
+   "human_yes": 13,
+   "both_yes": 12,
+   "agent_precision": 1.0,
+   "agent_recall": 0.9230769230769231
+  },
+  "access:ramp": {
+   "n": 1,
+   "agree": 0,
+   "kappa": 0.0,
+   "agent_yes": 0,
+   "human_yes": 1,
+   "both_yes": 0,
+   "agent_precision": 0.0,
+   "agent_recall": 0.0
+  },
+  "access:elevator": {
+   "n": 2,
+   "agree": 1,
+   "kappa": 0.0,
+   "agent_yes": 1,
+   "human_yes": 2,
+   "both_yes": 1,
+   "agent_precision": 1.0,
+   "agent_recall": 0.5
+  }
+ },
+ "claude_vs_api": {
+  "subject": {
+   "n": 324,
+   "agree": 272,
+   "kappa": 0.8169909082021702,
+   "yes_a": null,
+   "yes_b": null
+  },
+  "setting": {
+   "n": 324,
+   "agree": 298,
+   "kappa": 0.8562261059530311,
+   "yes_a": null,
+   "yes_b": null
+  },
+  "people": {
+   "n": 324,
+   "agree": 299,
+   "kappa": 0.8461480018234311,
+   "yes_a": 146,
+   "yes_b": 167
+  },
+  "equip:boat": {
+   "n": 324,
+   "agree": 317,
+   "kappa": 0.8180943214629453,
+   "yes_a": 17,
+   "yes_b": 24
+  },
+  "equip:kayak": {
+   "n": 324,
+   "agree": 324,
+   "kappa": 1.0,
+   "yes_a": 9,
+   "yes_b": 9
+  },
+  "equip:bicycle": {
+   "n": 324,
+   "agree": 323,
+   "kappa": 0.9639037433155079,
+   "yes_a": 14,
+   "yes_b": 15
+  },
+  "equip:helmet": {
+   "n": 324,
+   "agree": 317,
+   "kappa": 0.8803039898670045,
+   "yes_a": 32,
+   "yes_b": 33
+  },
+  "equip:bus": {
+   "n": 324,
+   "agree": 322,
+   "kappa": 0.7468749999999991,
+   "yes_a": 4,
+   "yes_b": 4
+  },
+  "equip:car": {
+   "n": 324,
+   "agree": 316,
+   "kappa": 0.8385650224215246,
+   "yes_a": 24,
+   "yes_b": 30
+  },
+  "equip:train": {
+   "n": 324,
+   "agree": 321,
+   "kappa": 0.8840648854961827,
+   "yes_a": 13,
+   "yes_b": 14
+  },
+  "equip:paraglider": {
+   "n": 324,
+   "agree": 324,
+   "kappa": 1.0,
+   "yes_a": 4,
+   "yes_b": 4
+  },
+  "equip:ski": {
+   "n": 324,
+   "agree": 322,
+   "kappa": 0.8539882830103644,
+   "yes_a": 7,
+   "yes_b": 7
+  },
+  "equip:surfboard": {
+   "n": 324,
+   "agree": 324,
+   "kappa": 1.0,
+   "yes_a": 5,
+   "yes_b": 5
+  },
+  "equip:horse": {
+   "n": 324,
+   "agree": 323,
+   "kappa": 0.9661229611041404,
+   "yes_a": 15,
+   "yes_b": 16
+  },
+  "equip:camel": {
+   "n": 324,
+   "agree": 324,
+   "kappa": 1.0,
+   "yes_a": 6,
+   "yes_b": 6
+  },
+  "equip:backpack": {
+   "n": 324,
+   "agree": 314,
+   "kappa": 0.43356643356643354,
+   "yes_a": 4,
+   "yes_b": 14
+  },
+  "equip:gym_machine": {
+   "n": 324,
+   "agree": 324,
+   "kappa": 1.0,
+   "yes_a": 10,
+   "yes_b": 10
+  },
+  "equip:bed": {
+   "n": 324,
+   "agree": 322,
+   "kappa": 0.9058960209119948,
+   "yes_a": 11,
+   "yes_b": 11
+  },
+  "equip:bathtub": {
+   "n": 324,
+   "agree": 324,
+   "kappa": 1.0,
+   "yes_a": 8,
+   "yes_b": 8
+  },
+  "equip:desk": {
+   "n": 324,
+   "agree": 319,
+   "kappa": 0.7750000000000005,
+   "yes_a": 9,
+   "yes_b": 14
+  },
+  "access:stairs": {
+   "n": 324,
+   "agree": 298,
+   "kappa": 0.600265730283762,
+   "yes_a": 23,
+   "yes_b": 49
+  },
+  "access:handrail": {
+   "n": 324,
+   "agree": 303,
+   "kappa": 0.706521739130435,
+   "yes_a": 30,
+   "yes_b": 51
+  },
+  "access:wheelchair": {
+   "n": 324,
+   "agree": 324,
+   "kappa": 1.0,
+   "yes_a": 13,
+   "yes_b": 13
+  },
+  "access:ramp": {
+   "n": 324,
+   "agree": 324,
+   "kappa": null,
+   "yes_a": 0,
+   "yes_b": 0
+  },
+  "access:elevator": {
+   "n": 324,
+   "agree": 322,
+   "kappa": 0.4976744186046505,
+   "yes_a": 1,
+   "yes_b": 3
+  },
+  "access:grab_bar": {
+   "n": 324,
+   "agree": 322,
+   "kappa": 0.0,
+   "yes_a": 0,
+   "yes_b": 2
+  },
+  "access:step_free_entrance": {
+   "n": 324,
+   "agree": 322,
+   "kappa": 0.0,
+   "yes_a": 0,
+   "yes_b": 2
+  },
+  "access:walk_in_shower": {
+   "n": 324,
+   "agree": 324,
+   "kappa": null,
+   "yes_a": 0,
+   "yes_b": 0
+  },
+  "access:wide_doorway": {
+   "n": 324,
+   "agree": 324,
+   "kappa": null,
+   "yes_a": 0,
+   "yes_b": 0
+  },
+  "equip:snorkel": {
+   "n": 324,
+   "agree": 323,
+   "kappa": 0.0,
+   "yes_a": 0,
+   "yes_b": 1
+  },
+  "equip:tuk_tuk": {
+   "n": 324,
+   "agree": 323,
+   "kappa": 0.0,
+   "yes_a": 0,
+   "yes_b": 1
+  }
+ },
+ "zero_shot": {
+  "subject": {
+   "test": 91,
+   "accuracy_all": 0.7802197802197802
+  },
+  "setting": {
+   "test": 91,
+   "accuracy_all": 0.9230769230769231
+  },
+  "people": {
+   "test": 172,
+   "test_pos": 127,
+   "auc": 0.7478565179352581,
+   "threshold": 0.604325532913208,
+   "right": 76,
+   "calls": 86,
+   "lower_bound": 0.799,
+   "recall": 0.5984251968503937,
+   "passes": false
+  },
+  "equip:boat": {
+   "test": 21,
+   "test_pos": 16,
+   "auc": 0.7125,
+   "threshold": 0.6697951555252075,
+   "right": 2,
+   "calls": 2,
+   "lower_bound": 0.342,
+   "recall": 0.125,
+   "passes": false
+  },
+  "equip:kayak": {
+   "test": 9,
+   "test_pos": 7,
+   "auc": 1.0,
+   "threshold": 0.653162956237793,
+   "right": 7,
+   "calls": 7,
+   "lower_bound": 0.646,
+   "recall": 1.0,
+   "passes": false
+  },
+  "equip:bicycle": {
+   "test": 21,
+   "test_pos": 10,
+   "auc": 0.7818181818181819,
+   "threshold": 0.6719668507575989,
+   "right": 4,
+   "calls": 5,
+   "lower_bound": 0.376,
+   "recall": 0.4,
+   "passes": false
+  },
+  "equip:helmet": {
+   "test": 21,
+   "test_pos": 11,
+   "auc": 0.7363636363636363,
+   "threshold": 0.6148005127906799,
+   "right": 6,
+   "calls": 9,
+   "lower_bound": 0.354,
+   "recall": 0.5454545454545454,
+   "passes": false
+  },
+  "equip:bus": {
+   "test": 11,
+   "test_pos": 8,
+   "auc": 0.75,
+   "threshold": 0.666705310344696,
+   "right": 4,
+   "calls": 4,
+   "lower_bound": 0.51,
+   "recall": 0.5,
+   "passes": false
+  },
+  "equip:car": {
+   "test": 45,
+   "test_pos": 16,
+   "auc": 0.853448275862069,
+   "threshold": 0.6331610679626465,
+   "right": 11,
+   "calls": 14,
+   "lower_bound": 0.524,
+   "recall": 0.6875,
+   "passes": false
+  },
+  "equip:train": {
+   "test": 12,
+   "test_pos": 8,
+   "auc": 0.84375,
+   "threshold": 0.6644275784492493,
+   "right": 5,
+   "calls": 5,
+   "lower_bound": 0.566,
+   "recall": 0.625,
+   "passes": false
+  },
+  "equip:paraglider": {
+   "test": 14,
+   "test_pos": 10,
+   "auc": 0.975,
+   "threshold": 0.6774150729179382,
+   "right": 9,
+   "calls": 10,
+   "lower_bound": 0.596,
+   "recall": 0.9,
+   "passes": false
+  },
+  "equip:ski": {
+   "test": 8,
+   "test_pos": 7,
+   "auc": 0.8571428571428571,
+   "threshold": 0.646246612071991,
+   "right": 6,
+   "calls": 7,
+   "lower_bound": 0.487,
+   "recall": 0.8571428571428571,
+   "passes": false
+  },
+  "equip:surfboard": {
+   "test": 14,
+   "test_pos": 10,
+   "auc": 0.875,
+   "threshold": 0.6297875046730042,
+   "right": 9,
+   "calls": 11,
+   "lower_bound": 0.523,
+   "recall": 0.9,
+   "passes": false
+  },
+  "equip:horse": {
+   "test": 8,
+   "test_pos": 6,
+   "auc": 0.75,
+   "threshold": null
+  },
+  "equip:camel": {
+   "test": 10,
+   "test_pos": 8,
+   "auc": 1.0,
+   "threshold": 0.6328651905059814,
+   "right": 8,
+   "calls": 9,
+   "lower_bound": 0.565,
+   "recall": 1.0,
+   "passes": false
+  },
+  "equip:backpack": {
+   "test": 11,
+   "test_pos": 8,
+   "auc": 0.875,
+   "threshold": null
+  },
+  "equip:gym_machine": {
+   "test": 15,
+   "test_pos": 10,
+   "auc": 1.0,
+   "threshold": 0.6375993490219116,
+   "right": 10,
+   "calls": 10,
+   "lower_bound": 0.722,
+   "recall": 1.0,
+   "passes": false
+  },
+  "equip:bed": {
+   "test": 17,
+   "test_pos": 9,
+   "auc": 0.875,
+   "threshold": 0.6348316669464111,
+   "right": 7,
+   "calls": 7,
+   "lower_bound": 0.646,
+   "recall": 0.7777777777777778,
+   "passes": false
+  },
+  "equip:bathtub": {
+   "test": 15,
+   "test_pos": 10,
+   "auc": 0.78,
+   "threshold": 0.6508537530899048,
+   "right": 8,
+   "calls": 10,
+   "lower_bound": 0.49,
+   "recall": 0.8,
+   "passes": false
+  },
+  "equip:desk": {
+   "test": 13,
+   "test_pos": 9,
+   "auc": 0.6388888888888888,
+   "threshold": 0.6686692833900452,
+   "right": 1,
+   "calls": 1,
+   "lower_bound": 0.207,
+   "recall": 0.1111111111111111,
+   "passes": false
+  },
+  "access:stairs": {
+   "test": 44,
+   "test_pos": 29,
+   "auc": 0.6988505747126437,
+   "threshold": 0.7051613330841064,
+   "right": 0,
+   "calls": 0,
+   "lower_bound": 0.0,
+   "recall": 0.0,
+   "passes": false
+  },
+  "access:handrail": {
+   "test": 28,
+   "test_pos": 16,
+   "auc": 0.8177083333333334,
+   "threshold": 0.6550962924957275,
+   "right": 6,
+   "calls": 8,
+   "lower_bound": 0.409,
+   "recall": 0.375,
+   "passes": false
+  },
+  "access:wheelchair": {
+   "test": 23,
+   "test_pos": 15,
+   "auc": 0.6666666666666666,
+   "threshold": 0.6627481579780579,
+   "right": 3,
+   "calls": 3,
+   "lower_bound": 0.438,
+   "recall": 0.2,
+   "passes": false
+  },
+  "access:ramp": {
+   "test": 1,
+   "test_pos": 1,
+   "auc": null,
+   "threshold": 0.5299696922302246,
+   "right": 1,
+   "calls": 1,
+   "lower_bound": 0.207,
+   "recall": 1.0,
+   "passes": false
+  },
+  "access:elevator": {
+   "test": 1,
+   "test_pos": 1,
+   "auc": null,
+   "threshold": null
+  }
+ },
+ "heads_human_full": {
+  "subject": {
+   "train": 269,
+   "train_pos": null,
+   "test": 91,
+   "test_pos": null,
+   "accuracy_all": 0.9230769230769231,
+   "threshold": 0.5,
+   "answers": {
+    "bathroom": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    },
+    "bedroom": {
+     "right": 9,
+     "calls": 9,
+     "lower_bound": 0.701,
+     "passes": false
+    },
+    "boat": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    },
+    "dining": {
+     "right": 5,
+     "calls": 5,
+     "lower_bound": 0.566,
+     "passes": false
+    },
+    "exterior": {
+     "right": 7,
+     "calls": 8,
+     "lower_bound": 0.529,
+     "passes": false
+    },
+    "gym": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    },
+    "interior": {
+     "right": 7,
+     "calls": 9,
+     "lower_bound": 0.453,
+     "passes": false
+    },
+    "meeting": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    },
+    "other": {
+     "right": 7,
+     "calls": 7,
+     "lower_bound": 0.646,
+     "passes": false
+    },
+    "pool": {
+     "right": 5,
+     "calls": 6,
+     "lower_bound": 0.436,
+     "passes": false
+    },
+    "scenery": {
+     "right": 7,
+     "calls": 7,
+     "lower_bound": 0.646,
+     "passes": false
+    },
+    "spa": {
+     "right": 5,
+     "calls": 6,
+     "lower_bound": 0.436,
+     "passes": false
+    }
+   },
+   "answers_share": 0.9340659340659341,
+   "right_when_answering": 0.9411764705882353,
+   "verdict": "fails gate"
+  },
+  "setting": {
+   "train": 269,
+   "train_pos": null,
+   "test": 91,
+   "test_pos": null,
+   "accuracy_all": 0.9560439560439561,
+   "threshold": 0.5,
+   "answers": {
+    "indoor": {
+     "right": 54,
+     "calls": 56,
+     "lower_bound": 0.879,
+     "passes": true
+    },
+    "outdoor": {
+     "right": 19,
+     "calls": 21,
+     "lower_bound": 0.711,
+     "passes": false
+    },
+    "on_water": {
+     "right": 5,
+     "calls": 5,
+     "lower_bound": 0.566,
+     "passes": false
+    },
+    "underwater": {
+     "right": 7,
+     "calls": 7,
+     "lower_bound": 0.646,
+     "passes": false
+    }
+   },
+   "answers_share": 0.978021978021978,
+   "right_when_answering": 0.9550561797752809,
+   "verdict": "passes"
+  },
+  "people": {
+   "train": 539,
+   "train_pos": 418,
+   "test": 172,
+   "test_pos": 127,
+   "auc": 0.9907261592300962,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 123,
+     "calls": 128,
+     "lower_bound": 0.912,
+     "passes": true
+    }
+   },
+   "recall": 0.968503937007874,
+   "verdict": "passes"
+  },
+  "equip:boat": {
+   "train": 70,
+   "train_pos": 48,
+   "test": 21,
+   "test_pos": 16,
+   "auc": 0.6875,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:kayak": {
+   "train": 36,
+   "train_pos": 26,
+   "test": 9,
+   "test_pos": 7,
+   "auc": 1.0,
+   "threshold": 0.69,
+   "answers": {
+    "1": {
+     "right": 7,
+     "calls": 8,
+     "lower_bound": 0.529,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "equip:bicycle": {
+   "train": 69,
+   "train_pos": 35,
+   "test": 21,
+   "test_pos": 10,
+   "auc": 0.8,
+   "threshold": 0.88,
+   "answers": {
+    "1": {
+     "right": 8,
+     "calls": 11,
+     "lower_bound": 0.434,
+     "passes": false
+    }
+   },
+   "recall": 0.8,
+   "verdict": "fails gate"
+  },
+  "equip:helmet": {
+   "train": 66,
+   "train_pos": 50,
+   "test": 21,
+   "test_pos": 11,
+   "auc": 0.9272727272727272,
+   "threshold": 0.91,
+   "answers": {
+    "1": {
+     "right": 10,
+     "calls": 13,
+     "lower_bound": 0.497,
+     "passes": false
+    }
+   },
+   "recall": 0.9090909090909091,
+   "verdict": "fails gate"
+  },
+  "equip:bus": {
+   "train": 38,
+   "train_pos": 24,
+   "test": 11,
+   "test_pos": 8,
+   "auc": 0.9166666666666666,
+   "threshold": 0.85,
+   "answers": {
+    "1": {
+     "right": 5,
+     "calls": 5,
+     "lower_bound": 0.566,
+     "passes": false
+    }
+   },
+   "recall": 0.625,
+   "verdict": "fails gate"
+  },
+  "equip:car": {
+   "train": 159,
+   "train_pos": 67,
+   "test": 45,
+   "test_pos": 16,
+   "auc": 0.8620689655172413,
+   "threshold": 0.98,
+   "answers": {
+    "1": {
+     "right": 5,
+     "calls": 7,
+     "lower_bound": 0.359,
+     "passes": false
+    }
+   },
+   "recall": 0.3125,
+   "verdict": "fails gate"
+  },
+  "equip:train": {
+   "train": 40,
+   "train_pos": 27,
+   "test": 12,
+   "test_pos": 8,
+   "auc": 0.8125,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:paraglider": {
+   "train": 28,
+   "train_pos": 20,
+   "test": 14,
+   "test_pos": 10,
+   "auc": 0.975,
+   "threshold": 0.93,
+   "answers": {
+    "1": {
+     "right": 9,
+     "calls": 9,
+     "lower_bound": 0.701,
+     "passes": false
+    }
+   },
+   "recall": 0.9,
+   "verdict": "fails gate"
+  },
+  "equip:ski": {
+   "train": 35,
+   "train_pos": 24,
+   "test": 8,
+   "test_pos": 7,
+   "auc": 1.0,
+   "threshold": 0.97,
+   "answers": {
+    "1": {
+     "right": 4,
+     "calls": 4,
+     "lower_bound": 0.51,
+     "passes": false
+    }
+   },
+   "recall": 0.5714285714285714,
+   "verdict": "fails gate"
+  },
+  "equip:surfboard": {
+   "train": 39,
+   "train_pos": 25,
+   "test": 14,
+   "test_pos": 10,
+   "auc": 0.975,
+   "threshold": 0.98,
+   "answers": {
+    "1": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    }
+   },
+   "recall": 0.8,
+   "verdict": "fails gate"
+  },
+  "equip:horse": {
+   "train": 50,
+   "train_pos": 34,
+   "test": 8,
+   "test_pos": 6,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "equip:camel": {
+   "train": 33,
+   "train_pos": 22,
+   "test": 10,
+   "test_pos": 8,
+   "auc": 0.9375,
+   "threshold": 0.83,
+   "answers": {
+    "1": {
+     "right": 8,
+     "calls": 9,
+     "lower_bound": 0.565,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "equip:backpack": {
+   "train": 33,
+   "train_pos": 24,
+   "test": 11,
+   "test_pos": 8,
+   "auc": 0.6666666666666666,
+   "threshold": 0.92,
+   "answers": {
+    "1": {
+     "right": 5,
+     "calls": 6,
+     "lower_bound": 0.436,
+     "passes": false
+    }
+   },
+   "recall": 0.625,
+   "verdict": "fails gate"
+  },
+  "equip:gym_machine": {
+   "train": 28,
+   "train_pos": 20,
+   "test": 15,
+   "test_pos": 10,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 10,
+     "calls": 11,
+     "lower_bound": 0.623,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "equip:bed": {
+   "train": 47,
+   "train_pos": 30,
+   "test": 17,
+   "test_pos": 9,
+   "auc": 0.8472222222222222,
+   "threshold": 0.66,
+   "answers": {
+    "1": {
+     "right": 8,
+     "calls": 11,
+     "lower_bound": 0.434,
+     "passes": false
+    }
+   },
+   "recall": 0.8888888888888888,
+   "verdict": "fails gate"
+  },
+  "equip:bathtub": {
+   "train": 28,
+   "train_pos": 21,
+   "test": 15,
+   "test_pos": 10,
+   "auc": 1.0,
+   "threshold": 0.53,
+   "answers": {
+    "1": {
+     "right": 10,
+     "calls": 12,
+     "lower_bound": 0.552,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "equip:desk": {
+   "train": 43,
+   "train_pos": 26,
+   "test": 13,
+   "test_pos": 9,
+   "auc": 0.6388888888888888,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "access:stairs": {
+   "train": 111,
+   "train_pos": 72,
+   "test": 44,
+   "test_pos": 29,
+   "auc": 0.8505747126436781,
+   "threshold": 0.65,
+   "answers": {
+    "1": {
+     "right": 24,
+     "calls": 29,
+     "lower_bound": 0.655,
+     "passes": false
+    }
+   },
+   "recall": 0.8275862068965517,
+   "verdict": "fails gate"
+  },
+  "access:handrail": {
+   "train": 77,
+   "train_pos": 54,
+   "test": 28,
+   "test_pos": 16,
+   "auc": 0.8229166666666666,
+   "threshold": 0.82,
+   "answers": {
+    "1": {
+     "right": 12,
+     "calls": 15,
+     "lower_bound": 0.548,
+     "passes": false
+    }
+   },
+   "recall": 0.75,
+   "verdict": "fails gate"
+  },
+  "access:wheelchair": {
+   "train": 81,
+   "train_pos": 56,
+   "test": 23,
+   "test_pos": 15,
+   "auc": 0.9916666666666667,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 15,
+     "calls": 17,
+     "lower_bound": 0.657,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "access:ramp": {
+   "train": 6,
+   "train_pos": 6,
+   "test": 1,
+   "test_pos": 1,
+   "verdict": "too few to train"
+  },
+  "access:elevator": {
+   "train": 3,
+   "train_pos": 3,
+   "test": 1,
+   "test_pos": 1,
+   "verdict": "too few to train"
+  }
+ },
+ "heads_agent_claude": {
+  "subject": {
+   "train": 324,
+   "train_pos": null,
+   "test": 91,
+   "test_pos": null,
+   "accuracy_all": 0.6703296703296703,
+   "threshold": 0.67,
+   "answers": {
+    "activity": {
+     "right": 0,
+     "calls": 1,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "animal": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "bathroom": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    },
+    "bedroom": {
+     "right": 4,
+     "calls": 4,
+     "lower_bound": 0.51,
+     "passes": false
+    },
+    "boat": {
+     "right": 3,
+     "calls": 3,
+     "lower_bound": 0.438,
+     "passes": false
+    },
+    "dining": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "exterior": {
+     "right": 1,
+     "calls": 2,
+     "lower_bound": 0.095,
+     "passes": false
+    },
+    "graphic": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "gym": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    },
+    "interior": {
+     "right": 5,
+     "calls": 6,
+     "lower_bound": 0.436,
+     "passes": false
+    },
+    "meeting": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "other": {
+     "right": 3,
+     "calls": 8,
+     "lower_bound": 0.137,
+     "passes": false
+    },
+    "pool": {
+     "right": 6,
+     "calls": 8,
+     "lower_bound": 0.409,
+     "passes": false
+    },
+    "scenery": {
+     "right": 4,
+     "calls": 5,
+     "lower_bound": 0.376,
+     "passes": false
+    },
+    "spa": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "vehicle": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    }
+   },
+   "answers_share": 0.5824175824175825,
+   "right_when_answering": 0.7924528301886793,
+   "verdict": "fails gate"
+  },
+  "setting": {
+   "train": 314,
+   "train_pos": null,
+   "test": 91,
+   "test_pos": null,
+   "accuracy_all": 0.8791208791208791,
+   "threshold": 0.5,
+   "answers": {
+    "indoor": {
+     "right": 53,
+     "calls": 54,
+     "lower_bound": 0.902,
+     "passes": true
+    },
+    "outdoor": {
+     "right": 21,
+     "calls": 30,
+     "lower_bound": 0.521,
+     "passes": false
+    },
+    "on_water": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "underwater": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    }
+   },
+   "answers_share": 0.989010989010989,
+   "right_when_answering": 0.8888888888888888,
+   "verdict": "passes"
+  },
+  "people": {
+   "train": 324,
+   "train_pos": 146,
+   "test": 172,
+   "test_pos": 127,
+   "auc": 0.9867016622922135,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 118,
+     "calls": 120,
+     "lower_bound": 0.941,
+     "passes": true
+    }
+   },
+   "recall": 0.9291338582677166,
+   "verdict": "passes"
+  },
+  "equip:boat": {
+   "train": 324,
+   "train_pos": 17,
+   "test": 21,
+   "test_pos": 16,
+   "auc": 0.5875,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 4,
+     "calls": 4,
+     "lower_bound": 0.51,
+     "passes": false
+    }
+   },
+   "recall": 0.25,
+   "verdict": "fails gate"
+  },
+  "equip:kayak": {
+   "train": 324,
+   "train_pos": 9,
+   "test": 9,
+   "test_pos": 7,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 4,
+     "calls": 4,
+     "lower_bound": 0.51,
+     "passes": false
+    }
+   },
+   "recall": 0.5714285714285714,
+   "verdict": "fails gate"
+  },
+  "equip:bicycle": {
+   "train": 324,
+   "train_pos": 14,
+   "test": 21,
+   "test_pos": 10,
+   "auc": 0.9090909090909091,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 7,
+     "calls": 8,
+     "lower_bound": 0.529,
+     "passes": false
+    }
+   },
+   "recall": 0.7,
+   "verdict": "fails gate"
+  },
+  "equip:helmet": {
+   "train": 324,
+   "train_pos": 32,
+   "test": 21,
+   "test_pos": 11,
+   "auc": 0.9,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 7,
+     "calls": 7,
+     "lower_bound": 0.646,
+     "passes": false
+    }
+   },
+   "recall": 0.6363636363636364,
+   "verdict": "fails gate"
+  },
+  "equip:bus": {
+   "train": 324,
+   "train_pos": 4,
+   "test": 11,
+   "test_pos": 8,
+   "verdict": "too few to train"
+  },
+  "equip:car": {
+   "train": 324,
+   "train_pos": 24,
+   "test": 45,
+   "test_pos": 16,
+   "auc": 0.9482758620689655,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 11,
+     "calls": 12,
+     "lower_bound": 0.646,
+     "passes": false
+    }
+   },
+   "recall": 0.6875,
+   "verdict": "fails gate"
+  },
+  "equip:train": {
+   "train": 324,
+   "train_pos": 13,
+   "test": 12,
+   "test_pos": 8,
+   "auc": 0.6875,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 5,
+     "calls": 6,
+     "lower_bound": 0.436,
+     "passes": false
+    }
+   },
+   "recall": 0.625,
+   "verdict": "fails gate"
+  },
+  "equip:paraglider": {
+   "train": 324,
+   "train_pos": 4,
+   "test": 14,
+   "test_pos": 10,
+   "verdict": "too few to train"
+  },
+  "equip:ski": {
+   "train": 324,
+   "train_pos": 7,
+   "test": 8,
+   "test_pos": 7,
+   "auc": 0.14285714285714285,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:surfboard": {
+   "train": 324,
+   "train_pos": 5,
+   "test": 14,
+   "test_pos": 10,
+   "auc": 0.9,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:horse": {
+   "train": 324,
+   "train_pos": 15,
+   "test": 8,
+   "test_pos": 6,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 5,
+     "calls": 5,
+     "lower_bound": 0.566,
+     "passes": false
+    }
+   },
+   "recall": 0.8333333333333334,
+   "verdict": "fails gate"
+  },
+  "equip:camel": {
+   "train": 324,
+   "train_pos": 6,
+   "test": 10,
+   "test_pos": 8,
+   "auc": 1.0,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:backpack": {
+   "train": 324,
+   "train_pos": 4,
+   "test": 11,
+   "test_pos": 8,
+   "verdict": "too few to train"
+  },
+  "equip:gym_machine": {
+   "train": 324,
+   "train_pos": 10,
+   "test": 15,
+   "test_pos": 10,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    }
+   },
+   "recall": 0.6,
+   "verdict": "fails gate"
+  },
+  "equip:bed": {
+   "train": 324,
+   "train_pos": 11,
+   "test": 17,
+   "test_pos": 9,
+   "auc": 0.875,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:bathtub": {
+   "train": 324,
+   "train_pos": 8,
+   "test": 15,
+   "test_pos": 10,
+   "auc": 0.8,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:desk": {
+   "train": 324,
+   "train_pos": 9,
+   "test": 13,
+   "test_pos": 9,
+   "auc": 0.8333333333333334,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "access:stairs": {
+   "train": 324,
+   "train_pos": 23,
+   "test": 44,
+   "test_pos": 29,
+   "auc": 0.6689655172413793,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "access:handrail": {
+   "train": 324,
+   "train_pos": 30,
+   "test": 28,
+   "test_pos": 16,
+   "auc": 0.875,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "access:wheelchair": {
+   "train": 324,
+   "train_pos": 13,
+   "test": 23,
+   "test_pos": 15,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 11,
+     "calls": 11,
+     "lower_bound": 0.741,
+     "passes": false
+    }
+   },
+   "recall": 0.7333333333333333,
+   "verdict": "fails gate"
+  },
+  "access:ramp": {
+   "train": 324,
+   "train_pos": 0,
+   "test": 1,
+   "test_pos": 1,
+   "verdict": "too few to train"
+  },
+  "access:elevator": {
+   "train": 324,
+   "train_pos": 1,
+   "test": 1,
+   "test_pos": 1,
+   "verdict": "too few to train"
+  }
+ },
+ "heads_human_same_photos": {
+  "subject": {
+   "train": 73,
+   "train_pos": null,
+   "test": 91,
+   "test_pos": null,
+   "accuracy_all": 0.7692307692307693,
+   "threshold": 0.68,
+   "answers": {
+    "bathroom": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    },
+    "bedroom": {
+     "right": 5,
+     "calls": 5,
+     "lower_bound": 0.566,
+     "passes": false
+    },
+    "boat": {
+     "right": 4,
+     "calls": 4,
+     "lower_bound": 0.51,
+     "passes": false
+    },
+    "dining": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "exterior": {
+     "right": 3,
+     "calls": 4,
+     "lower_bound": 0.301,
+     "passes": false
+    },
+    "gym": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    },
+    "interior": {
+     "right": 6,
+     "calls": 10,
+     "lower_bound": 0.313,
+     "passes": false
+    },
+    "meeting": {
+     "right": 2,
+     "calls": 2,
+     "lower_bound": 0.342,
+     "passes": false
+    },
+    "other": {
+     "right": 7,
+     "calls": 7,
+     "lower_bound": 0.646,
+     "passes": false
+    },
+    "pool": {
+     "right": 4,
+     "calls": 4,
+     "lower_bound": 0.51,
+     "passes": false
+    },
+    "scenery": {
+     "right": 4,
+     "calls": 4,
+     "lower_bound": 0.51,
+     "passes": false
+    },
+    "spa": {
+     "right": 2,
+     "calls": 2,
+     "lower_bound": 0.342,
+     "passes": false
+    }
+   },
+   "answers_share": 0.6373626373626373,
+   "right_when_answering": 0.9137931034482759,
+   "verdict": "fails gate"
+  },
+  "setting": {
+   "train": 73,
+   "train_pos": null,
+   "test": 91,
+   "test_pos": null,
+   "accuracy_all": 0.945054945054945,
+   "threshold": 0.5,
+   "answers": {
+    "indoor": {
+     "right": 54,
+     "calls": 56,
+     "lower_bound": 0.879,
+     "passes": true
+    },
+    "outdoor": {
+     "right": 21,
+     "calls": 24,
+     "lower_bound": 0.69,
+     "passes": false
+    },
+    "on_water": {
+     "right": 4,
+     "calls": 4,
+     "lower_bound": 0.51,
+     "passes": false
+    },
+    "underwater": {
+     "right": 7,
+     "calls": 7,
+     "lower_bound": 0.646,
+     "passes": false
+    }
+   },
+   "answers_share": 1.0,
+   "right_when_answering": 0.945054945054945,
+   "verdict": "passes"
+  },
+  "people": {
+   "train": 164,
+   "train_pos": 126,
+   "test": 172,
+   "test_pos": 127,
+   "auc": 0.9779527559055118,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 124,
+     "calls": 132,
+     "lower_bound": 0.885,
+     "passes": true
+    }
+   },
+   "recall": 0.9763779527559056,
+   "verdict": "passes"
+  },
+  "equip:boat": {
+   "train": 24,
+   "train_pos": 14,
+   "test": 21,
+   "test_pos": 16,
+   "auc": 0.6625,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:kayak": {
+   "train": 11,
+   "train_pos": 9,
+   "test": 9,
+   "test_pos": 7,
+   "auc": 1.0,
+   "threshold": 0.99,
+   "answers": {
+    "1": {
+     "right": 3,
+     "calls": 3,
+     "lower_bound": 0.438,
+     "passes": false
+    }
+   },
+   "recall": 0.42857142857142855,
+   "verdict": "fails gate"
+  },
+  "equip:bicycle": {
+   "train": 22,
+   "train_pos": 9,
+   "test": 21,
+   "test_pos": 10,
+   "auc": 0.6545454545454545,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:helmet": {
+   "train": 22,
+   "train_pos": 16,
+   "test": 21,
+   "test_pos": 11,
+   "auc": 0.7181818181818181,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:bus": {
+   "train": 10,
+   "train_pos": 4,
+   "test": 11,
+   "test_pos": 8,
+   "verdict": "too few to train"
+  },
+  "equip:car": {
+   "train": 49,
+   "train_pos": 24,
+   "test": 45,
+   "test_pos": 16,
+   "auc": 0.8168103448275862,
+   "threshold": 0.86,
+   "answers": {
+    "1": {
+     "right": 7,
+     "calls": 9,
+     "lower_bound": 0.453,
+     "passes": false
+    }
+   },
+   "recall": 0.4375,
+   "verdict": "fails gate"
+  },
+  "equip:train": {
+   "train": 20,
+   "train_pos": 11,
+   "test": 12,
+   "test_pos": 8,
+   "auc": 0.8125,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:paraglider": {
+   "train": 6,
+   "train_pos": 5,
+   "test": 14,
+   "test_pos": 10,
+   "auc": 0.925,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:ski": {
+   "train": 11,
+   "train_pos": 8,
+   "test": 8,
+   "test_pos": 7,
+   "auc": 0.5714285714285714,
+   "threshold": 0.98,
+   "answers": {
+    "1": {
+     "right": 6,
+     "calls": 7,
+     "lower_bound": 0.487,
+     "passes": false
+    }
+   },
+   "recall": 0.8571428571428571,
+   "verdict": "fails gate"
+  },
+  "equip:surfboard": {
+   "train": 15,
+   "train_pos": 5,
+   "test": 14,
+   "test_pos": 10,
+   "auc": 0.925,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:horse": {
+   "train": 22,
+   "train_pos": 16,
+   "test": 8,
+   "test_pos": 6,
+   "auc": 1.0,
+   "threshold": 0.85,
+   "answers": {
+    "1": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "equip:camel": {
+   "train": 8,
+   "train_pos": 5,
+   "test": 10,
+   "test_pos": 8,
+   "auc": 0.875,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:backpack": {
+   "train": 9,
+   "train_pos": 7,
+   "test": 11,
+   "test_pos": 8,
+   "auc": 0.7083333333333334,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:gym_machine": {
+   "train": 8,
+   "train_pos": 5,
+   "test": 15,
+   "test_pos": 10,
+   "auc": 1.0,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:bed": {
+   "train": 11,
+   "train_pos": 8,
+   "test": 17,
+   "test_pos": 9,
+   "auc": 0.8611111111111112,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:bathtub": {
+   "train": 9,
+   "train_pos": 6,
+   "test": 15,
+   "test_pos": 10,
+   "auc": 0.88,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:desk": {
+   "train": 13,
+   "train_pos": 6,
+   "test": 13,
+   "test_pos": 9,
+   "auc": 0.3888888888888889,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "access:stairs": {
+   "train": 35,
+   "train_pos": 20,
+   "test": 44,
+   "test_pos": 29,
+   "auc": 0.7310344827586207,
+   "threshold": 0.91,
+   "answers": {
+    "1": {
+     "right": 11,
+     "calls": 15,
+     "lower_bound": 0.48,
+     "passes": false
+    }
+   },
+   "recall": 0.3793103448275862,
+   "verdict": "fails gate"
+  },
+  "access:handrail": {
+   "train": 23,
+   "train_pos": 15,
+   "test": 28,
+   "test_pos": 16,
+   "auc": 0.8125,
+   "threshold": 0.78,
+   "answers": {
+    "1": {
+     "right": 14,
+     "calls": 20,
+     "lower_bound": 0.481,
+     "passes": false
+    }
+   },
+   "recall": 0.875,
+   "verdict": "fails gate"
+  },
+  "access:wheelchair": {
+   "train": 20,
+   "train_pos": 13,
+   "test": 23,
+   "test_pos": 15,
+   "auc": 0.95,
+   "threshold": 0.62,
+   "answers": {
+    "1": {
+     "right": 14,
+     "calls": 16,
+     "lower_bound": 0.64,
+     "passes": false
+    }
+   },
+   "recall": 0.9333333333333333,
+   "verdict": "fails gate"
+  },
+  "access:ramp": {
+   "train": 1,
+   "train_pos": 1,
+   "test": 1,
+   "test_pos": 1,
+   "verdict": "too few to train"
+  },
+  "access:elevator": {
+   "train": 2,
+   "train_pos": 2,
+   "test": 1,
+   "test_pos": 1,
+   "verdict": "too few to train"
+  }
+ },
+ "heads_agent_api": {
+  "subject": {
+   "train": 324,
+   "train_pos": null,
+   "test": 91,
+   "test_pos": null,
+   "accuracy_all": 0.6703296703296703,
+   "threshold": 0.63,
+   "answers": {
+    "activity": {
+     "right": 0,
+     "calls": 3,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "animal": {
+     "right": 0,
+     "calls": 3,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "bathroom": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    },
+    "bedroom": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    },
+    "boat": {
+     "right": 3,
+     "calls": 3,
+     "lower_bound": 0.438,
+     "passes": false
+    },
+    "dining": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "exterior": {
+     "right": 4,
+     "calls": 5,
+     "lower_bound": 0.376,
+     "passes": false
+    },
+    "graphic": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "gym": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    },
+    "interior": {
+     "right": 6,
+     "calls": 10,
+     "lower_bound": 0.313,
+     "passes": false
+    },
+    "meeting": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "other": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "pool": {
+     "right": 6,
+     "calls": 8,
+     "lower_bound": 0.409,
+     "passes": false
+    },
+    "scenery": {
+     "right": 2,
+     "calls": 3,
+     "lower_bound": 0.208,
+     "passes": false
+    },
+    "spa": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    },
+    "vehicle": {
+     "right": 0,
+     "calls": 0,
+     "lower_bound": 0.0,
+     "passes": false
+    }
+   },
+   "answers_share": 0.6483516483516484,
+   "right_when_answering": 0.7627118644067796,
+   "verdict": "fails gate"
+  },
+  "setting": {
+   "train": 320,
+   "train_pos": null,
+   "test": 91,
+   "test_pos": null,
+   "accuracy_all": 0.8901098901098901,
+   "threshold": 0.5,
+   "answers": {
+    "indoor": {
+     "right": 53,
+     "calls": 53,
+     "lower_bound": 0.932,
+     "passes": true
+    },
+    "outdoor": {
+     "right": 22,
+     "calls": 31,
+     "lower_bound": 0.534,
+     "passes": false
+    },
+    "on_water": {
+     "right": 1,
+     "calls": 1,
+     "lower_bound": 0.207,
+     "passes": false
+    },
+    "underwater": {
+     "right": 5,
+     "calls": 5,
+     "lower_bound": 0.566,
+     "passes": false
+    }
+   },
+   "answers_share": 0.989010989010989,
+   "right_when_answering": 0.9,
+   "verdict": "passes"
+  },
+  "people": {
+   "train": 324,
+   "train_pos": 167,
+   "test": 172,
+   "test_pos": 127,
+   "auc": 0.9870516185476815,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 118,
+     "calls": 121,
+     "lower_bound": 0.93,
+     "passes": true
+    }
+   },
+   "recall": 0.9291338582677166,
+   "verdict": "passes"
+  },
+  "equip:boat": {
+   "train": 324,
+   "train_pos": 24,
+   "test": 21,
+   "test_pos": 16,
+   "auc": 0.725,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 10,
+     "calls": 11,
+     "lower_bound": 0.623,
+     "passes": false
+    }
+   },
+   "recall": 0.625,
+   "verdict": "fails gate"
+  },
+  "equip:kayak": {
+   "train": 324,
+   "train_pos": 9,
+   "test": 9,
+   "test_pos": 7,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 4,
+     "calls": 4,
+     "lower_bound": 0.51,
+     "passes": false
+    }
+   },
+   "recall": 0.5714285714285714,
+   "verdict": "fails gate"
+  },
+  "equip:bicycle": {
+   "train": 324,
+   "train_pos": 15,
+   "test": 21,
+   "test_pos": 10,
+   "auc": 0.9,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 7,
+     "calls": 8,
+     "lower_bound": 0.529,
+     "passes": false
+    }
+   },
+   "recall": 0.7,
+   "verdict": "fails gate"
+  },
+  "equip:helmet": {
+   "train": 324,
+   "train_pos": 33,
+   "test": 21,
+   "test_pos": 11,
+   "auc": 0.9363636363636364,
+   "threshold": 0.64,
+   "answers": {
+    "1": {
+     "right": 5,
+     "calls": 5,
+     "lower_bound": 0.566,
+     "passes": false
+    }
+   },
+   "recall": 0.45454545454545453,
+   "verdict": "fails gate"
+  },
+  "equip:bus": {
+   "train": 324,
+   "train_pos": 4,
+   "test": 11,
+   "test_pos": 8,
+   "verdict": "too few to train"
+  },
+  "equip:car": {
+   "train": 324,
+   "train_pos": 30,
+   "test": 45,
+   "test_pos": 16,
+   "auc": 0.9137931034482759,
+   "threshold": 0.52,
+   "answers": {
+    "1": {
+     "right": 9,
+     "calls": 11,
+     "lower_bound": 0.523,
+     "passes": false
+    }
+   },
+   "recall": 0.5625,
+   "verdict": "fails gate"
+  },
+  "equip:train": {
+   "train": 324,
+   "train_pos": 14,
+   "test": 12,
+   "test_pos": 8,
+   "auc": 0.65625,
+   "threshold": 0.64,
+   "answers": {
+    "1": {
+     "right": 4,
+     "calls": 4,
+     "lower_bound": 0.51,
+     "passes": false
+    }
+   },
+   "recall": 0.5,
+   "verdict": "fails gate"
+  },
+  "equip:paraglider": {
+   "train": 324,
+   "train_pos": 4,
+   "test": 14,
+   "test_pos": 10,
+   "verdict": "too few to train"
+  },
+  "equip:ski": {
+   "train": 324,
+   "train_pos": 7,
+   "test": 8,
+   "test_pos": 7,
+   "auc": 0.2857142857142857,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:surfboard": {
+   "train": 324,
+   "train_pos": 5,
+   "test": 14,
+   "test_pos": 10,
+   "auc": 0.9,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:horse": {
+   "train": 324,
+   "train_pos": 16,
+   "test": 8,
+   "test_pos": 6,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "equip:camel": {
+   "train": 324,
+   "train_pos": 6,
+   "test": 10,
+   "test_pos": 8,
+   "auc": 1.0,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:backpack": {
+   "train": 324,
+   "train_pos": 14,
+   "test": 11,
+   "test_pos": 8,
+   "auc": 0.8333333333333334,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:gym_machine": {
+   "train": 324,
+   "train_pos": 10,
+   "test": 15,
+   "test_pos": 10,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    }
+   },
+   "recall": 0.6,
+   "verdict": "fails gate"
+  },
+  "equip:bed": {
+   "train": 324,
+   "train_pos": 11,
+   "test": 17,
+   "test_pos": 9,
+   "auc": 0.9444444444444444,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:bathtub": {
+   "train": 324,
+   "train_pos": 8,
+   "test": 15,
+   "test_pos": 10,
+   "auc": 0.8,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:desk": {
+   "train": 324,
+   "train_pos": 14,
+   "test": 13,
+   "test_pos": 9,
+   "auc": 0.8055555555555556,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "access:stairs": {
+   "train": 324,
+   "train_pos": 49,
+   "test": 44,
+   "test_pos": 29,
+   "auc": 0.8275862068965517,
+   "threshold": 0.71,
+   "answers": {
+    "1": {
+     "right": 20,
+     "calls": 21,
+     "lower_bound": 0.773,
+     "passes": false
+    }
+   },
+   "recall": 0.6896551724137931,
+   "verdict": "fails gate"
+  },
+  "access:handrail": {
+   "train": 324,
+   "train_pos": 51,
+   "test": 28,
+   "test_pos": 16,
+   "auc": 0.8385416666666666,
+   "threshold": 0.82,
+   "answers": {
+    "1": {
+     "right": 7,
+     "calls": 7,
+     "lower_bound": 0.646,
+     "passes": false
+    }
+   },
+   "recall": 0.4375,
+   "verdict": "fails gate"
+  },
+  "access:wheelchair": {
+   "train": 324,
+   "train_pos": 13,
+   "test": 23,
+   "test_pos": 15,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 11,
+     "calls": 11,
+     "lower_bound": 0.741,
+     "passes": false
+    }
+   },
+   "recall": 0.7333333333333333,
+   "verdict": "fails gate"
+  },
+  "access:ramp": {
+   "train": 324,
+   "train_pos": 0,
+   "test": 1,
+   "test_pos": 1,
+   "verdict": "too few to train"
+  },
+  "access:elevator": {
+   "train": 324,
+   "train_pos": 3,
+   "test": 1,
+   "test_pos": 1,
+   "verdict": "too few to train"
+  }
+ },
+ "heads_split_b": {
+  "subject": {
+   "train": 277,
+   "train_pos": null,
+   "test": 83,
+   "test_pos": null,
+   "accuracy_all": 0.8554216867469879,
+   "threshold": 0.5,
+   "answers": {
+    "bathroom": {
+     "right": 7,
+     "calls": 8,
+     "lower_bound": 0.529,
+     "passes": false
+    },
+    "bedroom": {
+     "right": 5,
+     "calls": 5,
+     "lower_bound": 0.566,
+     "passes": false
+    },
+    "boat": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    },
+    "dining": {
+     "right": 2,
+     "calls": 3,
+     "lower_bound": 0.208,
+     "passes": false
+    },
+    "exterior": {
+     "right": 7,
+     "calls": 7,
+     "lower_bound": 0.646,
+     "passes": false
+    },
+    "gym": {
+     "right": 7,
+     "calls": 7,
+     "lower_bound": 0.646,
+     "passes": false
+    },
+    "interior": {
+     "right": 7,
+     "calls": 8,
+     "lower_bound": 0.529,
+     "passes": false
+    },
+    "meeting": {
+     "right": 8,
+     "calls": 8,
+     "lower_bound": 0.676,
+     "passes": false
+    },
+    "other": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    },
+    "pool": {
+     "right": 6,
+     "calls": 8,
+     "lower_bound": 0.409,
+     "passes": false
+    },
+    "scenery": {
+     "right": 5,
+     "calls": 5,
+     "lower_bound": 0.566,
+     "passes": false
+    },
+    "spa": {
+     "right": 4,
+     "calls": 5,
+     "lower_bound": 0.376,
+     "passes": false
+    }
+   },
+   "answers_share": 0.9156626506024096,
+   "right_when_answering": 0.9210526315789473,
+   "verdict": "fails gate"
+  },
+  "setting": {
+   "train": 277,
+   "train_pos": null,
+   "test": 83,
+   "test_pos": null,
+   "accuracy_all": 0.9518072289156626,
+   "threshold": 0.5,
+   "answers": {
+    "indoor": {
+     "right": 53,
+     "calls": 57,
+     "lower_bound": 0.833,
+     "passes": true
+    },
+    "outdoor": {
+     "right": 14,
+     "calls": 14,
+     "lower_bound": 0.785,
+     "passes": false
+    },
+    "on_water": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    },
+    "underwater": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    }
+   },
+   "answers_share": 1.0,
+   "right_when_answering": 0.9518072289156626,
+   "verdict": "passes"
+  },
+  "people": {
+   "train": 518,
+   "train_pos": 396,
+   "test": 193,
+   "test_pos": 149,
+   "auc": 0.9821537522879805,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 144,
+     "calls": 151,
+     "lower_bound": 0.907,
+     "passes": true
+    }
+   },
+   "recall": 0.9664429530201343,
+   "verdict": "passes"
+  },
+  "equip:boat": {
+   "train": 68,
+   "train_pos": 49,
+   "test": 23,
+   "test_pos": 15,
+   "auc": 0.8666666666666667,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:kayak": {
+   "train": 35,
+   "train_pos": 27,
+   "test": 10,
+   "test_pos": 6,
+   "auc": 0.9583333333333334,
+   "threshold": 0.9,
+   "answers": {
+    "1": {
+     "right": 5,
+     "calls": 5,
+     "lower_bound": 0.566,
+     "passes": false
+    }
+   },
+   "recall": 0.8333333333333334,
+   "verdict": "fails gate"
+  },
+  "equip:bicycle": {
+   "train": 63,
+   "train_pos": 33,
+   "test": 27,
+   "test_pos": 12,
+   "auc": 0.9111111111111111,
+   "threshold": 0.98,
+   "answers": {
+    "1": {
+     "right": 3,
+     "calls": 4,
+     "lower_bound": 0.301,
+     "passes": false
+    }
+   },
+   "recall": 0.25,
+   "verdict": "fails gate"
+  },
+  "equip:helmet": {
+   "train": 60,
+   "train_pos": 45,
+   "test": 27,
+   "test_pos": 16,
+   "auc": 0.7215909090909091,
+   "threshold": 0.87,
+   "answers": {
+    "1": {
+     "right": 15,
+     "calls": 22,
+     "lower_bound": 0.473,
+     "passes": false
+    }
+   },
+   "recall": 0.9375,
+   "verdict": "fails gate"
+  },
+  "equip:bus": {
+   "train": 36,
+   "train_pos": 23,
+   "test": 13,
+   "test_pos": 9,
+   "auc": 0.6111111111111112,
+   "threshold": 0.8,
+   "answers": {
+    "1": {
+     "right": 6,
+     "calls": 8,
+     "lower_bound": 0.409,
+     "passes": false
+    }
+   },
+   "recall": 0.6666666666666666,
+   "verdict": "fails gate"
+  },
+  "equip:car": {
+   "train": 152,
+   "train_pos": 61,
+   "test": 52,
+   "test_pos": 22,
+   "auc": 0.8818181818181818,
+   "threshold": 0.96,
+   "answers": {
+    "1": {
+     "right": 10,
+     "calls": 11,
+     "lower_bound": 0.623,
+     "passes": false
+    }
+   },
+   "recall": 0.45454545454545453,
+   "verdict": "fails gate"
+  },
+  "equip:train": {
+   "train": 43,
+   "train_pos": 28,
+   "test": 9,
+   "test_pos": 7,
+   "auc": 0.7142857142857143,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:paraglider": {
+   "train": 32,
+   "train_pos": 23,
+   "test": 10,
+   "test_pos": 7,
+   "auc": 0.9523809523809523,
+   "threshold": 0.95,
+   "answers": {
+    "1": {
+     "right": 7,
+     "calls": 8,
+     "lower_bound": 0.529,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "equip:ski": {
+   "train": 34,
+   "train_pos": 24,
+   "test": 9,
+   "test_pos": 7,
+   "auc": 0.8571428571428571,
+   "threshold": 0.92,
+   "answers": {
+    "1": {
+     "right": 6,
+     "calls": 6,
+     "lower_bound": 0.61,
+     "passes": false
+    }
+   },
+   "recall": 0.8571428571428571,
+   "verdict": "fails gate"
+  },
+  "equip:surfboard": {
+   "train": 38,
+   "train_pos": 26,
+   "test": 15,
+   "test_pos": 9,
+   "auc": 0.9629629629629629,
+   "threshold": 0.87,
+   "answers": {
+    "1": {
+     "right": 7,
+     "calls": 7,
+     "lower_bound": 0.646,
+     "passes": false
+    }
+   },
+   "recall": 0.7777777777777778,
+   "verdict": "fails gate"
+  },
+  "equip:horse": {
+   "train": 43,
+   "train_pos": 29,
+   "test": 15,
+   "test_pos": 11,
+   "auc": 0.9772727272727273,
+   "threshold": 0.56,
+   "answers": {
+    "1": {
+     "right": 10,
+     "calls": 10,
+     "lower_bound": 0.722,
+     "passes": false
+    }
+   },
+   "recall": 0.9090909090909091,
+   "verdict": "fails gate"
+  },
+  "equip:camel": {
+   "train": 26,
+   "train_pos": 21,
+   "test": 17,
+   "test_pos": 9,
+   "auc": 0.9166666666666666,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:backpack": {
+   "train": 36,
+   "train_pos": 24,
+   "test": 8,
+   "test_pos": 8,
+   "auc": null,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "equip:gym_machine": {
+   "train": 34,
+   "train_pos": 24,
+   "test": 9,
+   "test_pos": 6,
+   "auc": 1.0,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 6,
+     "calls": 7,
+     "lower_bound": 0.487,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "equip:bed": {
+   "train": 44,
+   "train_pos": 27,
+   "test": 20,
+   "test_pos": 12,
+   "auc": 1.0,
+   "threshold": 0.97,
+   "answers": {
+    "1": {
+     "right": 10,
+     "calls": 10,
+     "lower_bound": 0.722,
+     "passes": false
+    }
+   },
+   "recall": 0.8333333333333334,
+   "verdict": "fails gate"
+  },
+  "equip:bathtub": {
+   "train": 32,
+   "train_pos": 23,
+   "test": 11,
+   "test_pos": 8,
+   "auc": 1.0,
+   "threshold": 0.91,
+   "answers": {
+    "1": {
+     "right": 8,
+     "calls": 9,
+     "lower_bound": 0.565,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "equip:desk": {
+   "train": 44,
+   "train_pos": 26,
+   "test": 12,
+   "test_pos": 9,
+   "auc": 0.48148148148148145,
+   "threshold": null,
+   "verdict": "never 90% in cross-validation"
+  },
+  "access:stairs": {
+   "train": 121,
+   "train_pos": 77,
+   "test": 34,
+   "test_pos": 24,
+   "auc": 0.9666666666666667,
+   "threshold": 0.93,
+   "answers": {
+    "1": {
+     "right": 17,
+     "calls": 17,
+     "lower_bound": 0.816,
+     "passes": true
+    }
+   },
+   "recall": 0.7083333333333334,
+   "verdict": "passes"
+  },
+  "access:handrail": {
+   "train": 79,
+   "train_pos": 52,
+   "test": 26,
+   "test_pos": 18,
+   "auc": 0.8958333333333334,
+   "threshold": 0.81,
+   "answers": {
+    "1": {
+     "right": 15,
+     "calls": 15,
+     "lower_bound": 0.796,
+     "passes": false
+    }
+   },
+   "recall": 0.8333333333333334,
+   "verdict": "fails gate"
+  },
+  "access:wheelchair": {
+   "train": 69,
+   "train_pos": 51,
+   "test": 35,
+   "test_pos": 20,
+   "auc": 0.9966666666666667,
+   "threshold": 0.5,
+   "answers": {
+    "1": {
+     "right": 20,
+     "calls": 22,
+     "lower_bound": 0.722,
+     "passes": false
+    }
+   },
+   "recall": 1.0,
+   "verdict": "fails gate"
+  },
+  "access:ramp": {
+   "train": 5,
+   "train_pos": 5,
+   "test": 2,
+   "test_pos": 2,
+   "verdict": "too few to train"
+  },
+  "access:elevator": {
+   "train": 3,
+   "train_pos": 3,
+   "test": 1,
+   "test_pos": 1,
+   "verdict": "too few to train"
+  }
+ },
+ "redraws": {
+  "subject=bathroom": [
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    7,
+    9,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ]
+  ],
+  "subject=bedroom": [
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ]
+  ],
+  "subject=boat": [
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ]
+  ],
+  "subject=dining": [
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    4,
+    5,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    3,
+    4,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ]
+  ],
+  "subject=exterior": [
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    10,
+    11,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ]
+  ],
+  "subject=gym": [
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ]
+  ],
+  "subject=interior": [
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    9,
+    11,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    3,
+    8,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    6,
+    8,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ]
+  ],
+  "subject=meeting": [
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    11,
+    11,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ]
+  ],
+  "subject=other": [
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ]
+  ],
+  "subject=pool": [
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    10,
+    12,
+    false
+   ],
+   [
+    5,
+    10,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    4,
+    6,
+    false
+   ],
+   [
+    7,
+    9,
+    false
+   ],
+   [
+    4,
+    7,
+    false
+   ],
+   [
+    7,
+    10,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    4,
+    5,
+    false
+   ],
+   [
+    6,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    10,
+    false
+   ],
+   [
+    10,
+    15,
+    false
+   ],
+   [
+    3,
+    5,
+    false
+   ],
+   [
+    6,
+    8,
+    false
+   ],
+   [
+    5,
+    8,
+    false
+   ],
+   [
+    3,
+    4,
+    false
+   ],
+   [
+    6,
+    8,
+    false
+   ],
+   [
+    7,
+    11,
+    false
+   ]
+  ],
+  "subject=scenery": [
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ]
+  ],
+  "subject=spa": [
+   [
+    4,
+    5,
+    false
+   ],
+   [
+    2,
+    4,
+    false
+   ],
+   [
+    2,
+    3,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    4,
+    6,
+    false
+   ],
+   [
+    4,
+    5,
+    false
+   ],
+   [
+    1,
+    2,
+    false
+   ],
+   [
+    1,
+    2,
+    false
+   ],
+   [
+    4,
+    6,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    1,
+    1,
+    false
+   ],
+   [
+    3,
+    4,
+    false
+   ],
+   [
+    1,
+    2,
+    false
+   ],
+   [
+    2,
+    2,
+    false
+   ],
+   [
+    3,
+    7,
+    false
+   ],
+   [
+    3,
+    4,
+    false
+   ],
+   [
+    3,
+    4,
+    false
+   ],
+   [
+    3,
+    7,
+    false
+   ],
+   [
+    4,
+    9,
+    false
+   ],
+   [
+    3,
+    6,
+    false
+   ]
+  ],
+  "setting=indoor": [
+   [
+    52,
+    56,
+    true
+   ],
+   [
+    54,
+    58,
+    true
+   ],
+   [
+    57,
+    59,
+    true
+   ],
+   [
+    57,
+    60,
+    true
+   ],
+   [
+    55,
+    56,
+    true
+   ],
+   [
+    54,
+    56,
+    true
+   ],
+   [
+    58,
+    59,
+    true
+   ],
+   [
+    56,
+    58,
+    true
+   ],
+   [
+    56,
+    57,
+    true
+   ],
+   [
+    50,
+    52,
+    true
+   ],
+   [
+    50,
+    55,
+    true
+   ],
+   [
+    57,
+    58,
+    true
+   ],
+   [
+    49,
+    53,
+    true
+   ],
+   [
+    57,
+    62,
+    true
+   ],
+   [
+    54,
+    56,
+    true
+   ],
+   [
+    52,
+    54,
+    true
+   ],
+   [
+    47,
+    48,
+    true
+   ],
+   [
+    60,
+    62,
+    true
+   ],
+   [
+    51,
+    54,
+    true
+   ],
+   [
+    54,
+    56,
+    true
+   ]
+  ],
+  "setting=outdoor": [
+   [
+    12,
+    12,
+    false
+   ],
+   [
+    12,
+    14,
+    false
+   ],
+   [
+    17,
+    17,
+    true
+   ],
+   [
+    14,
+    16,
+    false
+   ],
+   [
+    21,
+    23,
+    false
+   ],
+   [
+    21,
+    23,
+    false
+   ],
+   [
+    15,
+    15,
+    false
+   ],
+   [
+    17,
+    19,
+    false
+   ],
+   [
+    14,
+    15,
+    false
+   ],
+   [
+    13,
+    15,
+    false
+   ],
+   [
+    14,
+    14,
+    false
+   ],
+   [
+    16,
+    18,
+    false
+   ],
+   [
+    15,
+    18,
+    false
+   ],
+   [
+    18,
+    19,
+    false
+   ],
+   [
+    19,
+    22,
+    false
+   ],
+   [
+    15,
+    17,
+    false
+   ],
+   [
+    14,
+    15,
+    false
+   ],
+   [
+    14,
+    14,
+    false
+   ],
+   [
+    14,
+    15,
+    false
+   ],
+   [
+    15,
+    16,
+    false
+   ]
+  ],
+  "setting=on_water": [
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ]
+  ],
+  "setting=underwater": [
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ]
+  ],
+  "people=1": [
+   [
+    141,
+    147,
+    true
+   ],
+   [
+    137,
+    137,
+    true
+   ],
+   [
+    141,
+    144,
+    true
+   ],
+   [
+    130,
+    137,
+    true
+   ],
+   [
+    121,
+    126,
+    true
+   ],
+   [
+    140,
+    142,
+    true
+   ],
+   [
+    150,
+    157,
+    true
+   ],
+   [
+    130,
+    134,
+    true
+   ],
+   [
+    137,
+    140,
+    true
+   ],
+   [
+    133,
+    138,
+    true
+   ],
+   [
+    132,
+    135,
+    true
+   ],
+   [
+    139,
+    146,
+    true
+   ],
+   [
+    138,
+    141,
+    true
+   ],
+   [
+    126,
+    135,
+    true
+   ],
+   [
+    137,
+    140,
+    true
+   ],
+   [
+    143,
+    148,
+    true
+   ],
+   [
+    136,
+    142,
+    true
+   ],
+   [
+    128,
+    131,
+    true
+   ],
+   [
+    122,
+    125,
+    true
+   ],
+   [
+    132,
+    139,
+    true
+   ]
+  ],
+  "equip:boat:never 90% in cross-validation": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "equip:kayak=1": [
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    7,
+    10,
+    false
+   ],
+   [
+    10,
+    13,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    6,
+    9,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    10,
+    12,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    5,
+    7,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ]
+  ],
+  "equip:bicycle=1": [
+   [
+    6,
+    10,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    6,
+    9,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    8,
+    11,
+    false
+   ],
+   [
+    9,
+    12,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    5,
+    7,
+    false
+   ],
+   [
+    9,
+    11,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    0,
+    0,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    8,
+    11,
+    false
+   ],
+   [
+    2,
+    2,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ]
+  ],
+  "equip:helmet=1": [
+   [
+    11,
+    13,
+    false
+   ],
+   [
+    13,
+    16,
+    false
+   ],
+   [
+    11,
+    11,
+    false
+   ],
+   [
+    14,
+    17,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    17,
+    18,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    14,
+    14,
+    false
+   ],
+   [
+    11,
+    14,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    12,
+    13,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    12,
+    12,
+    false
+   ],
+   [
+    14,
+    17,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ]
+  ],
+  "equip:bus:never 90% in cross-validation": [
+   1,
+   1,
+   1
+  ],
+  "equip:car=1": [
+   [
+    11,
+    15,
+    false
+   ],
+   [
+    7,
+    11,
+    false
+   ],
+   [
+    10,
+    11,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    9,
+    12,
+    false
+   ],
+   [
+    10,
+    13,
+    false
+   ],
+   [
+    13,
+    16,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    10,
+    12,
+    false
+   ],
+   [
+    11,
+    13,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    17,
+    24,
+    false
+   ],
+   [
+    12,
+    15,
+    false
+   ]
+  ],
+  "equip:train=1": [
+   [
+    3,
+    4,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    6,
+    9,
+    false
+   ],
+   [
+    2,
+    2,
+    false
+   ]
+  ],
+  "equip:paraglider=1": [
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    7,
+    9,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    10,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    9,
+    11,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    10,
+    12,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    5,
+    7,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ]
+  ],
+  "equip:ski=1": [
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    4,
+    5,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    4,
+    6,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    2,
+    6,
+    false
+   ],
+   [
+    4,
+    6,
+    false
+   ]
+  ],
+  "equip:surfboard:never 90% in cross-validation": [
+   1,
+   1
+  ],
+  "equip:horse=1": [
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    12,
+    12,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    12,
+    13,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    11,
+    11,
+    false
+   ],
+   [
+    11,
+    11,
+    false
+   ],
+   [
+    9,
+    11,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    11,
+    11,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    12,
+    16,
+    false
+   ],
+   [
+    11,
+    12,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    13,
+    13,
+    false
+   ],
+   [
+    10,
+    12,
+    false
+   ]
+  ],
+  "equip:camel=1": [
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    7,
+    9,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    9,
+    11,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    10,
+    11,
+    false
+   ],
+   [
+    5,
+    7,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    11,
+    13,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ]
+  ],
+  "equip:backpack:never 90% in cross-validation": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "equip:gym_machine=1": [
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    10,
+    11,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    10,
+    11,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    9,
+    11,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ]
+  ],
+  "equip:bed=1": [
+   [
+    13,
+    14,
+    false
+   ],
+   [
+    8,
+    11,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    6,
+    8,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    10,
+    12,
+    false
+   ],
+   [
+    5,
+    10,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    10,
+    12,
+    false
+   ],
+   [
+    9,
+    12,
+    false
+   ],
+   [
+    9,
+    11,
+    false
+   ],
+   [
+    6,
+    9,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    8,
+    11,
+    false
+   ],
+   [
+    5,
+    6,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    6,
+    8,
+    false
+   ]
+  ],
+  "equip:bathtub=1": [
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    7,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    9,
+    12,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    11,
+    11,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    5,
+    7,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    7,
+    9,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ]
+  ],
+  "equip:desk=1": [
+   [
+    4,
+    7,
+    false
+   ],
+   [
+    5,
+    7,
+    false
+   ],
+   [
+    0,
+    1,
+    false
+   ]
+  ],
+  "access:stairs=1": [
+   [
+    21,
+    23,
+    false
+   ],
+   [
+    16,
+    17,
+    false
+   ],
+   [
+    23,
+    27,
+    false
+   ],
+   [
+    17,
+    18,
+    false
+   ],
+   [
+    26,
+    29,
+    false
+   ],
+   [
+    19,
+    27,
+    false
+   ],
+   [
+    17,
+    17,
+    true
+   ],
+   [
+    18,
+    19,
+    false
+   ],
+   [
+    18,
+    18,
+    true
+   ],
+   [
+    20,
+    22,
+    false
+   ],
+   [
+    22,
+    24,
+    false
+   ],
+   [
+    22,
+    24,
+    false
+   ],
+   [
+    20,
+    25,
+    false
+   ],
+   [
+    17,
+    18,
+    false
+   ],
+   [
+    20,
+    25,
+    false
+   ],
+   [
+    19,
+    19,
+    true
+   ],
+   [
+    15,
+    16,
+    false
+   ],
+   [
+    24,
+    25,
+    true
+   ],
+   [
+    18,
+    19,
+    false
+   ],
+   [
+    22,
+    24,
+    false
+   ]
+  ],
+  "access:handrail=1": [
+   [
+    13,
+    14,
+    false
+   ],
+   [
+    13,
+    14,
+    false
+   ],
+   [
+    14,
+    15,
+    false
+   ],
+   [
+    11,
+    13,
+    false
+   ],
+   [
+    10,
+    10,
+    false
+   ],
+   [
+    12,
+    15,
+    false
+   ],
+   [
+    9,
+    17,
+    false
+   ],
+   [
+    13,
+    15,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    16,
+    17,
+    false
+   ],
+   [
+    13,
+    19,
+    false
+   ],
+   [
+    14,
+    16,
+    false
+   ],
+   [
+    13,
+    14,
+    false
+   ],
+   [
+    12,
+    13,
+    false
+   ],
+   [
+    17,
+    22,
+    false
+   ],
+   [
+    16,
+    22,
+    false
+   ]
+  ],
+  "access:wheelchair=1": [
+   [
+    16,
+    16,
+    true
+   ],
+   [
+    18,
+    19,
+    false
+   ],
+   [
+    25,
+    26,
+    true
+   ],
+   [
+    16,
+    18,
+    false
+   ],
+   [
+    16,
+    17,
+    false
+   ],
+   [
+    22,
+    24,
+    false
+   ],
+   [
+    17,
+    17,
+    true
+   ],
+   [
+    15,
+    15,
+    false
+   ],
+   [
+    14,
+    15,
+    false
+   ],
+   [
+    19,
+    22,
+    false
+   ],
+   [
+    21,
+    22,
+    false
+   ],
+   [
+    25,
+    26,
+    true
+   ],
+   [
+    11,
+    12,
+    false
+   ],
+   [
+    14,
+    14,
+    false
+   ],
+   [
+    18,
+    18,
+    true
+   ],
+   [
+    19,
+    21,
+    false
+   ],
+   [
+    18,
+    18,
+    true
+   ],
+   [
+    18,
+    18,
+    true
+   ],
+   [
+    12,
+    12,
+    false
+   ],
+   [
+    16,
+    17,
+    false
+   ]
+  ],
+  "access:ramp:too few to train": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "access:elevator:too few to train": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "equip:bus=1": [
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    5,
+    8,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    2,
+    2,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    4,
+    5,
+    false
+   ],
+   [
+    6,
+    8,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    7,
+    9,
+    false
+   ],
+   [
+    6,
+    10,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    5,
+    8,
+    false
+   ]
+  ],
+  "equip:surfboard=1": [
+   [
+    10,
+    11,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    7,
+    11,
+    false
+   ],
+   [
+    8,
+    9,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    11,
+    14,
+    false
+   ],
+   [
+    6,
+    6,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ],
+   [
+    9,
+    9,
+    false
+   ],
+   [
+    3,
+    3,
+    false
+   ],
+   [
+    9,
+    11,
+    false
+   ],
+   [
+    8,
+    10,
+    false
+   ]
+  ],
+  "equip:backpack=1": [
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    5,
+    5,
+    false
+   ],
+   [
+    2,
+    3,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    4,
+    5,
+    false
+   ],
+   [
+    2,
+    2,
+    false
+   ],
+   [
+    7,
+    8,
+    false
+   ],
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    2,
+    2,
+    false
+   ],
+   [
+    6,
+    7,
+    false
+   ],
+   [
+    2,
+    2,
+    false
+   ]
+  ],
+  "equip:boat=1": [
+   [
+    4,
+    4,
+    false
+   ],
+   [
+    5,
+    9,
+    false
+   ],
+   [
+    8,
+    8,
+    false
+   ],
+   [
+    9,
+    10,
+    false
+   ],
+   [
+    12,
+    13,
+    false
+   ],
+   [
+    13,
+    13,
+    false
+   ],
+   [
+    11,
+    20,
+    false
+   ]
+  ],
+  "equip:train:never 90% in cross-validation": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "equip:desk:never 90% in cross-validation": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "equip:car:never 90% in cross-validation": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "equip:bicycle:never 90% in cross-validation": [
+   1,
+   1
+  ],
+  "equip:ski:never 90% in cross-validation": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "access:handrail:never 90% in cross-validation": [
+   1,
+   1,
+   1
+  ],
+  "equip:helmet:never 90% in cross-validation": [
+   1
+  ]
+ },
+ "qwen_zs_a": {
+  "photos": 360,
+  "unparsed": 0,
+  "stairs": {
+   "verified": 44,
+   "positives": 29,
+   "calls": 31,
+   "right": 29,
+   "calls_on_unverified_photos": 20,
+   "precision": 0.9354838709677419,
+   "recall": 1.0,
+   "lower_bound": 0.793,
+   "passes": false
+  },
+  "handrail": {
+   "verified": 28,
+   "positives": 16,
+   "calls": 11,
+   "right": 9,
+   "calls_on_unverified_photos": 26,
+   "precision": 0.8181818181818182,
+   "recall": 0.5625,
+   "lower_bound": 0.523,
+   "passes": false
+  },
+  "wheelchair": {
+   "verified": 23,
+   "positives": 15,
+   "calls": 16,
+   "right": 15,
+   "calls_on_unverified_photos": 3,
+   "precision": 0.9375,
+   "recall": 1.0,
+   "lower_bound": 0.717,
+   "passes": false
+  },
+  "ramp": {
+   "verified": 1,
+   "positives": 1,
+   "calls": 1,
+   "right": 1,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.207,
+   "passes": false
+  },
+  "elevator": {
+   "verified": 1,
+   "positives": 1,
+   "calls": 1,
+   "right": 1,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.207,
+   "passes": false
+  },
+  "boat": {
+   "verified": 21,
+   "positives": 16,
+   "calls": 10,
+   "right": 9,
+   "calls_on_unverified_photos": 12,
+   "precision": 0.9,
+   "recall": 0.5625,
+   "lower_bound": 0.596,
+   "passes": false
+  },
+  "kayak": {
+   "verified": 9,
+   "positives": 7,
+   "calls": 7,
+   "right": 7,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.646,
+   "passes": false
+  },
+  "bicycle": {
+   "verified": 21,
+   "positives": 10,
+   "calls": 12,
+   "right": 10,
+   "calls_on_unverified_photos": 1,
+   "precision": 0.8333333333333334,
+   "recall": 1.0,
+   "lower_bound": 0.552,
+   "passes": false
+  },
+  "helmet": {
+   "verified": 21,
+   "positives": 11,
+   "calls": 11,
+   "right": 11,
+   "calls_on_unverified_photos": 10,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.741,
+   "passes": false
+  },
+  "bus": {
+   "verified": 11,
+   "positives": 8,
+   "calls": 7,
+   "right": 6,
+   "calls_on_unverified_photos": 1,
+   "precision": 0.8571428571428571,
+   "recall": 0.75,
+   "lower_bound": 0.487,
+   "passes": false
+  },
+  "car": {
+   "verified": 45,
+   "positives": 16,
+   "calls": 11,
+   "right": 10,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.9090909090909091,
+   "recall": 0.625,
+   "lower_bound": 0.623,
+   "passes": false
+  },
+  "train": {
+   "verified": 12,
+   "positives": 8,
+   "calls": 4,
+   "right": 4,
+   "calls_on_unverified_photos": 1,
+   "precision": 1.0,
+   "recall": 0.5,
+   "lower_bound": 0.51,
+   "passes": false
+  },
+  "paraglider": {
+   "verified": 14,
+   "positives": 10,
+   "calls": 10,
+   "right": 10,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.722,
+   "passes": false
+  },
+  "ski": {
+   "verified": 8,
+   "positives": 7,
+   "calls": 7,
+   "right": 7,
+   "calls_on_unverified_photos": 2,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.646,
+   "passes": false
+  },
+  "surfboard": {
+   "verified": 14,
+   "positives": 10,
+   "calls": 6,
+   "right": 5,
+   "calls_on_unverified_photos": 2,
+   "precision": 0.8333333333333334,
+   "recall": 0.5,
+   "lower_bound": 0.436,
+   "passes": false
+  },
+  "horse": {
+   "verified": 8,
+   "positives": 6,
+   "calls": 6,
+   "right": 6,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.61,
+   "passes": false
+  },
+  "camel": {
+   "verified": 10,
+   "positives": 8,
+   "calls": 8,
+   "right": 7,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.875,
+   "recall": 0.875,
+   "lower_bound": 0.529,
+   "passes": false
+  },
+  "backpack": {
+   "verified": 11,
+   "positives": 8,
+   "calls": 9,
+   "right": 7,
+   "calls_on_unverified_photos": 15,
+   "precision": 0.7777777777777778,
+   "recall": 0.875,
+   "lower_bound": 0.453,
+   "passes": false
+  },
+  "gym_machine": {
+   "verified": 15,
+   "positives": 10,
+   "calls": 10,
+   "right": 10,
+   "calls_on_unverified_photos": 9,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.722,
+   "passes": false
+  },
+  "bed": {
+   "verified": 17,
+   "positives": 9,
+   "calls": 9,
+   "right": 8,
+   "calls_on_unverified_photos": 10,
+   "precision": 0.8888888888888888,
+   "recall": 0.8888888888888888,
+   "lower_bound": 0.565,
+   "passes": false
+  },
+  "bathtub": {
+   "verified": 15,
+   "positives": 10,
+   "calls": 10,
+   "right": 9,
+   "calls_on_unverified_photos": 6,
+   "precision": 0.9,
+   "recall": 0.9,
+   "lower_bound": 0.596,
+   "passes": false
+  },
+  "desk": {
+   "verified": 13,
+   "positives": 9,
+   "calls": 4,
+   "right": 4,
+   "calls_on_unverified_photos": 4,
+   "precision": 1.0,
+   "recall": 0.4444444444444444,
+   "lower_bound": 0.51,
+   "passes": false
+  }
+ },
+ "qwen_ft_a": {
+  "photos": 360,
+  "unparsed": 0,
+  "stairs": {
+   "verified": 44,
+   "positives": 29,
+   "calls": 26,
+   "right": 26,
+   "calls_on_unverified_photos": 3,
+   "precision": 1.0,
+   "recall": 0.896551724137931,
+   "lower_bound": 0.871,
+   "passes": true
+  },
+  "handrail": {
+   "verified": 28,
+   "positives": 16,
+   "calls": 12,
+   "right": 11,
+   "calls_on_unverified_photos": 5,
+   "precision": 0.9166666666666666,
+   "recall": 0.6875,
+   "lower_bound": 0.646,
+   "passes": false
+  },
+  "wheelchair": {
+   "verified": 23,
+   "positives": 15,
+   "calls": 15,
+   "right": 15,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.796,
+   "passes": false
+  },
+  "ramp": {
+   "verified": 1,
+   "positives": 1,
+   "calls": 1,
+   "right": 1,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.207,
+   "passes": false
+  },
+  "elevator": {
+   "verified": 1,
+   "positives": 1,
+   "calls": 1,
+   "right": 1,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.207,
+   "passes": false
+  },
+  "boat": {
+   "verified": 21,
+   "positives": 16,
+   "calls": 5,
+   "right": 5,
+   "calls_on_unverified_photos": 1,
+   "precision": 1.0,
+   "recall": 0.3125,
+   "lower_bound": 0.566,
+   "passes": false
+  },
+  "kayak": {
+   "verified": 9,
+   "positives": 7,
+   "calls": 7,
+   "right": 7,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.646,
+   "passes": false
+  },
+  "bicycle": {
+   "verified": 21,
+   "positives": 10,
+   "calls": 14,
+   "right": 10,
+   "calls_on_unverified_photos": 1,
+   "precision": 0.7142857142857143,
+   "recall": 1.0,
+   "lower_bound": 0.454,
+   "passes": false
+  },
+  "helmet": {
+   "verified": 21,
+   "positives": 11,
+   "calls": 7,
+   "right": 7,
+   "calls_on_unverified_photos": 2,
+   "precision": 1.0,
+   "recall": 0.6363636363636364,
+   "lower_bound": 0.646,
+   "passes": false
+  },
+  "bus": {
+   "verified": 11,
+   "positives": 8,
+   "calls": 6,
+   "right": 5,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.8333333333333334,
+   "recall": 0.625,
+   "lower_bound": 0.436,
+   "passes": false
+  },
+  "car": {
+   "verified": 45,
+   "positives": 16,
+   "calls": 18,
+   "right": 15,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.8333333333333334,
+   "recall": 0.9375,
+   "lower_bound": 0.608,
+   "passes": false
+  },
+  "train": {
+   "verified": 12,
+   "positives": 8,
+   "calls": 5,
+   "right": 5,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 0.625,
+   "lower_bound": 0.566,
+   "passes": false
+  },
+  "paraglider": {
+   "verified": 14,
+   "positives": 10,
+   "calls": 9,
+   "right": 9,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 0.9,
+   "lower_bound": 0.701,
+   "passes": false
+  },
+  "ski": {
+   "verified": 8,
+   "positives": 7,
+   "calls": 7,
+   "right": 7,
+   "calls_on_unverified_photos": 1,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.646,
+   "passes": false
+  },
+  "surfboard": {
+   "verified": 14,
+   "positives": 10,
+   "calls": 10,
+   "right": 9,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.9,
+   "recall": 0.9,
+   "lower_bound": 0.596,
+   "passes": false
+  },
+  "horse": {
+   "verified": 8,
+   "positives": 6,
+   "calls": 6,
+   "right": 6,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.61,
+   "passes": false
+  },
+  "camel": {
+   "verified": 10,
+   "positives": 8,
+   "calls": 9,
+   "right": 8,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.8888888888888888,
+   "recall": 1.0,
+   "lower_bound": 0.565,
+   "passes": false
+  },
+  "backpack": {
+   "verified": 11,
+   "positives": 8,
+   "calls": 7,
+   "right": 7,
+   "calls_on_unverified_photos": 2,
+   "precision": 1.0,
+   "recall": 0.875,
+   "lower_bound": 0.646,
+   "passes": false
+  },
+  "gym_machine": {
+   "verified": 15,
+   "positives": 10,
+   "calls": 9,
+   "right": 9,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 0.9,
+   "lower_bound": 0.701,
+   "passes": false
+  },
+  "bed": {
+   "verified": 17,
+   "positives": 9,
+   "calls": 8,
+   "right": 7,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.875,
+   "recall": 0.7777777777777778,
+   "lower_bound": 0.529,
+   "passes": false
+  },
+  "bathtub": {
+   "verified": 15,
+   "positives": 10,
+   "calls": 11,
+   "right": 10,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.9090909090909091,
+   "recall": 1.0,
+   "lower_bound": 0.623,
+   "passes": false
+  },
+  "desk": {
+   "verified": 13,
+   "positives": 9,
+   "calls": 8,
+   "right": 8,
+   "calls_on_unverified_photos": 3,
+   "precision": 1.0,
+   "recall": 0.8888888888888888,
+   "lower_bound": 0.676,
+   "passes": false
+  }
+ },
+ "qwen_ft_b": {
+  "photos": 363,
+  "unparsed": 0,
+  "stairs": {
+   "verified": 34,
+   "positives": 24,
+   "calls": 23,
+   "right": 22,
+   "calls_on_unverified_photos": 6,
+   "precision": 0.9565217391304348,
+   "recall": 0.9166666666666666,
+   "lower_bound": 0.79,
+   "passes": false
+  },
+  "handrail": {
+   "verified": 26,
+   "positives": 18,
+   "calls": 8,
+   "right": 8,
+   "calls_on_unverified_photos": 2,
+   "precision": 1.0,
+   "recall": 0.4444444444444444,
+   "lower_bound": 0.676,
+   "passes": false
+  },
+  "wheelchair": {
+   "verified": 35,
+   "positives": 20,
+   "calls": 22,
+   "right": 20,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.9090909090909091,
+   "recall": 1.0,
+   "lower_bound": 0.722,
+   "passes": false
+  },
+  "ramp": {
+   "verified": 2,
+   "positives": 2,
+   "calls": 2,
+   "right": 2,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.342,
+   "passes": false
+  },
+  "elevator": {
+   "verified": 1,
+   "positives": 1,
+   "calls": 1,
+   "right": 1,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.207,
+   "passes": false
+  },
+  "boat": {
+   "verified": 23,
+   "positives": 15,
+   "calls": 15,
+   "right": 14,
+   "calls_on_unverified_photos": 5,
+   "precision": 0.9333333333333333,
+   "recall": 0.9333333333333333,
+   "lower_bound": 0.702,
+   "passes": false
+  },
+  "kayak": {
+   "verified": 10,
+   "positives": 6,
+   "calls": 5,
+   "right": 5,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 0.8333333333333334,
+   "lower_bound": 0.566,
+   "passes": false
+  },
+  "bicycle": {
+   "verified": 27,
+   "positives": 12,
+   "calls": 9,
+   "right": 8,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.8888888888888888,
+   "recall": 0.6666666666666666,
+   "lower_bound": 0.565,
+   "passes": false
+  },
+  "helmet": {
+   "verified": 27,
+   "positives": 16,
+   "calls": 12,
+   "right": 12,
+   "calls_on_unverified_photos": 4,
+   "precision": 1.0,
+   "recall": 0.75,
+   "lower_bound": 0.757,
+   "passes": false
+  },
+  "bus": {
+   "verified": 13,
+   "positives": 9,
+   "calls": 7,
+   "right": 7,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 0.7777777777777778,
+   "lower_bound": 0.646,
+   "passes": false
+  },
+  "car": {
+   "verified": 52,
+   "positives": 22,
+   "calls": 22,
+   "right": 20,
+   "calls_on_unverified_photos": 1,
+   "precision": 0.9090909090909091,
+   "recall": 0.9090909090909091,
+   "lower_bound": 0.722,
+   "passes": false
+  },
+  "train": {
+   "verified": 9,
+   "positives": 7,
+   "calls": 5,
+   "right": 5,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 0.7142857142857143,
+   "lower_bound": 0.566,
+   "passes": false
+  },
+  "paraglider": {
+   "verified": 10,
+   "positives": 7,
+   "calls": 8,
+   "right": 7,
+   "calls_on_unverified_photos": 0,
+   "precision": 0.875,
+   "recall": 1.0,
+   "lower_bound": 0.529,
+   "passes": false
+  },
+  "ski": {
+   "verified": 9,
+   "positives": 7,
+   "calls": 7,
+   "right": 7,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.646,
+   "passes": false
+  },
+  "surfboard": {
+   "verified": 15,
+   "positives": 9,
+   "calls": 8,
+   "right": 8,
+   "calls_on_unverified_photos": 1,
+   "precision": 1.0,
+   "recall": 0.8888888888888888,
+   "lower_bound": 0.676,
+   "passes": false
+  },
+  "horse": {
+   "verified": 15,
+   "positives": 11,
+   "calls": 11,
+   "right": 11,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.741,
+   "passes": false
+  },
+  "camel": {
+   "verified": 17,
+   "positives": 9,
+   "calls": 9,
+   "right": 9,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.701,
+   "passes": false
+  },
+  "backpack": {
+   "verified": 8,
+   "positives": 8,
+   "calls": 6,
+   "right": 6,
+   "calls_on_unverified_photos": 2,
+   "precision": 1.0,
+   "recall": 0.75,
+   "lower_bound": 0.61,
+   "passes": false
+  },
+  "gym_machine": {
+   "verified": 9,
+   "positives": 6,
+   "calls": 6,
+   "right": 6,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.61,
+   "passes": false
+  },
+  "bed": {
+   "verified": 20,
+   "positives": 12,
+   "calls": 12,
+   "right": 12,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.757,
+   "passes": false
+  },
+  "bathtub": {
+   "verified": 11,
+   "positives": 8,
+   "calls": 8,
+   "right": 8,
+   "calls_on_unverified_photos": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "lower_bound": 0.676,
+   "passes": false
+  },
+  "desk": {
+   "verified": 12,
+   "positives": 9,
+   "calls": 5,
+   "right": 5,
+   "calls_on_unverified_photos": 3,
+   "precision": 1.0,
+   "recall": 0.5555555555555556,
+   "lower_bound": 0.566,
+   "passes": false
+  }
+ },
+ "qwen_ft_a_subsample_100": {
+  "stairs": {
+   "looks_ready": 0.907,
+   "passes_gate": 0.0,
+   "precision_p5_p95": [
+    1.0,
+    1.0
+   ]
+  },
+  "handrail": {
+   "looks_ready": 0.1245,
+   "passes_gate": 0.0,
+   "precision_p5_p95": [
+    0.6666666666666666,
+    1.0
+   ]
+  },
+  "wheelchair": {
+   "looks_ready": 0.4105,
+   "passes_gate": 0.0,
+   "precision_p5_p95": [
+    1.0,
+    1.0
+   ]
+  },
+  "ramp": {
+   "looks_ready": 0.0,
+   "passes_gate": 0.0,
+   "precision_p5_p95": [
+    1.0,
+    1.0
+   ]
+  },
+  "elevator": {
+   "looks_ready": 0.0,
+   "passes_gate": 0.0,
+   "precision_p5_p95": [
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "qwen_ft_a_subsample_200": {
+  "stairs": {
+   "looks_ready": 1.0,
+   "passes_gate": 0.32,
+   "precision_p5_p95": [
+    1.0,
+    1.0
+   ]
+  },
+  "handrail": {
+   "looks_ready": 0.424,
+   "passes_gate": 0.0,
+   "precision_p5_p95": [
+    0.8,
+    1.0
+   ]
+  },
+  "wheelchair": {
+   "looks_ready": 0.974,
+   "passes_gate": 0.0,
+   "precision_p5_p95": [
+    1.0,
+    1.0
+   ]
+  },
+  "ramp": {
+   "looks_ready": 0.0,
+   "passes_gate": 0.0,
+   "precision_p5_p95": [
+    1.0,
+    1.0
+   ]
+  },
+  "elevator": {
+   "looks_ready": 0.0,
+   "passes_gate": 0.0,
+   "precision_p5_p95": [
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "mining": {
+  "screened": 1000,
+  "stairs": {
+   "flagged": 53,
+   "flagged_verified_present": 7,
+   "flagged_verified_absent": 0,
+   "flagged_unverified": 46,
+   "unverified_agent_present": 29,
+   "unverified_agent_absent": 17,
+   "verified_present_in_pool": 12,
+   "true_per_1000_screened": 7.0,
+   "recall_of_verified": 0.5833333333333334,
+   "precision_where_verified": 1.0
+  },
+  "handrail": {
+   "flagged": 30,
+   "flagged_verified_present": 0,
+   "flagged_verified_absent": 0,
+   "flagged_unverified": 30,
+   "unverified_agent_present": 18,
+   "unverified_agent_absent": 12,
+   "verified_present_in_pool": 0,
+   "true_per_1000_screened": 0.0,
+   "recall_of_verified": 0.0,
+   "precision_where_verified": 0.0
+  },
+  "wheelchair": {
+   "flagged": 0,
+   "flagged_verified_present": 0,
+   "flagged_verified_absent": 0,
+   "flagged_unverified": 0,
+   "unverified_agent_present": 0,
+   "unverified_agent_absent": 0,
+   "verified_present_in_pool": 0,
+   "true_per_1000_screened": 0.0,
+   "recall_of_verified": 0.0,
+   "precision_where_verified": 0.0
+  },
+  "ramp": {
+   "flagged": 1,
+   "flagged_verified_present": 0,
+   "flagged_verified_absent": 0,
+   "flagged_unverified": 1,
+   "unverified_agent_present": 0,
+   "unverified_agent_absent": 1,
+   "verified_present_in_pool": 0,
+   "true_per_1000_screened": 0.0,
+   "recall_of_verified": 0.0,
+   "precision_where_verified": 0.0
+  },
+  "elevator": {
+   "flagged": 1,
+   "flagged_verified_present": 0,
+   "flagged_verified_absent": 0,
+   "flagged_unverified": 1,
+   "unverified_agent_present": 0,
+   "unverified_agent_absent": 1,
+   "verified_present_in_pool": 0,
+   "true_per_1000_screened": 0.0,
+   "recall_of_verified": 0.0,
+   "precision_where_verified": 0.0
+  }
+ },
+ "production": {
+  "photos": 1532,
+  "groups": 940,
+  "held_out": 380,
+  "positives_all": {
+   "stairs": 163,
+   "ramp": 21,
+   "handrail": 157,
+   "grab_bar": 71,
+   "walk_in_shower": 30,
+   "step_free_entrance": 82,
+   "elevator": 65,
+   "wheelchair": 19,
+   "wide_doorway": 3
+  },
+  "offer_generic_all": 22,
+  "qwen_zs_v2": {
+   "photos": 321,
+   "stairs": {
+    "positives": 31,
+    "calls": 128,
+    "right": 25,
+    "precision": 0.1953125,
+    "recall": 0.8064516129032258,
+    "lower_bound": 0.136,
+    "passes": false
+   },
+   "ramp": {
+    "positives": 4,
+    "calls": 5,
+    "right": 2,
+    "precision": 0.4,
+    "recall": 0.5,
+    "lower_bound": 0.118,
+    "passes": false
+   },
+   "handrail": {
+    "positives": 36,
+    "calls": 25,
+    "right": 8,
+    "precision": 0.32,
+    "recall": 0.2222222222222222,
+    "lower_bound": 0.172,
+    "passes": false
+   },
+   "grab_bar": {
+    "positives": 10,
+    "calls": 37,
+    "right": 10,
+    "precision": 0.2702702702702703,
+    "recall": 1.0,
+    "lower_bound": 0.154,
+    "passes": false
+   },
+   "walk_in_shower": {
+    "positives": 4,
+    "calls": 0,
+    "right": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "lower_bound": 0.0,
+    "passes": false
+   },
+   "step_free_entrance": {
+    "positives": 15,
+    "calls": 93,
+    "right": 14,
+    "precision": 0.15053763440860216,
+    "recall": 0.9333333333333333,
+    "lower_bound": 0.092,
+    "passes": false
+   },
+   "elevator": {
+    "positives": 9,
+    "calls": 7,
+    "right": 6,
+    "precision": 0.8571428571428571,
+    "recall": 0.6666666666666666,
+    "lower_bound": 0.487,
+    "passes": false
+   },
+   "wheelchair": {
+    "positives": 4,
+    "calls": 3,
+    "right": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "lower_bound": 0.0,
+    "passes": false
+   },
+   "wide_doorway": {
+    "positives": 1,
+    "calls": 0,
+    "right": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "lower_bound": 0.0,
+    "passes": false
+   }
+  },
+  "qwen_ft_v2": {
+   "photos": 321,
+   "stairs": {
+    "positives": 31,
+    "calls": 29,
+    "right": 24,
+    "precision": 0.8275862068965517,
+    "recall": 0.7741935483870968,
+    "lower_bound": 0.655,
+    "passes": false
+   },
+   "ramp": {
+    "positives": 4,
+    "calls": 6,
+    "right": 3,
+    "precision": 0.5,
+    "recall": 0.75,
+    "lower_bound": 0.188,
+    "passes": false
+   },
+   "handrail": {
+    "positives": 36,
+    "calls": 36,
+    "right": 33,
+    "precision": 0.9166666666666666,
+    "recall": 0.9166666666666666,
+    "lower_bound": 0.782,
+    "passes": false
+   },
+   "grab_bar": {
+    "positives": 10,
+    "calls": 11,
+    "right": 8,
+    "precision": 0.7272727272727273,
+    "recall": 0.8,
+    "lower_bound": 0.434,
+    "passes": false
+   },
+   "walk_in_shower": {
+    "positives": 4,
+    "calls": 4,
+    "right": 3,
+    "precision": 0.75,
+    "recall": 0.75,
+    "lower_bound": 0.301,
+    "passes": false
+   },
+   "step_free_entrance": {
+    "positives": 15,
+    "calls": 11,
+    "right": 8,
+    "precision": 0.7272727272727273,
+    "recall": 0.5333333333333333,
+    "lower_bound": 0.434,
+    "passes": false
+   },
+   "elevator": {
+    "positives": 9,
+    "calls": 7,
+    "right": 7,
+    "precision": 1.0,
+    "recall": 0.7777777777777778,
+    "lower_bound": 0.646,
+    "passes": false
+   },
+   "wheelchair": {
+    "positives": 4,
+    "calls": 3,
+    "right": 2,
+    "precision": 0.6666666666666666,
+    "recall": 0.5,
+    "lower_bound": 0.208,
+    "passes": false
+   },
+   "wide_doorway": {
+    "positives": 1,
+    "calls": 0,
+    "right": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "lower_bound": 0.0,
+    "passes": false
+   }
+  },
+  "qwen_ft_v3": {
+   "photos": 380,
+   "stairs": {
+    "positives": 37,
+    "calls": 30,
+    "right": 26,
+    "precision": 0.8666666666666667,
+    "recall": 0.7027027027027027,
+    "lower_bound": 0.703,
+    "passes": false
+   },
+   "ramp": {
+    "positives": 5,
+    "calls": 5,
+    "right": 3,
+    "precision": 0.6,
+    "recall": 0.6,
+    "lower_bound": 0.231,
+    "passes": false
+   },
+   "handrail": {
+    "positives": 40,
+    "calls": 37,
+    "right": 33,
+    "precision": 0.8918918918918919,
+    "recall": 0.825,
+    "lower_bound": 0.753,
+    "passes": false
+   },
+   "grab_bar": {
+    "positives": 17,
+    "calls": 17,
+    "right": 14,
+    "precision": 0.8235294117647058,
+    "recall": 0.8235294117647058,
+    "lower_bound": 0.59,
+    "passes": false
+   },
+   "walk_in_shower": {
+    "positives": 8,
+    "calls": 7,
+    "right": 5,
+    "precision": 0.7142857142857143,
+    "recall": 0.625,
+    "lower_bound": 0.359,
+    "passes": false
+   },
+   "step_free_entrance": {
+    "positives": 20,
+    "calls": 19,
+    "right": 13,
+    "precision": 0.6842105263157895,
+    "recall": 0.65,
+    "lower_bound": 0.46,
+    "passes": false
+   },
+   "elevator": {
+    "positives": 17,
+    "calls": 14,
+    "right": 14,
+    "precision": 1.0,
+    "recall": 0.8235294117647058,
+    "lower_bound": 0.785,
+    "passes": false
+   },
+   "wheelchair": {
+    "positives": 5,
+    "calls": 2,
+    "right": 2,
+    "precision": 1.0,
+    "recall": 0.4,
+    "lower_bound": 0.342,
+    "passes": false
+   },
+   "wide_doorway": {
+    "positives": 1,
+    "calls": 0,
+    "right": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "lower_bound": 0.0,
+    "passes": false
+   }
+  },
+  "eg2_heads_held_out": {
+   "equip:boat": {
+    "positives": 15,
+    "calls": 8,
+    "right": 8,
+    "lower_bound": 0.676,
+    "passes": false
+   },
+   "equip:bicycle": {
+    "positives": 6,
+    "calls": 3,
+    "right": 3,
+    "lower_bound": 0.438,
+    "passes": false
+   },
+   "equip:bus": {
+    "positives": 5,
+    "calls": 3,
+    "right": 3,
+    "lower_bound": 0.438,
+    "passes": false
+   },
+   "equip:car": {
+    "positives": 16,
+    "calls": 14,
+    "right": 10,
+    "lower_bound": 0.454,
+    "passes": false
+   },
+   "equip:gym_machine": {
+    "positives": 6,
+    "calls": 6,
+    "right": 6,
+    "lower_bound": 0.61,
+    "passes": false
+   },
+   "equip:bed": {
+    "positives": 24,
+    "calls": 21,
+    "right": 20,
+    "lower_bound": 0.773,
+    "passes": false
+   },
+   "equip:bathtub": {
+    "positives": 21,
+    "calls": 19,
+    "right": 19,
+    "lower_bound": 0.832,
+    "passes": true
+   },
+   "access:stairs": {
+    "positives": 37,
+    "calls": 22,
+    "right": 20,
+    "lower_bound": 0.722,
+    "passes": false
+   },
+   "access:handrail": {
+    "positives": 40,
+    "calls": 5,
+    "right": 5,
+    "lower_bound": 0.566,
+    "passes": false
+   },
+   "access:grab_bar": {
+    "positives": 17,
+    "calls": 7,
+    "right": 6,
+    "lower_bound": 0.487,
+    "passes": false
+   },
+   "access:elevator": {
+    "positives": 17,
+    "calls": 5,
+    "right": 5,
+    "lower_bound": 0.566,
+    "passes": false
+   }
+  }
+ },
+ "spend": {
+  "total_usd": 2.4609,
+  "by_step": {
+   "apilabel": 0.7377,
+   "qwen zero-shot, split a test": 0.0965,
+   "qwen LoRA train, split a": 0.6199,
+   "qwen LoRA predict, split a test": 0.0817,
+   "qwen LoRA train, split b": 0.5939,
+   "qwen LoRA predict, split b test": 0.066,
+   "qwen mining pool, LoRA a": 0.2652
+  }
+ }
+}

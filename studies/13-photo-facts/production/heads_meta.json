@@ -1,0 +1,209 @@
+{
+ "subject": {
+  "classes": [
+   "activity",
+   "animal",
+   "bathroom",
+   "bedroom",
+   "boat",
+   "dining",
+   "exterior",
+   "graphic",
+   "gym",
+   "interior",
+   "meeting",
+   "other",
+   "pool",
+   "scenery",
+   "spa",
+   "vehicle"
+  ],
+  "threshold": 0.6
+ },
+ "setting": {
+  "classes": [
+   "indoor",
+   "outdoor",
+   "on_water",
+   "underwater"
+  ],
+  "threshold": 0.5
+ },
+ "equip:boat": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.5,
+  "held_out_right": 8,
+  "held_out_calls": 8,
+  "held_out_positives": 15,
+  "lower_bound": 0.676
+ },
+ "equip:bicycle": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.5,
+  "held_out_right": 3,
+  "held_out_calls": 3,
+  "held_out_positives": 6,
+  "lower_bound": 0.438
+ },
+ "equip:helmet": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": null
+ },
+ "equip:bus": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.55,
+  "held_out_right": 3,
+  "held_out_calls": 3,
+  "held_out_positives": 5,
+  "lower_bound": 0.438
+ },
+ "equip:car": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.61,
+  "held_out_right": 10,
+  "held_out_calls": 14,
+  "held_out_positives": 16,
+  "lower_bound": 0.454
+ },
+ "equip:train": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": null
+ },
+ "equip:backpack": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": null
+ },
+ "equip:gym_machine": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.5,
+  "held_out_right": 6,
+  "held_out_calls": 6,
+  "held_out_positives": 6,
+  "lower_bound": 0.61
+ },
+ "equip:bed": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.5,
+  "held_out_right": 20,
+  "held_out_calls": 21,
+  "held_out_positives": 24,
+  "lower_bound": 0.773
+ },
+ "equip:bathtub": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.5,
+  "held_out_right": 19,
+  "held_out_calls": 19,
+  "held_out_positives": 21,
+  "lower_bound": 0.832
+ },
+ "equip:desk": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": null
+ },
+ "access:stairs": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.75,
+  "held_out_right": 20,
+  "held_out_calls": 22,
+  "held_out_positives": 37,
+  "lower_bound": 0.722
+ },
+ "access:ramp": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": null
+ },
+ "access:handrail": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.93,
+  "held_out_right": 5,
+  "held_out_calls": 5,
+  "held_out_positives": 40,
+  "lower_bound": 0.566
+ },
+ "access:grab_bar": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.75,
+  "held_out_right": 6,
+  "held_out_calls": 7,
+  "held_out_positives": 17,
+  "lower_bound": 0.487
+ },
+ "access:walk_in_shower": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": null
+ },
+ "access:step_free_entrance": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": null
+ },
+ "access:elevator": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": 0.73,
+  "held_out_right": 5,
+  "held_out_calls": 5,
+  "held_out_positives": 17,
+  "lower_bound": 0.566
+ },
+ "access:wheelchair": {
+  "classes": [
+   "no",
+   "yes"
+  ],
+  "threshold": null
+ }
+}

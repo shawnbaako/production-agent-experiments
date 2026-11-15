@@ -1,0 +1,11 @@
+Third-party data in this folder
+
+- Open Images V7: image ids and human-verified image-level labels, from the annotations published by
+  Google LLC under CC BY 4.0 (https://storage.googleapis.com/openimages/web/factsfigures_v7.html).
+  The images themselves are listed by Open Images as CC BY 2.0 and are not included; run.py fetch
+  downloads them from the Open Images bucket.
+- Places365: validation image file numbers and their scene categories, from the Places365-Standard
+  file lists (http://places2.csail.mit.edu). The images are for non-commercial research and education
+  and their copyright belongs to the image owners; they are not included.
+
+Everything else in this folder (agent labels, splits, mining pool, Qwen inputs) is ours, CC BY 4.0.

@@ -1,0 +1,49 @@
+1532 labelled photos with vectors; held-out 380
+  subject=activity: right 24/25, lower bound 80%
+  subject=animal: right 1/1, lower bound 21% (dropped)
+  subject=bathroom: right 51/51, lower bound 93%
+  subject=bedroom: right 24/24, lower bound 86%
+  subject=boat: right 3/4, lower bound 30% (dropped)
+  subject=dining: right 43/51, lower bound 72% (dropped)
+  subject=exterior: right 79/91, lower bound 78% (dropped)
+  subject=graphic: right 0/0, lower bound 0% (dropped)
+  subject=gym: right 7/7, lower bound 65% (dropped)
+  subject=interior: right 60/65, lower bound 83%
+  subject=meeting: right 4/4, lower bound 51% (dropped)
+  subject=other: right 0/0, lower bound 0% (dropped)
+  subject=pool: right 6/6, lower bound 61% (dropped)
+  subject=scenery: right 68/72, lower bound 87%
+  subject=spa: right 4/4, lower bound 51% (dropped)
+  subject=vehicle: right 15/15, lower bound 80% (dropped)
+subject (threshold 0.6): unseen right 93% when answering; answers 85% of photos; all-photo accuracy 87%: shipped ['activity', 'bathroom', 'bedroom', 'interior', 'scenery']
+  setting=indoor: right 223/225, lower bound 97%
+  setting=outdoor: right 245/257, lower bound 92%
+  setting=on_water: right 3/4, lower bound 30% (dropped)
+  setting=underwater: right 0/0, lower bound 0% (dropped)
+setting (threshold 0.5): unseen right 97% when answering; answers 100% of photos; all-photo accuracy 97%: shipped ['indoor', 'outdoor']
+  equip:boat=yes: right 19/19, lower bound 83%
+equip:boat (threshold 0.5): unseen precision 100% recall 70% (27 positives): shipped ['yes']
+equip:kayak: 2 positives, too few to train
+  equip:bicycle=yes: right 5/5, lower bound 57% (dropped)
+equip:bicycle (threshold 0.5): unseen precision 100% recall 62% (8 positives): not shipped
+equip:helmet: never right 90% of the time in cross-validation; not shipped
+  equip:bus=yes: right 7/7, lower bound 65% (dropped)
+equip:bus (threshold 0.55): unseen precision 100% recall 78% (9 positives): not shipped
+  equip:car=yes: right 11/19, lower bound 36% (dropped)
+equip:car (threshold 0.61): unseen precision 58% recall 65% (17 positives): not shipped
+equip:tuk_tuk: 3 positives, too few to train
+equip:train: never right 90% of the time in cross-validation; not shipped
+equip:paraglider: 0 positives, too few to train
+equip:ski: 0 positives, too few to train
+equip:snorkel: 2 positives, too few to train
+equip:surfboard: 0 positives, too few to train
+equip:horse: 0 positives, too few to train
+equip:camel: 1 positives, too few to train
+equip:backpack: never right 90% of the time in cross-validation; not shipped
+  equip:gym_machine=yes: right 6/6, lower bound 61% (dropped)
+equip:gym_machine (threshold 0.5): unseen precision 100% recall 100% (6 positives): not shipped
+  equip:bed=yes: right 20/21, lower bound 77% (dropped)
+equip:bed (threshold 0.5): unseen precision 95% recall 83% (24 positives): not shipped
+  equip:bathtub=yes: right 19/19, lower bound 83%
+equip:bathtub (threshold 0.5): unseen precision 100% recall 90% (21 positives): shipped ['yes']
+equip:desk: never right 90% of the time in cross-validation; not shipped

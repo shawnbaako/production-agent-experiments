@@ -1,0 +1,360 @@
+{"key": "oi_008c0486e6d6d1e4", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_0379f766c7ae7d43", "raw": "{\"visible\": [\"camel\"]}\n", "ans": {"visible": ["camel"]}}
+{"key": "oi_03cb58dfb0ecb4fd", "raw": "{\"visible\": [\"desk\", \"backpack\"]}\n", "ans": {"visible": ["desk", "backpack"]}}
+{"key": "oi_05be35c4d8bc0fb7", "raw": "{\"visible\": [\"train\"]}\n", "ans": {"visible": ["train"]}}
+{"key": "oi_065abb708dfd6dfe", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_075e8ff2794191fa", "raw": "{\"visible\": [\"camel\"]}\n", "ans": {"visible": ["camel"]}}
+{"key": "oi_087972c8b894ab66", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "oi_09e094375efab7fe", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_0a51958fcd523ae4", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_0ab4df4ab9f699c4", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_0af4ba8fd2a7e628", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "oi_0b055d85bc052e7e", "raw": "{\"visible\": [\"car\"]}\n", "ans": {"visible": ["car"]}}
+{"key": "oi_0b064592acaae176", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_0c89da9dff27950f", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_0f25f9ba117d9552", "raw": "{\"visible\": [\"boat\", \"kayak\"]}\n", "ans": {"visible": ["boat", "kayak"]}}
+{"key": "oi_0f3742c65d7bb522", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "oi_0fb3d01ad562197c", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_114c44c590244cd1", "raw": "{\"visible\": [\"bicycle\"]}\n", "ans": {"visible": ["bicycle"]}}
+{"key": "oi_11c5847810341c03", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_11dcac4ca5923a58", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "oi_11dd32ad9208d57c", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_1210ad4fd65b252a", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_1233f9bfe534bfec", "raw": "{\"visible\": [\"ramp\"]}\n", "ans": {"visible": ["ramp"]}}
+{"key": "oi_12fd11d4671464b8", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_140ad20c487e1a55", "raw": "{\"visible\": [\"boat\", \"kayak\", \"paddle\"]}\n", "ans": {"visible": ["boat", "kayak"]}}
+{"key": "oi_1547c76f5c13b2f8", "raw": "{\"visible\": [\"car\"]}\n", "ans": {"visible": ["car"]}}
+{"key": "oi_15b2b38695ed61c8", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_15cc483b22bb41a7", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_17c4b83031f8492c", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_18dd4a4037cd8948", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_19b5d71b5a5a72f7", "raw": "{\"visible\": [\"ski\", \"backpack\"]}\n", "ans": {"visible": ["ski", "backpack"]}}
+{"key": "oi_1b2eca4d58f035b4", "raw": "{\"visible\": [\"bus\", \"backpack\"]}\n", "ans": {"visible": ["bus", "backpack"]}}
+{"key": "oi_1bf81f2479f17f6d", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_2429c8f6cae64fb3", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_246d73584c7e6c5c", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_24f263c2e01787f2", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "oi_277c13e3d39af931", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_279e976b73642657", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_27c10dc3e778ad28", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_27efcb1835ce56be", "raw": "{\"visible\": [\"desk\"]}\n", "ans": {"visible": ["desk"]}}
+{"key": "oi_293dadae7af213b8", "raw": "{\"visible\": [\"bicycle\"]}\n", "ans": {"visible": ["bicycle"]}}
+{"key": "oi_29404a0f634ab198", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "oi_2a8d3b26a9cd1c71", "raw": "{\"visible\": [\"camel\"]}\n", "ans": {"visible": ["camel"]}}
+{"key": "oi_2c69b4284ca83597", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_2cea6fa6d7c15302", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_2d15e2771cf5b8dd", "raw": "{\"visible\": [\"horse\"]}\n", "ans": {"visible": ["horse"]}}
+{"key": "oi_2da2ba47aee1cd88", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_2dde828bf4e0bdd7", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_2e76ad35d664901c", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "oi_2fcf37a00cd2f802", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_2fe8f7dce31d4004", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_31e0383b18a48a63", "raw": "{\"visible\": [\"desk\"]}\n", "ans": {"visible": ["desk"]}}
+{"key": "oi_31e76123b6a3388b", "raw": "{\"visible\": [\"stairs\", \"helmet\"]}\n", "ans": {"visible": ["stairs", "helmet"]}}
+{"key": "oi_3220be9141f2d703", "raw": "{\"visible\": [\"paddle\", \"paddleboard\"]}\n", "ans": {"visible": []}}
+{"key": "oi_326008ec6a706ba1", "raw": "{\"visible\": [\"car\"]}\n", "ans": {"visible": ["car"]}}
+{"key": "oi_34bd6759def27335", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_35379fd065adb97d", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_361742ff1a64af93", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_36f08c7bb481ba25", "raw": "{\"visible\": [\"stairs\", \"handrail\", \"wheelchair\"]}\n", "ans": {"visible": ["stairs", "handrail", "wheelchair"]}}
+{"key": "oi_36f29ffcb961c7d1", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_37c0e116784c53f7", "raw": "{\"visible\": [\"bicycle\"]}\n", "ans": {"visible": ["bicycle"]}}
+{"key": "oi_381dfbdfe90d23ba", "raw": "{\"visible\": [\"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_39f7fee3d5351468", "raw": "{\"visible\": [\"surfboard\"]}\n", "ans": {"visible": ["surfboard"]}}
+{"key": "oi_3a0b72a274530636", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_3bb70c0267942681", "raw": "{\"visible\": [\"car\"]}\n", "ans": {"visible": ["car"]}}
+{"key": "oi_3d8581e9881e85d2", "raw": "{\"visible\": [\"boat\", \"kayak\"]}\n", "ans": {"visible": ["boat", "kayak"]}}
+{"key": "oi_3dc9d763270c26cc", "raw": "{\"visible\": [\"bus\"]}\n", "ans": {"visible": ["bus"]}}
+{"key": "oi_3e4598c84daf5197", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_412de16b47024777", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "oi_41706007fc77bff2", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_41b22d0fc425d148", "raw": "{\"visible\": [\"camel\"]}\n", "ans": {"visible": ["camel"]}}
+{"key": "oi_430fd27214d7dec1", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_435313253425506d", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_440aa8e30b5012d2", "raw": "{\"visible\": [\"car\", \"backpack\"]}\n", "ans": {"visible": ["car", "backpack"]}}
+{"key": "oi_443854f7605fabb3", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_44613c7c31aa2ac6", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_447a4308e611129c", "raw": "{\"visible\": [\"car\"]}\n", "ans": {"visible": ["car"]}}
+{"key": "oi_45d2e6b4984ff14d", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_4605bf01dde43943", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_472c81e653de13b8", "raw": "{\"visible\": [\"train\"]}\n", "ans": {"visible": ["train"]}}
+{"key": "oi_494898655338b9da", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_49d1bec9e1fa54e2", "raw": "{\"visible\": [\"boat\", \"kayak\", \"paddle\", \"life vest\", \"sunglasses\", \"shorts\", \"socks\"]}\n", "ans": {"visible": ["boat", "kayak"]}}
+{"key": "oi_4a115ae35b5cd4c3", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_4aaf3bac350304e8", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_4d549d4da1caa102", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_4f7d6239c0e5cf67", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_5051167a03619067", "raw": "{\"visible\": [\"rollerblades\", \"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_508b2c4f879fc269", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_50a8e0f047581eee", "raw": "{\"visible\": [\"bus\"]}\n", "ans": {"visible": ["bus"]}}
+{"key": "oi_50f3d5e1dc8d46a1", "raw": "{\"visible\": [\"car\"]}\n", "ans": {"visible": ["car"]}}
+{"key": "oi_50fbee503045aab9", "raw": "{\"visible\": [\"camel\"]}\n", "ans": {"visible": ["camel"]}}
+{"key": "oi_51928591fc5c7632", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_52557c5def8add62", "raw": "{\"visible\": [\"helmet\", \"backpack\"]}\n", "ans": {"visible": ["helmet", "backpack"]}}
+{"key": "oi_52bcc169148779e3", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "oi_53256f9aebf4db64", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_534af61fae5fe4d4", "raw": "{\"visible\": [\"helmet\"]}\n", "ans": {"visible": ["helmet"]}}
+{"key": "oi_55db358e236e72ea", "raw": "{\"visible\": [\"bicycle\"]}\n", "ans": {"visible": ["bicycle"]}}
+{"key": "oi_56d73d73ca9a0442", "raw": "{\"visible\": [\"horse\", \"helmet\"]}\n", "ans": {"visible": ["horse", "helmet"]}}
+{"key": "oi_5713c90c55692a3a", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_571f10d914e88f49", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_584da16e3de15687", "raw": "{\"visible\": [\"boat\", \"kayak\"]}\n", "ans": {"visible": ["boat", "kayak"]}}
+{"key": "oi_5851cd2229b1c070", "raw": "{\"visible\": [\"bicycle\", \"desk\", \"backpack\"]}\n", "ans": {"visible": ["bicycle", "desk", "backpack"]}}
+{"key": "oi_5982bbb8c5cf28c6", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_5a80e5785fdb6b55", "raw": "{\"visible\": [\"ski\", \"backpack\"]}\n", "ans": {"visible": ["ski", "backpack"]}}
+{"key": "oi_5b28a5ee663e5581", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "oi_5b93c61d21121dea", "raw": "{\"visible\": [\"surfboard\"]}\n", "ans": {"visible": ["surfboard"]}}
+{"key": "oi_5ba82a78da57b025", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_5c3c465350e25bee", "raw": "{\"visible\": [\"bicycle\"]}\n", "ans": {"visible": ["bicycle"]}}
+{"key": "oi_5d2637a6e0e82194", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_5d50fa92ed5ee34d", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "oi_612218ee9c751970", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_63373c02c7203e5b", "raw": "{\"visible\": [\"helmet\", \"backpack\"]}\n", "ans": {"visible": ["helmet", "backpack"]}}
+{"key": "oi_63e4090f980ed60c", "raw": "{\"visible\": [\"ski\", \"backpack\"]}\n", "ans": {"visible": ["ski", "backpack"]}}
+{"key": "oi_642f5e097bcb764f", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_65ace40ac8556f83", "raw": "{\"visible\": [\"bicycle\", \"helmet\"]}\n", "ans": {"visible": ["bicycle", "helmet"]}}
+{"key": "oi_67b71de6a6305025", "raw": "{\"visible\": [\"paraglider\"]}\n", "ans": {"visible": ["paraglider"]}}
+{"key": "oi_698e5507aaa9422b", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_69cfab94ec4a9923", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "oi_6a72afe97d27d3b6", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_6b0c2674ffb60b2b", "raw": "{\"visible\": [\"surfboard\"]}\n", "ans": {"visible": ["surfboard"]}}
+{"key": "oi_6b4a598fc0d4cc11", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "oi_6ba4d7b14ad15ad0", "raw": "{\"visible\": [\"paraglider\"]}\n", "ans": {"visible": ["paraglider"]}}
+{"key": "oi_6bc153aa89749a00", "raw": "{\"visible\": [\"car\"]}\n", "ans": {"visible": ["car"]}}
+{"key": "oi_6cfd52ff1adf95a2", "raw": "{\"visible\": [\"surfboard\"]}\n", "ans": {"visible": ["surfboard"]}}
+{"key": "oi_6d78deb3cdc9a6af", "raw": "{\"visible\": [\"paraglider\", \"helmet\"]}\n", "ans": {"visible": ["paraglider", "helmet"]}}
+{"key": "oi_6eb08c2105d19538", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_6ee11e994b3b597c", "raw": "{\"visible\": [\"bus\"]}\n", "ans": {"visible": ["bus"]}}
+{"key": "oi_6f82654a40e0ccbd", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_7003b8bbc5bb749f", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "oi_704487e358fd313d", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_71301f34672459c6", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_71df72bf0f7b67ca", "raw": "{\"visible\": [\"bus\"]}\n", "ans": {"visible": ["bus"]}}
+{"key": "oi_73df922ba55b2632", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_74aab81ba0d58943", "raw": "{\"visible\": [\"paraglider\"]}\n", "ans": {"visible": ["paraglider"]}}
+{"key": "oi_771dc661c271b6b4", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_79bf6f0fc14ede03", "raw": "{\"visible\": [\"bed\", \"backpack\"]}\n", "ans": {"visible": ["bed", "backpack"]}}
+{"key": "oi_7a72e090036afa59", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_7c350ef5d455a59e", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_7c9d6e9cc03afbff", "raw": "{\"visible\": [\"horse\", \"helmet\"]}\n", "ans": {"visible": ["horse", "helmet"]}}
+{"key": "oi_7f83d17b77071ff2", "raw": "{\"visible\": [\"bus\"]}\n", "ans": {"visible": ["bus"]}}
+{"key": "oi_80eb7b623eed3be1", "raw": "{\"visible\": [\"helmet\"]}\n", "ans": {"visible": ["helmet"]}}
+{"key": "oi_818207d196efe34e", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "oi_81e52d12b96163b2", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "oi_81fdb40b88e83026", "raw": "{\"visible\": [\"paddleboard\"]}\n", "ans": {"visible": []}}
+{"key": "oi_8255bcf627e2382e", "raw": "{\"visible\": [\"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_826690670ace3be4", "raw": "{\"visible\": [\"desk\", \"chair\", \"computer\", \"keyboard\", \"mouse\", \"bookcase\"]}\n", "ans": {"visible": ["desk"]}}
+{"key": "oi_82ca179b02b8a4c3", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_833a8ea5b4aa25af", "raw": "{\"visible\": [\"helmet\"]}\n", "ans": {"visible": ["helmet"]}}
+{"key": "oi_841af3a6415c3144", "raw": "{\"visible\": [\"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_8420872ea5615db3", "raw": "{\"visible\": [\"bicycle\"]}\n", "ans": {"visible": ["bicycle"]}}
+{"key": "oi_84984fb110316646", "raw": "{\"visible\": [\"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_85dc1db81bd89572", "raw": "{\"visible\": [\"ski\"]}\n", "ans": {"visible": ["ski"]}}
+{"key": "oi_87bf8499d316eb1d", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "oi_8823286afacc9898", "raw": "{\"visible\": [\"bicycle\", \"helmet\"]}\n", "ans": {"visible": ["bicycle", "helmet"]}}
+{"key": "oi_89b1e7d636e0c5f8", "raw": "{\"visible\": [\"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_8a2edaa67e4b5c89", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "oi_8b5065abfb11a6d6", "raw": "{\"visible\": [\"ski\"]}\n", "ans": {"visible": ["ski"]}}
+{"key": "oi_8dd5462a4c0c831e", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_8eabe2e9bf510280", "raw": "{\"visible\": [\"paraglider\"]}\n", "ans": {"visible": ["paraglider"]}}
+{"key": "oi_8f0dbb0ef168dc46", "raw": "{\"visible\": [\"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_8f330b03fe6dca7f", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_90ad3bb2dac11d26", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_91c768444ab29539", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_91d8be4c990c6e0b", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_92b5bb3144f0f7d1", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_93a00bafea2eaedf", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_93a9d4990e82ddd3", "raw": "{\"visible\": [\"boat\", \"kayak\", \"backpack\"]}\n", "ans": {"visible": ["boat", "kayak", "backpack"]}}
+{"key": "oi_94ac63ed9d4a7454", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_951a24223d267335", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_97bfed8b0b5da85b", "raw": "{\"visible\": [\"helmet\"]}\n", "ans": {"visible": ["helmet"]}}
+{"key": "oi_98942ea489053589", "raw": "{\"visible\": [\"paraglider\"]}\n", "ans": {"visible": ["paraglider"]}}
+{"key": "oi_996e4f08c8db6ff8", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_9ae6adb40bb7c721", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_9b5f2073ebca1c35", "raw": "{\"visible\": [\"car\"]}\n", "ans": {"visible": ["car"]}}
+{"key": "oi_9b9071e53f48d299", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_9c351bc9ee8c2b51", "raw": "{\"visible\": [\"bicycle\"]}\n", "ans": {"visible": ["bicycle"]}}
+{"key": "oi_9d487051422ae493", "raw": "{\"visible\": [\"helmet\", \"handrail\"]}\n", "ans": {"visible": ["helmet", "handrail"]}}
+{"key": "oi_9edc8634c52acde5", "raw": "{\"visible\": [\"stairs\", \"bicycle\"]}\n", "ans": {"visible": ["stairs", "bicycle"]}}
+{"key": "oi_9eeefa5adc2d035d", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_9f7b315b4d442860", "raw": "{\"visible\": [\"paraglider\", \"backpack\"]}\n", "ans": {"visible": ["paraglider", "backpack"]}}
+{"key": "oi_a11040cd51d83f02", "raw": "{\"visible\": [\"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_a22c44181665a4ae", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_a2f202466f5b45f7", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_a54b1464ac46b8f9", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_a666c035b86318ab", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_a673d333991d8635", "raw": "{\"visible\": [\"stairs\", \"wheelchair\"]}\n", "ans": {"visible": ["stairs", "wheelchair"]}}
+{"key": "oi_a716ac8e85a0f88b", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_a7f46557603317e1", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_a84814fea1c22bcc", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "oi_a9b8e9e932e7bdbd", "raw": "{\"visible\": [\"wheelchair\", \"helmet\"]}\n", "ans": {"visible": ["wheelchair", "helmet"]}}
+{"key": "oi_aa2dd9effb13632b", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_aa8efaa8feae094a", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_ab92403b4eb6e5bd", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_af741bec48f6fa6f", "raw": "{\"visible\": [\"ski\", \"helmet\"]}\n", "ans": {"visible": ["ski", "helmet"]}}
+{"key": "oi_afa34c23558adab7", "raw": "{\"visible\": [\"helmet\", \"kayak\", \"boat\"]}\n", "ans": {"visible": ["helmet", "kayak", "boat"]}}
+{"key": "oi_b0e92197b17eeeb7", "raw": "{\"visible\": [\"horse\"]}\n", "ans": {"visible": ["horse"]}}
+{"key": "oi_b219e325329e9454", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_b27d49e01147e6d0", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "oi_b2bc08eeb843f7a0", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_b41cbdd8591043aa", "raw": "{\"visible\": [\"ski\", \"helmet\", \"backpack\"]}\n", "ans": {"visible": ["ski", "helmet", "backpack"]}}
+{"key": "oi_b49844caf0ecc14c", "raw": "{\"visible\": [\"camel\"]}\n", "ans": {"visible": ["camel"]}}
+{"key": "oi_b626a6d04b8ed3b9", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_b660d655eeb2d002", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_b6cb19ac0f0712e3", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_b72b9f16ed5e3c95", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_bb8e4cf0385bb22a", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_be608bde6f7fc52d", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "oi_bfa8dd6b7a851d39", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_c200ce125389d94d", "raw": "{\"visible\": [\"surfboard\"]}\n", "ans": {"visible": ["surfboard"]}}
+{"key": "oi_c276ecc10eeee824", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_c3a182177e8d440f", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_c3a9c3ed842cd3de", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_c4457da8eb52aa92", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_c4837e76d6ce7946", "raw": "{\"visible\": [\"desk\"]}\n", "ans": {"visible": ["desk"]}}
+{"key": "oi_c49c3d1c4dee9ba9", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_c4d1f66783c9f45e", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_c4d893c07da849c7", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_c4fd3a4c10a63e01", "raw": "{\"visible\": [\"elevator\"]}\n", "ans": {"visible": ["elevator"]}}
+{"key": "oi_c5a63dc05121e7d4", "raw": "{\"visible\": [\"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_c5ad830a03726ba5", "raw": "{\"visible\": [\"paraglider\", \"helmet\"]}\n", "ans": {"visible": ["paraglider", "helmet"]}}
+{"key": "oi_c8b7467d2729f7b1", "raw": "{\"visible\": [\"bicycle\"]}\n", "ans": {"visible": ["bicycle"]}}
+{"key": "oi_c8c04a3846e22455", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_c97b9139791ce171", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_c97d553fecd8f59f", "raw": "{\"visible\": [\"paraglider\"]}\n", "ans": {"visible": ["paraglider"]}}
+{"key": "oi_ca31b74c39692e69", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_ce55bb81ea8736e6", "raw": "{\"visible\": [\"train\"]}\n", "ans": {"visible": ["train"]}}
+{"key": "oi_cfb8c5b0f0009b8a", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_d4eb556971ba4851", "raw": "{\"visible\": [\"paraglider\"]}\n", "ans": {"visible": ["paraglider"]}}
+{"key": "oi_d60e1c25e87d8b45", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_d9150adc7a1af79b", "raw": "{\"visible\": [\"train\"]}\n", "ans": {"visible": ["train"]}}
+{"key": "oi_dac2008b12a144d9", "raw": "{\"visible\": [\"bus\", \"car\"]}\n", "ans": {"visible": ["bus", "car"]}}
+{"key": "oi_dccedf138121a3b5", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "oi_ddd3f96ff7f0bc78", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "oi_dde3d07c3d9d33ff", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "oi_e0602477662127a6", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_e179205c268e580d", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_e3340bbe9232ee32", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_e3e5247e73529819", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_e5a3e62121f2b2d9", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_e6f18b4654c07bd9", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_e7b1cd62fadb41f0", "raw": "{\"visible\": [\"helmet\"]}\n", "ans": {"visible": ["helmet"]}}
+{"key": "oi_e90d12955a7c9386", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_e9252c7d6e6d69a4", "raw": "{\"visible\": [\"boat\", \"handrail\"]}\n", "ans": {"visible": ["boat", "handrail"]}}
+{"key": "oi_eaf164bc49df99e3", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_ec63f59c0c916ea5", "raw": "{\"visible\": [\"surfboard\"]}\n", "ans": {"visible": ["surfboard"]}}
+{"key": "oi_ec6e09dc8c78907b", "raw": "{\"visible\": [\"camel\"]}\n", "ans": {"visible": ["camel"]}}
+{"key": "oi_ecae4788191652a1", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "oi_ee9516834206ffaf", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_ee968c7641fe6677", "raw": "{\"visible\": [\"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_eef8a87c7b8e1067", "raw": "{\"visible\": [\"camel\"]}\n", "ans": {"visible": ["camel"]}}
+{"key": "oi_ef6a520a94834055", "raw": "{\"visible\": [\"horse\"]}\n", "ans": {"visible": ["horse"]}}
+{"key": "oi_f1193e51c44bdf1e", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_f1b2b23a01e52c39", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_f1c7c3c0a7fe34d6", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "oi_f219f22997dc6a79", "raw": "{\"visible\": [\"ski\"]}\n", "ans": {"visible": ["ski"]}}
+{"key": "oi_f3bad41032a8cd86", "raw": "{\"visible\": [\"bicycle\"]}\n", "ans": {"visible": ["bicycle"]}}
+{"key": "oi_f4360a78d152b01d", "raw": "{\"visible\": [\"car\"]}\n", "ans": {"visible": ["car"]}}
+{"key": "oi_f46f1741c3d0c0d8", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "oi_f4aaf5bf56d1e8dc", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_f4caae4bf8eb0c86", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "oi_f66e57fa9da8361e", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "oi_f684b35bc75c4505", "raw": "{\"visible\": [\"ski\"]}\n", "ans": {"visible": ["ski"]}}
+{"key": "oi_f85714e6d0c8f529", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_f96e6b95f8e12bf4", "raw": "{\"visible\": [\"backpack\"]}\n", "ans": {"visible": ["backpack"]}}
+{"key": "oi_fc1508a875d0c504", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_fc3f47ed9cf888be", "raw": "{\"visible\": [\"wheelchair\", \"helmet\"]}\n", "ans": {"visible": ["wheelchair", "helmet"]}}
+{"key": "oi_fc859a49dd256525", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "oi_fe7ca35356990449", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "oi_fe84e4aaedc15ca5", "raw": "{\"visible\": [\"helmet\", \"horse\", \"handrail\"]}\n", "ans": {"visible": ["helmet", "horse", "handrail"]}}
+{"key": "pl_00009245", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "pl_00029704", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00005144", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "pl_00012112", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00026053", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00032048", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "pl_00009270", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00006980", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "pl_00018244", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "pl_00002117", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "pl_00027648", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "pl_00015952", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "pl_00018444", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "pl_00034300", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "pl_00010946", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "pl_00004975", "raw": "{\"visible\": [\"bed\", \"desk\"]}\n", "ans": {"visible": ["bed", "desk"]}}
+{"key": "pl_00020211", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "pl_00012814", "raw": "{\"visible\": [\"boat\", \"handrail\"]}\n", "ans": {"visible": ["boat", "handrail"]}}
+{"key": "pl_00029004", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "pl_00014154", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "pl_00001470", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "pl_00010693", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "pl_00027327", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "pl_00020815", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00012861", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00004063", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00033430", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00002073", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00018536", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00011173", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00035223", "raw": "{\"visible\": [\"wheelchair\"]}\n", "ans": {"visible": ["wheelchair"]}}
+{"key": "pl_00000971", "raw": "{\"visible\": [\"desk\"]}\n", "ans": {"visible": ["desk"]}}
+{"key": "pl_00034365", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "pl_00014084", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "pl_00001639", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00015679", "raw": "{\"visible\": [\"stairs\", \"handrail\"]}\n", "ans": {"visible": ["stairs", "handrail"]}}
+{"key": "pl_00026811", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "pl_00002145", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00008329", "raw": "{\"visible\": [\"bus\"]}\n", "ans": {"visible": ["bus"]}}
+{"key": "pl_00033760", "raw": "{\"visible\": [\"boat\"]}\n", "ans": {"visible": ["boat"]}}
+{"key": "pl_00003600", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "pl_00008908", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "pl_00030198", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "pl_00008388", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "pl_00008975", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "pl_00009700", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "pl_00002306", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "pl_00033092", "raw": "{\"visible\": [\"gym_machine\"]}\n", "ans": {"visible": ["gym_machine"]}}
+{"key": "pl_00026555", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "pl_00030495", "raw": "{\"visible\": [\"train\"]}\n", "ans": {"visible": ["train"]}}
+{"key": "pl_00021584", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "pl_00003944", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00005831", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00035158", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00028266", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00035367", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00017033", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00022095", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00013083", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00015888", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00005743", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00024681", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00005412", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00017342", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00007065", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00004817", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00028520", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00002931", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00001092", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "pl_00023597", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "pl_00006792", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "pl_00017425", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}
+{"key": "pl_00017006", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00024943", "raw": "{\"visible\": [\"stairs\"]}\n", "ans": {"visible": ["stairs"]}}
+{"key": "pl_00002103", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00010498", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00026526", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00019112", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00010789", "raw": "{\"visible\": [\"surfboard\"]}\n", "ans": {"visible": ["surfboard"]}}
+{"key": "pl_00026787", "raw": "{\"visible\": [\"surfboard\"]}\n", "ans": {"visible": ["surfboard"]}}
+{"key": "pl_00019157", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00011586", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00027386", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00029682", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00009026", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "pl_00027309", "raw": "{\"visible\": [\"bed\"]}\n", "ans": {"visible": ["bed"]}}
+{"key": "pl_00020553", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00005465", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00011257", "raw": "{\"visible\": [\"bathtub\"]}\n", "ans": {"visible": ["bathtub"]}}
+{"key": "pl_00005321", "raw": "{\"visible\": []}\n", "ans": {"visible": []}}
+{"key": "pl_00021666", "raw": "{\"visible\": [\"handrail\"]}\n", "ans": {"visible": ["handrail"]}}

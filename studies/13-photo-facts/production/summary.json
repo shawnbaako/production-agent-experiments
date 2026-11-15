@@ -1,0 +1,47 @@
+{
+ "note": "Production aggregates from a travel catalogue, 2026-11-10 to 2026-11-15. Every label was written by Claude agent sessions (Claude Opus 5.5, general-purpose sessions viewing each photo and following the production label guide; for the offer field some also saw the listing's name, category and a short description). No person labelled these photos, so every precision and recall here is agreement with agent labels. Per-photo records are in records.jsonl under opaque ids (first 12 hex characters of a SHA-256); photos, links and listing text are not published.",
+ "labels": {
+  "photos": 1532,
+  "listings": 940,
+  "held_out_photos": 380,
+  "held_out_rule": "grouped by listing; the listings held out at label batch 2 stay held out, only new listings are split",
+  "ramp_positives": 21,
+  "offer_generic": 22,
+  "agent_vs_agent": {
+   "first_896": "108 photos labelled twice: 94-100% agreement on subject, setting, people and offer",
+   "batch_1": "24 shared photos: 23-24 of 24 agreed per field",
+   "batch_2": "24 shared photos: accessibility cues agreed on 19 of 24; disputed cues kept only where both labellers marked them"
+  }
+ },
+ "eg2": {
+  "model": "google/embeddinggemma-2 at revision f9972ac2, image only, 140 image tokens, about 0.1 s a photo on an RTX 3080 Ti",
+  "zero_shot_130_photos": {"subject_14_classes": 0.61, "setting": 0.69, "people_none_few_group": 0.58, "boat_auc": 1.0, "bicycle_auc": 0.99, "bus_auc": 0.99},
+  "nearest_centroid_130_photos": {"subject": 0.77, "setting": 0.91, "people": 0.76},
+  "paid_vision_llm_130_photos": {"setting": 0.95, "people": 0.84},
+  "heads_held_out_380": "see records.jsonl and heads_report.txt; subject answers bathroom 51/51, bedroom 24/24, indoor common area 60/65, scenery 68/72, activity 24/25 pass the gate; setting indoor 223/225, outdoor 245/257; bathtub 19/19 passes; bed 20/21 (lower bound 77%) does not",
+  "blind_check_220_catalogue_photos_where_heads_answered": {"boat": [40, 41], "stairs": [55, 60], "bathroom": [20, 20], "bedroom": [20, 20], "indoor_common_area": [28, 30], "indoor": [92, 93], "scenery": [51, 58], "outdoor": [105, 120]},
+  "catalogue_read": "1,900 listings in 23 minutes, about 0.7 s a listing"
+ },
+ "qwen": {
+  "model": "Qwen/Qwen3.5-2B, thinking off, greedy, photos at 768 px",
+  "lora": "r16, alpha 32, dropout 0.05, language-model projections only, vision frozen, 2 epochs, lr 1e-4, photos with a cue or a generic offer shown 3 times, Modal A10G",
+  "train_minutes": 41,
+  "usd_per_run": 0.8,
+  "prompt": "listing name, category and a 400-character description excerpt, the cue definitions, one line of JSON",
+  "v2_held_out": 321,
+  "v3_held_out": 380,
+  "mining": {"photos_screened": 2196, "usd": 1.0, "candidates_labelled": 234, "labels_after": "grab bar 71, step-free shower 30, ramp 21, wheelchair 19 positives in all 1,532"}
+ },
+ "joint_image_text_vector": {
+  "what": "hero photo plus name in the EG2 vision space as one ranking arm, weight chosen on a development split",
+  "held_out_queries": 152,
+  "ndcg10_joint": 0.8267,
+  "ndcg10_text": 0.8352,
+  "difference": -0.0085,
+  "difference_95ci": [-0.025, 0.008],
+  "mrr_difference": 0.0045,
+  "mrr_difference_95ci": [-0.021, 0.034],
+  "caveat": "the labelled queries are text-led; none asks what a place looks like"
+ },
+ "decision": "Accessibility is never read from photos. Accessibility facts are stated by the operator, not photographed; a photo without a ramp says nothing about whether there is one; and a wrong step-free claim harms the person who relied on it. The fine-tuned Qwen was not served."
+}
