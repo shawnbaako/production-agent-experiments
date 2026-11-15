@@ -16,29 +16,35 @@ runs per arm. Read it as an account of what happened, not as a result that gener
 
 **Short version.**
 
-- The consolidation ran in two phases. On 2026-10-20 and 10-21 the firm-level pipelines were
-  deleted (about 41,000 lines of application code and about half the tools). From 2026-11-03 to
-  11-07 the remaining separate background agent was folded into the chat agent, in five measured
-  steps.
-- On the outcome eval, several cases went from failing to passing. A stated preference about
-  colleagues held in 1 of 3 runs before and 3 of 3 after. A reassignment arriving by mail was taken
-  in 0 of 3 before and 3 of 3 after. A direction given in chat turned into owned, ongoing work in 0
-  of 3 before and 4 of 4 at the end. Tool searches per turn fell from 6.8–17.6 to 2.1–2.6.
-- **Evidence against:**
-  - The eval never ran the system as it was before 2026-10-20. Its baseline already had the
-    firm-level pipelines removed, so the first phase has no outcome eval at all.
-  - Steps 3 to 5 ran the eval once each. Two cases pass only after their pass check was changed
-    or a further fix landed.
-  - Spend per eval run went up, from $0.71–$0.99 to $1.72 at the last step (and $2.56 at the
-    step before).
-  - The large fall in production cost (from $34.82 a day to under $2) happened on 2026-10-17 and
-    10-18, through price routing and an event-driven attention pass, before the consolidation began.
-  - The consolidation caused regressions. Found tools could not be called for about a week; one
-    colleague had no background help for at least four days; contact saves failed for about a
-    day; a retry asked for the whole output budget. Morning checks still failed silently in
-    November.
-- Production failed turns fell from 20% to about 1–4% a week, but volume, routing and features
-  changed in the same weeks. That fall cannot be attributed to the architecture.
+- **Background work stopped duplicating itself.** Before the change, three agents with their own
+  contexts acted on the same work: the chat agent, a per-person background agent and a firm-level
+  agent. In one hour a partner's 25 edits to one email woke his background agent 15 times, and it
+  opened four separate send approvals for that one email. Questions were asked twice and never
+  withdrawn, and seven repeat guards had been stacked on top to hold it back. After the change, one
+  agent per person runs every turn with the same context, so it sees what it is already doing.
+- **Background model calls fell by about 85%, and background spend by about 85–90%.** In the week of
+  2026-10-12 the background pipelines made 6,656 model calls for $51.64. After the consolidation,
+  background turns made 658–1,187 calls a week for $5.34–$7.69. The price of a call barely moved
+  ($0.0078 before, $0.0065–$0.0081 after), so the saving is in the number of runs, not in cheaper
+  calls.
+- **The agent became coherent where it had been fragmented.** On a 10-case outcome eval:
+  - a stated preference about colleagues held in 3 of 3 runs, up from 1 of 3;
+  - a reassignment arriving by mail was taken in 3 of 3, up from 0 of 3;
+  - a direction given in chat became owned, ongoing work in 4 of 4 at the end, up from 0 of 3;
+  - two mails on one matter produced one message.
+
+  Tool searches per turn fell from 6.8–17.6 to 2.1–2.6, and the change removed about 48,000 lines of
+  application code (about 40,000 net of what was added), about half the tools and all seven repeat
+  guards.
+- **What it did not do:**
+  - It did not make each run cheaper. Spend per eval run rose from $0.71–$0.99 to $1.72, because a
+    background turn now carries the person's conversation, and one person's work wakes the agents of
+    colleagues it concerns.
+  - The consolidation caused regressions, each lasting days to about a week. Found tools could not
+    be called; one partner had no background help; a retry asked for the whole output budget.
+  - Price routing, which cut the cost of each unattended call, started on 2026-10-14, before the
+    consolidation.
+  - The first phase of the change has no outcome eval; the 10-case eval measures only the second.
 
 ## Setting
 
@@ -168,6 +174,52 @@ How to read the table:
   to it. In step 4 one colleague turn cost $0.63 by itself, mostly searching for a client name that
   was invented and not on file.
 
+## Duplicate and wasted background work
+
+**What it looked like before.** From read-only queries on 2026-10-19 and 10-20, and the 30 days before:
+
+| Symptom | Count |
+|---|---|
+| Background runs woken by one partner's edits to one email, in one hour | 15, without the chat transcript |
+| Send approvals opened for that one email | 4 |
+| Items put in front of one partner by background work in 34 hours | 66 (13 in quiet hours) |
+| Attention-pass runs in 30 days | 891, making 7,363 model calls for $32.79 |
+| Questions the attention pass tried to ask in those 30 days | 305, of which its own guards refused 266 |
+| Repeat guards, each added to patch the one before | 7 |
+| Overnight re-runs of the same research on 2026-10-14/15 | 7 |
+
+Each of these is the same failure: an agent acting on work another agent was already doing, without
+that agent's context. The guards treated the symptom; the consolidation removed the cause, because
+every turn now reads the person's conversation, notes and pending items.
+
+**Background model calls and spend, week by week.** "Pipelines" are the separate background agents
+before the change (attention pass, commitment help, research, inbound mail, meeting synthesis).
+"Background turns" are the consolidated agent's scheduled and event-started turns. Person-started
+turns are left out of both columns.
+
+| Week of | Background calls | Background spend | Spend per call | Where it ran |
+|---|---|---|---|---|
+| 10-12 | 6,656 | $51.64 | $0.0078 | Pipelines |
+| 10-19 | transition | transition | | Pipelines deleted on 10-20/21 |
+| 10-26 | 1,187 | $7.69 | $0.0065 | One agent |
+| 11-02 | 953 | $6.22 | $0.0065 | One agent |
+| 11-09 (to 11-13) | 658 | $5.34 | $0.0081 | One agent |
+
+The week of 10-19 is left out: the pipelines ran for part of it and calls were not yet tied to turns.
+In the week of 10-26, 899 further calls ($4.69) were not tied to any turn, and they are not counted
+above; from 11-02 such calls were under 30 a week.
+
+How much of this is the architecture:
+
+- **The number of runs is.** The fall in background calls is the deleted pipelines and the wakes
+  that no longer duplicate one another. A separate replay of 2026-10-20 without a model estimated
+  the new wake rules alone would have started 44 runs instead of 63.
+- **The price of a call mostly is not.** Price routing started on 2026-10-14, inside the 10-12 week,
+  so that week's per-call figure is a blend. Per-call cost is about the same on both sides, which is
+  why the saving is attributed to run count.
+- **A person's own use is not part of this comparison.** Person turns fell over the same weeks for
+  reasons unrelated to the architecture; they are excluded from the table above.
+
 ## Production, week by week
 
 Read-only aggregates. "Person turns" are turns a person started and was waiting on. "Background
@@ -195,8 +247,8 @@ Gaps in the record:
 What the series shows, and what it does not:
 
 - **Cost per call stayed about the same:** $0.0076 in the week of 10-12, $0.0058–$0.0077 after.
-  Weekly cost fell because there were fewer calls, and calls fell with use: person turns went from
-  133 to 35 a week.
+  Weekly cost fell because there were fewer calls. For background work that is the consolidation
+  (previous section); person turns also fell, for unrelated reasons.
 - **The cost cut came before the consolidation.** Daily cost was $34.82 on 10-14. It was $1.89 and
   $1.99 on 10-17 and 10-18, after unattended calls moved to the cheapest adequate host and the
   attention pass moved from a timer to events. It rose again to $23.65 on 10-19 (the day of the
@@ -245,8 +297,9 @@ Still failing at the end:
     prompt start;
   - tool-search fixes;
   - a fix for tool-call text leaking into replies.
-- **Use fell.** Person turns went from 133 a week to 35. One partner was without background
-  turns for some days.
+- **Person use fell,** from 133 person turns a week to 35, for reasons unrelated to the
+  architecture. It does not enter the background comparison. One partner was without background
+  turns for some days (a regression, listed above).
 - **The eval itself changed.** Its harness, triggers and two pass checks were revised during the
   steps.
 
@@ -274,9 +327,11 @@ Still failing at the end:
    context. Background work that never saw the chat, duplicate approvals, and questions nobody
    withdrew were all of that kind. The cases built to catch those failures passed after the
    consolidation, and most passed on the step written for them.
-2. The consolidation did not make the agent cheaper. Per eval run it cost more, because one
-   person's work now wakes the agents of the colleagues it concerns. In production the cost cut had
-   already come from routing.
+2. The consolidation removed most background work by removing the duplication behind it:
+   background calls fell from 6,656 a week to under 1,200, at about the same price per call. It did
+   not make an individual run cheaper. Per eval run it cost more, because each turn carries the
+   person's context and one person's work now wakes the agents of the colleagues it concerns. The
+   cheaper price of each unattended call came from routing, which started first.
 3. Removing structure created its own defects, for about a week each. Proofs on a restored copy
    caught some before merge (a false "record saved" claim, a migration that failed on an empty
    database) and missed others (the schema removal).
