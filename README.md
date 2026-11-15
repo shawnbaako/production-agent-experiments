@@ -18,7 +18,7 @@ Related, in its own repository: [Tool calls, stop tokens and missing issue text:
 
 ## Hardware notes
 
-- [Tesla P40 speed against temperature](hardware/p40-thermals/): ten weeks of clock, power and request timings from one P40 serving a 27B model at 125 W, with the watchdog and idle downclock that kept it running.
+- [Tesla P40 at a 125 W limit](hardware/p40-thermals/): clock, power and temperature over ten weeks; at the power limit heat costs about 13% of clock by 80 °C, and an idle downclock keeps the card at 31 °C instead of 60 °C.
 
 ## What a study here contains
 
