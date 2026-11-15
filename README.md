@@ -7,8 +7,8 @@ answers a question that came up in real work, with the code and per-item results
 
 | # | Study | Question | Status |
 |---|---|---|---|
-| 01 | [Decision models as a set-reading tool](studies/01-decision-models-sift/) | Can one yes-no question per item, answered by a small decision model, find the few relevant items in a set of 1,500? How do Jev, Laya, a local LLM and keyword search compare on the same items? | In progress |
-| 02 | [Deleting the test suite: proofs on real seams instead of tests](studies/02-proofs-not-tests/) | A product built by coding agents deleted 895 test files and banned new ones. What changed, what did it cost, and what does the evidence say against it? | Draft case report |
+| 01 | [Decision models as a set-reading tool](studies/01-decision-model-set-filter/) | Can one yes-no question per item, answered by a small decision model, find the few relevant items in a set of 1,500? How do Jev, Laya, a local LLM and keyword search compare on the same items? | In progress |
+| 02 | [Deleting the test suite: proofs on real seams instead of tests](studies/02-deleting-the-test-suite/) | A product built by coding agents deleted 895 test files and banned new ones. What changed, what did it cost, and what does the evidence say against it? | Draft case report |
 
 Related, in its own repository: [Tool calls, stop tokens and missing issue text: Gemma 4 as a coding agent](https://github.com/shawnbaako/gemma4-agent-failure-analysis).
 
