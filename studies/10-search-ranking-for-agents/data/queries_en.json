@@ -1,0 +1,362 @@
+[
+  {
+    "qid": "rome-activity-1",
+    "pool_id": "rome-activity",
+    "kind": "precise",
+    "text": "guided tour of the Colosseum and Roman Forum"
+  },
+  {
+    "qid": "rome-activity-2",
+    "pool_id": "rome-activity",
+    "kind": "precise",
+    "text": "catacombs or underground Rome tour"
+  },
+  {
+    "qid": "rome-activity-3",
+    "pool_id": "rome-activity",
+    "kind": "vague",
+    "text": "something relaxing on the water for a couple in the evening"
+  },
+  {
+    "qid": "rome-activity-4",
+    "pool_id": "rome-activity",
+    "kind": "negation",
+    "text": "day trip out of Rome to see wine country, not Pompeii"
+  },
+  {
+    "qid": "rome-activity-5",
+    "pool_id": "rome-activity",
+    "kind": "nomatch",
+    "text": "scuba diving lesson for beginners"
+  },
+  {
+    "qid": "tokyo-activity-1",
+    "pool_id": "tokyo-activity",
+    "kind": "precise",
+    "text": "hands-on Japanese craft class like pottery or kintsugi"
+  },
+  {
+    "qid": "tokyo-activity-2",
+    "pool_id": "tokyo-activity",
+    "kind": "precise",
+    "text": "morning food tour around Tsukiji market"
+  },
+  {
+    "qid": "tokyo-activity-3",
+    "pool_id": "tokyo-activity",
+    "kind": "vague",
+    "text": "fun indoor thing for kids on a rainy day"
+  },
+  {
+    "qid": "tokyo-activity-4",
+    "pool_id": "tokyo-activity",
+    "kind": "negation",
+    "text": "drinks tour with sake and whisky, but not a food tour"
+  },
+  {
+    "qid": "tokyo-activity-5",
+    "pool_id": "tokyo-activity",
+    "kind": "nomatch",
+    "text": "sumo wrestling match tickets"
+  },
+  {
+    "qid": "kyoto-activity-1",
+    "pool_id": "kyoto-activity",
+    "kind": "precise",
+    "text": "matcha green tea experience in Uji"
+  },
+  {
+    "qid": "kyoto-activity-2",
+    "pool_id": "kyoto-activity",
+    "kind": "precise",
+    "text": "evening walk through Gion with a guide"
+  },
+  {
+    "qid": "kyoto-activity-3",
+    "pool_id": "kyoto-activity",
+    "kind": "vague",
+    "text": "first time in Kyoto, want to see the famous temples in one day"
+  },
+  {
+    "qid": "kyoto-activity-4",
+    "pool_id": "kyoto-activity",
+    "kind": "negation",
+    "text": "day trip to Nara but not a private tour"
+  },
+  {
+    "qid": "kyoto-activity-5",
+    "pool_id": "kyoto-activity",
+    "kind": "nomatch",
+    "text": "snowboarding day trip"
+  },
+  {
+    "qid": "bangkok-activity-1",
+    "pool_id": "bangkok-activity",
+    "kind": "precise",
+    "text": "floating market half-day trip"
+  },
+  {
+    "qid": "bangkok-activity-2",
+    "pool_id": "bangkok-activity",
+    "kind": "precise",
+    "text": "street food tour in Chinatown"
+  },
+  {
+    "qid": "bangkok-activity-3",
+    "pool_id": "bangkok-activity",
+    "kind": "vague",
+    "text": "get out of the city into nature for a day"
+  },
+  {
+    "qid": "bangkok-activity-4",
+    "pool_id": "bangkok-activity",
+    "kind": "negation",
+    "text": "see the temples without a tuk tuk ride"
+  },
+  {
+    "qid": "bangkok-activity-5",
+    "pool_id": "bangkok-activity",
+    "kind": "nomatch",
+    "text": "Muay Thai boxing class"
+  },
+  {
+    "qid": "newyork-activity-1",
+    "pool_id": "newyork-activity",
+    "kind": "precise",
+    "text": "helicopter flight over Manhattan"
+  },
+  {
+    "qid": "newyork-activity-2",
+    "pool_id": "newyork-activity",
+    "kind": "precise",
+    "text": "bike tour across the Brooklyn Bridge"
+  },
+  {
+    "qid": "newyork-activity-3",
+    "pool_id": "newyork-activity",
+    "kind": "vague",
+    "text": "something hands-on with food rather than just sightseeing"
+  },
+  {
+    "qid": "newyork-activity-4",
+    "pool_id": "newyork-activity",
+    "kind": "negation",
+    "text": "Statue of Liberty visit, not by car"
+  },
+  {
+    "qid": "newyork-activity-5",
+    "pool_id": "newyork-activity",
+    "kind": "nomatch",
+    "text": "Broadway show tickets"
+  },
+  {
+    "qid": "lisbon-activity-1",
+    "pool_id": "lisbon-activity",
+    "kind": "precise",
+    "text": "fado music show"
+  },
+  {
+    "qid": "lisbon-activity-2",
+    "pool_id": "lisbon-activity",
+    "kind": "precise",
+    "text": "dolphin watching boat trip"
+  },
+  {
+    "qid": "lisbon-activity-3",
+    "pool_id": "lisbon-activity",
+    "kind": "vague",
+    "text": "romantic evening activity for our anniversary"
+  },
+  {
+    "qid": "lisbon-activity-4",
+    "pool_id": "lisbon-activity",
+    "kind": "negation",
+    "text": "see the city at my own pace, not on a bus"
+  },
+  {
+    "qid": "lisbon-activity-5",
+    "pool_id": "lisbon-activity",
+    "kind": "nomatch",
+    "text": "surf lesson"
+  },
+  {
+    "qid": "marrakech-activity-1",
+    "pool_id": "marrakech-activity",
+    "kind": "precise",
+    "text": "quad biking in the Agafay desert"
+  },
+  {
+    "qid": "marrakech-activity-2",
+    "pool_id": "marrakech-activity",
+    "kind": "precise",
+    "text": "Moroccan cooking class"
+  },
+  {
+    "qid": "marrakech-activity-3",
+    "pool_id": "marrakech-activity",
+    "kind": "vague",
+    "text": "a calm, pampering day after a long flight"
+  },
+  {
+    "qid": "marrakech-activity-4",
+    "pool_id": "marrakech-activity",
+    "kind": "negation",
+    "text": "day trip to the Atlas Mountains without driving a quad or buggy"
+  },
+  {
+    "qid": "marrakech-activity-5",
+    "pool_id": "marrakech-activity",
+    "kind": "nomatch",
+    "text": "hot air balloon ride at sunrise"
+  },
+  {
+    "qid": "rio-activity-1",
+    "pool_id": "rio-activity",
+    "kind": "precise",
+    "text": "Christ the Redeemer and Sugarloaf Mountain tour"
+  },
+  {
+    "qid": "rio-activity-2",
+    "pool_id": "rio-activity",
+    "kind": "precise",
+    "text": "samba show at night"
+  },
+  {
+    "qid": "rio-activity-3",
+    "pool_id": "rio-activity",
+    "kind": "vague",
+    "text": "outdoor adventure with great views, I'm fit"
+  },
+  {
+    "qid": "rio-activity-4",
+    "pool_id": "rio-activity",
+    "kind": "negation",
+    "text": "beach day away from Copacabana crowds, not a boat party"
+  },
+  {
+    "qid": "rio-activity-5",
+    "pool_id": "rio-activity",
+    "kind": "nomatch",
+    "text": "Amazon rainforest jungle lodge"
+  },
+  {
+    "qid": "tokyo-hotel-1",
+    "pool_id": "tokyo-hotel",
+    "kind": "precise",
+    "text": "hotel near Ginza"
+  },
+  {
+    "qid": "tokyo-hotel-2",
+    "pool_id": "tokyo-hotel",
+    "kind": "precise",
+    "text": "waterfront hotel in Odaiba with views of the bay"
+  },
+  {
+    "qid": "tokyo-hotel-3",
+    "pool_id": "tokyo-hotel",
+    "kind": "vague",
+    "text": "quiet hotel with a garden, somewhere peaceful"
+  },
+  {
+    "qid": "tokyo-hotel-4",
+    "pool_id": "tokyo-hotel",
+    "kind": "negation",
+    "text": "budget-friendly hotel in Akihabara, not a luxury property"
+  },
+  {
+    "qid": "tokyo-hotel-5",
+    "pool_id": "tokyo-hotel",
+    "kind": "nomatch",
+    "text": "ryokan with private onsen hot spring"
+  },
+  {
+    "qid": "newyork-hotel-1",
+    "pool_id": "newyork-hotel",
+    "kind": "precise",
+    "text": "hotel in Times Square"
+  },
+  {
+    "qid": "newyork-hotel-2",
+    "pool_id": "newyork-hotel",
+    "kind": "precise",
+    "text": "suite with a kitchenette for a longer stay"
+  },
+  {
+    "qid": "newyork-hotel-3",
+    "pool_id": "newyork-hotel",
+    "kind": "vague",
+    "text": "boutique hotel with character downtown"
+  },
+  {
+    "qid": "newyork-hotel-4",
+    "pool_id": "newyork-hotel",
+    "kind": "negation",
+    "text": "hotel near Madison Square Garden but not in Times Square"
+  },
+  {
+    "qid": "newyork-hotel-5",
+    "pool_id": "newyork-hotel",
+    "kind": "nomatch",
+    "text": "beachfront resort with a private beach"
+  },
+  {
+    "qid": "lisbon-hotel-1",
+    "pool_id": "lisbon-hotel",
+    "kind": "precise",
+    "text": "five-star hotel near Pra\u00e7a do Com\u00e9rcio"
+  },
+  {
+    "qid": "lisbon-hotel-2",
+    "pool_id": "lisbon-hotel",
+    "kind": "precise",
+    "text": "boutique hotel in Chiado"
+  },
+  {
+    "qid": "lisbon-hotel-3",
+    "pool_id": "lisbon-hotel",
+    "kind": "vague",
+    "text": "charming small hotel in a historic building"
+  },
+  {
+    "qid": "lisbon-hotel-4",
+    "pool_id": "lisbon-hotel",
+    "kind": "negation",
+    "text": "hotel in Baixa that is not an apartment"
+  },
+  {
+    "qid": "lisbon-hotel-5",
+    "pool_id": "lisbon-hotel",
+    "kind": "nomatch",
+    "text": "hotel with a golf course"
+  },
+  {
+    "qid": "dubai-hotel-1",
+    "pool_id": "dubai-hotel",
+    "kind": "precise",
+    "text": "beach resort with a spa"
+  },
+  {
+    "qid": "dubai-hotel-2",
+    "pool_id": "dubai-hotel",
+    "kind": "precise",
+    "text": "serviced apartment with a kitchen"
+  },
+  {
+    "qid": "dubai-hotel-3",
+    "pool_id": "dubai-hotel",
+    "kind": "vague",
+    "text": "somewhere to sleep near the airport before an early flight"
+  },
+  {
+    "qid": "dubai-hotel-4",
+    "pool_id": "dubai-hotel",
+    "kind": "negation",
+    "text": "hotel in Dubai itself, not Sharjah or Ajman"
+  },
+  {
+    "qid": "dubai-hotel-5",
+    "pool_id": "dubai-hotel",
+    "kind": "nomatch",
+    "text": "hotel with direct Burj Khalifa views"
+  }
+]

@@ -1,0 +1,19 @@
+[project]
+# Environment for the local models (embeddings, cross-encoder) and the Wikivoyage parser.
+# The OpenRouter steps and the report need only the standard library.
+name = "search-ranking-for-agents"
+version = "1.0.0"
+requires-python = ">=3.13"
+dependencies = [
+    "mwparserfromhell==0.7.2",
+    "numpy>=2.2",
+    "torch==2.15.0",
+    "torchvision==0.29.2",  # EmbeddingGemma 2 loads its image processor even text-only
+    "pillow>=10.0",
+    "transformers==5.22.1",
+    "sentence-transformers==6.2.0",
+    "einops>=0.8",  # Nomic's remote code
+]
+
+[tool.uv]
+package = false

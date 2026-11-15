@@ -1,0 +1,397 @@
+{
+  "model": "z-ai/glm-5.3",
+  "system": "You translate short requests that a traveler's AI assistant sends to a travel search engine. Translate each one naturally and idiomatically, the way a native speaker's assistant would phrase it. Keep proper nouns as a native speaker would write them. Keep negations and constraints exactly. Do not add or drop meaning. Return JSON: {\"translations\": {\"<id>\": \"<translation>\", ...}}",
+  "calls": [
+    {
+      "lang": "es",
+      "model": "z-ai/glm-5.3",
+      "cost_usd": 0.0006128764,
+      "seconds": 2.72,
+      "count": 18
+    },
+    {
+      "lang": "zh",
+      "model": "z-ai/glm-5.3",
+      "cost_usd": 0.0005146647,
+      "seconds": 4.29,
+      "count": 18
+    },
+    {
+      "lang": "de",
+      "model": "z-ai/glm-5.3",
+      "cost_usd": 0.0005862384,
+      "seconds": 3.26,
+      "count": 18
+    },
+    {
+      "lang": "fr",
+      "model": "z-ai/glm-5.3",
+      "cost_usd": 0.0005734986,
+      "seconds": 2.41,
+      "count": 18
+    },
+    {
+      "lang": "ja",
+      "model": "z-ai/glm-5.3",
+      "cost_usd": 0.0006601568,
+      "seconds": 3.21,
+      "count": 18
+    },
+    {
+      "lang": "pt",
+      "model": "z-ai/glm-5.3",
+      "cost_usd": 0.0006017762,
+      "seconds": 3.94,
+      "count": 18
+    },
+    {
+      "lang": "ko",
+      "model": "z-ai/glm-5.3",
+      "cost_usd": 0.0007849346,
+      "seconds": 5.1,
+      "count": 18
+    },
+    {
+      "lang": "it",
+      "model": "z-ai/glm-5.3",
+      "cost_usd": 0.0005876384,
+      "seconds": 2.53,
+      "count": 18
+    },
+    {
+      "lang": "ar",
+      "model": "z-ai/glm-5.3",
+      "cost_usd": 0.000666318,
+      "seconds": 4.48,
+      "count": 18
+    },
+    {
+      "lang": "hi",
+      "model": "z-ai/glm-5.3",
+      "cost_usd": 0.0011190073,
+      "seconds": 6.03,
+      "count": 18
+    }
+  ],
+  "at": "2026-11-02T22:47:37Z",
+  "queries": {
+    "rome-activity-1": {
+      "es": "visita guiada al Coliseo y al Foro Romano",
+      "zh": "罗马斗兽场和古罗马广场导览游",
+      "de": "geführte Tour durch das Kolosseum und das Forum Romanum"
+    },
+    "rome-activity-4": {
+      "es": "excursión de un día desde Roma para conocer la región vinícola, no Pompeya",
+      "zh": "从罗马出发前往葡萄酒之乡的一日游，不去庞贝",
+      "hi": "रोम से बाहर वाइन क्षेत्र देखने के लिए एक दिन की यात्रा, पांपेई नहीं"
+    },
+    "tokyo-activity-2": {
+      "es": "tour gastronómico matutino por el mercado de Tsukiji",
+      "ar": "جولة طعام صباحية حول سوق تسوكيجي",
+      "hi": "सुबह त्सुकिजी बाज़ार के आसपास खाने का टूर"
+    },
+    "kyoto-activity-1": {
+      "es": "experiencia con té verde matcha en Uji",
+      "zh": "宇治抹茶体验",
+      "de": "Matcha-Grüntee-Erlebnis in Uji"
+    },
+    "kyoto-activity-4": {
+      "es": "excursión de un día a Nara pero no un tour privado",
+      "zh": "奈良一日游，但不要私人导览",
+      "hi": "नारा के लिए एक दिन की यात्रा लेकिन प्राइवेट टूर नहीं"
+    },
+    "bangkok-activity-2": {
+      "es": "tour de comida callejera por el barrio chino",
+      "ar": "جولة طعام الشوارع في الحي الصيني",
+      "hi": "चाइनाटाउन में स्ट्रीट फूड टूर"
+    },
+    "newyork-activity-1": {
+      "es": "vuelo en helicóptero sobre Manhattan",
+      "zh": "直升机飞越曼哈顿",
+      "de": "Helikopterflug über Manhattan"
+    },
+    "newyork-activity-4": {
+      "es": "visita a la Estatua de la Libertad, no en coche",
+      "zh": "参观自由女神像，不坐汽车",
+      "hi": "स्टैचू ऑफ लिबर्टी की विजिट, कार से नहीं"
+    },
+    "lisbon-activity-2": {
+      "es": "excursión en barco para avistar delfines",
+      "ar": "رحلة قارب لمشاهدة الدلافين",
+      "hi": "डॉल्फिन देखने की नाव की यात्रा"
+    },
+    "marrakech-activity-1": {
+      "es": "tour en quad por el desierto de Agafay",
+      "zh": "阿加法伊沙漠四轮摩托越野",
+      "de": "Quadfahren in der Agafay-Wüste"
+    },
+    "marrakech-activity-4": {
+      "es": "excursión de un día a las montañas del Atlas sin conducir quad ni buggy",
+      "zh": "阿特拉斯山脉一日游，不开四轮摩托或越野卡丁车",
+      "hi": "एटलस पर्वतों के लिए एक दिन की यात्रा, क्वाड या बगी चलाए बिना"
+    },
+    "rio-activity-2": {
+      "es": "espectáculo de samba por la noche",
+      "ar": "عرض سامبا ليلي",
+      "hi": "रात में सांबा शो"
+    },
+    "tokyo-hotel-1": {
+      "es": "hotel cerca de Ginza",
+      "zh": "银座附近的酒店",
+      "de": "Hotel in der Nähe von Ginza"
+    },
+    "tokyo-hotel-4": {
+      "es": "hotel económico en Akihabara, no un alojamiento de lujo",
+      "zh": "秋叶原经济实惠的酒店，不要豪华型",
+      "hi": "आकिहाबारा में बजट-फ्रेंडली होटल, लक्ज़री प्रॉपर्टी नहीं"
+    },
+    "newyork-hotel-2": {
+      "es": "suite con kitchenette para una estancia larga",
+      "ar": "جناح مع مطبخ صغير لإقامة طويلة",
+      "hi": "लंबे प्रवास के लिए किचनेट वाला सुइट"
+    },
+    "lisbon-hotel-1": {
+      "es": "hotel de cinco estrellas cerca de la Praça do Comércio",
+      "zh": "商业广场附近的五星级酒店",
+      "de": "Fünf-Sterne-Hotel nahe der Praça do Comércio"
+    },
+    "lisbon-hotel-4": {
+      "es": "hotel en Baixa que no sea un apartamento",
+      "zh": "下城区（Baixa）的酒店，不要公寓式",
+      "hi": "बाशा में होटल जो अपार्टमेंट न हो"
+    },
+    "dubai-hotel-2": {
+      "es": "apartamento con servicios de hotel y cocina",
+      "ar": "شقة فندقية مع مطبخ",
+      "hi": "किचन वाला सर्विस्ड अपार्टमेंट"
+    },
+    "tokyo-activity-3": {
+      "zh": "雨天适合孩子的室内好玩项目",
+      "de": "spannende Indoor-Aktivität für Kinder an einem Regentag",
+      "fr": "activité intérieure amusante pour enfants un jour de pluie"
+    },
+    "bangkok-activity-3": {
+      "zh": "离开城市去大自然待一天",
+      "de": "für einen Tag aus der Stadt in die Natur",
+      "fr": "échapper à la ville pour une journée dans la nature"
+    },
+    "lisbon-activity-3": {
+      "zh": "适合周年纪念的浪漫夜间活动",
+      "de": "romantische Abendaktivität für unseren Jahrestag",
+      "fr": "activité romantique en soirée pour notre anniversaire de mariage"
+    },
+    "rio-activity-3": {
+      "zh": "风景绝佳的户外探险，我体力很好",
+      "de": "Outdoor-Abenteuer mit toller Aussicht, ich bin fit",
+      "fr": "aventure en plein air avec de belles vues, je suis sportif"
+    },
+    "newyork-hotel-3": {
+      "zh": "市中心有特色的精品酒店",
+      "de": "Boutique-Hotel mit Charakter Downtown",
+      "fr": "hôtel boutique avec du caractère en centre-ville"
+    },
+    "dubai-hotel-3": {
+      "zh": "机场附近能睡一晚的地方，赶早班机",
+      "de": "eine Übernachtungsmöglichkeit in Flughafennähe vor einem frühen Flug",
+      "fr": "un endroit pour dormir près de l'aéroport avant un vol tôt le matin"
+    },
+    "rome-activity-5": {
+      "de": "Tauchkurs für Anfänger",
+      "fr": "cours de plongée sous-marine pour débutants",
+      "ja": "初心者向けスキューバダイビングレッスン"
+    },
+    "kyoto-activity-5": {
+      "de": "Snowboard-Tagesausflug",
+      "fr": "excursion snowboard à la journée",
+      "ja": "スノーボードの日帰りツアー"
+    },
+    "newyork-activity-5": {
+      "de": "Tickets für ein Broadway-Musical",
+      "fr": "billets pour une comédie musicale de Broadway",
+      "ja": "ブロードウェイショーのチケット"
+    },
+    "marrakech-activity-5": {
+      "de": "Ballonfahrt bei Sonnenaufgang",
+      "fr": "vol en montgolfière au lever du soleil",
+      "ja": "日の出の熱気球フライト"
+    },
+    "tokyo-hotel-5": {
+      "de": "Ryokan mit privatem Onsen-Thermalbad",
+      "fr": "ryokan avec onsen privé, source chaude",
+      "ja": "貸切温泉付きの旅館"
+    },
+    "lisbon-hotel-5": {
+      "de": "Hotel mit Golfplatz",
+      "fr": "hôtel avec un parcours de golf",
+      "ja": "ゴルフコース付きのホテル"
+    },
+    "rome-activity-2": {
+      "fr": "visite des catacombes ou de la Rome souterraine",
+      "ja": "カタコンベまたは地下ローマツアー",
+      "pt": "tour pelas catacumbas ou pela Roma subterrânea"
+    },
+    "kyoto-activity-2": {
+      "fr": "promenade en soirée dans Gion avec un guide",
+      "ja": "ガイド付きの祇園イブニングウォーク",
+      "pt": "caminhada noturna por Gion com um guia"
+    },
+    "newyork-activity-2": {
+      "fr": "tour à vélo à travers le pont de Brooklyn",
+      "ja": "ブルックリンブリッジを渡るバイクツアー",
+      "pt": "tour de bike pela Ponte do Brooklyn"
+    },
+    "marrakech-activity-2": {
+      "fr": "cours de cuisine marocaine",
+      "ja": "モロッコ料理のクッキングクラス",
+      "pt": "aula de culinária marroquina"
+    },
+    "tokyo-hotel-2": {
+      "fr": "hôtel au bord de l'eau à Odaiba avec vue sur la baie",
+      "ja": "お台場のベイビュー水辺のホテル",
+      "pt": "hotel à beira-mar em Odaiba com vista para a baía"
+    },
+    "lisbon-hotel-2": {
+      "fr": "hôtel boutique dans le Chiado",
+      "ja": "シアード地区のブティックホテル",
+      "pt": "hotel boutique no Chiado"
+    },
+    "tokyo-activity-4": {
+      "ja": "日本酒とウイスキーの飲み歩きツアー（グルメツアーは除く）",
+      "pt": "tour de bebidas com saquê e uísque, mas não tour gastronômico",
+      "ko": "사케와 위스키가 있는 술 투어, 음식 투어는 제외"
+    },
+    "bangkok-activity-4": {
+      "ja": "トゥクトゥクに乗らないで寺院をめぐるツアー",
+      "pt": "ver os templos sem passeio de tuk tuk",
+      "ko": "툭툭 투어 없이 사찰 구경하기"
+    },
+    "lisbon-activity-4": {
+      "ja": "バスではなく自分のペースで街を見て回る",
+      "pt": "conhecer a cidade no meu próprio ritmo, não de ônibus",
+      "ko": "버스 타지 않고 내 페이스대로 도시 구경하기"
+    },
+    "rio-activity-4": {
+      "ja": "コパカバーナの混雑を避けたビーチデー（ボートパーティーは不可）",
+      "pt": "dia de praia longe da aglomeração de Copacabana, não festa de barco",
+      "ko": "코파카바나의 인파를 벗어난 해변 데이, 보트 파티는 제외"
+    },
+    "newyork-hotel-4": {
+      "ja": "マディソンスクエアガーデン近くのホテル（ただしタイムズスクエアは除く）",
+      "pt": "hotel perto do Madison Square Garden, mas não na Times Square",
+      "ko": "매디슨 스퀘어 가든 근처에 있지만 타임스퀘어는 아닌 호텔"
+    },
+    "dubai-hotel-4": {
+      "ja": "ドバイ市内のホテル（シャールジャやアジュマンは不可）",
+      "pt": "hotel no próprio Dubai, não em Sharjah ou Ajman",
+      "ko": "두바이 시내에 있는 호텔, 샤르자나 아지만은 제외"
+    },
+    "tokyo-activity-1": {
+      "pt": "aula prática de artesanato japonês, como cerâmica ou kintsugi",
+      "ko": "도자기나 킨츠기 같은 직접 체험하는 일본 전통공예 수업",
+      "it": "corso pratico di artigianato giapponese come ceramica o kintsugi"
+    },
+    "bangkok-activity-1": {
+      "pt": "passeio de meio dia em mercado flutuante",
+      "ko": "플로팅 마켓 반나절 투어",
+      "it": "escursione di mezza giornata al mercato galleggiante"
+    },
+    "lisbon-activity-1": {
+      "pt": "show de fado",
+      "ko": "파두 공연",
+      "it": "spettacolo di musica fado"
+    },
+    "rio-activity-1": {
+      "pt": "tour pelo Cristo Redentor e Pão de Açúcar",
+      "ko": "그리스도상과 슈가로프 산 투어",
+      "it": "tour del Cristo Redentore e del Pan di Zucchero"
+    },
+    "newyork-hotel-1": {
+      "pt": "hotel na Times Square",
+      "ko": "타임스퀘어에 있는 호텔",
+      "it": "hotel a Times Square"
+    },
+    "dubai-hotel-1": {
+      "pt": "resort de praia com spa",
+      "ko": "스파가 있는 해변 리조트",
+      "it": "resort con spiaggia e spa"
+    },
+    "rome-activity-3": {
+      "ko": "저녁에 커플이 즐기는 물 위에서 하는 편안한 활동",
+      "it": "qualcosa di rilassante sull'acqua per una coppia in serata",
+      "ar": "شيء هادئ ومريح على الماء لزوجين في المساء"
+    },
+    "kyoto-activity-3": {
+      "ko": "교토가 처음인데 유명한 사찰을 하루에 다 보고 싶어요",
+      "it": "prima volta a Kyoto, vorrei vedere i templi famosi in un giorno",
+      "ar": "زيارتي الأولى لكيوتو، أريد مشاهدة المعابد الشهيرة في يوم واحد"
+    },
+    "newyork-activity-3": {
+      "ko": "그냥 구경만 하는 게 아니라 음식을 직접 만져보며 체험할 수 있는 것",
+      "it": "qualcosa di pratico a contatto con il cibo, non solo visite turistiche",
+      "ar": "شيء عملي مع الطعام وليس مجرد مشاهدة المعالم"
+    },
+    "marrakech-activity-3": {
+      "ko": "긴 비행 후에 편안하게 힐링하는 하루",
+      "it": "una giornata tranquilla e rilassante dopo un lungo volo",
+      "ar": "يوم هادئ ومنعش للاستجمام بعد رحلة طويلة بالطائرة"
+    },
+    "tokyo-hotel-3": {
+      "ko": "정원이 있어서 평화로운 조용한 호텔",
+      "it": "hotel tranquillo con un giardino, un posto sereno",
+      "ar": "فندق هادئ مع حديقة، في مكان يبعث على الاطمئنان"
+    },
+    "lisbon-hotel-3": {
+      "ko": "역사 있는 건물에 있는 매력적인 소형 호텔",
+      "it": "piccolo hotel di charme in un edificio storico",
+      "ar": "فندق صغير ساحر في مبنى تاريخي"
+    },
+    "tokyo-activity-5": {
+      "it": "biglietti per un incontro di sumo",
+      "ar": "تذاكر مباراة مصارعة السومو",
+      "hi": "सुमो कुश्ती मैच के टिकट"
+    },
+    "bangkok-activity-5": {
+      "it": "corso di Muay Thai",
+      "ar": "حصة تدريب في الملاكمة التايلاندية (مواي تاي)",
+      "hi": "मुआय थाई बॉक्सिंग क्लास"
+    },
+    "lisbon-activity-5": {
+      "it": "lezione di surf",
+      "ar": "درس في ركوب الأمواج",
+      "hi": "सर्फिंग की क्लास"
+    },
+    "rio-activity-5": {
+      "it": "lodge nella giungla della foresta amazzonica",
+      "ar": "منتجع وسط غابة الأمازون المطيرة",
+      "hi": "अमेज़न रेनफॉरेस्ट जंगल लॉज"
+    },
+    "newyork-hotel-5": {
+      "it": "resort fronte spiaggia con spiaggia privata",
+      "ar": "منتجع على الشاطئ بشاطئ خاص",
+      "hi": "प्राइवेट बीच वाला बीचफ्रंट रिसॉर्ट"
+    },
+    "dubai-hotel-5": {
+      "it": "hotel con vista diretta sul Burj Khalifa",
+      "ar": "فندق بإطلالة مباشرة على برج خليفة",
+      "hi": "बुर्ज खलीफा के सीधे नज़ारे वाला होटल"
+    }
+  },
+  "manual_corrections": [
+    {
+      "qid": "rome-activity-5",
+      "lang": "de",
+      "was": "Schnorchelkurs für Anfänger – nein, Tauchkurs für Anfänger",
+      "now": "Tauchkurs für Anfänger",
+      "why": "model output contained a self-correction ('Schnorchelkurs … – nein, …')",
+      "by": "agent (Claude) reviewing all 180 translations"
+    },
+    {
+      "qid": "tokyo-activity-2",
+      "lang": "hi",
+      "was": "सुबह सुखीजी बाज़ार के आसपास खाने का टूर",
+      "now": "सुबह त्सुकिजी बाज़ार के आसपास खाने का टूर",
+      "why": "model transliterated Tsukiji as 'सुखीजी' (Sukhiji)",
+      "by": "agent (Claude) reviewing all 180 translations"
+    }
+  ]
+}

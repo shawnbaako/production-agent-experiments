@@ -1,0 +1,349 @@
+{
+ "rows": [
+  {
+   "qid": "lisbon-hotel-3",
+   "request": "charming small hotel in a historic building",
+   "cid": "60c72f75230c",
+   "text": "Olissippo Lapa Palace\nFive-star, 109-room hotel, property of Orient-Express Hotels, Trains & Cruises. A luxury palace hotel in one of Lisbon's seven hills, with gardens and pools, heated all year long. Member of the Leading Hotels of the World. With one of the best spas in Lisbon, gourmet food (its restaurant is considered by the Zagat Guide as one of the best in Lisbon) and one of the best concierge services in the country.\nArea: Bairro Alto; Address: Rua do Pau de Bandeira 4; Price: 264-351",
+   "mine": 2,
+   "note": "palace hotel implies a historic building; 109 rooms is not small"
+  },
+  {
+   "qid": "newyork-activity-1",
+   "request": "helicopter flight over Manhattan",
+   "cid": "cbbfba0e1c3d",
+   "text": "High Line Park\nBuilt on a defunct elevated railway that runs 30 feet above the streets, the re-purposing of the rail line as a park has made it the focus of major development in the neighborhood. There are plenty of plantings and art installations along the park as it winds its way between (and through!) buildings, and walking the stretch offers some pretty unique views over the streets of Manhattan. No dogs or bicycles. There are restrooms at Gansevoort St. (the southern terminus), 16th St, 30th St, and 31st St/ Dyer Ave .\nArea: Chelsea; Address: Runs mostly along 10th Avenue from 34th Street south to Gansevoort Street in the Meatpacking District, with access points at Gansevoort, 14th, 16th, 17th, 20th, 23rd, 26th, 28th, 30th, and 34th Streets; Hours: Open daily Apr–Nov: 7AM-10PM; Dec–March: 7AM-8PM; Price: Free admission",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "lisbon-hotel-3",
+   "request": "charming small hotel in a historic building",
+   "cid": "099b313f7242",
+   "text": "Nau Palácio do Governador\nFive-star, 60 room hotel with spa, gym, two swimming pools, business centre, free breakfast, and free Wi-Fi.\nArea: Belém; Address: Rua Bartolomeu Dias 117; Price: 119-248",
+   "mine": 1,
+   "note": "neither small nor historic is stated"
+  },
+  {
+   "qid": "dubai-hotel-1",
+   "request": "beach resort with a spa",
+   "cid": "cbf0b224263d",
+   "text": "Jebel Ali Beach Hotel\nPets are not allowed. Speaks Russian, English, German and Arabic. This luxurious resort hotel is located on the Arabian Gulf. It has 1km private beach surrounded by palm trees and sun loungers. All the rooms are bright and stylish and they have fresh air and scenic balcony.\nArea: Jebel Ali; Address: Exit 13, Sheikh Zayed Road, Jebel Ali, Dubai",
+   "mine": 2,
+   "note": "beach resort; no spa stated"
+  },
+  {
+   "qid": "marrakech-activity-3",
+   "request": "a calm, pampering day after a long flight",
+   "cid": "03337b873158",
+   "text": "The Menara gardens\nA mixture of orchards and olive groves surrounding the water reservoir with the central pavilion which is a popular sight on tourist postcards. Not a decorative garden, and now quite run down. The pavilion was built during the 16th-century Saadi dynasty, and renovated in 1869. It has a small cafe, but it is not open all hours. There are no toilets open when the cafe is closed.\nArea: Marrakech; Hours: 09:00-17:00; Price: Free admission",
+   "mine": 1,
+   "note": "a garden, calm, but run down and not pampering"
+  },
+  {
+   "qid": "tokyo-hotel-2",
+   "request": "waterfront hotel in Odaiba with views of the bay",
+   "cid": "d1544024dddf",
+   "text": "Khaosan Tokyo Guesthouse\nThis group of guest houses has 3 hostels within 5 minutes of Asakusa station. They also run a travelers' bar and you get 1 free drink when you stay. There are dormitories as well as private rooms available.\nArea: Asakusa; Price: ¥2000",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "kyoto-activity-4",
+   "request": "day trip to Nara but not a private tour",
+   "cid": "13df344a66d1",
+   "text": "The Museum of Kyoto\nThe museum features many ancient artifacts relating to Kyoto life and history. It has an expansive ancient ceramics collection.\nArea: Central; Address: Sanjo Takakura, Nakagyo-ku; Hours: Tue-Sun 10:00-19:30 (until 18:00 during special events); Price: Adults: ¥500; students: ¥400; children: free. For special exhibits: adults: ¥1,400; students: ¥1,000; children: ¥500",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "rome-activity-5",
+   "request": "scuba diving lesson for beginners",
+   "cid": "42c90da8d98e",
+   "text": "Basilica of Santa Sabina\nA 5th-century basilica, simply and attractively decorated. The wooden door, of which 18 carved panels of scenes from the Bible survive, is believed to date from the church's construction.\nArea: Aventino-Testaccio",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "newyork-activity-4",
+   "request": "Statue of Liberty visit, not by car",
+   "cid": "3846616f351d",
+   "text": "GoCity Pass\n2 passes are available from GoCity. The Explorer pass lets you can visit a set number of attractions, while the All-Inclusive pass which allows unlimited attractions for a set number of days. The Explorer pass cardholders have 30 days to use the card after visiting the first attraction; the All-Inclusive cardholders have the time-limit activate on the day of first use. Both passes allow holders to either print a paper-pass to scan, or to use an Android/iOS compatible phone app. Attractions include Top of the Rock Observation, Rockefeller Center Tour, Statue of Liberty and Ellis Island, Museum of Modern Art, NBC Studio Tour, movie tours, and cruises. Also included with the card are shopping, dining, and additional attraction discounts. The biggest attraction not included is the …\nArea: New York City",
+   "mine": 2,
+   "note": "pass that includes the Statue of Liberty; not a car"
+  },
+  {
+   "qid": "marrakech-activity-3",
+   "request": "a calm, pampering day after a long flight",
+   "cid": "7c9ec65db985",
+   "text": "Thai marrakech\nBann Thai institute is a beauty center based in the heart of Marrakech. His team is a graduate of the famous school of Wat Po in Bangkok. The center offers several Thai massage relaxation with a traditional Moroccan hammam natural products\nArea: Marrakech; Address: Résidence Les Jasmins Apt N° 13 4ème étage Angle Av. Mohamed v et Rue Oum Errabia Guéliz",
+   "mine": 3,
+   "note": "massage and hammam"
+  },
+  {
+   "qid": "dubai-hotel-1",
+   "request": "beach resort with a spa",
+   "cid": "d520c65aff26",
+   "text": "Emirates Grand Hotel\nIt is a non-alcoholic hotel decorated with luxurious amenities. Equipped with stream rooms, hot tubs, sauna, roof top pool, fitness center and tennis court.\nArea: Jumeirah; Address: Near Finance Centre, Metro Stop, Sheikh Zayed Road",
+   "mine": 1,
+   "note": "spa facilities but no beach"
+  },
+  {
+   "qid": "marrakech-activity-3",
+   "request": "a calm, pampering day after a long flight",
+   "cid": "adab85957bb0",
+   "text": "Koutoubia Mosque\nNamed after the booksellers market that used to be located here. It is said that the minaret of the Koutoubia mosque is to Marrakech as the Eiffel Tower is to Paris. The minaret is visible from Gueliz which is connected to the Medina by Avenue Mohammed V. At night, the mosque is beautifully lit. The Almohad caliph Abd al-Mu'min founded the first mosque here in 1147 and built the present one beside it in 1158; the excavated remains of the first mosque can be seen on the esplanade next to it. The minaret was completed under Caliph Yaqub al-Mansur (1184 to 1199), and has inspired other buildings such as the Giralda of Seville and the Hassan Tower of Rabat. Non-Muslims are not allowed inside.\nArea: Marrakech",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "marrakech-activity-5",
+   "request": "hot air balloon ride at sunrise",
+   "cid": "fc7cebc11d51",
+   "text": "Almoravid Koubba\nA very small but intricate domed pavilion, known for being the only surviving example of Almoravid religious architecture (early 12th century) in Marrakech. Located across the street from the Ben Youssef Mosque, it is believed to have been an annex of the former Almoravid mosque. It was excavated in the 20th century after being half-buried for centuries. The pavilion's exterior can be easily seen from the street, so paying for entry just lets you see its interior.\nArea: Marrakech; Price: 50 dirham",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "rome-activity-3",
+   "request": "something relaxing on the water for a couple in the evening",
+   "cid": "17225828e2e4",
+   "text": "Palatine Hill\nContains the ruins of several large villas that belonged to wealthy Roman families. You can buy a combined ticket for the Palatine Hill, the Roman Forum and the Colosseum here, avoiding the long lines at the Colosseum. While the Imperial and Roman Fora are probably more spectacular, overall, there are amazing sights on the Palatine Hill, so unless you are terribly short on time or find it too challenging to climb the hill, allow an hour or more for these sights, too.\nArea: Colosseo; Address: Via di San Gregorio 30; Hours: Working hours the same as Colosseum",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "tokyo-hotel-2",
+   "request": "waterfront hotel in Odaiba with views of the bay",
+   "cid": "a44471eafdf1",
+   "text": "Park Hotel Tokyo\nIf the Park were any more minimalist, it wouldn't be here at all. This sky-high establishment boasts a light and airy foyer, with inviting lounge and restaurant adjoining.\nArea: Shiodome; Address: Shiodome Media Tower, 1-7-1, Higashi Shimbashi; Price: Rooms start from ¥19,500 single",
+   "mine": 1,
+   "note": "hotel near the bay, not in Odaiba"
+  },
+  {
+   "qid": "marrakech-activity-5",
+   "request": "hot air balloon ride at sunrise",
+   "cid": "93fa629e2c32",
+   "text": "Marrakech Paragliding\nLeave the city behind and discover the incredible beauty of Morocco from above! Enjoy an exciting tandem paragliding experience near Marrakech, surrounded by the spectacular Atlas Mountains.\nArea: Marrakech; Address: Aguergour , Ouzguita 45 Km from Marrakech",
+   "mine": 1,
+   "note": "aerial experience, not a balloon"
+  },
+  {
+   "qid": "rio-activity-3",
+   "request": "outdoor adventure with great views, I'm fit",
+   "cid": "15ac7be5002d",
+   "text": "Christ the Redeemer Statue (Corcovado peak)\nThe 710 granite peak of Corcovado, capped by the famous 38-m statue of Jesus known as Christ the Redeemer (Cristo Redentor), has been the vantage point for countless picture postcards and travel posters through the ages. Its peak provides a sweeping panorama, from the interior of Guanabara Bay to the north, to Lagoa Rodrigo de Freitas (Rodrigo de Freitas' Lagoon) to the south. Access to the mountain as a whole is free, but most of the good views are within the paid area of the Christ statue. You can't enter the statue itself except for a small chapel at the bottom of it.\nArea: Zona Sul; Hours: 08:00-19:00; Price: R$58 adults, R$32 children/students/seniors (included in price of some transportation)",
+   "mine": 2,
+   "note": "great views; the adventure is not stated"
+  },
+  {
+   "qid": "tokyo-activity-2",
+   "request": "morning food tour around Tsukiji market",
+   "cid": "22f5f8a0ebf1",
+   "text": "Toyosu Market\nToyosu is new home of the world's largest wholesale market for seafood and produce after its relocation from Tsukiji. Unlike the old facility where tourists could almost walk up to the fish, Toyosu's market has large enclosed observation decks and dedicated paths for tourists to view the action, including the famous tuna auctions. However, early morning fish sales start before public transit opens, so take a taxi for those.\nArea: East; Address: 6 Toyosu, Koto-ku; Hours: Mon-Sat 05:00-17:00; closed holidays and most Wednesdays; Price: Free",
+   "mine": 1,
+   "note": "fish market that replaced Tsukiji; not a food tour"
+  },
+  {
+   "qid": "lisbon-hotel-3",
+   "request": "charming small hotel in a historic building",
+   "cid": "7a53d7e1b0ff",
+   "text": "Myriad\nFive-star, 186-room hotel at the Vasco da Gama Tower offering panoramic river views. Amenities include indoor pool, spa, gym, restaurant, and bar.\nArea: Parque das Nações; Address: Cais das Naus, Lote 2.21.01; Price: 187-272",
+   "mine": 1,
+   "note": "modern tower hotel, neither small nor historic"
+  },
+  {
+   "qid": "tokyo-activity-2",
+   "request": "morning food tour around Tsukiji market",
+   "cid": "7f724da053e1",
+   "text": "Tsukiji Outer Market\nFor more than 80 years, Tsukiji was the world's largest wholesale fish market. Although the wholesale operations (including the famous tuna auctions) closed in 2018 and moved to Toyosu, the outer market remains in place and continues to welcome the public with stalls selling fresh fish, sushi, produce and kitchen supplies. Suggested plans for the former inner market site include a sport stadium or an anime/manga themed entertainment facility.\nArea: Chuo; Address: 5-2-1 Tsukiji; Hours: Varies by shop, but typically Mon-Sat 09:00-14:00, closed holidays and most Wednesdays; Price: Free",
+   "mine": 2,
+   "note": "the right market with food stalls; not a tour"
+  },
+  {
+   "qid": "rome-activity-3",
+   "request": "something relaxing on the water for a couple in the evening",
+   "cid": "41b52419bb57",
+   "text": "Trevi Fountain\nCompleted in 1762 to a design by Nicola Salvi, this spectacular Baroque fountain features a mythological sculptural composition of Neptune, god of the sea, flanked by two Tritons: one Triton labours to control a violent sea-horse, the other controls a pacified creature, both symbolising the dual nature of the world's oceans. The location of the Trevi fountain marks the terminus of the ancient Aqua Virgo aqueduct, completed in 19 BCE in order to supply the Baths of Agrippa, and is so named on account of its position at the junction of three roads (tre vie). The legend says that one who throws a coin in the fountain shall one day return to Rome. The coins in the fountain are regularly collected to finance charities. The fountain has been made even more famous by the 1954 film, Three Coins …\nArea: Modern Centre",
+   "mine": 1,
+   "note": "water theme only"
+  },
+  {
+   "qid": "rio-activity-3",
+   "request": "outdoor adventure with great views, I'm fit",
+   "cid": "87f0d576252c",
+   "text": "Rio de Janeiro Zoo\nIf you won't be making it to the Amazon or the Pantanal, this is a good place to see some of Brazil's more exotic creatures.\nArea: Zona Norte; Address: Parque Quinta da Boa Vista - São Cristóvão",
+   "mine": 1,
+   "note": "outdoors, no adventure or views"
+  },
+  {
+   "qid": "tokyo-activity-2",
+   "request": "morning food tour around Tsukiji market",
+   "cid": "bdb8220e2f5f",
+   "text": "Baishoin\n51 weeks of the year, this is just a small, unimportant and uninteresting temple connected to an equally uninteresting park / playground. But during one week in the year, in early April, this is where Nakano celebrates hanami. There are lots of white cherry trees on the way there already, and some more sakura can be seen on the grounds. At this time, there are also lots of food stalls and even a small stage with some traditional singing and dancing going on. If you want to be amazed by the sheer number or size of cherry trees (or hanami parties), there are better places in Tokyo. But if you're in Nakano anyway, it's a nice place to see how the local people enjoy the sakura season and grab some typical Japanese bites.\nArea: Nakano; Address: 5-3-5 Arai, Nakano",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "rome-activity-4",
+   "request": "day trip out of Rome to see wine country, not Pompeii",
+   "cid": "ac22afe4f741",
+   "text": "Casino Nobile Museum\nIn the first half of the 18th century the Torlonia family were leading collectors of works of art. This museum brings together some of their collection. You can also see the furniture used by Mussolini when he was in residence, as well as photos and films of him in the grounds of the Villa.\nArea: Nomentano; Address: Via Nomentana 70; Hours: 09.00-16.00 in winter and to 19.00 in summer; Price: €6.50 for the two museums in Villa Torlonia",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "rio-activity-3",
+   "request": "outdoor adventure with great views, I'm fit",
+   "cid": "498dbe2484ec",
+   "text": "Sugar Loaf Mountain\nOne of the defining landmarks of the city. The cable cars take you up from for a breathtaking view of much of Zona Sul and the center, and also the city of Niteroi, just across Guanabara Bay. You have to queue again at Urca Hill (Morro da Urca) station for the second part of the ride. You can also walk up a trail to this point (start on Trilha do Morro da Urca along the shore, then climb the stairs on your left) and take the cable cars to Pão de Açucar and back to Praia Vermelha for R$92, or just back to Morro da Urca for R$59, or just down to Praia Vermelha for R$39 (full prices). This ticket office closes at 19:30, the downward trip is free after that. At Morro da Urca you can take a sightseeing helicopter trip, if you can afford it. The area is pretty secure, thanks to the various …\nArea: Zona Sul; Address: Av. Pasteur 520, Urca; Hours: 08:00-21:00; Price: R$99 (online), R$110 (box office)",
+   "mine": 3,
+   "note": "trail walk and cable car with views"
+  },
+  {
+   "qid": "tokyo-activity-5",
+   "request": "sumo wrestling match tickets",
+   "cid": "bdb8220e2f5f",
+   "text": "Baishoin\n51 weeks of the year, this is just a small, unimportant and uninteresting temple connected to an equally uninteresting park / playground. But during one week in the year, in early April, this is where Nakano celebrates hanami. There are lots of white cherry trees on the way there already, and some more sakura can be seen on the grounds. At this time, there are also lots of food stalls and even a small stage with some traditional singing and dancing going on. If you want to be amazed by the sheer number or size of cherry trees (or hanami parties), there are better places in Tokyo. But if you're in Nakano anyway, it's a nice place to see how the local people enjoy the sakura season and grab some typical Japanese bites.\nArea: Nakano; Address: 5-3-5 Arai, Nakano",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "newyork-activity-4",
+   "request": "Statue of Liberty visit, not by car",
+   "cid": "e9fa09cfc854",
+   "text": "Brooklyn Borough Hall\nThis pretty building was built as Brooklyn's city hall in 1851 and is still a very significant official building in very active use.\nArea: Downtown; Address: 209 Joralemon St",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "lisbon-activity-1",
+   "request": "fado music show",
+   "cid": "2dd008a0d7c3",
+   "text": "Pavilhão do Conhecimento - Centro Ciência Viva\nCiência Viva is an interactive science and technology museum that aims to make science accessible to all, stimulating experimentation and exploration of the physical world.\nArea: Parque das Nações; Address: Largo José Mariano Gago 1; Hours: Mon–Fri 10:00–18:00, Sat Sun & holidays 10:00–19:00; Price: Adults 10, seniors 65+ 7, youths 12–17 8, children 3–11 7, children 2 & under free, family (2 adults + children under 17) 25",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "dubai-hotel-1",
+   "request": "beach resort with a spa",
+   "cid": "42904c6414fe",
+   "text": "Anantara World Islands Dubai Resort\nBeachfront resort located on the World Islands. Contains a Swimming pool, spa, Paddle court, Fitness centre, Water sports centre, Kids’ club and Games room\nArea: Jumeirah; Address: 55VG+QWX South America - World Islands; Price: $417/night",
+   "mine": 3,
+   "note": "beachfront resort with a spa"
+  },
+  {
+   "qid": "newyork-activity-4",
+   "request": "Statue of Liberty visit, not by car",
+   "cid": "aaa9d676164d",
+   "text": "New York Pass\nAlso from GoCity. Grants access to over 50 top attractions with line skipping privileges. Passes are available for 1, 2, 3, 4, 5, 7, or 10 days. You must obtain a ticket in each attraction. You can visit as many attractions as you want in the time period. Also includes a 140-page guide book, but is much better to organize your visits in advance on the internet.\nArea: New York City; Price: Prices are given as adult price/child (ages 4-12) price. 1 day: $134/$99; 2 day: $199/$159; 3 day: $274/$199; 4 day: $299/$224; 5 day: $339/$244; 7 day: $379/$259; 10 day: $469/$299",
+   "mine": 1,
+   "note": "an attractions pass; the Statue of Liberty is not named"
+  },
+  {
+   "qid": "tokyo-hotel-2",
+   "request": "waterfront hotel in Odaiba with views of the bay",
+   "cid": "9b8f7ca6c1e4",
+   "text": "Tokyo Bay Ariake Washington Hotel\nThe third hotel in the area (just north of the Tokyo Big Sight exhibition center). Targeting business travelers it is the cheapest hotel in the area.\nArea: Odaiba; Address: 3-1-28 Ariake, Koto-ku; Price: Rates ranging from ¥9,950 (single) to ¥18,000 (twin)",
+   "mine": 2,
+   "note": "hotel in Odaiba; waterfront and views not stated"
+  },
+  {
+   "qid": "marrakech-activity-4",
+   "request": "day trip to the Atlas Mountains without driving a quad or buggy",
+   "cid": "cbf9b02ad24f",
+   "text": "Ali Ben Youssef Mosque\nThe first mosque in Marrakesh was erected at this place by the Almoravid emir Yusuf ibn Tashfin in the 1070s. However, it was almost completely rebuilt in early 19th century by the Alaouite sultan Suleiman, with hardly any trace left of its original Almoravid or Almohad design. Non-Muslims are not allowed to enter it.\nArea: Marrakech",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "rio-activity-1",
+   "request": "Christ the Redeemer and Sugarloaf Mountain tour",
+   "cid": "498dbe2484ec",
+   "text": "Sugar Loaf Mountain\nOne of the defining landmarks of the city. The cable cars take you up from for a breathtaking view of much of Zona Sul and the center, and also the city of Niteroi, just across Guanabara Bay. You have to queue again at Urca Hill (Morro da Urca) station for the second part of the ride. You can also walk up a trail to this point (start on Trilha do Morro da Urca along the shore, then climb the stairs on your left) and take the cable cars to Pão de Açucar and back to Praia Vermelha for R$92, or just back to Morro da Urca for R$59, or just down to Praia Vermelha for R$39 (full prices). This ticket office closes at 19:30, the downward trip is free after that. At Morro da Urca you can take a sightseeing helicopter trip, if you can afford it. The area is pretty secure, thanks to the various …\nArea: Zona Sul; Address: Av. Pasteur 520, Urca; Hours: 08:00-21:00; Price: R$99 (online), R$110 (box office)",
+   "mine": 2,
+   "note": "one of the two sights, and not a tour"
+  },
+  {
+   "qid": "kyoto-activity-5",
+   "request": "snowboarding day trip",
+   "cid": "fa4e297e8e6e",
+   "text": "Sanjusangen-do\nDefinitely worth a visit. It was founded in 1164 and became famous for its 1001 beautiful wooden and gold-leaf covered statues of Kannon, goddess of mercy, housed in thirty-three bays (sanjusan = thirty-three, gendo = bays) in the main hall.\nArea: Higashiyama; Address: 657 Sanjūsangendō Mawari Machi, Higashiyama-ku; Hours: Daily 08:00-17:00; Price: Entrance fee: ¥600",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "marrakech-activity-4",
+   "request": "day trip to the Atlas Mountains without driving a quad or buggy",
+   "cid": "93fa629e2c32",
+   "text": "Marrakech Paragliding\nLeave the city behind and discover the incredible beauty of Morocco from above! Enjoy an exciting tandem paragliding experience near Marrakech, surrounded by the spectacular Atlas Mountains.\nArea: Marrakech; Address: Aguergour , Ouzguita 45 Km from Marrakech",
+   "mine": 2,
+   "note": "an outing into the Atlas foothills, not a quad"
+  },
+  {
+   "qid": "newyork-activity-2",
+   "request": "bike tour across the Brooklyn Bridge",
+   "cid": "3846616f351d",
+   "text": "GoCity Pass\n2 passes are available from GoCity. The Explorer pass lets you can visit a set number of attractions, while the All-Inclusive pass which allows unlimited attractions for a set number of days. The Explorer pass cardholders have 30 days to use the card after visiting the first attraction; the All-Inclusive cardholders have the time-limit activate on the day of first use. Both passes allow holders to either print a paper-pass to scan, or to use an Android/iOS compatible phone app. Attractions include Top of the Rock Observation, Rockefeller Center Tour, Statue of Liberty and Ellis Island, Museum of Modern Art, NBC Studio Tour, movie tours, and cruises. Also included with the card are shopping, dining, and additional attraction discounts. The biggest attraction not included is the …\nArea: New York City",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "bangkok-activity-4",
+   "request": "see the temples without a tuk tuk ride",
+   "cid": "25561967f34b",
+   "text": "Santa Cruz Church\nThe Santa Cruz Church is an interesting Catholic church right at the banks of the Chao Phraya River. After the fall of Ayutthaya by a Burmese invasion, King Taksin commanded that the peoples who escaped had to settle down in Thonburi, the new capital of Siam. The King dictated that the Chinese group had to settle down around the area of Wat Kalayanamit, while the Portuguese people would have their houses built along the bank of the Chao Phraya River. The Portuguese had given military support to King Taksin to help him drive out the Burmese from Siam. In recognition of their support, King Taksin granted the Portuguese a plot of land for the building of a church. The first Santa Cruz Church was a wooden church built in 1770. When that church got into a state of decay, a new Chinese-style …\nArea: Thonburi; Address: 112 Tesaban 1 Rd",
+   "mine": 1,
+   "note": "a church, not a temple"
+  },
+  {
+   "qid": "bangkok-activity-4",
+   "request": "see the temples without a tuk tuk ride",
+   "cid": "f699fa4b3852",
+   "text": "Erawan Shrine\nA Hindu shrine that houses a statue of Phra Phrom, the Thai representation of the Hindu creation god Brahma.\nArea: Siam Square; Address: 494 Ratchadamri Rd; Hours: 06:00-00:00 daily; Price: Free",
+   "mine": 2,
+   "note": "a shrine rather than a temple"
+  },
+  {
+   "qid": "newyork-activity-2",
+   "request": "bike tour across the Brooklyn Bridge",
+   "cid": "7557b489eb70",
+   "text": "Chatham Square\nAt this square at the confluence of several major streets, there is a memorial archway to Chinese-Americans who died in World War II which has some interesting calligraphy. Also in the square is a statue of Lin Zexu, a Chinese scholar who opposed the opium trade in the 19th century.\nArea: Chinatown",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "rio-activity-1",
+   "request": "Christ the Redeemer and Sugarloaf Mountain tour",
+   "cid": "fb45b786c52c",
+   "text": "Arpoador\nThe rocks at the Copacabana end of Ipanema beach. From here you can see a panorama including Corcovado and Sugar Loaf. It is supposed to be the best place to watch the sunset from in Rio. Reputedly a bit dangerous so go there at weekends when there are lots of people and a few police around.\nArea: Zona Sul",
+   "mine": 1,
+   "note": "a viewpoint of both sights"
+  },
+  {
+   "qid": "marrakech-activity-4",
+   "request": "day trip to the Atlas Mountains without driving a quad or buggy",
+   "cid": "bb4d6b12732b",
+   "text": "Dar Si Saïd Museum\nMuseum set in an old palace with beautiful gardens. While somewhat run-down, it is worth seeing and houses many different artifacts from Morocco through the ages, such as wood carvings, musical instruments, and weapons. It is dedicated to the Moroccan craft industry of wood, gathering a very beautiful collection of popular art: carpets, clothing, pottery and ceramics. All these objects are regional, coming from Marrakech and all the south, especially from Tensift, High Atlas, Soussthe, Anti Atlas, Bani, and Tafilal.\nArea: Marrakech; Hours: 10:00–18:00; Price: Locals: adult 10 dirham, child below 12 3 dirham; tourists: adult 30 dirham",
+   "mine": 0,
+   "note": ""
+  },
+  {
+   "qid": "bangkok-activity-4",
+   "request": "see the temples without a tuk tuk ride",
+   "cid": "520c62fda1b4",
+   "text": "Wat Kanlayanamit\nSituated on the mouth of Bangkok Yai canal at the west bank of the Chao Phraya, this massive temple is popular among the Thai-Chinese community. It was founded in 1825 by a Chinese nobleman who donated his own residence and bought a piece of land to build a temple. This was during the reign of King Rama III, when trade with China was flourishing. The viharn is in a typical Thai style, but the two flanking buildings look Chinese. Inside the viharn is a large Buddha image named Phraputtatrirattananayok, which is 15.44 metres tall and 11.75 metres wide. It is so large that it almost entirely filled the interior of the hall. The image is called Sampokong by worshippers of Thai-Chinese descent. The inner courtyard is decorated with statues and gates imported from China. Every day during the …\nArea: Thonburi; Address: 656 Tesaban 1 Rd",
+   "mine": 3,
+   "note": "a temple; nothing excluded"
+  },
+  {
+   "qid": "rio-activity-1",
+   "request": "Christ the Redeemer and Sugarloaf Mountain tour",
+   "cid": "1f85b374b972",
+   "text": "Tijuca National Park\nA few km north of the beach, this mountainous subtropical forest is Brazil's smallest national park. It is largely hand-planted as much of the original forest was destroyed to make way for coffee plantations. Despite this it contains hundreds of species, many of which are threatened with extinction. Corcovado is to the east of the park but if you really want to appreciate what the park has to offer you have to drive along some windy, hilly roads and get out and hike. This sector of the park can be reached via Rua Boa Vista, and from São Conrado in Zona Oeste.\nArea: Zona Norte; Address: Estrada da Cascatinha, 850 - Alto da Boa Vista",
+   "mine": 1,
+   "note": "park beside Corcovado, not a tour"
+  }
+ ],
+ "method": "Rows 0-30: 15 English queries drawn with seed 7; per query one listing at each grade the judge used, up to three. Graded by hand (the agent that ran the study) from the listing text before looking at the judge's grade. Rows 31-42: 5 more queries drawn with seed 8 from those not yet sampled, the same way."
+}

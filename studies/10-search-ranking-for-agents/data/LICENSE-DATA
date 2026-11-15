@@ -1,0 +1,13 @@
+Listing text in data/pools.json (and quoted in data/spotcheck.json) comes from English Wikivoyage
+(https://en.wikivoyage.org), written by Wikivoyage contributors, and is licensed under the
+Creative Commons Attribution-ShareAlike 4.0 licence (CC BY-SA 4.0,
+https://creativecommons.org/licenses/by-sa/4.0/). The text was shortened (descriptions cut at
+800 characters) and reformatted (wiki markup removed; area, address, hours and price joined on
+one line) by pools.py.
+
+Attribution: every listing records the page it came from ("page") and the page revision
+("revid"). data/pages.json lists every page read and its revision. The history and authors of a
+revision are at https://en.wikivoyage.org/w/index.php?oldid=<revid> and the page's history.
+
+The queries, translations, judge grades, hand grades and every other file in this folder are
+under CC BY 4.0 with the rest of the repository's text and data.

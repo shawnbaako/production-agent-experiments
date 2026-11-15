@@ -1,0 +1,8 @@
+{
+ "nomic_docs": 0.722,
+ "nomic_queries": 0.197,
+ "eg2_docs": 1.708,
+ "eg2_queries": 0.216,
+ "eg2_raw_queries": 0.2,
+ "device": "NVIDIA GeForce RTX 3080 Ti"
+}
