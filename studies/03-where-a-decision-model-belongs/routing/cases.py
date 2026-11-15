@@ -169,7 +169,7 @@ CASES: list[tuple[str, str, str]] = [
      "A link to the new document."),
     ("general", "Check whether the marketing post scheduled for Thursday has its image attached and its approval recorded.",
      "Yes or no for each, with what is missing."),
-    ("general", "Collect the open questions iso has asked partners this week that are still unanswered and group them by person.",
+    ("general", "Collect the open questions the assistant has asked partners this week that are still unanswered and group them by person.",
      "A grouped list of unanswered questions with links."),
     ("general", "Review the Work items marked blocked and say for each one what it is waiting on.",
      "A list: Work item, what it waits on, since when."),

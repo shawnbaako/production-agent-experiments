@@ -70,7 +70,6 @@
 {"choice": "general", "cid": "s069", "cost": 1.6338e-05, "ms": 208, "p": 0.78, "run": "v1_prod", "status": 200}
 {"choice": "general", "cid": "s070", "cost": 1.6254e-05, "ms": 191, "p": 0.71, "run": "v1_prod", "status": 200}
 {"choice": "general", "cid": "s071", "cost": 1.6254e-05, "ms": 150, "p": 0.58, "run": "v1_prod", "status": 200}
-{"choice": "general", "cid": "s072", "cost": 1.6296e-05, "ms": 217, "p": 0.78, "run": "v1_prod", "status": 200}
 {"choice": "general", "cid": "s073", "cost": 1.638e-05, "ms": 195, "p": 0.68, "run": "v1_prod", "status": 200}
 {"choice": "general", "cid": "s074", "cost": 1.6212e-05, "ms": 193, "p": 0.54, "run": "v1_prod", "status": 200}
 {"choice": "general", "cid": "s075", "cost": 1.6422e-05, "ms": 154, "p": 0.87, "run": "v1_prod", "status": 200}
@@ -184,7 +183,6 @@
 {"choice": "general", "cid": "s069", "cost": 1.8522e-05, "ms": 190, "p": 0.81, "run": "v1_full", "status": 200}
 {"choice": "general", "cid": "s070", "cost": 1.8438e-05, "ms": 268, "p": 0.59, "run": "v1_full", "status": 200}
 {"choice": "general", "cid": "s071", "cost": 1.8438e-05, "ms": 190, "p": 0.52, "run": "v1_full", "status": 200}
-{"choice": "meeting", "cid": "s072", "cost": 1.848e-05, "ms": 170, "p": 0.71, "run": "v1_full", "status": 200}
 {"choice": "general", "cid": "s073", "cost": 1.8564e-05, "ms": 197, "p": 0.55, "run": "v1_full", "status": 200}
 {"choice": "general", "cid": "s074", "cost": 1.8396e-05, "ms": 196, "p": 0.57, "run": "v1_full", "status": 200}
 {"choice": "general", "cid": "s075", "cost": 1.8606e-05, "ms": 164, "p": 0.88, "run": "v1_full", "status": 200}
@@ -298,7 +296,6 @@
 {"choice": "general", "cid": "s069", "cost": 1.6464e-05, "ms": 193, "p": 0.81, "run": "v1_prod_reworded", "status": 200}
 {"choice": "general", "cid": "s070", "cost": 1.638e-05, "ms": 206, "p": 0.63, "run": "v1_prod_reworded", "status": 200}
 {"choice": "general", "cid": "s071", "cost": 1.638e-05, "ms": 155, "p": 0.64, "run": "v1_prod_reworded", "status": 200}
-{"choice": "general", "cid": "s072", "cost": 1.6422e-05, "ms": 202, "p": 0.86, "run": "v1_prod_reworded", "status": 200}
 {"choice": "general", "cid": "s073", "cost": 1.6506e-05, "ms": 227, "p": 0.68, "run": "v1_prod_reworded", "status": 200}
 {"choice": "general", "cid": "s074", "cost": 1.6338e-05, "ms": 179, "p": 0.72, "run": "v1_prod_reworded", "status": 200}
 {"choice": "general", "cid": "s075", "cost": 1.6548e-05, "ms": 139, "p": 0.87, "run": "v1_prod_reworded", "status": 200}
@@ -412,7 +409,6 @@
 {"choice": "general", "cid": "s069", "cost": 1.6338e-05, "ms": 173, "p": 0.79, "run": "v1_prod_reordered", "status": 200}
 {"choice": "general", "cid": "s070", "cost": 1.6254e-05, "ms": 187, "p": 0.64, "run": "v1_prod_reordered", "status": 200}
 {"choice": "draft", "cid": "s071", "cost": 1.6254e-05, "ms": 153, "p": 0.61, "run": "v1_prod_reordered", "status": 200}
-{"choice": "general", "cid": "s072", "cost": 1.6296e-05, "ms": 187, "p": 0.79, "run": "v1_prod_reordered", "status": 200}
 {"choice": "general", "cid": "s073", "cost": 1.638e-05, "ms": 199, "p": 0.58, "run": "v1_prod_reordered", "status": 200}
 {"choice": "draft", "cid": "s074", "cost": 1.6212e-05, "ms": 167, "p": 0.67, "run": "v1_prod_reordered", "status": 200}
 {"choice": "general", "cid": "s075", "cost": 1.6422e-05, "ms": 177, "p": 0.85, "run": "v1_prod_reordered", "status": 200}
@@ -526,7 +522,6 @@
 {"choice": "general", "cid": "s069", "cost": 1.8648e-05, "ms": 330, "p": 0.85, "run": "v1_full_reworded", "status": 200}
 {"choice": "general", "cid": "s070", "cost": 1.8564e-05, "ms": 169, "p": 0.51, "run": "v1_full_reworded", "status": 200}
 {"choice": "general", "cid": "s071", "cost": 1.8564e-05, "ms": 223, "p": 0.61, "run": "v1_full_reworded", "status": 200}
-{"choice": "meeting", "cid": "s072", "cost": 1.8606e-05, "ms": 190, "p": 0.73, "run": "v1_full_reworded", "status": 200}
 {"choice": "general", "cid": "s073", "cost": 1.869e-05, "ms": 176, "p": 0.55, "run": "v1_full_reworded", "status": 200}
 {"choice": "general", "cid": "s074", "cost": 1.8522e-05, "ms": 215, "p": 0.7, "run": "v1_full_reworded", "status": 200}
 {"choice": "general", "cid": "s075", "cost": 1.8732e-05, "ms": 206, "p": 0.89, "run": "v1_full_reworded", "status": 200}
@@ -640,7 +635,6 @@
 {"choice": "general", "cid": "s069", "cost": 1.8522e-05, "ms": 217, "p": 0.66, "run": "v1_full_reordered", "status": 200}
 {"choice": "general", "cid": "s070", "cost": 1.8438e-05, "ms": 194, "p": 0.53, "run": "v1_full_reordered", "status": 200}
 {"choice": "draft", "cid": "s071", "cost": 1.8438e-05, "ms": 1052, "p": 0.31, "run": "v1_full_reordered", "status": 200}
-{"choice": "meeting", "cid": "s072", "cost": 1.848e-05, "ms": 231, "p": 0.77, "run": "v1_full_reordered", "status": 200}
 {"choice": "general", "cid": "s073", "cost": 1.8564e-05, "ms": 181, "p": 0.39, "run": "v1_full_reordered", "status": 200}
 {"choice": "meeting", "cid": "s074", "cost": 1.8396e-05, "ms": 385, "p": 0.37, "run": "v1_full_reordered", "status": 200}
 {"choice": "general", "cid": "s075", "cost": 1.8606e-05, "ms": 194, "p": 0.78, "run": "v1_full_reordered", "status": 200}
@@ -754,7 +748,6 @@
 {"choice": "general", "cid": "s069", "cost": 1.7892e-05, "ms": 220, "p": 1.0, "run": "v2_prod", "status": 200}
 {"choice": "general", "cid": "s070", "cost": 1.7808e-05, "ms": 198, "p": 0.98, "run": "v2_prod", "status": 200}
 {"choice": "general", "cid": "s071", "cost": 1.7808e-05, "ms": 207, "p": 1.0, "run": "v2_prod", "status": 200}
-{"choice": "general", "cid": "s072", "cost": 1.785e-05, "ms": 171, "p": 1.0, "run": "v2_prod", "status": 200}
 {"choice": "general", "cid": "s073", "cost": 1.7934e-05, "ms": 188, "p": 1.0, "run": "v2_prod", "status": 200}
 {"choice": "general", "cid": "s074", "cost": 1.7766e-05, "ms": 203, "p": 0.99, "run": "v2_prod", "status": 200}
 {"choice": "general", "cid": "s075", "cost": 1.7976e-05, "ms": 220, "p": 1.0, "run": "v2_prod", "status": 200}
@@ -868,7 +861,6 @@
 {"choice": "general", "cid": "s069", "cost": 2.058e-05, "ms": 214, "p": 1.0, "run": "v2_full", "status": 200}
 {"choice": "general", "cid": "s070", "cost": 2.0496e-05, "ms": 210, "p": 0.98, "run": "v2_full", "status": 200}
 {"choice": "general", "cid": "s071", "cost": 2.0496e-05, "ms": 161, "p": 1.0, "run": "v2_full", "status": 200}
-{"choice": "general", "cid": "s072", "cost": 2.0538e-05, "ms": 150, "p": 0.89, "run": "v2_full", "status": 200}
 {"choice": "general", "cid": "s073", "cost": 2.0622e-05, "ms": 194, "p": 1.0, "run": "v2_full", "status": 200}
 {"choice": "general", "cid": "s074", "cost": 2.0454e-05, "ms": 156, "p": 0.99, "run": "v2_full", "status": 200}
 {"choice": "general", "cid": "s075", "cost": 2.0664e-05, "ms": 250, "p": 1.0, "run": "v2_full", "status": 200}
@@ -982,7 +974,6 @@
 {"choice": "general", "cid": "s069", "cost": 2.058e-05, "ms": 217, "p": 1.0, "run": "v2_full_reordered", "status": 200}
 {"choice": "general", "cid": "s070", "cost": 2.0496e-05, "ms": 218, "p": 0.99, "run": "v2_full_reordered", "status": 200}
 {"choice": "general", "cid": "s071", "cost": 2.0496e-05, "ms": 176, "p": 1.0, "run": "v2_full_reordered", "status": 200}
-{"choice": "general", "cid": "s072", "cost": 2.0538e-05, "ms": 204, "p": 0.84, "run": "v2_full_reordered", "status": 200}
 {"choice": "general", "cid": "s073", "cost": 2.0622e-05, "ms": 221, "p": 0.99, "run": "v2_full_reordered", "status": 200}
 {"choice": "general", "cid": "s074", "cost": 2.0454e-05, "ms": 189, "p": 0.99, "run": "v2_full_reordered", "status": 200}
 {"choice": "general", "cid": "s075", "cost": 2.0664e-05, "ms": 166, "p": 1.0, "run": "v2_full_reordered", "status": 200}
@@ -1024,3 +1015,12 @@
 {"choice": "draft", "cid": "s111", "cost": 2.0622e-05, "ms": 218, "p": 1.0, "run": "v2_full_reordered", "status": 200}
 {"choice": "unsure", "cid": "s112", "cost": 1.995e-05, "ms": 210, "p": 0.67, "run": "v2_full_reordered", "status": 200}
 {"choice": "general", "cid": "s113", "cost": 2.0538e-05, "ms": 187, "p": 0.96, "run": "v2_full_reordered", "status": 200}
+{"choice": "general", "cid": "s072", "cost": 1.6338e-05, "ms": 350, "p": 0.83, "run": "v1_prod", "status": 200}
+{"choice": "meeting", "cid": "s072", "cost": 1.8522e-05, "ms": 370, "p": 0.65, "run": "v1_full", "status": 200}
+{"choice": "general", "cid": "s072", "cost": 1.6464e-05, "ms": 419, "p": 0.87, "run": "v1_prod_reworded", "status": 200}
+{"choice": "general", "cid": "s072", "cost": 1.6338e-05, "ms": 367, "p": 0.85, "run": "v1_prod_reordered", "status": 200}
+{"choice": "meeting", "cid": "s072", "cost": 1.8648e-05, "ms": 355, "p": 0.62, "run": "v1_full_reworded", "status": 200}
+{"choice": "meeting", "cid": "s072", "cost": 1.8522e-05, "ms": 305, "p": 0.67, "run": "v1_full_reordered", "status": 200}
+{"choice": "general", "cid": "s072", "cost": 1.7892e-05, "ms": 340, "p": 1.0, "run": "v2_prod", "status": 200}
+{"choice": "general", "cid": "s072", "cost": 2.058e-05, "ms": 336, "p": 0.97, "run": "v2_full", "status": 200}
+{"choice": "general", "cid": "s072", "cost": 2.058e-05, "ms": 190, "p": 0.96, "run": "v2_full_reordered", "status": 200}

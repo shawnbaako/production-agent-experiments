@@ -256,17 +256,17 @@
   "clef": {
    "answers": 1026,
    "cost_usd": 0.0517,
-   "latency_ms_p50": 299
+   "latency_ms_p50": 300
   },
   "jev-1.13": {
    "answers": 1026,
    "cost_usd": 0.0189,
-   "latency_ms_p50": 180
+   "latency_ms_p50": 181
   },
   "jev-1.14": {
    "answers": 1026,
    "cost_usd": 0.0189,
-   "latency_ms_p50": 191
+   "latency_ms_p50": 192
   }
  }
 }
