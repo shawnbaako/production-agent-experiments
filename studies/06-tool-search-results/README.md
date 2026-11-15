@@ -161,6 +161,15 @@ $0.01 for pilots that are not in the results.
 - **Do not assume a found tool joins the tool list.** Production removed schemas on that assumption, and
   when the list was full the tool never joined. The result's promise ("join your next tool list") made it
   worse: the agent searched for the same exact name 124 times.
+- **Outside clients keep the schema they cached, not the one you just published.** The same rule as
+  above, seen from an MCP server that other people's assistants call. They cache your tool list and
+  your output schemas, sometimes for a long time. In production, making photo-fact fields required in a
+  tool's output schema, then changing them, broke clients holding the old schema: they rejected valid
+  results that no longer matched what they had stored. ChatGPT also kept an old tool list until the
+  person pressed "Refresh tools" in the app settings. Only add optional output fields. Never remove,
+  rename, narrow or make required a field clients have seen; add a new field and keep the old one. Don't
+  assume a new tool reaches a client before it refreshes, and record published schemas in a snapshot
+  that a check compares against.
 - **Watch for loops that have nothing to do with search.** The default DeepSeek model emitted hundreds of
   identical `list_tasks` calls in single steps on one purchase-order task (up to 3,616 calls in one run).
   Gemma repeated a primary read until the limit on the mailing-list task in every shape, and on the deal

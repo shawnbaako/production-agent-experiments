@@ -319,6 +319,13 @@ $0.190.
   listings on Wikivoyage text. A floor carried to a new corpus quietly changes recall.
 - **English-only gates.** Nomic was close to EmbeddingGemma 2 in English and found nothing in five
   scripts. An English eval would have kept it.
+- **Text-led requests can't value a photo signal.** In production we added one joint vector per listing
+  (its main photo and name in EmbeddingGemma 2's shared image-text space) to the text ranking, with the
+  weight chosen on the dev split. On the same 152 held-out searches it scored NDCG@10 0.827 against 0.835
+  for text alone (difference -0.008, 95% CI -0.025 to +0.008), so it stayed out of ranking. But none of
+  the requests asked what a place looks like. A test set can only reward what its requests ask for: add
+  requests about appearance before deciding a photo signal is worthless. Details in
+  [study 13](../13-photo-facts/).
 - **Library versions.** Nomic's remote code calls `get_extended_attention_mask`, which transformers 5.18
   removed; `run.py` restores the removed body. EmbeddingGemma 2 needs torchvision and Pillow installed
   even for text-only use.
