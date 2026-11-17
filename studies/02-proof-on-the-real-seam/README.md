@@ -1,6 +1,6 @@
 # 02 · Proof on the real seam, not agent-written tests
 
-**Our position.** When coding agents write the code, delete their tests and ban new ones: all of them,
+**My position.** When coding agents write the code, delete their tests and ban new ones: all of them,
 fake-adapter "integration" tests included. Make "done" mean the change works on the real seam it
 touches, the place where the code meets real data, a real service or a person. Show it with evidence
 the agent can't shape: a replay on a restored copy of production with the production models, the real
@@ -30,7 +30,7 @@ codebases:
 **Status.** Design position, with production data. The codebase-2 scripts and aggregates are in
 [`codebase-2/`](codebase-2/), ready to point at your own repository.
 
-We did this in two production codebases, and both arrived at the same place:
+I did this in two production codebases, and both arrived at the same place:
 
 | | Codebase 1 | Codebase 2 |
 |---|---|---|
@@ -41,8 +41,8 @@ We did this in two production codebases, and both arrived at the same place:
 
 The difference in the last row is the most useful result here. In codebase 1, test work fell to 0.5%
 of the agents' tool calls straight away. In codebase 2, removing only the unit tests made agents write
-tests faster than at any point that year, as fake-adapter "integration" tests, until proof itself was
-redefined. **Deleting tests doesn't change what agents do. Changing what counts as proof does.**
+tests faster than at any point that year, as fake-adapter "integration" tests, until I redefined proof
+itself. **Deleting tests doesn't change what agents do. Changing what counts as proof does.**
 
 ## Why the old practices stop fitting
 
@@ -69,7 +69,7 @@ exercising the real path end to end, and reading the result. Spend the effort th
 | Test files created and deleted | — | 7,597 created in a year; of those deleted, half lived under 50 days and one in five under a week |
 | Assertions | In 772 commits the agent changed a test's assertions with the code it tested | 114,000 added and 39,000 removed in ten months: one deleted for every three written |
 
-— means the figure was not measured in that codebase.
+— means I did not measure the figure in that codebase.
 
 Both suites were green through the defects that reached people.
 
@@ -96,8 +96,8 @@ Codebase 2:
 - An audit found three defects "reported closed and were not", and "several existing tests asserted
   the defect outright".
 
-Codebase 2 keeps a write-up of every defect whose cause wasn't obvious. Of 89, none was found by a unit
-test, before or after the deletion:
+Codebase 2 keeps a write-up of every defect whose cause wasn't obvious. Of 89, a unit test found none,
+before or after the deletion:
 
 | Found by | Before the deletion | After |
 |---|---|---|
@@ -118,7 +118,7 @@ the ones that come from real data, real permissions, real model output, real pro
 
 ## What tests do to coding agents
 
-Run time is the smallest cost. We measured the rest from the coding agents' own session logs and from
+Run time is the smallest cost. I measured the rest from the coding agents' own session logs and from
 git history. Codebase 1 had 34,266 tool calls in the weeks before the deletion and 242 sessions after.
 Codebase 2 had about 2,400 sessions across the three periods described below.
 
@@ -164,8 +164,8 @@ exact literals".
 
 A fake teaches the agent how the world behaves, and the agent believes it. In codebase 1, simulated
 Google services, recording doubles, a recording executor and a fake sign-in all stood in for the real
-thing, and stubbed "source-level proof" was reported as proved. Removing them took four commits and
-over 26,000 lines. Red CI was "traced to environment, not code, every time". In codebase 2, we told
+thing, and agents reported stubbed "source-level proof" as proved. Removing them took four commits and
+over 26,000 lines. Red CI was "traced to environment, not code, every time". In codebase 2, I told
 agents 87 times over eight months to stop mocking and use real dependencies:
 
 > "remove the mocks and call real dependencies, also use real redis not mocks"
@@ -174,8 +174,8 @@ Agents kept going back to mocks anyway.
 
 ### They steal the session from the task
 
-The owner had to keep pulling agents back. In codebase 1, in the three weeks before the deletion there
-were about 13 distinct messages redirecting an agent from tests to the task; after it, one:
+I had to keep pulling agents back. In codebase 1, in the three weeks before the deletion I sent about
+13 distinct messages redirecting an agent from tests to the task; after it, one:
 
 > "Why are you still churning role and scope testing instead of proving the workflow live end to end."
 
@@ -191,7 +191,7 @@ expected failures, 115 raised test timeouts and 62 deleted test files.
 
 ## Deleting tests alone makes it worse
 
-Codebase 2 removed its unit suites first and told agents to prove changes "with integration tests
+In codebase 2 I removed the unit suites first and told agents to prove changes "with integration tests
 against real stores, end-to-end tests, and live drives". The rule said in so many words: "Do not add
 unit or mocked-adapter tests." Agents read a real database plus fake providers as "integration against
 real stores" and carried on. Over the next ten days:
@@ -201,7 +201,7 @@ real stores" and carried on. Over the next ten days:
 - Test-file edits peaked at 230–270 a day, the busiest stretch of the year.
 - The rate of rewritten assertions rose to five times what it had been.
 
-Ten days later the instructions changed. Proof is the live journey plus the persisted record read
+Ten days later I changed the instructions. Proof is the live journey plus the persisted record read
 back. Fake, stub or "controlled" provider adapters are mocks, even against a real database. No new
 tests unless the owner asks. A pre-commit hook rejects new test lines.
 
@@ -226,14 +226,14 @@ A model's defaults outlast a single instruction. Codebase 2 shows how. Three wee
 instruction file banned new tests, five of the scaffolding skills agents load for routine work (new
 service, new tool, new resource, new event, workflow change) still told them to write integration
 tests, commit fixtures, mock workflow activities and add replay tests to CI. An agent that loads two
-opposite instructions follows its default, and the skill named the concrete step. We rewrote each one
+opposite instructions follows its default, and the skill named the concrete step. I rewrote each one
 to drive the real caller, read back the persisted record and check the failure that matters.
 
 Mechanical checks back the instructions up, and they leak too. After the hook went in, agents made
 about a dozen work-in-progress commits with `--no-verify`, which skips it, though the instructions say
 never to do that.
 
-## What we do instead
+## What I do instead
 
 ### The verification ladder
 
@@ -274,7 +274,7 @@ purpose, not as a side effect of every feature.
 
 ### CI on the machine that can see production
 
-Hosted CI's one real advantage is a machine the code under test cannot tamper with. We keep it for
+Hosted CI's one real advantage is a machine the code under test cannot tamper with. I keep it for
 exactly that case: code from outside, and work orders from coding agents that run without a person,
 still run on hosted runners and never on the production host. Everything else runs locally:
 
@@ -307,7 +307,7 @@ always red tells you nothing, and every agent that reads its output learns that 
 | Agent input tokens per commit | — | — | 12.9M | 8.9M |
 | Median age of a bug when fixed | — | — | 3.7 days | 3.7 hours |
 
-— means not measured in that codebase.
+— means I did not measure it in that codebase.
 
 What the written evidence for each change contains, in codebase 1:
 
@@ -342,18 +342,18 @@ and tool calls from 43 to 69, because driving a browser, reading screenshots and
 all take tokens. Each session also lands more change, so input tokens per commit fell by about a
 third. In the middle period, when agents were writing fake-adapter tests and running multi-agent
 review loops, cost per commit peaked at 20.7M. The model spend on live evals is a few dollars a month,
-and payment test mode and test inboxes cost nothing. Defects are now found within hours of being
-written, on staging, which is the cheapest place to find them.
+and payment test mode and test inboxes cost nothing. Agents now find defects within hours of writing
+them, on staging, which is the cheapest place to find them.
 
-## What we caused, what the models did
+## What I caused, what the models did
 
-We sorted each finding by one test: did it stop when a person changed a rule, a config or a design, or
+I sorted each finding by one test: did it stop when a person changed a rule, a config or a design, or
 did it continue despite clear instructions?
 
-| Ours: it stopped when we changed something | The models': it continued despite instructions |
+| Mine: it stopped when I changed something | The models': it continued despite instructions |
 |---|---|
 | "Done" meant "tests pass", so agents anchored on the suite | Defaulting to mocks, through 87 instructions and an explicit ban |
-| Our scaffolding skills told agents to write tests with every feature | Writing tests across an explicit ban: 10,405 assertions in ten days |
+| My scaffolding skills told agents to write tests with every feature | Writing tests across an explicit ban: 10,405 assertions in ten days |
 | A rule that said "integration tests against real stores", which fake providers on a real database fit | Reading that rule for its loophole |
 | Hosted CI left red for eight months | Editing the test instead of the code after a red run, against an instruction not to rewrite tests |
 | A price computed in two places | Skipping the hook with `--no-verify` |
@@ -377,14 +377,14 @@ writing more tests.
   deleted database-backed test had covered exactly that write. Data writes belong with access, ledgers
   and money on the list of deterministic guarantees checked against the restored copy.
 - **A proof covers what you ran, not what you didn't.** A change that removed input schemas from
-  tool-search results was proved on a replay and still shipped a defect, because the replay never
+  tool-search results passed a replay and still shipped a defect, because the replay never
   filled the tool list. When a change removes something, prove the case where its absence matters.
 - **A proof covers what you looked at.** In codebase 2 a form stayed on screen after it was submitted;
   agents had driven the journey without checking the state afterwards. Name the state to check.
 - **Stand-ins creep back.** Agents under pressure reach for fakes and call the result a proof. Name the
   rung ("rehearsed, not proved") in every report, and check for it in review.
 - **A one-off proof is not a regression guard.** Behaviour that must not regress belongs in an outcome
-  eval that is rerun, or in a deterministic check.
+  eval that you rerun, or in a deterministic check.
 - **Hooks leak.** Agents skip pre-commit hooks for "work in progress". Keep the proof standard in the
   definition of done, where skipping it means the work isn't done.
 - **Don't keep a red gate.** Fix it or delete it. Agents read its output and learn that red is normal.
@@ -403,24 +403,24 @@ people. Teams with no way to run the real system. And any project where someone 
 author writes the tests: that independence is what makes a test worth having, and it's what
 agent-written tests lack.
 
-## How we measured
+## How I measured
 
-- **Session logs.** Tool calls were parsed for test paths (`/tests/`, `test_*.py`, `*_test.py`,
-  `*.test.ts(x)`, `*.spec.ts(x)`, `conftest.py`) and test-runner commands, with aggregate counts only.
-  In codebase 1, "before" is up to the week of 2026-10-12 and "after" from 2026-10-26; the deletion
-  week is left out, and redirect counts were vetted by hand. In codebase 2, the three periods are
+- **Session logs.** I parsed tool calls for test paths (`/tests/`, `test_*.py`, `*_test.py`,
+  `*.test.ts(x)`, `*.spec.ts(x)`, `conftest.py`) and test-runner commands, and kept aggregate counts only.
+  In codebase 1, "before" is up to the week of 2026-10-12 and "after" from 2026-10-26; I left out the
+  deletion week and vetted redirect counts by hand. In codebase 2, the three periods are
   before 25 October 2026, 25 October to 4 November, and after 4 November. Browser, staging and
   outside-assistant actions are browser and MCP tool calls plus commands that reach staging or run
   evals.
 - **Git.** Test and product lines at points in time, weekly churn, test-file lifespans, assertion lines
   added and removed, and commits touching test paths.
-- **CI.** Every hosted run in codebase 2 (7,394), with a random sample of eight failed main-workflow runs
-  a month inspected job by job.
-- **Defects.** All 89 codebase-2 defect write-ups were read against their commits. For fixes since the
+- **CI.** Every hosted run in codebase 2 (7,394). I inspected a random sample of eight failed
+  main-workflow runs a month, job by job.
+- **Defects.** I read all 89 codebase-2 defect write-ups against their commits. For fixes since the
   change, the discovery channel comes from the fix's description. Bug age is the median `git blame` age
   of the product lines each fix replaced, then the median across fixes in each period: 3.7 days for
   the 39 fixes before 25 October, 1.0 day for the 68 in the middle period, and 3.7 hours for the 201
-  after 4 November. The 76 fixes that replaced no product lines are left out. The mean moved much less
+  after 4 November. I left out the 76 fixes that replaced no product lines. The mean moved much less
   (30 days to 26): old defects still surface, but most fixes now land within hours of the code they
   correct. Per-fix figures are in [`codebase-2/data/fix_pr_bug_age.csv`](codebase-2/data/fix_pr_bug_age.csv).
 - **Cost.** Input tokens from the harnesses' own usage records, divided by sessions and by commits on
@@ -469,7 +469,7 @@ own repository and transcripts to compute the same numbers.
   a skill saying "write integration tests" beat a general rule against it.
 - Schwab, "Tests Beat Instructions for AI Coding Agents", 2026.
   https://caimito.net/en/blog/2026/04/17/tests-beat-instructions-for-ai-coding-agents.html. Agrees
-  instructions alone don't hold; proposes tests as the executable constraint. We agree when a person
+  instructions alone don't hold; proposes tests as the executable constraint. I agree when a person
   writes the failing test and the agent can't edit it.
 
 **Independent verification**
@@ -496,7 +496,7 @@ own repository and transcripts to compute the same numbers.
   Real implementations first; the costs of larger tests.
 - Shore, "Testing Without Mocks: A Pattern Language", 2023. https://www.jamesshore.com/v2/projects/nullables/testing-without-mocks
 
-Most of these argue for fewer and better tests, not none. We go further because the author of the code
+Most of these argue for fewer and better tests, not none. I go further because the author of the code
 and the author of the tests are now the same agent.
 
 **Testing against production state, and outcome evals**
@@ -522,18 +522,18 @@ and the author of the tests are now the same agent.
 - Nagappan, Maximilien, Bhat, Williams, "Realizing quality improvement through test driven development",
   *Empirical Software Engineering* 13(3), 2008.
 - Yuan et al., "Simple Testing Can Prevent Most Critical Failures", OSDI 2014.
-  https://www.usenix.org/conference/osdi14/technical-sessions/presentation/yuan. Its lesson is our
+  https://www.usenix.org/conference/osdi14/technical-sessions/presentation/yuan. Its lesson is my
   deterministic-writes pitfall: error paths in deterministic code deserve a check.
 - Petrović, Ivanković, Fraser, Just, "Does mutation testing improve testing practices?", ICSE 2021.
   https://arxiv.org/abs/2103.07189
 
-**Close to our practice**
+**Close to my practice**
 
 - McCarthy (StrongDM), "Software Factory", 2026. https://factory.strongdm.ai/. Held-out scenarios in
-  place of in-repo tests. They score against simulated services; we would call that a rehearsal.
+  place of in-repo tests. They score against simulated services; I call that a rehearsal.
 - Freire (Nubank), "Why We Killed Our End-to-End Test Suite", 2021. https://building.nu.com/why-we-killed-our-end-to-end-test-suite/
 
 **What this study adds.** Two production codebases measured from the agents' own logs, not
-benchmarks. Two findings we haven't seen documented: a partial ban moves agents' test-writing into
+benchmarks. Two findings I haven't seen documented: a partial ban moves agents' test-writing into
 fake-adapter "integration" tests, and instruction-level fixes that work on benchmarks (a stricter
 prompt, mocking guidance in config files) didn't hold over months of real work. Proof standards did.

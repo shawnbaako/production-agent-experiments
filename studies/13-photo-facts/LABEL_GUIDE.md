@@ -5,9 +5,9 @@ listing's own text, which public photos do not have), and contact sheets come fr
 `run.py sheets` instead of the production photo folder. Field names, options and definitions are
 otherwise production's, word for word.
 
-**Provenance:** the agent labels in `data/agent_labels/` were written by a Claude agent session
-(Claude Opus 5.5, model id `claude-opus-5-5`) viewing each contact sheet with its file-reading tool,
-on 2026-11-15. They are agent labels, not human labels. The human labels are Open Images V7's
+**Provenance:** I made the agent labels in `data/agent_labels/` with a Claude agent session (Claude
+Opus 5.5, model id `claude-opus-5-5`) that viewed each contact sheet with its file-reading tool, on
+2026-11-15. They are agent labels, not human labels. The human labels are Open Images V7's
 human-verified image-level labels and the Places365 scene categories.
 
 Contact sheets: `work/sheets/sNNN.jpg` (9 photos each, yellow 4-digit number in the corner).

@@ -1,10 +1,10 @@
 # 04 · What the checker sees: give it what the writer read
 
-**Our position.** A checker that verifies an agent's output must see everything the agent read, not
+**My position.** A checker that verifies an agent's output must see everything the agent read, not
 only the sources the output cites. Most of what an agent writes comes from records it read on the way:
 account history, earlier mail, a page that returned an error. A checker shown only the citations flags
-those true sentences as unsupported, and its flags become noise a reviewer learns to ignore. In our
-production agent this mismatch is why the checker was removed (see
+those true sentences as unsupported, and its flags become noise a reviewer learns to ignore. In my
+production agent this mismatch is why I removed the checker (see
 [study 03](../03-where-a-decision-model-belongs/)). Fix the evidence, not the model.
 
 **The evidence**, on 48 synthetic outputs with 109 planted errors (held-out half reported):
@@ -25,7 +25,7 @@ production agent this mismatch is why the checker was removed (see
 
 ## Data
 
-Everything is invented: the same fictional consulting firm as study 01, invented clients and people,
+Everything here is fictional: the same consulting firm as study 01, invented clients and people,
 `.example` addresses.
 
 - **48 outputs** an agent might write: 16 email replies, 12 client updates, 10 short research briefs,
@@ -34,7 +34,7 @@ Everything is invented: the same fictional consulting firm as study 01, invented
   - *cited*: what the output replies to or cites (an email thread, a fetched page, a KPI sheet);
   - *other*: what else the agent read through its tools (CRM records, internal notes, earlier threads,
     calendar lookups, a page that returned an error). Some are distractors that no sentence uses.
-- **Every sentence is labelled:**
+- **I labelled every sentence:**
 
   | Label | Sentences | Meaning |
   |---|---|---|
@@ -49,18 +49,18 @@ Everything is invented: the same fictional consulting firm as study 01, invented
   subtle: a week off, 182 staff for 192, "as Dana said" when it was Priya.
 - **Split:** outputs with an even number are development (fitting thresholds), odd numbers are held
   out (everything reported). Each half has 24 outputs.
-- **Labels** are the author's intent, re-read case by case and not independently relabelled.
-  Sentences in six cases were flagged as hard to label and left as written: c08 (a confirmation that is only in a note), c16 and c21 (a correct ratio from a
+- **Labels** are my intent, which I re-read case by case; nobody has independently relabelled them.
+  I flagged sentences in six cases as hard to label and left them as written: c08 (a confirmation that is only in a note), c16 and c21 (a correct ratio from a
   wrong total; a "nearly half" that is 35%), c30 (an unsupported earlier figure), c33 (online check-in
-  read as online booking) and c34 (relabelled after a record was expanded).
+  read as online booking) and c34 (relabelled after I expanded a record).
 - **Length:** every case's records stay under 1,300 words, because Clef reads only about the first
   2,000 tokens of its input on Workers AI.
 
 ## Method
 
 One yes-no (`noul`) question per sentence: *"Is this sentence stated in, or supported by, the records
-above?"* The state is the records followed by the sentence. A sentence is flagged when P(yes) is below
-a threshold fitted on the development half (best F1 for finding errors among sentences that make a
+above?"* The state is the records followed by the sentence. The checker flags a sentence when P(yes) is
+below a threshold fitted on the development half (best F1 for finding errors among sentences that make a
 claim). Three conditions:
 
 | Condition | Records in the state |
@@ -94,7 +94,7 @@ tokens of state (423 on average here, against 650–780 for the hosted models), 
 is cut before the model reads it, and error recall falls to 22 of 53. Even with only the cited records
 it flags 15% of correct cited sentences.
 
-"True sentences" are `cited` and `other`. Non-claims are reported separately below.
+"True sentences" are `cited` and `other`. I report non-claims separately below.
 
 **Cost and size**, through OpenRouter on 2026-11-15, 1,605 calls per model:
 
@@ -125,7 +125,7 @@ it flags 15% of correct cited sentences.
 ## Building a checker that works
 
 - **Give it what the writer read.** Send the tool results the agent used, not only the documents the
-  output cites. Most false flags in our production checker came from this mismatch.
+  output cites. Most false flags in my production checker came from this mismatch.
 - **Skip sentences that make no claim.** Greetings and offers are where the remaining flags are. Ask
   "does this sentence state a fact?" first, or filter them out before checking.
 - **Fit the threshold on your own outputs.** Fitted thresholds here ran from 0.09 to 0.50 depending on

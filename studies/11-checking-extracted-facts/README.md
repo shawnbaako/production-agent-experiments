@@ -1,6 +1,6 @@
 # 11 · Checking extracted facts: a number check, then a judge that reads the whole source
 
-**Our position.** Check the facts an agent extracts in two steps. First, a deterministic number and
+**My position.** Check the facts an agent extracts in two steps. First, a deterministic number and
 unit check: the price, duration, capacity or age must be written in the fact's own excerpt. Then a
 cheap decision model that reads the whole source. Never judge a fact from its cited excerpt alone. The
 excerpt is a real quote, often with a true value, and the value can belong to a different offering. Only
@@ -26,8 +26,8 @@ second domain: what the checker is shown decides the result.
   excerpts in dollars), which inflates its rates in production too.
 
 **Status.** Reproducible, with production data. 130 public sources from English Wikivoyage, every model
-answer committed, $0.71 through OpenRouter for everything. The production study's per-fact verdicts are
-published in anonymised form.
+answer committed, $0.71 through OpenRouter for everything. I publish the production study's per-fact
+verdicts in anonymised form.
 
 ## What happened in production
 
@@ -35,7 +35,7 @@ An intake agent reads an operator's own material (a pasted description, a spread
 photo of a price board, pages of their website) and proposes draft offerings: title, price,
 duration, capacity, minimum age, what is included, cancellation terms and so on. Each fact carries a
 status (`observed` when the material states it) and a short excerpt quoting where it was read. The
-operator reviews the drafts before anything is sold. The only check before this study was a quote
+operator reviews the drafts before anything goes on sale. The only check before this study was a quote
 check: an observed fact's excerpt must appear in the text that was read. It caught nothing, because
 a wrong fact usually comes with a real quote.
 
@@ -55,46 +55,46 @@ is the cost: a correct fact the operator has to re-check.
 | D gpt-oss-safeguard, cited excerpt only | 16.7% / 20.0% | 25.0% / 26.9% | 100% | 100% | 50.0% / 37.5% | 1 of 4 |
 | **A1 + B Jev @0.5** | **4.4%** (1.1–8.8) | **4.0%** (1.6–7.0) | 100% | 100% | 83.3% | 4 of 4 |
 
-Two runs are shown as run 1 / run 2. Brackets are 95% bootstrap intervals over sources. Photos
+Cells with two values show run 1 / run 2. Brackets are 95% bootstrap intervals over sources. Photos
 reached Jev as OCR text; the full production table, with OCR and entailment arms, per-kind rates and
 intervals for every cell, is in [`production/summary.md`](production/summary.md).
 
 Two things in production motivated the replica. The excerpt-only judge (D) was a different model
-from the whole-source judges (B and C), so "excerpt only" and "a weaker model" could not be told
-apart. And the sample was small: 35 sources, 24 other-offering errors, most of the material written
-by us.
+from the whole-source judges (B and C), so I could not tell "excerpt only" apart from "a weaker
+model". And the sample was small: 35 sources, 24 other-offering errors, and I wrote most of the
+material.
 
 ## The replica
 
 **Data.** 130 sources, each one "See", "Do" or "Sleep" section of an English Wikivoyage article
 about a US destination (86 articles, 38 states, 1,209 listings). A section lists several businesses
 with their address, phone, hours, price and a description, which is close to an operator's own
-material and makes "a value from another offering" possible. Every listing template is kept as
-structured data (the ground truth) and rendered to the plain text a reader sees (what the extractor
+material and makes "a value from another offering" possible. I keep every listing template as
+structured data (the ground truth) and render it to the plain text a reader sees (what the extractor
 reads). Median section length is 2,640 characters. Text is CC BY-SA 4.0; each source records its
-page, section and revision ([`data/LICENSE-DATA.md`](data/LICENSE-DATA.md)). Only US destinations
-were used, because the extraction prompt records prices in US cents.
+page, section and revision ([`data/LICENSE-DATA.md`](data/LICENSE-DATA.md)). I used only US
+destinations, because the extraction prompt records prices in US cents.
 
 **Extraction.** The production extractor, unchanged: DeepSeek V4.1 Flash 1017, the same prompt (its
 rendered text hashes to the same SHA-256 as production's), the same output schema, temperature 0,
-low reasoning effort, 16k output tokens and production's salvage of output cut at the budget. Each
-section is given as a pasted text file, with no existing offerings. 125 of 130 sections produced
-offerings (the other 5 were declined as a guide, not an operator's material), 1,114 in all; 5,612
-facts were marked observed.
+low reasoning effort, 16k output tokens and production's salvage of output cut at the budget. I gave
+each section as a pasted text file, with no existing offerings. 125 of 130 sections produced
+offerings (the extractor declined the other 5 as a guide, not an operator's material), 1,114 in all;
+it marked 5,612 facts observed.
 
-**Labels.** A natural fact is labelled correct when the listing it belongs to confirms it, by
-field-specific rules in `labels.py`: the name, address, a dollar amount or "free" in the price, a
+**Labels.** `labels.py` labels a natural fact correct when the listing it belongs to confirms it, by
+field-specific rules: the name, address, a dollar amount or "free" in the price, a
 length stated in the description, at least 80% of description words in the listing, and production's
-wording rules for prices, hours and terms. Facts the rules cannot confirm are left out of scoring
-(134), as are facts from offerings that match no listing (388, mostly sub-offerings the extractor
-split out of one listing) and business-contact facts (15), because a guide section has no single
-operator. There is no public equivalent of production's natural errors, so that category is
+wording rules for prices, hours and terms. Scoring leaves out facts the rules cannot confirm (134),
+facts from offerings that match no listing (388, mostly sub-offerings the extractor split out of one
+listing) and business-contact facts (15), because a guide section has no single operator. There is no public equivalent of production's natural errors, so that category is
 production-only here.
 
 **Injected errors.** Production's injection code, seed (20261101) and taxonomy, per source where
 possible: one swapped digit or unit (92), one invented fact whose excerpt is an unrelated real line
-(124), one value taken from another listing in the same section (68). One guard was added: a value
-is not moved to a listing that states the same value, because the moved fact would then be true. The
+(124), one value taken from another listing in the same section (68). I added one guard: the
+injection never moves a value to a listing that states the same value, because the moved fact would
+then be true. The
 scored set is 5,075 facts from 124 sources: 284 wrong and 4,791 correct.
 
 **Arms.** All arms judge the same recorded facts, and all run on top of the quote check.
@@ -134,7 +134,7 @@ catches every swapped digit and unit and nothing else of note: an invented fact 
 it is a number (an age, a capacity, a length) and the unrelated excerpt lacks it. Jev at 0.5 kept
 three wrong facts, all capacities with two digits swapped ("Sleeps up to 16" claimed as 61, scored
 0.85), the same blind spot production found; the number check catches all three. The DeepSeek judge
-caught every wrong fact in both runs and downgraded somewhat more correct ones, most of them "what
+caught every wrong fact in both runs and downgraded more correct ones, most of them "what
 the price includes".
 
 ### Same model: cited excerpt against whole source
@@ -151,8 +151,8 @@ phrases, the same fact lines with their excerpts, and Dw also gets the section.
   to 7, and every one of the remaining misses in both arms is a value from another offering. An
   excerpt such as "Adults $13.25" is a true quote; only the rest of the section shows it is the
   aquarium's price, not the wax museum's.
-- **It removed a third of the wrong rejections, not all of them.** 1,465 correct facts were
-  downgraded with the excerpt only, 959 with the whole source. What remains is the model and its
+- **It removed a third of the wrong rejections, not all of them.** With the excerpt only it
+  downgraded 1,465 correct facts; with the whole source, 959. What remains is the model and its
   policy: "SUPPORTED only if the material states this exact value" rejects a category (`kind: stay`
   for a bed and breakfast) and most prices, which its fact lines give in cents (see below).
 - **The model is not the right judge even with the whole source.** Jev and the DeepSeek judge,
@@ -174,7 +174,7 @@ Jev's probabilities were identical or nearly so between runs: 12 facts of 5,612 
 them changing a result in the table. In production its two batched runs agreed on all 993 facts.
 gpt-oss-safeguard was the least stable and, given more to read, less stable still. All arms ran
 through OpenRouter on 2026-11-15; Jev resolved to `typesafe/jev-1.14-20261014` on every call,
-DeepSeek was served by Sail Research and gpt-oss-safeguard by Groq. Latencies for gpt-oss-safeguard
+Sail Research served DeepSeek and Groq served gpt-oss-safeguard. Latencies for gpt-oss-safeguard
 include retries after upstream rate limits.
 
 Jev's probability tracks correctness (run 1, scored facts): below 0.1, 0 of 269 were correct;
@@ -225,14 +225,14 @@ halves its wrong downgrades (0.8%) and lets through one more copied value (4 wro
   where it read the fact. A judge confined to it rejects anything inferred or joined (kind, a
   description assembled from fragments) and cannot see that the quoted value belongs to someone
   else.
-- **Write values the way the source does.** The excerpt judge was shown `price_minor: 9900` against
+- **Write values the way the source does.** The excerpt judge saw `price_minor: 9900` against
   "$99" and rejected most correct prices: 291 of 343 with the excerpt, 258 of 343 with the whole
   source, 48 of 57 in production. Jev's claim sentence turns cents into dollars, and it rejected 2
   of 343. Give a judge the value in the source's units, or convert it in the claim.
 - **Choose the threshold on your own facts.** Jev's probability tracks correctness, but the useful
   cut differs: in the replica 98% of facts scored 0.3–0.5 were correct, so 0.5 costs reviews that
   0.3 would not.
-- **Keep the last mile human.** "What the price includes" was where both whole-source judges and our
+- **Keep the last mile human.** "What the price includes" was where both whole-source judges and my
   own labels disagreed most; amenities a hotel offers are not always in the price. Show the operator
   the flagged facts rather than discarding them.
 
@@ -240,7 +240,7 @@ halves its wrong downgrades (0.8%) and lets through one more copied value (4 wro
 
 - **The extractor refused a travel guide.** Given the Wikivoyage URL as a website source, the
   extractor declined one of three pilot sections as "not one operator's own material". Giving each
-  section as a pasted text file fixed it; 5 of 130 sections were still declined. A study that reuses
+  section as a pasted text file fixed it; the extractor still declined 5 of 130 sections. A study that reuses
   a production prompt on public data has to present the data in a shape the prompt accepts.
 - **The excerpt judge's prices were in cents.** See above; it inflates D's wrong downgrades in both
   studies. Without prices and durations, D still wrongly downgraded 26.9% of the remaining correct
@@ -250,36 +250,36 @@ halves its wrong downgrades (0.8%) and lets through one more copied value (4 wro
   disagreements reviewed. Production's fuzzy title match can also attach a fact to the wrong listing
   ("Provincetown Art Association and Museum" to "Provincetown Museum"), which then leaves a true
   fact unscored.
-- **Groq rate-limits gpt-oss-safeguard-20b.** As in production, upstream HTTP 429s; failed sources
-  were retried on the next run with backoff, and the latency figures include the retries' last try.
+- **Groq rate-limits gpt-oss-safeguard-20b.** As in production, upstream HTTP 429s; I retried failed
+  sources on the next run with backoff, and the latency figures include the retries' last try.
 
-## How we measured
+## How I measured
 
-- **Spot check, ground truth.** 40 scored facts drawn at random (5 of each injected type, 25
-  labelled correct) were read against their listings. All 40 labels held. The sample is mostly names, addresses,
+- **Spot check, ground truth.** I read 40 scored facts drawn at random (5 of each injected type, 25
+  labelled correct) against their listings. All 40 labels held. The sample is mostly names, addresses,
   descriptions and prices, the fields that dominate the scored set.
-- **Spot check, verdicts.** 29 facts where an arm disagreed with the label, read the same way: 10 of
+- **Spot check, verdicts.** I read, the same way, 29 facts where an arm disagreed with the label: 10 of
   Jev's downgrades of correct-labelled facts, 5 of the DeepSeek judge's, 7 of the excerpt judge's,
-  and 7 wrong facts an arm kept (3 by Jev, 4 by the excerpt judge). All 7 kept facts were really
+  and 7 wrong facts an arm kept (3 by Jev, 4 by the excerpt judge). All 7 kept facts were
   wrong. Of the 22 downgrades, the arm was wrong in 15, the label was wrong in 3 (a restaurant, a
   bar and a parking fee counted as part of a price) and 4 were judgement calls (hotel facilities as
   "included", which of two prices is standard, a name the extractor composed). All 7 excerpt-judge
   downgrades were wrong: a category, or an address with the city added. The label errors all favour
   the judges, so the wrongly-downgraded rates of B and C are, if anything, slightly high. Details in
   [`results/hand_check.json`](results/hand_check.json).
-- **Bootstrap.** Sources are resampled with replacement, 2,000 times, seed 11, and each rate is
-  recomputed; the interval is the 2.5th to 97.5th percentile. Facts from one source are not
+- **Bootstrap.** I resample sources with replacement, 2,000 times, seed 11, and recompute each
+  rate; the interval is the 2.5th to 97.5th percentile. Facts from one source are not
   independent, so resampling facts would understate the width.
-- **Spend.** Every call's OpenRouter-reported cost is appended to
-  [`results/spend.jsonl`](results/spend.jsonl), and the code refuses a call once recorded spend
-  reaches 95% of USD 5. The ledger includes an extraction pilot of three sections given as a website
-  (USD 0.001), an arms pilot on two sources, and a first arms pass discarded after a labelling rule
-  was fixed to read "free" as a price of zero (USD 0.048 for the last two). Calls in flight when a
-  run was restarted are not in the ledger.
+- **Spend.** The code appends every call's OpenRouter-reported cost to
+  [`results/spend.jsonl`](results/spend.jsonl) and refuses a call once recorded spend reaches 95% of
+  USD 5. The ledger includes an extraction pilot of three sections given as a website (USD 0.001), an
+  arms pilot on two sources, and a first arms pass I discarded after fixing a labelling rule to read
+  "free" as a price of zero (USD 0.048 for the last two). The ledger misses calls that were in flight
+  when I restarted a run.
 - **Production export.** Production's per-fact verdicts are in
   [`production/facts.jsonl`](production/facts.jsonl), keyed by salted, truncated SHA-256 ids, with
-  the source kind, field, label, error type and every arm's verdict or probability. No source text,
-  fact value, name or address is included. The same `report.py` recomputes production's table from
+  the source kind, field, label, error type and every arm's verdict or probability. The file holds no
+  source text, fact value, name or address. The same `report.py` recomputes production's table from
   it: the numbers match the production study's to the decimal. Costs are in
   [`production/costs.json`](production/costs.json).
 

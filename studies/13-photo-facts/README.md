@@ -1,20 +1,20 @@
 # 13 · Photo facts from the embedding you already have
 
-**Our position.** To read facts from photos at catalogue scale, don't call a vision model per photo.
+**My position.** To read facts from photos at catalogue scale, don't call a vision model per photo.
 Train small heads on the image vectors your search already computes, label with a strong model, and
 check those labels against people. Ship an answer only when the 95% lower bound on its held-out
 precision clears your bar, because small samples make a head or a fine-tune look ready when it isn't.
 And never infer from photos the facts people rely on for safety, such as step-free access: ask the
 party responsible for them.
 
-**The evidence.** We built this for a production travel catalogue, where assistants ask what a place
+**The evidence.** I built this for a production travel catalogue, where assistants ask what a place
 looks like and who it suits, then rebuilt it on public photos with human labels:
 
 - **Linear heads on EmbeddingGemma 2 image vectors answer the common facts well:** subject 87% and 92%
   of all photos, setting 97% and 96% (production, replica). Zero-shot matching against option text is
   well behind.
 - **Agent labels match people on objects and drift on definitions.** Stairs agreed at Cohen's kappa
-  0.38 for our labeller and 0.70 for a second model. Most disagreements were about what counts as
+  0.38 for my labeller and 0.70 for a second model. Most disagreements were about what counts as
   stairs, a handrail or a boat, not about what was in the photo.
 - **Point estimates lie at this scale.** Across 20 re-drawn splits, the stairs head looked ready by its
   point precision in 15 and passed the lower-bound gate in 4. Only answers with 50 or more held-out
@@ -26,7 +26,7 @@ looks like and who it suits, then rebuilt it on public photos with human labels:
 
 **Status.** Reproducible: the photo ids, human labels, both agents' labels, the image vectors, every
 Qwen answer and the spend ledger are in this folder, and `uv run --frozen python run.py report`
-recomputes every replica number without a network call or a GPU. Photos are not redistributed;
+recomputes every replica number without a network call or a GPU. I do not redistribute the photos;
 `run.py fetch` downloads them. Production figures are aggregates, with per-photo agent labels, head
 scores and Qwen answers under opaque ids in [`production/`](production/). The replica spent $2.46 of a
 $10 cap.
@@ -51,27 +51,27 @@ Production precision is agreement with agent labels; replica precision is agreem
 "Gate" everywhere means: at least 5 right calls, right at least 90% of the time on held-out groups,
 and a 95% Wilson lower bound of at least 80%. EG2 is EmbeddingGemma 2.
 
-## What was tested
+## What I tested
 
 ### The production photos
 
-Photos supplied by hotel and activity operators for their own listings. 1,532 were labelled in several
-batches by Claude agent sessions (Claude Opus 5.5, general-purpose sessions that opened each photo,
+Photos supplied by hotel and activity operators for their own listings. Claude agent sessions labelled
+1,532 of them in several batches (Claude Opus 5.5, general-purpose sessions that opened each photo,
 on contact sheets of 9 and at full size for bathrooms, entrances, stairs and pools) following one
 label guide: subject (16 classes), setting, people (none, 1-2, 3 or more), whether the photo shows the
 offer or is generic, 19 equipment items and 9 accessibility cues. For the offer field some labellers
 also saw the listing's name, category and a short description. No person labelled any photo. Where
 two agent labellers saw the same photos they agreed on 94-100% of subject, setting, people and offer,
-and on accessibility cues for 19 of 24 photos. The split is grouped by listing; since label batch 2
-the held-out listings stay fixed and only new listings are split (380 photos held out).
+and on accessibility cues for 19 of 24 photos. The split groups photos by listing; since label batch 2
+the held-out listings stay fixed and the rule splits only new listings (380 photos held out).
 
 ### The public photos
 
 [`run.py`](run.py) `select` builds the set from two human-labelled public data sets and pins it in
 [`data/photos.jsonl`](data/photos.jsonl):
 
-- **Open Images V7** validation and test images (CC BY 2.0, no rotation), 1,086 photos. Image-level
-  labels in these splits were verified by people, present or absent; a class nobody verified is
+- **Open Images V7** validation and test images (CC BY 2.0, no rotation), 1,086 photos. People
+  verified the image-level labels in these splits, present or absent; a class nobody verified is
   unknown, not absent ("All other classes which are not explicitly marked as positive or negative for
   an image are not annotated"). For each field the selection takes verified positives and verified
   negatives: 70 and 30 for stairs, handrail and wheelchair (handrail has 79 positives in all), every
@@ -83,8 +83,8 @@ the held-out listings stay fixed and only new listings are split (380 photos hel
   restaurant, dining room, bar and coffee shop; lobby, corridor and reception; conference room;
   indoor gymnasium; sauna and indoor jacuzzi; beach, mountain and coast; boat deck; deep ocean).
   Setting is Places365's indoor/outdoor file, with boat deck as on water and deep ocean as
-  underwater. Each photo is its own group. The images are for non-commercial research; only ids and
-  labels are committed.
+  underwater. Each photo is its own group. The images are for non-commercial research; I commit only
+  ids and labels.
 
 That is 1,446 photos and 26 fields: subject and setting (Places365), people present, 17 equipment
 items and 5 accessibility cues (Open Images: stairs, handrail, wheelchair, ramp, elevator). Grab bars,
@@ -96,26 +96,26 @@ random draws the one whose held-out side has closest to a quarter of every field
 360 photos); split b repeats this with seeds 4,000-7,999 (363 photos). The 20 re-draws in the sample-
 size section use seeds 10,000 onward, 300 each.
 
-**Agent labels.** 324 photos drawn at random from split a's training side (73 from Places365) were
-labelled twice:
+**Agent labels.** 324 photos drawn at random from split a's training side (73 from Places365) each
+have two sets of agent labels:
 
-- by us, with Claude Opus 5.5 (`claude-opus-5-5`) in an agent session, viewing 36 contact sheets of 9
+- mine, made with Claude Opus 5.5 (`claude-opus-5-5`) in an agent session, viewing 36 contact sheets of 9
   photos with the file-reading tool, in batches of four sheets, following [`LABEL_GUIDE.md`](LABEL_GUIDE.md):
   production's guide with the offer field removed. Production's guide asks for full-size photos where
-  a cue might be present; we labelled from the sheets (320-pixel cells) and opened none, which is
+  a cue might be present; I labelled from the sheets (320-pixel cells) and opened none, which is
   cheaper and, as the results show, misses small cues;
-- by Gemini 3.8 Flash (`google/gemini-3.8-flash` through OpenRouter, low reasoning effort), one photo
+- Gemini 3.8 Flash's (`google/gemini-3.8-flash` through OpenRouter, low reasoning effort), one photo
   per call at up to 1,024 pixels, with the same guide text. Its endpoint refused reasoning off with
   HTTP 400, "Reasoning is mandatory for this endpoint and cannot be disabled."
 
-**Arms.** Every arm is scored on held-out photos against human labels, only where a person verified
+**Arms.** I score every arm on held-out photos against human labels, only where a person verified
 the field.
 
 | Arm | What it is |
 |---|---|
 | EG2 zero-shot | `google/embeddinggemma-2` at revision `f9972ac2`, image only, 140 image tokens (production's budget), fp32, 0.047 s a photo on an RTX 3080 Ti. Multi-class: the nearest option text (`task: search result \| query: a hotel bedroom`, ...). Yes-or-no: similarity to one option text, with a threshold set on the training photos by the production rule; nothing is trained |
 | EG2 heads | Production's trainer unchanged ([`report.py`](report.py) `fit`, `threshold`, `wilson`, `grouped_folds`): a linear softmax over the 768-dim vector per field, a confidence threshold from 5-fold group cross-validation on the training photos (lowest at which 90% of answers are right with 5 or more right), then the held-out gate |
-| Heads on agent labels | The same trainer on the 324 photos with our labels or Gemini's, against heads trained on the human labels of the same 324 photos |
+| Heads on agent labels | The same trainer on the 324 photos with my labels or Gemini's, against heads trained on the human labels of the same 324 photos |
 | Qwen3.5-2B zero-shot | `Qwen/Qwen3.5-2B`, thinking off, greedy, photos at 768 pixels, one line of JSON listing the visible cues and equipment ([`qwen_modal.py`](qwen_modal.py)) |
 | Qwen3.5-2B LoRA | Production's setup: rank 16, alpha 32, dropout 0.05, language-model projections only, vision tower frozen, 2 epochs, learning rate 1e-4, photos with a cue shown three times, Modal A10G. Trained on human labels of split a's training photos (unverified items count as absent in the training target), and again on split b |
 
@@ -150,12 +150,12 @@ Where the agents were off, it was mostly the definition, and the two agents were
 - **Boat.** People tagged kayaks, canoes and a ship's hatch as boats; both agents put kayaks under
   `kayak` as the guide's list invites. A taxonomy where one class contains another is labelled
   differently by people and by a model following a flat list.
-- **Handrail.** People tagged balcony and gallery railings as handrails (4 of our 5 misses); the guide
+- **Handrail.** People tagged balcony and gallery railings as handrails (4 of my 5 misses); the guide
   defines a handrail as "a rail to hold along stairs, a ramp or a walkway".
-- **Stairs.** People counted escalators, bleachers and single steps at a gate. Three of our 8 misses
-  were escalators we had deliberately left out. Our 3 false stairs were rooms where we saw a banister
-  and marked stairs; people marked none. Gemini, looking at
-  each photo at full size, missed none of the 20 verified stairs; we missed 8 from 320-pixel sheets.
+- **Stairs.** People counted escalators, bleachers and single steps at a gate. Three of my 8 misses
+  were escalators I had deliberately left out. My 3 false stairs were rooms where I saw a banister and
+  marked stairs; people marked none. Gemini, looking at each photo at full size, missed none of the 20
+  verified stairs; I missed 8 from 320-pixel sheets.
 - **Desk.** People tagged a lectern, a dessert cart, a display cabinet and furniture in a den as
   desks. Neither agent did.
 - **Subject and setting.** The confusions are the boundary cases: hot tubs filed as pools, the deck of
@@ -185,7 +185,7 @@ were about as good as heads trained on the human labels for objects (car, horse,
 partly because agent labels are complete: every photo carries every field, while the human labels of
 those photos verify stairs on 35 and handrail on 23. They were worse for subject and setting, where the
 agents' subject (16 classes, some with no human counterpart such as `activity` or `vehicle`) is a
-coarser fit to Places365's scene categories, and for the cue whose definition drifted: trained on our
+coarser fit to Places365's scene categories, and for the cue whose definition drifted: trained on my
 stairs labels (23 positives, 8 missed escalators and steps), the head never reached 90% in cross-
 validation; trained on Gemini's (49 positives), it was right 20 of 21 times. More labelled photos
 mattered more than who labelled them: the head on all 1,086 human-labelled training photos is the
@@ -233,8 +233,8 @@ lower bound 91%) and setting = indoor (54/56, 88%).
   shows, miss some stairs themselves; part of the zero-shot "false" stairs in production may have been
   real.
 - **What the fine-tune changed most here was when it speaks.** On photos where nobody verified the
-  item, the base model called stairs 20 times and handrails 26 times; after the LoRA, 3 and 5. Those
-  calls are not scored, since no label exists, and they would be most of the errors in a catalogue.
+  item, the base model called stairs 20 times and handrails 26 times; after the LoRA, 3 and 5. I can't
+  score those calls, since no label exists, and they would be most of the errors in a catalogue.
 - **EG2 heads are close on objects and behind on cues.** On kayak, horse, paraglider, ski, gym machine
   and bathtub the heads, the zero-shot vectors and Qwen are within one or two calls; on stairs and
   handrail the heads are wrong more often (5 of 29 and 3 of 15 calls, against 0 of 26 and 1 of 12
@@ -331,24 +331,24 @@ outside the photo or the class is rare. These are things to test, not results: t
 measured here are travel listings and Open Images. Measure against people on a sample, gate on the
 held-out lower bound, and count calls on photos nobody labelled.
 
-**Why it was not served.** Production uses it for nothing customer-facing: the cues it learned best are
-accessibility cues, which production does not read from photos at all (next section). What it does do
-is find photos worth labelling.
+**Why production does not serve it.** Production uses it for nothing customer-facing: the cues it
+learned best are accessibility cues, which production does not read from photos at all (next section).
+What it does do is find photos worth labelling.
 
 ### Label mining
 
 Production pointed the fine-tuned model, unserved, at 2,196 unlabelled catalogue photos (bathrooms,
 interiors, hotel exteriors) for about $1 on Modal, and agents labelled 234 of the candidates it
 flagged. That batch took the label set to 71 grab bars, 30 step-free showers, 21 ramps and 19
-wheelchairs. The model's answers were never used as labels.
+wheelchairs. Production never used the model's answers as labels.
 
 The replica ran the split-a fine-tune over 1,000 Open Images photos it had never seen, drawn at random
 from photos people had tagged with a listing-like class (building, house, room, interior, bathroom,
 bedroom, kitchen, living room, lobby, pool, restaurant, street, boat, beach), in 15 minutes for $0.27.
-Few of them carry a verified access label, so flagged photos nobody verified were checked by us (the
+Few of them carry a verified access label, so I checked the flagged photos nobody verified myself (the
 same way, from contact sheets; `data/agent_labels_mine/`):
 
-| Cue | Flagged per 1,000 | Present (people verified / our check) | Absent | Present per 1,000 screened |
+| Cue | Flagged per 1,000 | Present (people verified / my check) | Absent | Present per 1,000 screened |
 |---|---|---|---|---|
 | Stairs | 53 | 7 / 29 | 0 / 17 | 36 |
 | Handrail | 30 | 0 / 18 | 0 / 12 | 18 |
@@ -359,10 +359,10 @@ same way, from contact sheets; `data/agent_labels_mine/`):
 Of the 12 photos where people had verified stairs, the model flagged 7. As a miner it turns 1,000
 photos into about 50 to look at, two thirds of which have the cue. For the rarest cues it
 finds nothing: it flagged no wheelchair, and its one ramp and one lift were wrong. People had verified
-none of the three anywhere in the pool. We did not check the 947 photos it left unflagged, so its
-misses there are unknown. Mining raises the hit rate of labelling; it cannot raise the base rate. For those
-cues the photos have to come from where they are (accessibility pages, operator uploads), or the facts
-from the operator.
+none of the three anywhere in the pool. I did not check the 947 photos it left unflagged, so its
+misses there are unknown. Mining raises the hit rate of labelling; it cannot raise the base rate. For
+those cues the photos have to come from where they are (accessibility pages, operator uploads), or the
+facts from the operator.
 
 ### The joint image-text vector
 
@@ -370,8 +370,7 @@ Production also tested one listing-level vector, the hero photo and name in EG2'
 ranking arm next to the text embedding. On 152 held-out traveler queries it scored nDCG@10 0.8267
 against 0.8352 for text alone (difference −0.0085, 95% CI −0.025 to +0.008; MRR +0.0045, −0.021 to
 +0.034), so it did not join ranking. Every labelled query was text-led; none asked what a place looks
-like. The test could not have shown the photo helping. The replica did not
-repeat it.
+like. The test could not have shown the photo helping. The replica did not repeat it.
 
 ## Don't read safety facts from photos
 
@@ -389,8 +388,8 @@ general to any agent that serves facts people act on:
    people disagree on what counts as stairs at all.
 
 What production does instead: accessibility is what the operator states, the photo heads have no
-accessibility output at all, and the contract tells assistants that every
-photo-derived list is partial and absence is unknown. With these facts, an assistant on the
+accessibility output at all, and the contract tells assistants that every photo-derived list is
+partial and absence is unknown. With these facts, an assistant on the
 production service called a cruise without a visible boat "not confirmed" rather than boatless, and
 would not claim step-free access for a walker user.
 
@@ -404,8 +403,8 @@ for what helps someone choose; ask for what someone will rely on.
   in both: subject 87% and 92% of all photos, setting 97% and 96%. Zero-shot against option text is
   well behind in both (61% and 78% on subject).
 - **The gate agreed, and so did what it lets through.** In both, only answers with dozens of
-  held-out examples pass (production: five subjects, indoor, outdoor, boat, bathtub; replica: indoor, people
-  present) and every rare cue fails, however right its point estimate.
+  held-out examples pass (production: five subjects, indoor, outdoor, boat, bathtub; replica: indoor,
+  people present) and every rare cue fails, however right its point estimate.
 - **The instability agreed.** Production's stairs head went from every call right to 20 of 22 when the
   held-out side changed; the replica's went from 24 of 29 to 17 of 17 between two splits, and passed
   the gate on 4 of 20 re-draws. The Qwen fine-tune passed stairs on one split and not the other in the
@@ -446,16 +445,17 @@ for what helps someone choose; ask for what someone will rely on.
   later. It was too costly for 100,000+ listings with several photos each.
 - **Fine-tuning a small vision-language model.** Better on fine, local cues (see above), and about
   15 times slower per photo than an EG2 vector on a larger GPU (0.74 s a photo on an A10G including
-  model load, against 0.047 s on an RTX 3080 Ti). Worth it for the cues the heads can't see, if those cues are
-  facts you may serve.
+  model load, against 0.047 s on an RTX 3080 Ti). Worth it for the cues the heads can't see, if those
+  cues are facts you may serve.
 
 ## Pitfalls
 
 - **Agent labels as ground truth.** Every production precision is agreement with agent labels. In the
-  replica our labels agreed with people at kappa 0.74-1.00 on 12 of 23 fields (people, setting,
+  replica my labels agreed with people at kappa 0.74-1.00 on 12 of 23 fields (people, setting,
   subject, camel, horse, helmet, wheelchair, bus, bathtub, gym machine, car, kayak), 0.57-0.70 on 5,
-  and 0.05-0.49 on handrail, ski, stairs, backpack, boat and desk, with 6 to 35 verified photos each. Production never measured this; a strong model checked against a few hundred
-  human-labelled photos is the minimum.
+  and 0.05-0.49 on handrail, ski, stairs, backpack, boat and desk, with 6 to 35 verified photos each.
+  Production never measured this; a strong model checked against a few hundred human-labelled photos
+  is the minimum.
 - **Two agents agreeing.** On boat and desk, Claude and Gemini agreed with each other at kappa 0.82
   and 0.78 and with people at 0.31-0.35 and 0.05-0.07. They share a reading of the guide; agreement
   between labellers measures the guide, not the truth. Production's 94-100% agreement between agent
@@ -465,11 +465,11 @@ for what helps someone choose; ask for what someone will rely on.
 - **Moving splits.** Re-splitting all listings when labels are added moves photos between sides and
   changes the verdict for reasons unrelated to the model. Production now keeps held-out listings fixed.
 - **Rare classes.** Ramps were 21 of 1,532 production photos and 8 of all Open Images verified
-  positives in the two splits we used; neither data set can say anything about them.
+  positives in the two splits I used; neither data set can say anything about them.
 - **Unverified is not absent.** Open Images verifies some classes per photo; the rest are unknown.
-  Scoring an unverified class as "no" would have counted many correct calls as false positives. The
-  Qwen fine-tune here was trained with unverified items as absent, which teaches it to miss some.
-- **Contact sheets miss small cues.** Our sheet-level labels missed 8 of 20 verified stairs that
+  Scoring an unverified class as "no" would have counted many correct calls as false positives. I
+  trained the Qwen fine-tune here with unverified items as absent, which teaches it to miss some.
+- **Contact sheets miss small cues.** My sheet-level labels missed 8 of 20 verified stairs that
   Gemini, at full size, caught. Production's guide asks for the full-size photo for exactly these
   cases.
 - **Joint vectors evaluated only on text-led queries.** A photo vector can't win on queries that never
@@ -518,9 +518,9 @@ that leaves out container CPU and memory.
   mining, and the production recomputation. `qwen_modal.py`: the Qwen zero-shot, LoRA and mining runs.
 - `LABEL_GUIDE.md`: the agent label guide and how its fields map to the human labels.
 - `data/photos.jsonl`: every photo's id, source, group, human labels and split membership;
-  `data/agent_labels/`: our labels; `data/agent_sheet_index.txt`: sheet number to photo id;
+  `data/agent_labels/`: my labels; `data/agent_sheet_index.txt`: sheet number to photo id;
   `data/mine_pool.jsonl`: the 1,000 mining photos with their verified labels;
-  `data/agent_labels_mine/`: our check of mined candidates no person verified; `data/qwen_items.jsonl`,
+  `data/agent_labels_mine/`: my check of mined candidates no person verified; `data/qwen_items.jsonl`,
   key files: Qwen's inputs.
 - `results/eg2_vectors.npz`, `results/eg2_option_text.npz`: every EG2 vector;
   `results/api_labels.jsonl`: Gemini's labels; `results/qwen/`: every Qwen answer;
@@ -538,40 +538,40 @@ that leaves out container CPU and memory.
 
 - Radford et al., "Learning Transferable Visual Models From Natural Language Supervision" (CLIP),
   2021. https://arxiv.org/abs/2103.00020. Natural language as the label space "enabling zero-shot
-  transfer"; the paper's linear probes on the frozen image features are the same move as our heads.
-  Our zero-shot arm is the CLIP recipe on EmbeddingGemma 2, and it is clearly worse than a trained head.
+  transfer"; the paper's linear probes on the frozen image features are the same move as my heads.
+  My zero-shot arm is the CLIP recipe on EmbeddingGemma 2, and it is clearly worse than a trained head.
 - Kumar et al., "Fine-Tuning can Distort Pretrained Features and Underperform Out-of-Distribution",
   ICLR 2022. https://arxiv.org/abs/2202.10054. With good features and a distribution shift, a linear
-  probe can beat full fine-tuning out of distribution. Our heads never touch the encoder, so the
+  probe can beat full fine-tuning out of distribution. My heads never touch the encoder, so the
   vectors search uses stay the vectors the heads read.
 - Hinton, Vinyals, Dean, "Distilling the Knowledge in a Neural Network", 2015.
-  https://arxiv.org/abs/1503.02531. Train a cheap model on a strong one's outputs. Our heads are a
+  https://arxiv.org/abs/1503.02531. Train a cheap model on a strong one's outputs. My heads are a
   distillation of agent labels into a matrix multiply.
 - Wang et al., "Want To Reduce Labeling Cost? GPT-3 Can Help", Findings of EMNLP 2021.
   https://arxiv.org/abs/2108.13487. GPT-3 labels cost "50% to 96% less" than human labels and trained
-  models nearly as well; mixing in human labels did better on a fixed budget. Our heads on agent
+  models nearly as well; mixing in human labels did better on a fixed budget. My heads on agent
   labels match that on objects and miss it where the definition drifted.
 
 **Models as labellers**
 
 - Gilardi, Alizadeh, Kubli, "ChatGPT Outperforms Crowd-Workers for Text-Annotation Tasks", PNAS 2023.
   https://arxiv.org/abs/2303.15056. Higher accuracy than crowd workers on four of five tasks, at under
-  $0.003 an annotation. That is text; our photo cues show where it does not carry: stairs and
+  $0.003 an annotation. That is text; my photo cues show where it does not carry: stairs and
   handrails depend on what people count as one.
 - Bavaresco et al., "LLMs instead of Human Judges? A Large Scale Empirical Study across 20 NLP
   Evaluation Tasks", ACL 2025. https://arxiv.org/abs/2406.18403. Agreement with people "varies widely"
   by property and annotator expertise; "LLMs should be carefully validated against human judgments".
-  Our per-field kappas, from 0.05 to 1.00 on one label guide, are the photo version.
+  My per-field kappas, from 0.05 to 1.00 on one label guide, are the photo version.
 - Northcutt, Athalye, Mueller, "Pervasive Label Errors in Test Sets Destabilize Machine Learning
   Benchmarks", NeurIPS 2021 Datasets and Benchmarks. https://arxiv.org/abs/2103.14749. At least 3.3%
   label errors on average in ten benchmark test sets, enough to reorder models. Human labels are not
-  perfect either; ours disagreed with both agents on escalators and balconies by definition.
+  perfect either; the ones I used disagreed with both agents on escalators and balconies by definition.
 
 **Sample size**
 
 - Varoquaux, "Cross-validation failure: small sample sizes lead to large error bars", 2017.
   https://arxiv.org/abs/1706.07581. With about 100 samples the error bars are around ±10%, and "the
-  standard error across folds strongly underestimates them". Our re-draws show the same thing per
+  standard error across folds strongly underestimates them". My re-draws show the same thing per
   answer, with 5 to 30 positives.
 - Binomial proportion confidence intervals, Wikipedia.
   https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval. The Wilson interval "can be
@@ -582,7 +582,7 @@ that leaves out container CPU and memory.
 **Models and data**
 
 - Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models", 2021.
-  https://arxiv.org/abs/2106.09685. Frozen weights plus small trained low-rank matrices; our fine-tune
+  https://arxiv.org/abs/2106.09685. Frozen weights plus small trained low-rank matrices; my fine-tune
   adapts only the language-model projections.
 - Qwen team, Qwen3.5-2B model card. https://huggingface.co/Qwen/Qwen3.5-2B. A 2B "Causal Language Model
   with Vision Encoder", Apache-2.0, non-thinking by default. Bai et al., "Qwen2.5-VL Technical

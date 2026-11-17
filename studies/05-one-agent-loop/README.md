@@ -1,21 +1,21 @@
 # 05 · One agent loop, not sub-agents and background pipelines
 
-**Our position.** An agent that works for people, in chat and in the background, should be one agent:
+**My position.** An agent that works for people, in chat and in the background, should be one agent:
 one loop, one context, one set of permissions, started by whatever happens. Chat and background are two
 ways of starting the same agent, not two agents. Split by who the work is for, never by what kind of
 work it is. Specialised agents, sub-agents and fixed pipelines beside the main loop each decide part of
 the work without the rest of the picture, and the system spends its time and money reconciling them.
 
-**The evidence.** We built the split system first, ran it in production, and then consolidated it.
+**The evidence.** I built the split system first, ran it in production, and then consolidated it.
 
 - **Background work stopped duplicating itself:** about 85% fewer background model calls and 85–90%
   less background spend, at the same price per call.
 - **The agent became coherent.** On a 10-case outcome eval run on a copy of production, every case where
   something learned in one place had to shape another went from failing to passing: a preference stated
-  in chat now holds in background work (1 of 3 to 3 of 3), and a reassignment arriving by mail is now
-  taken (0 of 3 to 3 of 3).
-- **Less system:** seven stacked repeat guards removed, a 1,900-line background permission system
-  deleted, about 48,000 lines of application code gone.
+  in chat now holds in background work (1 of 3 to 3 of 3), and the agent now takes up a reassignment
+  arriving by mail (0 of 3 to 3 of 3).
+- **Less system:** I removed seven stacked repeat guards, deleted a 1,900-line background permission
+  system, and cut about 48,000 lines of application code.
 
 **Status.** Design position, with production data.
 
@@ -43,31 +43,31 @@ Two planner loops ran in one service, beside eleven domain pipelines with their 
 | Repeat guards, each added to patch the one before | 7 |
 
 Every row is one failure: an agent acting on work another agent was already doing, without that
-agent's context. Questions were asked twice and never withdrawn when the person answered them in chat.
-A preference stated in chat never reached the background. Reassignments arriving by mail were seen by
-one agent and not the one that owned the work.
+agent's context. Agents asked questions twice and never withdrew them when the person answered in chat.
+A preference stated in chat never reached the background. One agent saw reassignments arriving by
+mail; the agent that owned the work did not.
 
-The usual response is guards: a repeat check, a dedupe rule, a cooldown, a review pass. We had seven,
+The usual response is guards: a repeat check, a dedupe rule, a cooldown, a review pass. I had seven,
 and they made it worse. Each guard is another fixed decision made without context, and each one
 patches a symptom of the split rather than the split.
 
-## What we built
+## What I built
 
 1. **One loop.** Every turn runs the same agent loop with the same prompt, tools and model, whether a
    person wrote, their work changed or a time arrived.
 2. **One context.** A background turn reads the person's conversation, notes and pending items, the
    same as a chat turn. It sees what it is already doing.
-3. **One set of permissions.** A separate background permission system (seven switches and about 1,900
-   lines of checks) was deleted; in 30 days it had refused 50 updates the chat agent was allowed to
+3. **One set of permissions.** I deleted a separate background permission system (seven switches and
+   about 1,900 lines of checks); in 30 days it had refused 50 updates the chat agent was allowed to
    make. The approval gates on outside effects, such as sending mail, stayed.
 4. **Events start turns.** One list of what starts a turn, visible to the person, and one lock per
    person so chat and background never run at once. No timers that wake the model when nothing changed.
 5. **One voice.** Only the turn decides what reaches the person: a message, an item in a "needs you"
    list, or an approval. Marking work done stops its background work.
-6. **Delete before you fold.** Pipelines that produced little were deleted outright. What value they
+6. **Delete before you fold.** I deleted outright the pipelines that produced little. What value they
    had moved to the person's own agent, woken by the event.
 
-We did it in two phases: first deleting the specialised pipelines, then folding the remaining
+I did it in two phases: first deleting the specialised pipelines, then folding the remaining
 background agent into the chat agent in five steps, each measured on the same outcome eval before the
 next.
 
@@ -76,7 +76,7 @@ next.
 ### Background work stopped duplicating itself
 
 Background model calls and spend per week. Before: the specialised pipelines. After: the one agent's
-event-started turns. Person-started turns are excluded from both.
+event-started turns. I excluded person-started turns from both.
 
 | Week | Background calls | Background spend | Spend per call |
 |---|---|---|---|
@@ -136,12 +136,12 @@ wakes the colleague's agent, which is why the reassignment cases pass.
 three steps that only repeat calls already answered end the tool use. It compares calls and judges
 nothing about the work ([study 12](../12-workflows-vs-agent/)).
 
-## Pitfalls we hit building it
+## Pitfalls I hit building it
 
-None of these follows from having one agent. They are mistakes we made carrying it out, each fixed
+None of these follows from having one agent. They are mistakes I made carrying it out. I fixed each
 within about a week, and they are the ones other teams are most likely to repeat.
 
-- **Do not strip schemas from tool-search results to save tokens.** We assumed found tools would join
+- **Do not strip schemas from tool-search results to save tokens.** I assumed found tools would join
   the visible tool list; when the list was full they did not, so the agent found tools it could not
   call and searched for the same tool up to 124 times in one turn. Return the full schema with every
   hit.
@@ -153,7 +153,7 @@ within about a week, and they are the ones other teams are most likely to repeat
 - **Do not let the agent's own writes wake it.** One chat edit started four background runs; one call
   started seven. Wake on what changed outside the agent.
 
-## What we think this generalises to
+## What I think this generalises to
 
 - **Split by who the work is for, not by what kind of work it is.** One agent per person, with that
   person's context and permissions. Specialisation by task (a research agent, a mail agent, a
@@ -165,47 +165,47 @@ within about a week, and they are the ones other teams are most likely to repeat
 - **Guards are a smell.** A repeat guard, a dedupe rule or a review pass bolted onto runs is evidence
   that some agent is deciding without the context it needs. Remove the split rather than add the guard.
 - **Measure by outcomes on real state.** The improvements above were invisible to tests of individual
-  components; they show only when the whole agent runs on a copy of production and what reached the
-  person is judged.
+  components; they show only when the whole agent runs on a copy of production and you judge what
+  reached the person.
 
-## How we measured
+## How I measured
 
 - **Background calls and spend:** read-only aggregates from the system's model-call ledger, split by
-  whether a turn was started by a person or by an event. The "before" week is the last full week
-  before the specialised pipelines were deleted.
+  whether a person or an event started the turn. The "before" week is the last full week before I
+  deleted the specialised pipelines.
 - **Outcome eval:** ten cases on restored copies of production, with the production models and the real
   scheduler. Baseline and the first two steps ran three times each; later steps once each, against the
   stored result of the step before, rerunning any case that fell.
 - **Models:** DeepSeek V4.1 Flash through OpenRouter, in chat and background alike.
 - **Price of a call:** cheaper hosting for unattended calls started a week before the consolidation.
-  It is why the per-call price is similar on both sides, and why the saving above is counted in runs.
+  It is why the per-call price is similar on both sides, and why I count the saving above in runs.
 
 ## Related work
 
 **For and against one agent**
 
 - Yan (Cognition), "Don't Build Multi-Agents", 2025-06-12. https://cognition.com/blog/dont-build-multi-agents.
-  "Share context" and "actions carry implicit decisions". Our four approvals for one email are what it
-  predicts. We agree, and extend it from sub-agents to background agents.
+  "Share context" and "actions carry implicit decisions". My system's four approvals for one email are
+  what it predicts. I agree, and extend it from sub-agents to background agents.
 - Sarkis (Anthropic), "Building agents: When to fold subagents into your main agent loop", 2026-10-22.
   https://claude.com/blog/building-agents-when-to-fold-subagents-into-your-main-agent-loop. One loop
   with tools found as needed; keep subagents only where context size, parallel work or conflicting
-  instructions require them; build an end-to-end eval first and fold one piece at a time. We followed
+  instructions require them; build an end-to-end eval first and fold one piece at a time. I followed
   the same route and found no part of this system that needed to stay separate.
 - Schluntz and Zhang (Anthropic), "Building effective agents", 2024-12-19.
   https://www.anthropic.com/engineering/building-effective-agents. Workflows suit well-defined tasks,
-  agents suit open-ended ones, start simple. The pipelines we deleted were workflows built for work
+  agents suit open-ended ones, start simple. The pipelines I deleted were workflows built for work
   that turned out not to be well-defined.
 - Hadfield et al. (Anthropic), "How we built our multi-agent research system", 2025-06-13.
   https://www.anthropic.com/engineering/multi-agent-research-system. Multi-agent research wins on
   broad, parallel questions at about 15 times the tokens of chat, and fits poorly where agents must
   share context. Work done for one person is that poor fit.
 - Cemri et al., "Why Do Multi-Agent LLM Systems Fail?", 2025. https://arxiv.org/abs/2503.13657.
-  Fourteen failure modes from over 1,600 traces. Our failures before the change are its inter-agent
-  misalignment group: agents ignoring each other's state and repeating work.
+  Fourteen failure modes from over 1,600 traces. My system's failures before the change are its
+  inter-agent misalignment group: agents ignoring each other's state and repeating work.
 - Tran and Kiela, "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal
   Thinking Token Budgets", 2026. https://arxiv.org/abs/2604.02460. Many reported multi-agent gains come
-  from extra compute that was not counted.
+  from uncounted extra compute.
 - Kim et al., "Towards a Science of Scaling Agent Systems", 2025. https://arxiv.org/abs/2512.08296.
   Multi-agent overhead hurts tool-heavy, sequential tasks most, which is what operational work is.
 - Gao et al., "Single-agent or Multi-agent Systems? Why Not Both?", 2025. https://arxiv.org/abs/2505.18286.
@@ -214,9 +214,9 @@ within about a week, and they are the ones other teams are most likely to repeat
 **Context**
 
 - Hong, Troynikov, Huber (Chroma), "Context Rot", 2025-07-14. https://www.trychroma.com/research/context-rot.
-  Performance falls as input grows. This is the price of one context: our prompts average 64,000–81,000
+  Performance falls as input grows. This is the price of one context: my prompts average 64,000–81,000
   tokens, and replies that are all reasoning rise from 0.3% of calls under 50,000 tokens to 6.7% above
-  150,000. We cap conversation history and keep older turns searchable instead of splitting the agent.
+  150,000. I cap conversation history and keep older turns searchable instead of splitting the agent.
 - Rajasekaran et al. (Anthropic), "Effective context engineering for AI agents", 2025-09-29.
   https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents. Context as a finite
   resource; compaction for long conversations, clean sub-agent windows for parallel research.
@@ -225,9 +225,9 @@ within about a week, and they are the ones other teams are most likely to repeat
 
 - Chase (LangChain), "Introducing ambient agents", 2025-01-14.
   https://www.langchain.com/blog/introducing-ambient-agents. Agents driven by events, reaching people by
-  notifying, asking or asking for review. We arrived at the same three, with one difference: the
+  notifying, asking or asking for review. I arrived at the same three, with one difference: the
   event-started agent is the chat agent itself.
 - Garimella (Actively), "Human-agent collaboration for long-running agents", 2025-10-31.
   https://www.actively.ai/blog/human-agent-collaboration. The opposite design: a long-running background
-  agent per account with short-lived chat agents reading its memory. Our intermediate design was close
+  agent per account with short-lived chat agents reading its memory. My intermediate design was close
   to this, and it is where the fragmentation above came from.

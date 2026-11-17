@@ -1,11 +1,11 @@
 # 06 · What a tool search returns: schemas, a plain miss, and loops
 
-**Our position.** When an agent finds tools through a search tool, every hit must carry the tool's full
+**My position.** When an agent finds tools through a search tool, every hit must carry the tool's full
 input schema, and every result must end by saying plainly that there is nothing more: no further page,
 and if none of these fits, no tool here does it. Two common shapes make models loop. Names and
 descriptions without schemas leave the model to guess arguments and search again. A note that "less
 close matches follow" turns a missing capability into a ranking for the model to page through. This
-puts us against the Model Context Protocol's client guidance, which recommends returning names first.
+puts me against the Model Context Protocol's client guidance, which recommends returning names first.
 
 **The evidence.**
 
@@ -24,14 +24,14 @@ every response committed, $1.35.
 
 ## What happened in production
 
-The agent has a few primary tools listed with their schemas. The rest of the catalogue is reached
-through `find_tools(query)` and run with `run_tool(name, arguments)`.
+The agent has a few primary tools listed with their schemas. It reaches the rest of the catalogue
+through `find_tools(query)` and runs them with `run_tool(name, arguments)`.
 
 | Date | Change | What it did |
 |---|---|---|
 | Aug 2026 | Progressive disclosure: 11 everyday tools, plus `find_tools` and `run_tool`, instead of the whole catalogue | Tool text sent on every turn fell from 75 tools, about 13,011 tokens, to 13 tools, about 3,831 (characters / 4) |
-| Oct 2026, day 1 | Schemas removed from search results to shrink prompts; found tools were meant to join the next tool list with their schemas | In one long background run, search results fell from 127,640 to 29,506 bytes and the last prompt from 376,199 to 266,909 bytes |
-| Oct 2026, days 1–8 | When the tool list was full, found tools did not join it. Results said "join your next tool list" and carried no schema | Six chat turns made 36 to 133 searches each. One searched for the same tool by its exact name 124 times. Two turns on day 8 were cancelled by the person after $0.10 and $0.32 |
+| Oct 2026, day 1 | I removed schemas from search results to shrink prompts; found tools were meant to join the next tool list with their schemas | In one long background run, search results fell from 127,640 to 29,506 bytes and the last prompt from 376,199 to 266,909 bytes |
+| Oct 2026, days 1–8 | When the tool list was full, found tools did not join it. Results said "join your next tool list" and carried no schema | Six chat turns made 36 to 133 searches each. One searched for the same tool by its exact name 124 times. On day 8 the person cancelled two turns after $0.10 and $0.32 |
 | Oct 2026, days 8–9 | Reversed: every runnable hit carries its schema | The found-but-not-callable loop stopped |
 | Nov 2026 | Search stopped paging a ranking of the whole catalogue. It returns the closest tools, says there is no further page and that, if none fits, no tool does it. A name that does not exist is answered "No tool is named X." | One request no tool could serve: 109 searches, 151 calls, $0.386 before; 13 to 29 searches and $0.033 to $0.067 in four runs after |
 
@@ -52,11 +52,11 @@ invoices, expenses, calendar, mail, tasks, engagements and time, documents, staf
 purchasing, reporting, marketing. Six are primary tools, listed to the model with their schemas. The
 other 94 are reachable only through `find_tools` and `run_tool`.
 
-**Tasks** (20). Two use a primary tool, as controls. Ten need a catalogue tool whose schema has to be
-read: amounts in cents, enums ("proposal sent" is stage `proposal`), nested invoice and order lines,
-time in minutes. Eight need a tool that does not exist, with near-matches in the catalogue: merge two
-client records, recall a sent email, automatic payment reminders, mark a thread handled, add a news
-feed to a sweep, transcribe a voicemail, pay a vendor bill, send a document for e-signature.
+**Tasks** (20). Two use a primary tool, as controls. Ten need a catalogue tool whose schema the model
+has to read: amounts in cents, enums ("proposal sent" is stage `proposal`), nested invoice and order
+lines, time in minutes. Eight need a tool that does not exist, with near-matches in the catalogue:
+merge two client records, recall a sent email, automatic payment reminders, mark a thread handled,
+add a news feed to a sweep, transcribe a voicemail, pay a vendor bill, send a document for e-signature.
 
 **One thing changes between conditions:** what `find_tools` returns. The search itself (BM25 over
 names, descriptions and argument names, plus letter trigrams) is the same in every condition, and
@@ -71,8 +71,8 @@ like an embedding search it always returns the five closest tools.
 
 `run_tool` checks arguments against the schema and answers with what is wrong (missing field, unexpected
 field, a value not in an enum), as a JSON-schema validator would. A valid call succeeds against the
-run's own synthetic records. The system prompt asks the model to finish with `DONE:` or `CANNOT:`. A run
-is cut off after 16 model calls.
+run's own synthetic records. The system prompt asks the model to finish with `DONE:` or `CANNOT:`. The
+loop cuts a run off after 16 model calls.
 
 **Scoring.** A task with a tool succeeds when that tool was called successfully with the right values
 and the reply does not say CANNOT. A task with no tool succeeds when the reply says CANNOT, within the
@@ -131,21 +131,21 @@ $0.01 for pilots that are not in the results.
 
 - **A plain miss is what stops the search.** With "no further page; if none fits, no tool here does it",
   the agent said it could not do the job in 66 of 72 runs across the three models, against 42 of 72 with
-  the same page and no note, and 31 of 72 with "more follow". Searches per missing task fell by a factor of 2 to 5: from 17.6 to 7.2
-  for the stronger production model, from 33.1 to 16.3 for the default, and from 9.7 to 1.8 for Gemma.
-  Prompt tokens fell with them.
+  the same page and no note, and 31 of 72 with "more follow". Searches per missing task fell by a
+  factor of 2 to 5: from 17.6 to 7.2 for the stronger production model, from 33.1 to 16.3 for the
+  default, and from 9.7 to 1.8 for Gemma. Prompt tokens fell with them.
 - **"Less close matches follow" is an invitation.** The default production model read 11 follow-on
   pages per missing task in the `paged` shape and said it could not in 8 of 24, the fewest of any shape.
   It was cut off in 15. This is the production loop: the result promises something further down, so the
   model goes looking.
-- **Without schemas the model guesses, and the guesses are repaired by error messages.** On tasks with a
-  tool, the default model even finished all 36 with names only, more than with schemas (31). It got
-  there by trial and error. With only names,
-  every model made more failed calls: 1.3 per task for both DeepSeek models, against 0 to 0.08 with
-  schemas, and 2.25 for Gemma against 0.08. Because the validator here says what is wrong, the DeepSeek
-  models still finished. Gemma completed 27 of 36 against 31 with schemas, and repeated identical
-  searches in 14 of 24 missing-tool runs, the most of any shape. Production's names-only loop was worse
-  than this, because the result promised the tool would appear in the list, and it did not.
+- **Without schemas the model guesses, and error messages repair the guesses.** On tasks with a tool,
+  the default model finished all 36 with names only, more than with schemas (31). It got there by
+  trial and error. With only names, every model made more failed calls: 1.3 per task for both
+  DeepSeek models, against 0 to 0.08 with schemas, and 2.25 for Gemma against 0.08. Because the
+  validator here says what is wrong, the DeepSeek models still finished. Gemma completed 27 of 36
+  against 31 with schemas, and repeated identical searches in 14 of 24 missing-tool runs, the most of
+  any shape. Production's names-only loop was worse than this, because the result promised the tool
+  would appear in the list, and it did not.
 - **Saying "no tool here does it" is only as good as the first page.** In the `plain` shape Gemma gave
   up on a tool that existed four times: it searched "update ticket" and "permissions", the right tool
   was not among the closest five, and it believed the search. The DeepSeek models never gave up this
@@ -163,40 +163,39 @@ $0.01 for pilots that are not in the results.
   it. Answer a name that does not exist with "No tool is named X." Never end a result with "more follow".
 - **Spend the effort on recall, because the plain answer depends on it.** Index argument names and enum
   values, not only descriptions. Check that the right tool reaches the first page for the ways people
-  actually ask ("permissions" for sharing, "update" for changing a priority), with an eval of real
+  ask ("permissions" for sharing, "update" for changing a priority), with an eval of real
   queries.
-- **Let a tool's index be paged, not a query's ranking.** A full listing of names, in a few calls, is a
+- **Page a tool's index, not a query's ranking.** A full listing of names, in a few calls, is a
   separate request with its own end. Paging a ranking does not find a missing tool.
 - **Make validation errors specific.** "Missing required field 'unit_price_cents'" turned a wrong guess
   into a right call in one step for both DeepSeek models. A bare "invalid arguments" would not.
 
 ## Pitfalls
 
-- **Do not assume a found tool joins the tool list.** Production removed schemas on that assumption, and
-  when the list was full the tool never joined. The result's promise ("join your next tool list") made it
+- **Do not assume a found tool joins the tool list.** I removed schemas on that assumption, and when the
+  list was full the tool never joined. The result's promise ("join your next tool list") made it
   worse: the agent searched for the same exact name 124 times.
 - **Watch for loops that have nothing to do with search.** The default DeepSeek model emitted hundreds of
   identical `list_tasks` calls in single steps on one purchase-order task (up to 3,616 calls in one run).
   Gemma repeated a primary read until the limit on the mailing-list task in every shape, and on the deal
-  task in three of four. These
-  failures are spread evenly across the shapes and do not change the comparison, but a loop limit in the
-  agent is still needed.
+  task in three of four. These failures spread evenly across the shapes and do not change the
+  comparison, but the agent still needs a loop limit.
 - **A record that is not there reads as a reason to stop.** Reads of an id the synthetic store had never
   seen came back empty. Every CANNOT on a task with a tool from the DeepSeek models, and three of
   Gemma's, came from this: "There's no deal D-7730 on record", "There's no vendor V-118". It hit every
-  shape, and it is a flaw in our synthetic store, not in a shape. The same happens in production when a
+  shape, and it is a flaw in my synthetic store, not in a shape. The same happens in production when a
   read returns nothing without saying why.
 
-## How we measured
+## How I measured
 
-- Every model response is cached in `results/<model>.jsonl`, keyed by shape, task, repeat and step, with
+- I cache every model response in `results/<model>.jsonl`, keyed by shape, task, repeat and step, with
   a hash of the request it answered. `python3 agent.py report` replays all 720 runs from the cache through
   the same loop and tools, without a network call, and checks every request hash; none differed.
-- Tasks and checks were written before the first run and not changed after it. One scoring rule was
-  changed after reading replies: a reply that says CANNOT anywhere counts as CANNOT, because some replies
-  began "DONE is not appropriate here" and then said CANNOT. The rule applies to every shape.
+- I wrote the tasks and checks before the first run and did not change them after it. I changed one
+  scoring rule after reading replies: a reply that says CANNOT anywhere counts as CANNOT, because
+  some replies began "DONE is not appropriate here" and then said CANNOT. The rule applies to every shape.
 - Hosts, from OpenRouter's responses: InferenceNet for V4.1 Flash, PrimeIntellect for V4.1 Flash 1017
-  and for all but one Gemma call. Hosts serving the model at fewer than 8 bits were excluded.
+  and for all but one Gemma call. I excluded hosts serving the model at fewer than 8 bits.
 - The 16-call limit is far below production's (100 steps and $2 a turn), so the production loops ran to
   109 or 133 searches where these stop at 16 calls.
 
@@ -219,7 +218,7 @@ python3 agent.py report
 
 - Anthropic, "Tool search tool", Claude API documentation.
   https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool. Search results are
-  `tool_reference` blocks that "the API automatically expands … into full tool definitions", which is our
+  `tool_reference` blocks that "the API automatically expands … into full tool definitions", which is my
   first rule built into the platform. A search that matches nothing returns an empty list, "not an
   error", and the guidance on missed tools is to improve descriptions. Nothing tells the model that no
   tool exists.
@@ -228,26 +227,26 @@ python3 agent.py report
   about 8,700, and tool-selection accuracy up on internal evals (Opus 4 from 49% to 74%).
 - OpenAI, "Tool search", Responses API documentation.
   https://developers.openai.com/api/docs/guides/tools-tool-search. Deferred tools load with their full
-  definitions when found. Misses are not covered.
+  definitions when found. It does not cover misses.
 - Model Context Protocol, "Client best practices: progressive tool discovery".
   https://modelcontextprotocol.io/docs/develop/clients/client-best-practices. Recommends the opposite of
-  our first rule: a search that "returns matching tool names with brief descriptions", then a
-  `get_tool_details` call for the schema. That is our `names` shape plus one more call. It works if the
-  model reliably makes the second call. Our production agent, told it would get the schema another way,
+  my first rule: a search that "returns matching tool names with brief descriptions", then a
+  `get_tool_details` call for the schema. That is my `names` shape plus one more call. It works if the
+  model reliably makes the second call. My production agent, told it would get the schema another way,
   did not.
 - Model Context Protocol specification, Tools, 2025-11-25.
   https://modelcontextprotocol.io/specification/2025-11-25/server/tools. `tools/list` pages with a cursor
   and every tool's `inputSchema` must be a JSON Schema object. There is no search primitive.
 - Spring AI, "Tool Search Tool".
-  https://docs.spring.io/spring-ai/reference/api/tools/tool-search-tool.html. Found tools' definitions are
-  added to the conversation for the next iteration, and hits below a score threshold are "silently
+  https://docs.spring.io/spring-ai/reference/api/tools/tool-search-tool.html. It adds found tools'
+  definitions to the conversation for the next iteration, and hits below a score threshold are "silently
   dropped".
 - LangChain, langgraph-bigtool. https://github.com/langchain-ai/langgraph-bigtool. Retrieval returns tool
   ids, which the graph binds as tools.
 
 **Tool retrieval and missing tools**
 
-- Qin et al., "ToolLLM", 2023. https://arxiv.org/abs/2307.16789. Retrieved APIs are given to the model
+- Qin et al., "ToolLLM", 2023. https://arxiv.org/abs/2307.16789. It gives retrieved APIs to the model
   with their full documentation. It defines "Finish by Giving Up" for when the APIs cannot do the task,
   and motivates its tree search with models "trapped in a faulty loop", calling an API wrongly or
   inventing APIs.
@@ -255,7 +254,7 @@ python3 agent.py report
   inference time reduces invented API calls.
 - Shi et al., "Retrieval Models Aren't Tool-Savvy" (ToolRet), ACL 2025. https://arxiv.org/abs/2503.01763.
   Strong retrieval models do poorly on tool retrieval, and poor retrieval lowers task success. This is
-  the recall that our plain answer depends on.
+  the recall that my plain answer depends on.
 - Zhang et al., "ToolBeHonest", 2024. https://arxiv.org/abs/2406.20015. Tasks with missing or limited
   tools. The main cause of errors is judging whether a task can be done at all.
 - Gan and Sun, "RAG-MCP", 2025. https://arxiv.org/abs/2505.03275. Retrieving tool descriptions instead
@@ -263,7 +262,7 @@ python3 agent.py report
 - Fei, Zheng, Feng, "MCP-Zero", 2025. https://arxiv.org/abs/2506.01056. The model writes structured
   requests for the tools it needs.
 - Lumer et al., "ScaleMCP", 2025. https://arxiv.org/abs/2505.06416. The agent "can continue to re-query"
-  when nothing matches. That is the behaviour our `paged` shape rewards and our `plain` shape stops.
+  when nothing matches. That is the behaviour my `paged` shape rewards and my `plain` shape stops.
 - Lumer et al., "Toolshed", 2024. https://arxiv.org/abs/2410.14594. Better tool retrieval through query
   rewriting and richer tool documents.
 - Liu, Lin et al., "PlanBench-XL", 2026. https://arxiv.org/abs/2606.22388. Names "search exhaustion":
@@ -272,5 +271,5 @@ python3 agent.py report
 - Toh et al., "ScrambleToolBench", 2026. https://arxiv.org/abs/2608.02358. When tool names drift, agents
   fall back to exhaustive search, and more reasoning mostly makes that search bigger.
 
-None of these compares result shapes on the same search. The vendor tools return schemas, as we argue,
+None of these compares result shapes on the same search. The vendor tools return schemas, as I argue,
 but none of them ends a result by saying no tool does it, and the MCP guidance recommends names first.
