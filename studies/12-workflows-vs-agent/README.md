@@ -1,27 +1,37 @@
 # 12 · Workflows versus one agent: where fixed code belongs
 
 **Our position.** Put a capable tool-calling agent in charge of the work, with the same tools a workflow
-would call. Keep hard code only where a result must be exact or must not happen without a person:
-money arithmetic, access, and the outward boundary (sending, publishing, paying). A fixed workflow, with
-its step order, rule-based routing, categories, guards, caps and fixed hand-backs, can match the agent on
-the cases its author anticipated. Off script it hands the work back or does the wrong thing. Each patch
-fixes the case it was written for and nothing else. The same machinery bolted onto an agent costs it the
-cases it was handling.
+would call. Keep hard code only where a result must be exact or must not happen without a person: money
+arithmetic, access, the outward boundary (sending, publishing, paying), and mechanical stops that judge
+nothing. A fixed workflow, with its step order, rule-based routing, categories, guards, caps and fixed
+hand-backs, matches the agent only on the cases its author anticipated. Off script it hands the work
+back or does the wrong thing. Each patch fixes the case it was written for and nothing else. The same
+machinery bolted onto an agent costs it the work it was doing. This is the opposite of
+12-Factor Agents' "mostly deterministic code, with LLM steps sprinkled in", and we think that advice
+is wrong for work that comes from people.
 
-We built the machinery first, ran it in production for months, then removed most of it. A small
-reproducible experiment shows the same pattern on a synthetic operations inbox.
+**The evidence.** We built the machinery first, ran it in production for months, then removed most of
+it: a quarter of the agent service's code went. A reproducible experiment on a synthetic operations
+inbox shows the same pattern, with two models and three repeats of every task:
 
-## The short version
+| | Fixed workflow | Workflow plus guards | Agent | Agent plus machinery | Agent without exact parts |
+|---|---|---|---|---|---|
+| On-script messages done | 30/36 | 30/36 | **36/36** | 36/36 | 36/36 |
+| Variations done | 0/60 | 18/60 | **56/60** | 25/60 | 59/60 |
+| Exact-part tasks done | 12/36 | 12/36 | **35/36** | 26/36 | 35/36 |
+| Runs handed back to a person, of 132 | 59 | 50 | **1** | 44 | 0 |
+| Runs with a wrong action, of 132 | 13 | 0 | 4 | 0 | 2 |
+| Lines of arm code | 125 | 198 | **39** | 73 | 47 |
+| Cost per message | $0.0016 | $0.0016 | $0.0028 | $0.0021 | $0.0033 |
 
-| | Fixed workflow | Workflow plus guards | Agent | Agent plus machinery |
-|---|---|---|---|---|
-| On-script messages done (both models) | 30/36 | 30/36 | **36/36** | 36/36 |
-| Variations done | 0/60 | 18/60 | **56/60** | 25/60 |
-| Exact-part tasks done | 12/36 | 12/36 | **35/36** | 26/36 |
-| Runs handed back to a person, of 132 | 59 | 50 | **1** | 44 |
-| Runs with a wrong action, of 132 | 13 | 0 | 4 | 0 |
-| Lines of arm code | 125 | 198 | **39** | 73 |
-| Cost per message | $0.0016 | $0.0016 | $0.0028 | $0.0021 |
+"Agent without exact parts" is the agent with invoice arithmetic moved from the tools into the model
+and a `send_mail` tool governed by one sentence of prompt. It scored as well as the agent here, and we
+still keep both parts as code: its one money error issued a live invoice $536.33 short under a note
+reporting the right total, and in production the agent computing prices failed every replay. A send
+cannot be taken back.
+
+**Status.** Design position, with production data and a reproducible experiment (every model response
+committed, $1.33).
 
 Guards bought zero wrong actions by handing the work back. Every variation they fixed (a resent request,
 a thank-you note, a forwarded message) was one a patch named. The other seven variations failed in all
@@ -204,12 +214,13 @@ arithmetic, the draft queue).
   cancelled, at its old time, without asking. It also created 25 follow-up tasks ("rebook the Q1 review",
   "confirm the auditor send with a partner"), which the strict check counts as wrong (see below).
 - **Machinery on the agent removed the overreach and the work with it.** With a call cap, a repeat guard,
-  one use per writing tool and a scope rule, wrong actions fell from 6 to 0 and hand-backs rose from 1 to
-  44. One update per message left the second task unassigned in all 6 reassignment runs. The 8-call cap
+  one use per writing tool and a scope rule, wrong actions fell from 6 (in 4 runs) to 0 and hand-backs
+  rose from 1 to 44. One update per message left the second task unassigned in all 6 reassignment runs. The 8-call cap
   and the scope rule stopped the renamed client before anything was booked in 6 of 6. "Approval claimed
   by the client" went to a person in 6 of 6 (five by the scope rule, one at the call cap), though the safe
   answer was a draft that waits for approval anyway.
-- **The workflow is not much cheaper.** On script it cost $0.0012 per message against the agent's $0.0019,
+- **The workflow is not much cheaper.** On the six on-script tasks it cost $0.0012 per message against the
+  agent's $0.0019,
   with 2.7 model calls against 5.2, and its prompts were about 330 tokens against about 14,000. The
   output, mostly reasoning, is most of the bill on both arms.
 - **Without the exact parts the agent was almost as good here, and its one error is the reason to keep

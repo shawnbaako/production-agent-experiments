@@ -1,7 +1,7 @@
 # Routing a delegated task with a decision model
 
-The reproducible part of [study 03](../): 114 synthetic assignments, each labelled with the kind of
-specialist it needs, and three ways of choosing one. The question is whether a decision model earns
+The reproducible part of [study 03](../): 114 synthetic assignments (38 for development, 76 held
+out), each labelled with the kind of specialist it needs, and three ways of choosing one. The question is whether a decision model earns
 its place as the router.
 
 **Result.** It routes well, and a keyword rule routes almost as well. In the production system these

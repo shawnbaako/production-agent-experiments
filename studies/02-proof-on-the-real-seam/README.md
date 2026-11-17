@@ -1,20 +1,34 @@
-# 02 · Proof on the real seam: integration, end-to-end and evals instead of agent-written tests
+# 02 · Proof on the real seam, not agent-written tests
 
-**Our position.** When coding agents write the code, the agent's own tests are a weak and expensive
-signal. Make "done" mean the change works on the real seam it touches, shown by evidence the agent
-can't shape: a replay on a restored copy of production with the production models, the real outside
-service, a browser used the way a person uses it, an outside assistant driving the product, the
-persisted record read back, and outcome evals as the regression guard. Then remove the tests and ban
-new ones, all of them, fake-adapter "integration" tests included. Make every instruction the agent
-reads say the same thing. Guard deterministic guarantees such as money, access and data writes with
-structure and a check against a real database, not with test volume.
+**Our position.** When coding agents write the code, delete their tests and ban new ones: all of them,
+fake-adapter "integration" tests included. Make "done" mean the change works on the real seam it
+touches, the place where the code meets real data, a real service or a person. Show it with evidence
+the agent can't shape: a replay on a restored copy of production with the production models, the real
+outside service, a browser used the way a person uses it, an outside assistant driving the product,
+the persisted record read back, and outcome evals as the regression guard. Guard money, access and
+data writes with structure and a check against a real database, not with test volume.
 
-Unit tests and hosted CI were built for human teams, where running the real system was slow and
-expensive and a cheap proxy was the best you could afford. Coding agents change that trade. An agent
-can restore production, replay a real request, drive a browser and read the result in minutes, so the
-proxy is no longer the cheap option, and it was never the accurate one. When the same agent writes the
-code and the tests, the tests describe what the code does, bugs included. A green suite becomes the
-agent's stop condition, and the suite defends the implementation against every later change.
+When the same agent writes the code and the tests, the tests describe what the code does, bugs
+included. A green suite becomes the agent's stop condition, and the suite then defends the
+implementation against every later change. Unit tests and hosted CI were a cheap proxy for human
+teams, who could not afford to run the real system on every change. An agent can restore production,
+replay a real request and drive a browser in minutes. The proxy is no longer the cheap option, and it
+was never the accurate one.
+
+**The evidence**, from the coding agents' own session logs and the git history of two production
+codebases:
+
+- Of 89 written-up defects in codebase 2, unit tests found none, before or after the deletion. Both
+  suites were green through the defects that reached people.
+- Before the deletion, a quarter of the agents' edits in codebase 1 touched a test file (19% in
+  codebase 2). After a red test, the agent's next edit changed the test rather than the code 56% of
+  the time.
+- Deleting only the unit tests made agents write tests faster than ever, as fake-adapter integration
+  tests. Redefining proof is what worked: commits touching tests fell to 9%, and browser, staging and
+  outside-assistant actions rose from 12 to 139 per 1,000 tool calls.
+
+**Status.** Design position, with production data. The codebase-2 scripts and aggregates are in
+[`codebase-2/`](codebase-2/), ready to point at your own repository.
 
 We did this in two production codebases, and both arrived at the same place:
 
@@ -51,9 +65,11 @@ exercising the real path end to end, and reading the result. Spend the effort th
 | Test lines at the peak | 320,463, 0.78 for every line of source | 1,013,532, 0.76 for every line of source |
 | Commits that touched a test file | 71% | Over half; 64% in the ten days after the unit suites went |
 | Changed lines that were test lines | 40% | 30–40% in a typical week |
-| Commits spent fixing tests or CI | 11–16 a week | |
-| Test files created and deleted | | 7,597 created in a year; of those deleted, half lived under 50 days and one in five under a week |
+| Commits spent fixing tests or CI | 11–16 a week | — |
+| Test files created and deleted | — | 7,597 created in a year; of those deleted, half lived under 50 days and one in five under a week |
 | Assertions | In 772 commits the agent changed a test's assertions with the code it tested | 114,000 added and 39,000 removed in ten months: one deleted for every three written |
+
+— means the figure was not measured in that codebase.
 
 Both suites were green through the defects that reached people.
 
@@ -286,10 +302,12 @@ always red tells you nothing, and every agent that reads its output learns that 
 | Commits touching a test file | 71% | under 1% | over half | 9% |
 | Changed lines that were test lines | 40% | 0.1% | 30–40% | 6% in the latest week |
 | CI run | 48–55 minutes | about 1 minute | red 96% of the time | local gate |
-| Median pull request | 20 files, 1,600 lines | 13.5 files, 727 lines | | |
-| Browser, staging and outside-assistant actions per 1,000 tool calls | | | 12 | 139 |
-| Agent input tokens per commit | | | 12.9M | 8.9M |
-| Median age of a bug when fixed | | | 2.3–68 days | 5 hours |
+| Median pull request | 20 files, 1,600 lines | 13.5 files, 727 lines | — | — |
+| Browser, staging and outside-assistant actions per 1,000 tool calls | — | — | 12 | 139 |
+| Agent input tokens per commit | — | — | 12.9M | 8.9M |
+| Median age of a bug when fixed | — | — | 2.3–68 days | 5 hours |
+
+— means not measured in that codebase.
 
 What the written evidence for each change contains, in codebase 1:
 

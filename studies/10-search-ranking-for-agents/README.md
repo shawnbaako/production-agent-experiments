@@ -1,22 +1,29 @@
-# 10 · Search ranking for agents: one question per listing, a top score that says "none", and gates in every language
+# 10 · Search ranking for agents: a top score that can say "none"
 
 **Our position.** When an assistant searches a catalogue for a person, order the candidates with a
 decision model asked one yes-no question per listing ("does listing N match what the traveler asked
-for?"), and give the assistant its top probability as a fact: under 0.5, nothing here fully matches.
-A cross-encoder reranker orders listings reasonably, but its scores can't say when nothing fits, and
-on both data sets here it ranked no better than the multilingual embedding it would have reranked.
-Test the embedding in every language the assistants will search in: an English-only gate passes a
-model that, at its similarity floor, finds no relevant listing at all in Mandarin, Japanese, Korean,
-Arabic or Hindi.
+for?"), and hand the assistant its top probability as a fact: under 0.5, nothing here fully matches.
+An assistant that knows nothing fits can say so, ask, or widen the search instead of selling the
+closest wrong thing. A cross-encoder reranker can't give it that: its scores carry no notion of
+absence. And test every embedding in every language your assistants search in, because an English
+eval will pass a model that finds nothing in five scripts.
 
-We measured this on a production travel search that assistants call in their users' languages, then
-rebuilt the experiment on public Wikivoyage listings so anyone can rerun it. The replica agrees on the
-ranking, on the cross-encoder and on the embeddings. It disagrees on one thing, and that changes how the
-"nothing matches" signal should be read. In production every search with a match had a listing that
-fully matched, and the decision model's top score fell under 0.5 on 1 of 152 of them. In the replica
-many searches had only partial fits (the right kind of thing, a stated wish not evidenced). The top
-score fell under 0.5 on 20 of 40 of those, and on 4 of 56 searches with a full match. The signal means
-"nothing fully matches", not "nothing related is here".
+**The evidence.** A production travel search that assistants call in their users' languages, and a
+rebuild on public Wikivoyage listings in 11 languages that anyone can rerun:
+
+- **The decision model ranked best in both,** by about 0.15 NDCG@10 over the cross-encoder
+  (bge-reranker-v2-m3). The cross-encoder ranked no better than the multilingual embedding it would
+  have reranked.
+- **Its top score said "nothing matches" when nothing did:** under 0.5 on 40 of 40 no-match searches in
+  production and 94 of 96 in the replica, and on 1 of 152 and 4 of 56 searches with a full match. The
+  cross-encoder's top score was under 0.5 on half or more of the searches that did have a match.
+- **The signal means "nothing fully matches", not "nothing related".** The replica had 40 searches with
+  only partial fits (the right kind of thing, a stated wish not evidenced); the top score fell under 0.5
+  on half of them.
+- **An English-only gate would have kept the wrong embedding.** At its similarity floor, Nomic v1.5
+  found no relevant listing at all in Mandarin, Japanese, Korean, Arabic or Hindi, in either data set.
+
+The headline numbers:
 
 |  | Production (152 ranked test searches) | Public replica (96 ranked test searches) |
 |---|---|---|
@@ -151,6 +158,10 @@ shares no word with English listing text.
 | Precise | 72 / 36 | – / 0.833 | 0.949 / 0.800 | 0.983 / 0.922 |
 | Vague | 40 / 28 | – / 0.737 | 0.757 / 0.706 | 0.969 / 0.922 |
 | With an exclusion | 40 / 24 | – / 0.729 | 0.631 / 0.791 | 0.948 / 0.932 |
+| Meant to have no match, but had one | 0 / 8 | – / 0.878 | – / 0.818 | – / 0.858 |
+
+The last row is the 8 replica searches written to have nothing in the pool that turned out to have a
+match. It is the one kind where the decision model trailed the embedding.
 
 Production's bge ranked excluded listings first: hop-on hop-off bus tours for "not on a bus", hotels in
 the neighbouring emirates for "in Dubai itself, not Sharjah or Ajman". The replica can't show this. Its

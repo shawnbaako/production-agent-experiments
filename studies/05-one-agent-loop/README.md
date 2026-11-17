@@ -1,13 +1,23 @@
-# 05 · One agent loop: why we replaced sub-agents and specialised background agents
+# 05 · One agent loop, not sub-agents and background pipelines
 
-**Our position.** A production agent that works for people, in chat and in the background, should be
-one agent: one loop, one context, one set of permissions, started by whatever happens. Chat and
-background are two ways of starting the same agent, not two agents. Specialised agents, sub-agents and
-fixed pipelines beside the main loop each decide part of the work without the rest of the picture, and
-the system spends its time and money reconciling them.
+**Our position.** An agent that works for people, in chat and in the background, should be one agent:
+one loop, one context, one set of permissions, started by whatever happens. Chat and background are two
+ways of starting the same agent, not two agents. Split by who the work is for, never by what kind of
+work it is. Specialised agents, sub-agents and fixed pipelines beside the main loop each decide part of
+the work without the rest of the picture, and the system spends its time and money reconciling them.
 
-We built the other way first, ran it in production, and then consolidated. This is what we saw, what we
-built instead, and what changed.
+**The evidence.** We built the split system first, ran it in production, and then consolidated it.
+
+- **Background work stopped duplicating itself:** about 85% fewer background model calls and 85–90%
+  less background spend, at the same price per call.
+- **The agent became coherent.** On a 10-case outcome eval run on a copy of production, every case where
+  something learned in one place had to shape another went from failing to passing: a preference stated
+  in chat now holds in background work (1 of 3 to 3 of 3), and a reassignment arriving by mail is now
+  taken (0 of 3 to 3 of 3).
+- **Less system:** seven stacked repeat guards removed, a 1,900-line background permission system
+  deleted, about 48,000 lines of application code gone.
+
+**Status.** Design position, with production data.
 
 ## What fragmentation looked like
 
@@ -91,12 +101,15 @@ Baseline: the system with the background agent still separate.
 | A reassignment arriving by mail is taken | 0 of 3 | 3 of 3 |
 | The new owner's agent sees the reassignment | 0 of 3 | 3 of 3 |
 | A direction given in chat becomes owned, ongoing work | 0 of 3 | 4 of 4 |
-| A morning check is listed where the person sees it | 0 of 3 | pass |
-| Two mails on one matter produce one message | fail * | pass |
-| A quiet day produces no message, question or push | 3 of 3 | pass |
-| Mail needing a reply is prepared and nothing is sent | 3 of 3 | pass |
+| A morning check is listed where the person sees it | 0 of 3 | 1 of 1 |
+| Two mails on one matter produce one message | fail * | 1 of 1 |
+| A quiet day produces no message, question or push | 3 of 3 | 1 of 1 |
+| Mail needing a reply is prepared and nothing is sent | 3 of 3 | 1 of 1 |
 | Tool searches per turn | 6.8–17.6 | 1.5–4.0 |
 | Repeated searches per run | 32–69 | 0–18 |
+
+Cells are passing runs out of runs. The cases added in later steps ran once each, so the one-agent
+column shows them as 1 of 1.
 
 \* The separate agent "passed" this case only because its messages never reached the person at all.
 Once they did, it sent two.
@@ -116,8 +129,12 @@ wakes the colleague's agent, which is why the reassignment cases pass.
 | Planner loops | 2 | 1 |
 | Agents with their own context | 3 kinds | 1 per person |
 | Hub tools / loop built-ins / tools listed per turn | 272 / 22 / 22 | 125 / 10 / 20 |
-| Repeat guards | 7 | 0 |
-| Application code removed | | about 48,000 lines (40,000 net) |
+| Repeat guards | 7 | 0 * |
+| Application code removed | — | about 48,000 lines (40,000 net) |
+
+\* A guard here is a check that decides whether work is a repeat. One mechanical stop came back later:
+three steps that only repeat calls already answered end the tool use. It compares calls and judges
+nothing about the work ([study 12](../12-workflows-vs-agent/)).
 
 ## Pitfalls we hit building it
 

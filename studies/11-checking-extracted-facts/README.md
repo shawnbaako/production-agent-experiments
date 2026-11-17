@@ -1,43 +1,33 @@
 # 11 · Checking extracted facts: a number check, then a judge that reads the whole source
 
-**Our position.** Check the facts an agent extracts from source material in two steps. First a
-deterministic number and unit check: the price, duration, capacity or age must be written in the
-fact's own excerpt. Then a cheap decision model that reads the whole source. Do not judge a fact
-from its cited excerpt alone. A judge that sees only the excerpt wrongly rejects about a quarter to
-a third of correct facts, and it lets through about half of the facts copied from another offering,
-because the excerpt is a real quote with a true value for something else. The whole source is
-necessary, not sufficient: the same policy classifier given the whole source still rejected a fifth
-of correct facts, where Jev and a DeepSeek judge rejected 2–3%.
+**Our position.** Check the facts an agent extracts in two steps. First, a deterministic number and
+unit check: the price, duration, capacity or age must be written in the fact's own excerpt. Then a
+cheap decision model that reads the whole source. Never judge a fact from its cited excerpt alone. The
+excerpt is a real quote, often with a true value, and the value can belong to a different offering. Only
+the rest of the source shows that. This is [study 04](../04-what-the-checker-sees/)'s finding in a
+second domain: what the checker is shown decides the result.
 
-This extends [study 04](../04-what-the-checker-sees/): a sentence checker given only the cited
-sources flags true sentences taken from other records, and one given everything the agent read does
-not. Here the same holds in a second domain, for structured facts rather than sentences, and with
-the same model on both sides of the comparison.
+**The evidence**, from a production intake agent and a public replica on 130 Wikivoyage sections:
 
-**Status.** Reproducible, with production data. 130 public sources from English Wikivoyage, every
-model answer committed, USD 0.71 through OpenRouter for everything. The production study's per-fact
-verdicts are published in anonymised form.
+- **The same model, with only the evidence changed.** gpt-oss-safeguard-20b, an open model that
+  classifies content against a written policy, given only each fact's excerpt wrongly downgraded 31.2%
+  of 4,791 correct facts and let through 33 of 68 values copied from another offering. Given the whole
+  source as well, it wrongly downgraded 20.6% and let through 7.
+- **Cheap judges that read the whole source do the job.** Jev wrongly downgraded 1.7% of correct facts
+  and caught every invented and copied value. A DeepSeek judge caught all 284 wrong facts and wrongly
+  downgraded 2.7%.
+- **The number check covers the decision model's blind spot.** Jev missed 3 of 92 swapped digits, all
+  capacities; the number check caught all 92. Together, no wrong fact stayed marked as observed, for
+  about $0.00013 a source.
+- **Production agrees in direction.** The excerpt-only judge wrongly downgraded 25–27% and caught 37–50%
+  of copied values; the whole-source judges 2.5–3.3% and 83–88%.
+- **The whole source is necessary, not sufficient.** Even with it, the policy classifier rejected a fifth
+  of correct facts. Part of that is a units mismatch (its fact lines show prices in cents against
+  excerpts in dollars), which inflates its rates in production too.
 
-**Short version.**
-
-- **Same model, only the evidence changes.** gpt-oss-safeguard-20b given only each fact's cited
-  excerpt wrongly downgraded 31.2% of 4,791 correct facts and let through 33 of 68 values copied
-  from another offering. Given the whole source as well, it wrongly downgraded 20.6% and let through
-  7.
-- **Cheap judges that read the whole source do the job.** Jev wrongly downgraded 1.7% of correct
-  facts and caught every invented and copied value; it missed 3 of 92 swapped digits, all
-  capacities. The DeepSeek judge caught all 284 wrong facts and wrongly downgraded 2.7%.
-- **The number check covers Jev's blind spot.** It caught all 92 swapped digits and units. With Jev
-  after it, no wrong fact stayed observed and 2.6% of correct facts were downgraded (1.7% once the
-  check reads "free" as a price of zero), for about USD 0.00013 a source.
-- **Production agrees in direction.** There the excerpt-only judge wrongly downgraded 25–27% and
-  caught 37–50% of copied values; the whole-source judges 2.5–3.3% and 83–88%. The replica is easier
-  for whole-source judges, because its copied values come from a different business with a different
-  name rather than from a sibling product of the same operator.
-- **The excerpt judge also had a units problem.** Its fact lines give prices in cents ("9900")
-  against excerpts in dollars ("$99"), and it rejected 85% of correct prices with the excerpt only
-  and 75% with the whole source. Part of its wrong-downgrade rate, in production too, comes from
-  that and not from the evidence.
+**Status.** Reproducible, with production data. 130 public sources from English Wikivoyage, every model
+answer committed, $0.71 through OpenRouter for everything. The production study's per-fact verdicts are
+published in anonymised form.
 
 ## What happened in production
 

@@ -1,25 +1,26 @@
-# 03 · Where a decision model belongs in an agent: nine placements, one kept
+# 03 · Where a decision model belongs: in the agent's hands
 
-**Our position.** A decision model (a small model that answers a typed question, yes or no, one of
-several options, a score, with a probability, for a fraction of a cent) belongs in the agent's hands, as
-a tool the agent decides to call. Placed anywhere else, in front of the agent, on its output, inside
-its tool results or after the run, it makes decisions without the agent's context, and the system ends
-up working around it.
+**Our position.** A decision model belongs in the agent's tool list, as a tool the agent decides to
+call. Put it anywhere else (in front of the agent, on its output, inside its tool results, after the
+run) and it makes decisions without the agent's context, and the system ends up working around it.
+Accuracy does not settle this. Placement does: where the model sits and who acts on its answer.
 
-We tried a decision model in nine places in a production agent and kept it in one. Accuracy did not
-decide any of it. Placement did: where the model sat and who acted on its answer.
+A *decision model* is a small model that answers a typed question (yes or no, one of several options,
+a score) with a probability, for a fraction of a cent.
 
-- Four uses were adopted into production in one day after measuring well. Three were removed within
-  eight days.
-- The one that stayed, a set filter, is a tool the agent writes the question for and reads the answer
-  from.
+**The evidence.** We tried a decision model in nine places in a production agent and kept it in one.
+
+- Four uses measured well and went into production on the same day. Three were removed within eight
+  days.
 - Every removed use was a fixed step the agent could not choose: a step before it ran, a check on what
   it wrote, a reading added to its tool results, or a review after it finished.
+- The one that stayed, a set filter, is a tool the agent writes the question for and reads the answer
+  from.
 
-Two parts are reproducible here: the set filter, in [study 01](../01-decision-model-set-filter/), and
-the routing experiment's synthetic cases, in [`routing/`](routing/). The checker that was removed is
-rebuilt, with the fix, in [study 04](../04-what-the-checker-sees/). The other numbers are aggregates from
-the production system.
+**Status.** Design position, with production data. Two parts are reproducible: the set filter in
+[study 01](../01-decision-model-set-filter/), and the routing experiment's synthetic cases in
+[`routing/`](routing/). The checker that was removed is rebuilt, with the fix, in
+[study 04](../04-what-the-checker-sees/). The other numbers are aggregates from the production system.
 
 ## Setting
 
@@ -45,14 +46,14 @@ the production system.
 | Use | Where it sat | What was measured (held-out) | Outcome |
 |---|---|---|---|
 | Pick the subject before the agent runs | Fixed step in front of the agent | Accuracy never recorded | Removed after nine days |
-| Route a delegated task to a model profile | Fixed step in front of a sub-task | 85 cases (76 synthetic, 9 from production): 91.8% with the deployed question, 100% with a second question; a keyword rule 97.6% | Removed. In production it chose the default 9 times out of 9 |
+| Route a delegated task to a model profile | Fixed step in front of a sub-task | 85 held-out cases (76 synthetic, 9 from production): 91.8% with the deployed question, 100% with a second question; a keyword rule 97.6% | Removed. In production it chose the default 9 times out of 9 |
 | Review each finished run | Fixed step after the agent | 120 runs: repeated work precision 0.92, recall 0.95; ended-without-a-result 0.86, 0.86 | Adopted, then removed after eight days |
 | Check each sentence of the agent's output against its sources | Fixed step on the agent's writes | 36 outputs, 941 sentences: precision 0.87, recall 0.81; 46 of 49 planted errors caught | Adopted, then deleted the next day |
 | "Has this already been done?" | Fixed reading inside three tools | 86 issued items: 51 of 65 real repeats found, against 15 for an exact-id rule | Adopted, then deleted the next day |
 | Readings on each arriving event | Fixed annotation on evidence | "Asks for something": AUROC 0.73, precision 0.08. No reading predicted whether the agent acted (AUROC 0.42–0.64) | Never adopted |
 | Learn what a person acts on | Trained layer beside the agent | 209 labels: AUROC 0.97 from the item's type alone, 0.95 with text, 0.67 for the zero-shot decision model | Dropped |
 | Choose between two generated images | Fixed step on the agent's output | 53 pairs: the model answered "first" 106 times out of 106 | Dropped; the images never reached the model |
-| Set filter: one yes-no question per item over a large set | **Tool the agent chooses to call** | 25 of 26 planted items in the top 10, against 14 for keyword search | **Kept** |
+| Set filter: one yes-no question per item over a large set | **Tool the agent chooses to call** | 25 of 26 planted items in the top 10, against 9 for keyword search (study 01) | **Kept** |
 
 ## Why the ones that measured well were removed
 
@@ -77,8 +78,9 @@ next run of the same work as a recorded fact, or to delete the review. It was de
 **Model routing** was accurate and pointless. In production only two of the profiles were eligible
 for a tool-using sub-task, so the only decision it could make was between the default and one costlier
 alternative, and it chose the default every time. With every profile offered, a second question
-reached 98.8% and a keyword rule on the required output reached 94.1%. The synthetic cases and a
-fresh run on current models are in [`routing/`](routing/).
+reached 98.8% and a keyword rule on the required output 94.1% (the original run, 85 cases). The
+synthetic cases and a fresh run on current models are in [`routing/`](routing/): on the 76 synthetic
+held-out cases, 98.7% and 93.4%.
 
 ## What stayed, and what was different about it
 

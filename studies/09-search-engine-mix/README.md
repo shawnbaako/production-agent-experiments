@@ -1,4 +1,4 @@
-# 09 · Search engine mix: which engines an agent's web search needs, and how a date filter takes them away
+# 09 · Search engine mix: measure your engines, and keep the date filter out
 
 **Our position.** If an agent searches the web through a self-hosted metasearch engine such as
 SearXNG, choose the engines by measuring them from your own address, keep at least three that answer,
@@ -7,8 +7,8 @@ general web search. In SearXNG a date filter does not filter the engines that ca
 them. It drops them without a word, so the agent reads one engine's results, or none, as what the web
 has.
 
-We ran an agent's web search on SearXNG in production for three months. Two changes mattered more
-than anything we did to the agent's prompt:
+**The evidence.** We ran an agent's web search on SearXNG in production for three months. Two changes
+mattered more than anything we did to the agent's prompt:
 
 - **The engine mix.** One engine that ignores quoted phrases, given full weight, filled the top
   results with pages about something else. Turning off an engine that failed every call, giving that
@@ -83,7 +83,7 @@ until it was removed for rate limits, Google CSE. Only Yandex and Google CSE sup
 
 | Period | Date-filtered general searches | Answered by one engine | Answered by none |
 |---|---|---|---|
-| Two weeks, with Google CSE | 57 | 46 (Google CSE alone) | 10 (1 more recorded no engines) |
+| Two weeks, with Google CSE | 57 | 46 (Google CSE alone) | 10, plus 1 whose log recorded no engines at all |
 | Five days, without it | 29 | 21 (Yandex alone) | 8 |
 
 In the five-day window the query's first word appeared in 78.6% of results without a filter (138

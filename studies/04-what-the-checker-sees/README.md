@@ -1,29 +1,27 @@
-# 04 · What the checker sees: checking an agent's output against the right evidence
+# 04 · What the checker sees: give it what the writer read
 
-**Question.** A small decision model checks each sentence an agent writes: is it supported by the
-sources? In a production agent this checker was given only the sources the output cited, and most of
-its flags turned out to be true sentences the agent had taken from other records it read. The checker
-was removed (see [study 03](../03-where-a-decision-model-belongs/)). Does giving the checker everything
-the agent read fix the false flags, and are the real errors still caught when it has more to read?
+**Our position.** A checker that verifies an agent's output must see everything the agent read, not
+only the sources the output cites. Most of what an agent writes comes from records it read on the way:
+account history, earlier mail, a page that returned an error. A checker shown only the citations flags
+those true sentences as unsupported, and its flags become noise a reviewer learns to ignore. In our
+production agent this mismatch is why the checker was removed (see
+[study 03](../03-where-a-decision-model-belongs/)). Fix the evidence, not the model.
 
-**Status.** Reproducible: synthetic data, every answer committed, about $0.23 for all hosted runs.
+**The evidence**, on 48 synthetic outputs with 109 planted errors (held-out half reported):
 
-**Short version.**
-
-- **Given only the cited sources, the checker flags almost every sentence that came from another
+- **Given only the cited sources, the checker flags almost every true sentence that came from another
   record.** Jev 1.14 flagged 94% of them and Clef Flash 97%, about 3.7 false flags per output. Clef
-  flagged 56%. The checker was right that those sentences are not in the cited sources; that is
-  exactly why its flags were noise to a reviewer.
+  flagged 56%.
 - **Given everything the agent read, those false flags disappear and the errors are still caught.**
-  With the full evidence set every hosted model flagged at most 1 of 89 such sentences, and caught 46
-  to 49 of the 53 planted errors in the held-out half, against 47 to 51 with the cited sources only.
+  Every hosted model flagged at most 1 of 89 such sentences, and caught 46 to 49 of the 53 planted
+  errors, against 47 to 51 with the cited sources only.
 - **Separating errors from true sentences went from moderate to near perfect:** AUROC 0.62–0.78 to
   0.98–0.99 for errors against sentences grounded in other records.
-- **The cost is a longer state.** Input per question rose from 350–480 tokens to 650–780, and cost per
-  output from $0.0002 to $0.0004 for Jev 1.14.
-- **The remaining noise is non-claims.** Greetings, sign-offs and offers are still flagged by some
-  models (24 of 42 for Jev 1.14, 40 of 42 for Clef Flash, 3 of 42 for Clef). A checker should skip
-  sentences that make no claim, or ask that first.
+- **The cost is a longer input:** 650–780 tokens per question instead of 350–480, and $0.0004 per output
+  instead of $0.0002 for Jev 1.14. What noise remains is non-claims (greetings, sign-offs), which a
+  checker should skip.
+
+**Status.** Reproducible: synthetic data, every answer committed, about $0.23 for all hosted runs.
 
 ## Data
 
@@ -88,7 +86,6 @@ cited records, 42 non-claims.
 | Clef Flash | cited only | 51/53 | 97% | 9% | 3.92 | 0.800 |
 | Clef Flash | everything read | 46/53 | 0% | 2% | 0.08 | 0.977 |
 | Clef Flash | everything, reworded | 45/53 | 0% | 1% | 0.04 | 0.986 |
-
 | Laya (local CPU) | cited only | 45/53 | 82% | 15% | 3.58 | 0.713 |
 | Laya (local CPU) | everything read | 22/53 | 20% | 10% | 1.12 | 0.763 |
 | Laya (local CPU) | everything, reworded | 31/53 | 28% | 23% | 1.88 | 0.762 |
