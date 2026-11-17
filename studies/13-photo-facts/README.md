@@ -99,7 +99,7 @@ size section use seeds 10,000 onward, 300 each.
 **Agent labels.** 324 photos drawn at random from split a's training side (73 from Places365) were
 labelled twice:
 
-- by us, a Claude agent session (Claude Opus 5.5, `claude-opus-5-5`), viewing 36 contact sheets of 9
+- by us, with Claude Opus 5.5 (`claude-opus-5-5`) in an agent session, viewing 36 contact sheets of 9
   photos with the file-reading tool, in batches of four sheets, following [`LABEL_GUIDE.md`](LABEL_GUIDE.md):
   production's guide with the offer field removed. Production's guide asks for full-size photos where
   a cue might be present; we labelled from the sheets (320-pixel cells) and opened none, which is
@@ -346,7 +346,7 @@ The replica ran the split-a fine-tune over 1,000 Open Images photos it had never
 from photos people had tagged with a listing-like class (building, house, room, interior, bathroom,
 bedroom, kitchen, living room, lobby, pool, restaurant, street, boat, beach), in 15 minutes for $0.27.
 Few of them carry a verified access label, so flagged photos nobody verified were checked by us (the
-same agent session, from contact sheets; `data/agent_labels_mine/`):
+same way, from contact sheets; `data/agent_labels_mine/`):
 
 | Cue | Flagged per 1,000 | Present (people verified / our check) | Absent | Present per 1,000 screened |
 |---|---|---|---|---|

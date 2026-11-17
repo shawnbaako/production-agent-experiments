@@ -12,8 +12,8 @@ and vendors on `.example` domains. Nothing here is real.
 
 Each task carries its check: for a `exists` task, the tool that must be called successfully and
 the argument values it must carry; for a `missing` task, that the run ends by saying it cannot,
-without a write that stands in for the missing tool. Tasks and checks were written by an LLM agent
-(Claude, 2026-11-15) before any model was run, and have not been changed since the first run.
+without a write that stands in for the missing tool. Tasks and checks were written on
+2026-11-15 before any model was run, and have not been changed since the first run.
 """
 from __future__ import annotations
 

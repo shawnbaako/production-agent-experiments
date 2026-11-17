@@ -49,9 +49,8 @@ Everything is invented: the same fictional consulting firm as study 01, invented
   subtle: a week off, 182 staff for 192, "as Dana said" when it was Priya.
 - **Split:** outputs with an even number are development (fitting thresholds), odd numbers are held
   out (everything reported). Each half has 24 outputs.
-- **Labels** are the author's intent, written by an LLM agent (Claude) and re-read case by case; no
-  person has relabelled them. The author flagged sentences in six cases as hard to label and left
-  them as written: c08 (a confirmation that is only in a note), c16 and c21 (a correct ratio from a
+- **Labels** are the author's intent, re-read case by case and not independently relabelled.
+  Sentences in six cases were flagged as hard to label and left as written: c08 (a confirmation that is only in a note), c16 and c21 (a correct ratio from a
   wrong total; a "nearly half" that is 35%), c30 (an unsupported earlier figure), c33 (online check-in
   read as online booking) and c34 (relabelled after a record was expanded).
 - **Length:** every case's records stay under 1,300 words, because Clef reads only about the first

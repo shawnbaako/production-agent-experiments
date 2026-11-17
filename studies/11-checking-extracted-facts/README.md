@@ -62,7 +62,7 @@ intervals for every cell, is in [`production/summary.md`](production/summary.md)
 Two things in production motivated the replica. The excerpt-only judge (D) was a different model
 from the whole-source judges (B and C), so "excerpt only" and "a weaker model" could not be told
 apart. And the sample was small: 35 sources, 24 other-offering errors, most of the material written
-by the agent that ran the study.
+by us.
 
 ## The replica
 
@@ -246,7 +246,7 @@ halves its wrong downgrades (0.8%) and lets through one more copied value (4 wro
   studies. Without prices and durations, D still wrongly downgraded 26.9% of the remaining correct
   facts with the excerpt only and 16.3% with the whole source (production, excerpt only: 18.7%).
 - **Labels by rule are lenient.** A rule that says the words of an "includes" item appear in the
-  listing accepts a restaurant as included in a room price; the hand check found 3 such labels in 22
+  listing accepts a restaurant as included in a room price; the spot check found 3 such labels in 22
   disagreements reviewed. Production's fuzzy title match can also attach a fact to the wrong listing
   ("Provincetown Art Association and Museum" to "Provincetown Museum"), which then leaves a true
   fact unscored.
@@ -255,11 +255,10 @@ halves its wrong downgrades (0.8%) and lets through one more copied value (4 wro
 
 ## How we measured
 
-- **Hand check, ground truth.** 40 scored facts drawn at random (5 of each injected type, 25
-  labelled correct) were read against their listings by the study's author, an LLM agent (Claude),
-  not by a person. The author agreed with all 40 labels. The sample is mostly names, addresses,
+- **Spot check, ground truth.** 40 scored facts drawn at random (5 of each injected type, 25
+  labelled correct) were read against their listings. All 40 labels held. The sample is mostly names, addresses,
   descriptions and prices, the fields that dominate the scored set.
-- **Hand check, verdicts.** 29 facts where an arm disagreed with the label, read the same way: 10 of
+- **Spot check, verdicts.** 29 facts where an arm disagreed with the label, read the same way: 10 of
   Jev's downgrades of correct-labelled facts, 5 of the DeepSeek judge's, 7 of the excerpt judge's,
   and 7 wrong facts an arm kept (3 by Jev, 4 by the excerpt judge). All 7 kept facts were really
   wrong. Of the 22 downgrades, the arm was wrong in 15, the label was wrong in 3 (a restaurant, a

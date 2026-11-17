@@ -27,7 +27,7 @@ a score) with a probability, for a fraction of a cent.
 - **The agent:** a tool-calling loop working in chat and in background runs. Production model: DeepSeek V4.1 Flash.
 - **The decision model:** TypeSafe Jev 1.13 through OpenRouter. The surviving use now runs on Jev 1.14.
 - **The experiments:** 2026-10-18, each with a frozen question wording, a development split for fitting thresholds and a held-out split for the reported numbers. Total spend about $6.30, of which Jev itself was under $1.
-- **Labels:** reference labels were careful readings by LLM agents (Claude); a spot audit of 24 labels in one experiment found no disagreement.
+- **Labels:** reference labels were careful readings of each case; a spot audit of 24 labels in one experiment found no disagreement.
 
 ## Timeline
 

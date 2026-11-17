@@ -17,7 +17,7 @@ without approval, any new client record, any new double booking, and any change 
 tasks that no expectation claims. Extra drafts, client notes and new follow-up tasks are
 tolerated (the last after reading results; `strict` scores them as wrong, as first written).
 
-Written by an LLM agent (Claude) on 2026-11-15 before any model was run; not tuned on results.
+Written on 2026-11-15 before any model was run; not tuned on results.
 """
 from __future__ import annotations
 

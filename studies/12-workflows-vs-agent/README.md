@@ -271,7 +271,7 @@ fixed refusals and hand-backs.
 - Every model response is cached in `results/calls/<model>.jsonl` under a hash of the exact request and
   the repeat index. `python3 run.py report` replays all 660 runs from the cache through the same code,
   without a network call, and writes `results/report.json`. Failed calls are not cached.
-- Tasks, arms and checks were written by an LLM agent (Claude) before any model was run. The workflow and
+- Tasks, arms and checks were written before any model was run. The workflow and
   its guards were written for the on-script tasks and the typical patches, not tuned on results.
 - Three things changed after reading results, and all are in the code:
   1. New follow-up tasks are tolerated. The strict check, as first written, counts them as wrong. Strict

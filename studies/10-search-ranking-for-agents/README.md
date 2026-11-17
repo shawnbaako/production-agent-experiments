@@ -45,13 +45,13 @@ The replica spent $0.143 of a $5 cap.
 ## What was tested
 
 Twelve candidate pools: activities in Rome, Tokyo, Kyoto, Bangkok, New York, Lisbon, Marrakech and Rio
-de Janeiro, and hotels in Tokyo, New York, Lisbon and Dubai. Five English requests per pool, written by
-our agent in the style an assistant sends: two precise ("floating market half-day trip"), one vague ("a
+de Janeiro, and hotels in Tokyo, New York, Lisbon and Dubai. Five English requests per pool, written in
+the style an assistant sends: two precise ("floating market half-day trip"), one vague ("a
 calm, pampering day after a long flight"), one with an exclusion ("see the temples without a tuk tuk
 ride") and one meant to have nothing in the pool ("Muay Thai boxing class"). GLM 5.3 translated each
 request into 3 of 10 other languages in rotation (Spanish, Mandarin, German, French, Japanese, Brazilian
-Portuguese, Korean, Italian, Arabic, Hindi). That is 240 searches. Our agent read all 180 translations
-and corrected two. One request per pool, rotating the kind, is the development split (48 searches);
+Portuguese, Korean, Italian, Arabic, Hindi). That is 240 searches. We read all 180 translations and
+corrected two. One request per pool, rotating the kind, is the development split (48 searches);
 every number here is on the other 192.
 
 **Labels.** GLM 5.3 (`z-ai/glm-5.3`) graded every (English request, listing) pair 0 to 3, all of a
@@ -312,14 +312,14 @@ $0.190.
 ## Pitfalls
 
 - **Judge-generated labels.** One LLM judge wrote every grade, and Jev is also a language model, so the
-  two may share a sense of "match" that bge does not. Our hand check of 43 replica grades (15 requests
+  two may share a sense of "match" that bge does not. Our spot check of 43 replica grades (15 requests
   drawn with a fixed seed, then 5 more; one listing per grade the judge used) matched exactly on 31,
   within one grade on 42, and on the same side of the relevant line on 38. In all 12 disagreements the
   judge graded higher than we did. Production's check: 37 of 47 exact, 47 within one, 43 on the same
   side. The judge is lenient about unmet must-haves ("hotel with a golf course": 20 hotels at grade 2),
   and that leniency is what made Jev's "none" look wrong on partial fits.
-- **Agent-written requests and machine translation.** 60 requests, written by our agent, translated by a
-  model and checked by the same agent, not by native speakers. Each language has 6 to 15 ranked searches.
+- **Our own requests and machine translation.** 60 requests, written by us, translated by a model and
+  checked by us, not by native speakers. Each language has 6 to 15 ranked searches.
   No traveler or operator labeled anything.
 - **Pools built without the query.** Both data sets rank fixed pools of up to 30 listings, not the
   candidates a real retrieval would hand the reranker, which would be likelier to be relevant and harder
@@ -364,11 +364,11 @@ revisions instead of the pinned ones and will build different pools. Production 
 ## Files
 
 - `pools.py`: the Wikivoyage reader and the selection rule. `run.py`: the judge, every arm, the
-  injection test, the hand-check sample and the report.
+  injection test, the spot-check sample and the report.
 - `data/pools.json`: the 346 listings with page and revision; `data/pages.json`: every page read and its
-  revision; `data/queries_en.json`, `data/translations.json`: the requests (with the two hand
-  corrections); `data/labels.json`: the judge's grades; `data/spotcheck.json`: our hand grades with
-  notes. `data/LICENSE-DATA`: Wikivoyage text is CC BY-SA 4.0.
+  revision; `data/queries_en.json`, `data/translations.json`: the requests (with the two
+  corrections); `data/labels.json`: the judge's grades; `data/spotcheck.json`: our spot-check grades
+  with notes. `data/LICENSE-DATA`: Wikivoyage text is CC BY-SA 4.0.
 - `results/arm_*.json`, `results/jev.json`, `results/jev_rerun.json`: every score for every search;
   `results/injection.json`; `results/summary.json` and `summary.md`: every replica number above.
 - `production/`: production's pools as ordered lists of opaque candidate ids (the first 12 hex

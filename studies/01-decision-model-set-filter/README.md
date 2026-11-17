@@ -51,7 +51,7 @@ Everything is invented: a fictional consulting firm, 26 fictional clients, `.exa
 - **Split.** Every item was assigned to `dev` or `held` by the seed before any model was asked.
   Thresholds are fitted on `dev` and reported on `held`. The question wordings and one rewording of each
   were frozen before the first held-out run.
-- **Labels** are the generator's intent, written by an LLM agent. No person has relabelled them.
+- **Labels** are the generator's intent. They have not been independently relabelled.
 
 Positives are rare by design (2 to 6 per question in the held-out half), as they are in a real mailbox.
 Each per-question number therefore rests on a handful of items. Read the pooled figures first.

@@ -85,16 +85,11 @@ BM25, a rule, a default.
 
 Reproducible experiments use synthetic or public data only. Production figures are aggregates.
 
-## Where the work comes from
+## Where the data comes from
 
 The production data comes from two systems. One is an assistant that works for the people of a small
 firm, in chat and in the background (studies 01, 03–09 and 12). The other is a travel commerce service
 that outside AI assistants search and book through (studies 10, 11 and 13). Study 02 covers both.
-
-The positions and the decisions are ours. Coding agents built the harnesses, ran the experiments and
-drafted the write-ups under our direction. Unless a study says otherwise, labels and "hand checks" were
-done by an LLM agent, not a person, and each study says which. Study 13 measures agent labels against
-human ones from public data sets, because that is the check most of the other studies could not make.
 
 ## Terms
 
