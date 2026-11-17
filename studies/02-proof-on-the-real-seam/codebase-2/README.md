@@ -2,7 +2,7 @@
 
 `data/` holds the aggregates behind the codebase-2 numbers in the study: weekly test and product churn,
 CI results and billing by month, a sample of failed CI jobs, agent activity by period, and the age of
-the code each fix replaced. Raw session logs and prompts are not published.
+the code each fix replaced. I don't publish raw session logs or prompts.
 
 To compute the same numbers for your own repository and coding-agent sessions:
 

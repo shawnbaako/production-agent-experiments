@@ -1,13 +1,13 @@
 # Production agent experiments
 
-Positions on how to build LLM agents, each backed by what happened when we ran one in production. Every
-study states what we think builders should do, shows the production numbers that led us there and,
+Positions on how to build LLM agents, each backed by what happened when I ran one in production. Every
+study states what I think builders should do, shows the production numbers that led me there and,
 where it can, a reproducible experiment with the code, the data and every model answer committed, so
 anyone can check the numbers without paying for a call.
 
-## What we believe
+## Key takeaways
 
-The thirteen studies come down to nine convictions.
+Nine principles run through the thirteen studies. Each links to the studies that support it.
 
 1. **The agent decides. Code holds only what must be exact.** One agent loop with the person's whole
    context does the work. Hard code is for money arithmetic, access, the outward boundary (sending,
@@ -77,9 +77,9 @@ Related, in its own repository: [Tool calls, stop tokens and missing issue text:
 
 ## How to read a study
 
-Every study opens the same way: **our position** in a few sentences, **the evidence** for it in a few
+Every study opens the same way: **my position** in a few sentences, **the evidence** for it in a few
 bullets, and its **status** (what is reproducible, what it cost). Then come what happened in production,
-the experiment and its results, what to build, the pitfalls we hit, and related work, including who
+the experiment and its results, what to build, the pitfalls I hit, and related work, including who
 disagrees. Each also tries the simple alternative a builder would reach for first: keyword search,
 BM25, a rule, a default.
 
@@ -94,19 +94,19 @@ that outside AI assistants search and book through (studies 10, 11 and 13). Stud
 ## Terms
 
 - **Decision model.** A small hosted model that answers one typed question (yes or no, one of several
-  options, a score) with a probability, for a fraction of a cent. The ones tested here are Jev 1.13 and
-  1.14 (TypeSafe), Clef and Clef Flash (Cloudflare) and Laya, an open checkpoint. They are called over
-  the System One protocol, where `noul` is the yes-no question type.
+  options, a score) with a probability, for a fraction of a cent. The ones I tested are Jev 1.13 and
+  1.14 (TypeSafe), Clef and Clef Flash (Cloudflare) and Laya, an open checkpoint. I call them over the
+  System One protocol, where `noul` is the yes-no question type.
 - **Production models.** The agent's chat and background models: DeepSeek V4.1 Flash (the default),
   V4.1 Flash 1017 (the stronger option) and V4 Flash 0731 (the fast one).
 - **Progressive disclosure.** A few tools listed on every turn; the rest found with a `find_tools`
   search and run by name with `run_tool`.
-- **Restored copy.** A fresh copy of the production database in a private server, so a change can be
-  replayed against real data, roles and row security, with the production models.
+- **Restored copy.** A fresh copy of the production database in a private server, so I can replay a
+  change against real data, roles and row security, with the production models.
 - **Outcome eval.** An eval that judges what happened (what changed, what reached a person), never
   wording or the order of tool calls.
-- **Held out, lower bound.** Thresholds are fitted on a development split and results reported on a
-  held-out split. A lower bound is the 95% Wilson lower bound on a proportion.
+- **Held out, lower bound.** I fit thresholds on a development split and report results on a held-out
+  split. A lower bound is the 95% Wilson lower bound on a proportion.
 
 ## Licence
 

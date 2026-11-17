@@ -1,16 +1,16 @@
 # 12 · Workflows versus one agent: where fixed code belongs
 
-**Our position.** Put a capable tool-calling agent in charge of the work, with the same tools a workflow
+**My position.** Put a capable tool-calling agent in charge of the work, with the same tools a workflow
 would call. Keep hard code only where a result must be exact or must not happen without a person: money
 arithmetic, access, the outward boundary (sending, publishing, paying), and mechanical stops that judge
 nothing. A fixed workflow, with its step order, rule-based routing, categories, guards, caps and fixed
 hand-backs, matches the agent only on the cases its author anticipated. Off script it hands the work
 back or does the wrong thing. Each patch fixes the case it was written for and nothing else. The same
 machinery bolted onto an agent costs it the work it was doing. This is the opposite of
-12-Factor Agents' "mostly deterministic code, with LLM steps sprinkled in", and we think that advice
+12-Factor Agents' "mostly deterministic code, with LLM steps sprinkled in", and I think that advice
 is wrong for work that comes from people.
 
-**The evidence.** We built the machinery first, ran it in production for months, then removed most of
+**The evidence.** I built the machinery first, ran it in production for months, then removed most of
 it: a quarter of the agent service's code went. A reproducible experiment on a synthetic operations
 inbox shows the same pattern, with two models and three repeats of every task:
 
@@ -25,7 +25,7 @@ inbox shows the same pattern, with two models and three repeats of every task:
 | Cost per message | $0.0016 | $0.0016 | $0.0028 | $0.0021 | $0.0033 |
 
 "Agent without exact parts" is the agent with invoice arithmetic moved from the tools into the model
-and a `send_mail` tool governed by one sentence of prompt. It scored as well as the agent here, and we
+and a `send_mail` tool governed by one sentence of prompt. It scored as well as the agent here, and I
 still keep both parts as code: its one money error issued a live invoice $536.33 short under a note
 reporting the right total, and in production the agent computing prices failed every replay. A send
 cannot be taken back.
@@ -72,24 +72,24 @@ tool results) before, 48 (0.32%) after. The fixed part that belongs still fires.
 
 Two kinds of fixed code survived the removal or came back, and both cut the other way:
 
-- **Arithmetic stayed exact, for a measured reason.** The tools that priced options and computed business
-  cases were deleted on the view that the agent could read the catalogue and compute in a spreadsheet.
+- **Arithmetic stayed exact, for a measured reason.** I deleted the tools that priced options and computed
+  business cases, on the view that the agent could read the catalogue and compute in a spreadsheet.
   Replays on restored copies of production with the production model then failed both analysis tasks, 3
   of 3 each. The agent gave $714,500 where the right figure was $664,500, and 46% of revenue where it was
-  43.2%. It mixed delivery days with partner-days in one formula and typed constants into formulas. An
-  exact calculator tool was added and listed on every turn. Re-run, both tasks still failed 3 of 3: the
+  43.2%. It mixed delivery days with partner-days in one formula and typed constants into formulas. I
+  added an exact calculator tool and listed it on every turn. Re-run, both tasks still failed 3 of 3: the
   errors moved from arithmetic to choosing inputs and units. A calculator does not choose the right
   inputs. Exact money code with fixed inputs does.
-- **Mechanical stops came back.** Once the seven stacked repeat guards were gone ([study 05](../05-one-agent-loop/)),
-  two chat turns looped until the person cancelled, one repeating a search for 25 steps. The root cause was
-  a tool list that did not admit a found tool ([study 06](../06-tool-search-results/)). A stop was still
-  added: three steps in a row that only repeat answered calls end the tool use. A refused call sent again
-  is answered from the turn instead of being run again; before that, one refused navigation was sent 9 times.
-  Earlier turns are capped at 32 KB per call, after one turn carried 128,800 tokens and failed after 390
-  seconds. A wake filter skips the person's own sent mail, bulk lists and mail-authentication reports: a
-  substring rule, and honestly machinery. Routing unattended work to the cheapest host stayed code because
-  it is money: one rule sending every call to the fastest host took metered spend from under $2 a day to
-  $27.85 in one day.
+- **Mechanical stops came back.** Once I removed the seven stacked repeat guards
+  ([study 05](../05-one-agent-loop/)), two chat turns looped until the person cancelled, one repeating a
+  search for 25 steps. The root cause was a tool list that did not admit a found tool
+  ([study 06](../06-tool-search-results/)). I still added a stop: three steps in a row that only repeat
+  answered calls end the tool use. The loop answers a refused call sent again from the turn instead of
+  running it again; before that, the agent sent one refused navigation 9 times. I cap earlier turns at
+  32 KB per call, after one turn carried 128,800 tokens and failed after 390 seconds. A wake filter skips
+  the person's own sent mail, bulk lists and mail-authentication reports: a substring rule, and I count
+  it as machinery. Routing unattended work to the cheapest host stayed code because it is money: one rule
+  sending every call to the fastest host took metered spend from under $2 a day to $27.85 in one day.
 
 What these have in common: none of them decides what the work is or how to do it. They count, compare
 bytes, check identity, or hold an effect for a person.
@@ -98,8 +98,8 @@ Study 05 has the background permission system, the 66 items in 34 hours and the 
 refused. Study 03 has the review passes a decision model ran over the agent's output. Study 07 has
 reasoning switched off for a whole turn. They are not repeated here.
 
-One removal is unproved: the guard on which audience a write may reach was removed, and no leak has been
-measured either way.
+One removal is unproved: I removed the guard on which audience a write may reach, and I have not
+measured leaks either way.
 
 ## The experiment
 
@@ -108,7 +108,7 @@ tasks, time entries, invoices, documents and past mail, all invented, on `.examp
 one message arriving in the firm's operations inbox. The outcome check judges only the world's final
 state: what was booked, moved, cancelled, invoiced, reassigned and drafted.
 
-**The tools** (20) are shared by every arm: find and read clients, list and change events, tasks, time
+**The tools** (20) are the same for every arm: find and read clients, list and change events, tasks, time
 entries, invoices and documents, search past mail, and `draft_reply`. Two things are hard code in the
 tools: `create_invoice` and `split_invoice` compute every amount in integer cents, and there is no send
 tool, only `draft_reply`, which queues mail for a partner's approval.
@@ -133,9 +133,9 @@ tool, only `draft_reply`, which queues mail for a partner's approval.
 
 **Scoring.** Each task lists what must be true at the end, and each expectation claims the changes that
 satisfy it. Wrong actions are mail sent without approval, a new client record, a new double booking, and
-any change to events, invoices or existing tasks that no expectation claims. Extra drafts, notes and new
-follow-up tasks are tolerated. A run is *correct* with every expectation met and no wrong action. The
-agent arms end with `DONE:` or `NEEDS PERSON:`, and the second counts as a hand-back.
+any change to events, invoices or existing tasks that no expectation claims. The check tolerates extra
+drafts, notes and new follow-up tasks. A run is *correct* with every expectation met and no wrong
+action. The agent arms end with `DONE:` or `NEEDS PERSON:`, and the second counts as a hand-back.
 
 **Models.** DeepSeek V4.1 Flash, the production agent's default model, and DeepSeek V4.1 Flash 1017, its
 stronger option, through OpenRouter. The workflow's model steps use the same model as its agent
@@ -200,9 +200,9 @@ arithmetic, the draft queue).
   calendar and moved the call. The fixed order of steps was the defect, not the model.
 - **Off script, the workflow hands back or does harm.** No variation was done in 60 runs. It double-booked
   the clashing request in 6 of 6, and on cancel-and-rebook it moved the two-hour workshop onto the next
-  meeting in 6 of 6. In 9 runs across the two workflow arms it classified the client's request to send a document as a
-  staff task. Asked to reassign Priya's tasks, it tried to create a new task from the request in every
-  run: four were created, two refused for want of an owner.
+  meeting in 6 of 6. In 9 runs across the two workflow arms it classified the client's request to send
+  a document as a staff task. Asked to reassign Priya's tasks, it tried to create a new task from the
+  request in every run: it created four, and the tool refused two for want of an owner.
 - **Guards trade wrong actions for hand-backs, one named case at a time.** The patched workflow made no
   wrong action. It did the resent request, the thank-you note and the forwarded message, each in 6 of 6,
   because a patch named each one. Everything else went to a person: 50 of 132 runs, against 1 for the
@@ -215,14 +215,13 @@ arithmetic, the draft queue).
   "confirm the auditor send with a partner"), which the strict check counts as wrong (see below).
 - **Machinery on the agent removed the overreach and the work with it.** With a call cap, a repeat guard,
   one use per writing tool and a scope rule, wrong actions fell from 6 (in 4 runs) to 0 and hand-backs
-  rose from 1 to 44. One update per message left the second task unassigned in all 6 reassignment runs. The 8-call cap
-  and the scope rule stopped the renamed client before anything was booked in 6 of 6. "Approval claimed
-  by the client" went to a person in 6 of 6 (five by the scope rule, one at the call cap), though the safe
-  answer was a draft that waits for approval anyway.
+  rose from 1 to 44. One update per message left the second task unassigned in all 6 reassignment runs.
+  The 8-call cap and the scope rule stopped the renamed client before the agent booked anything, in 6
+  of 6. "Approval claimed by the client" went to a person in 6 of 6 (five by the scope rule, one at the
+  call cap), though the safe answer was a draft that waits for approval anyway.
 - **The workflow is not much cheaper.** On the six on-script tasks it cost $0.0012 per message against the
-  agent's $0.0019,
-  with 2.7 model calls against 5.2, and its prompts were about 330 tokens against about 14,000. The
-  output, mostly reasoning, is most of the bill on both arms.
+  agent's $0.0019, with 2.7 model calls against 5.2, and its prompts were about 330 tokens against about
+  14,000. The output, mostly reasoning, is most of the bill on both arms.
 - **Without the exact parts the agent was almost as good here, and its one error is the reason to keep
   them.** The bare agent computed every other invoice and split to the cent and queued every outside mail
   for approval, including the two that asked it not to. In one twelve-entry invoice it issued the right
@@ -250,43 +249,43 @@ fixed refusals and hand-backs.
 
 - **Do not let patches answer patches.** Every guard in the `guards` arm is reasonable and each fixed one
   named case. In production the same pattern made chains: a number gate, then a quote rule, then a "Q1"
-  exception; a meeting parser, then a repair pass, then marker stripping. Each could have been removed at
+  exception; a meeting parser, then a repair pass, then marker stripping. I could have removed each one at
   its root.
 - **A cap you have not measured is a silent cut.** The 8-call cap here and the 4,000-character cuts in
   production failed the same way: the work stopped and nothing said why, or the agent went looking for
-  what had been cut.
+  what the cap had cut.
 - **One use per tool is not dedupe.** It stops a duplicate invoice and it also stops the second task, the
   second draft and the second change a message asks for. Deduplicate by identity (the message id, an
   existing invoice for the month), not by counting calls.
 - **A scope rule hands back the safe cases first.** "Anything unclear goes to a person" sent the approval
   cases to a person even though the draft queue already held them for a person.
 - **Moving a fixed part into the prompt looks free until it isn't.** The bare agent kept the approval rule
-  in all 132 runs and got 35 of 36 exact-part tasks right. The one miss issued a wrong invoice under a correct
-  summary, and only the world's state showed it.
+  in all 132 runs and got 35 of 36 exact-part tasks right. The one miss issued a wrong invoice under a
+  correct summary, and only the world's state showed it.
 - **Check the world, not the note.** Several machinery runs said `DONE:` with half the work refused, and
   the bare agent's wrong invoice came with a right figure in its note. Judge outcomes on state.
 
-## How we measured
+## How I measured
 
-- Every model response is cached in `results/calls/<model>.jsonl` under a hash of the exact request and
-  the repeat index. `python3 run.py report` replays all 660 runs from the cache through the same code,
-  without a network call, and writes `results/report.json`. Failed calls are not cached.
-- Tasks, arms and checks were written before any model was run. The workflow and
-  its guards were written for the on-script tasks and the typical patches, not tuned on results.
-- Three things changed after reading results, and all are in the code:
-  1. New follow-up tasks are tolerated. The strict check, as first written, counts them as wrong. Strict
-     correct runs out of 66: workflow 21 and 21, guards 30 and 30, agent 53 and 51, agent with machinery
-     43 and 42, bare agent 58 and 50 (V4.1 Flash, then 1017). The ordering does not change.
-  2. The exact-parts tasks c4 to c6 are a second round. They were written after the first round, where
-     the bare agent made no error, and run under the same code.
+- `llm.py` caches every model response in `results/calls/<model>.jsonl` under a hash of the exact request
+  and the repeat index. `python3 run.py report` replays all 660 runs from the cache through the same code,
+  without a network call, and writes `results/report.json`. It does not cache failed calls.
+- I wrote the tasks, arms and checks before running any model. I wrote the workflow and its guards for
+  the on-script tasks and the typical patches, and did not tune them on results.
+- I changed three things after reading results, and all are in the code:
+  1. The check tolerates new follow-up tasks. The strict check, as first written, counts them as wrong.
+     Strict correct runs out of 66: workflow 21 and 21, guards 30 and 30, agent 53 and 51, agent with
+     machinery 43 and 42, bare agent 58 and 50 (V4.1 Flash, then 1017). The ordering does not change.
+  2. The exact-parts tasks c4 to c6 are a second round. I wrote them after the first round, where the
+     bare agent made no error, and they run under the same code.
   3. The invoice check judges the one live invoice for the month. It had judged the first one created,
      which in the bare agent's error run was void.
 - Hosts, from OpenRouter's responses: Together for V4.1 Flash; mostly CoreWeave, some BaseTen, for 1017.
-  Hosts serving the model at fewer than 8 bits were excluded.
+  I excluded hosts serving the model at fewer than 8 bits.
 - Production figures are aggregates from the agent's call journal, spend records and source history. The
   arithmetic replays ran on restored copies of production with the production model. Refusal categories
-  come from matching patterns in refusal text; 488 refusals before and 214 after matched no pattern and
-  are counted in neither group.
+  come from matching patterns in refusal text; 488 refusals before and 214 after matched no pattern, and
+  I counted them in neither group.
 
 ## Files
 
@@ -310,35 +309,35 @@ python3 run.py report
   https://www.anthropic.com/engineering/building-effective-agents. Defines workflows as "systems where
   LLMs and tools are orchestrated through predefined code paths" and agents as systems where "LLMs
   dynamically direct their own processes and tool usage". It says "workflows offer predictability and
-  consistency for well-defined tasks", and advises "the simplest solution possible". We agree on
+  consistency for well-defined tasks", and advises "the simplest solution possible". I agree on
   simplicity and disagree on where it lies. An operations inbox is not a well-defined task. Here the
   simplest system that worked was the agent, in 39 lines.
 - Hadfield et al. (Anthropic), "How we built our multi-agent research system", 2025-06-13.
   https://www.anthropic.com/engineering/multi-agent-research-system. "You can't hardcode a fixed path for
-  exploring complex topics." We found the same of a mailbox.
+  exploring complex topics." I found the same of a mailbox.
 - LangChain, "Workflows and agents", LangGraph documentation.
   https://docs.langchain.com/oss/python/langgraph/workflows-agents. "Workflows have predetermined code
   paths"; agents "are used in situations where problems and solutions are unpredictable". The framing is
-  the same as ours. Our claim is that most business messages fall in the second case once they come from
+  the same as mine. My claim is that most business messages fall in the second case once they come from
   real people.
 - OpenAI, "A practical guide to building agents", 2025.
   https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf. Names
   "difficult-to-maintain rules" and "complex decision-making … exceptions" as reasons to build an agent,
   says declarative graph frameworks "can quickly become cumbersome", and keeps "rules-based protections"
   (blocklists, length limits, regex) as guardrails. It also says "a deterministic solution may suffice"
-  when the criteria are not met. Close to our position, with more rule-based guardrails than we kept.
+  when the criteria are not met. Close to my position, with more rule-based guardrails than I kept.
 - Horthy, "12-Factor Agents". https://github.com/humanlayer/12-factor-agents. Argues that good agents are
   "mostly deterministic code, with LLM steps sprinkled in at just the right points", with factors such as
-  "Own your control flow" and "Small, Focused Agents". This is the opposite position, and it is our
-  `workflow` arm. We agree with "contact humans with tool calls" and with owning the context window. We
-  disagree on control flow: our fixed control flow failed its own script.
+  "Own your control flow" and "Small, Focused Agents". This is the opposite position, and it is my
+  `workflow` arm. I agree with "contact humans with tool calls" and with owning the context window. I
+  disagree on control flow: my fixed control flow failed its own script.
 - Yan (Cognition), "Don't Build Multi-Agents", 2025-06-12. https://cognition.com/blog/dont-build-multi-agents.
   "Share context, and share full agent traces" and "Actions carry implicit decisions." A fixed pipeline is
   the extreme case: each step decides with only the fields the previous step extracted. The "same time"
   failure is exactly that.
 - Sutton, "The Bitter Lesson", 2019-03-13. http://www.incompleteideas.net/IncIdeas/BitterLesson.html. "We
   have to learn the bitter lesson that building in how we think we think does not work in the long run."
-  Categories, routing tables and step orders are how we think an inbox works, built in.
+  Categories, routing tables and step orders are a builder's idea of how an inbox works, built in.
 
 **Scripted pipelines against agents**
 
@@ -346,10 +345,10 @@ python3 run.py report
   https://arxiv.org/abs/2407.01489. A fixed localize-repair-validate pipeline resolved 32.00% of
   SWE-bench Lite at $0.70 per issue, ahead of open-source agents of the time, and asks "Do we really have
   to employ complex autonomous software agents?" It is the strongest case for the other side, and it holds
-  where the task has one known shape (an issue becomes a patch), much as our on-script group does.
+  where the task has one known shape (an issue becomes a patch), much as my on-script group does.
 - Yang et al., "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering", 2024.
   https://arxiv.org/abs/2405.15793. An agent with an interface designed for it. The paper's claim is that
-  tool design matters, which matches our view that the work belongs in good tools, not in step order.
+  tool design matters, which matches my view that the work belongs in good tools, not in step order.
 - SWE-agent team, mini-swe-agent. https://github.com/SWE-agent/mini-swe-agent. About 100 lines for the
   agent class, bash as the only tool, and over 74% on SWE-bench Verified by its own report. The
   simple-loop result on the task where Agentless made the pipeline case.
@@ -357,12 +356,12 @@ python3 run.py report
   https://arxiv.org/abs/2508.02721. The model "is strategically invoked as a specialized tool to handle
   bounded, complex sub-tasks within the workflow, but never to decide the workflow's path", reporting a
   35.56% pass rate on TravelPlanner against 18.00% for a baseline. The opposite design, argued for
-  predictability. We agree where the path is known and must be audited: money, approvals.
+  predictability. I agree where the path is known and must be audited: money, approvals.
 - Yao et al., "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains", 2024.
   https://arxiv.org/abs/2406.12045. Function-calling agents "succeed on <50% of the tasks" and "pass^8
   <25% in retail", judged by comparing "the database state at the end of a conversation with the
-  annotated goal state". It is the outcome-on-state scoring we used. Its reliability numbers are the honest
-  argument for workflows. Our answer is to make the parts that need reliability exact in tools, not to
+  annotated goal state". It is the outcome-on-state scoring I used. Its reliability numbers are the honest
+  argument for workflows. My answer is to make the parts that need reliability exact in tools, not to
   fix the path.
 
 **Brittleness of rule-based automation**

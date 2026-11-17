@@ -1,6 +1,6 @@
 # 07 · Reasoning off for one decision, not for the turn
 
-**Our position.** Reasoning belongs to a single decision, not to a whole turn. When one decision
+**My position.** Reasoning belongs to a single decision, not to a whole turn. When one decision
 reasons through its whole output budget and answers nothing, ask that decision again with a bigger
 budget and reasoning still on. Never turn reasoning off for the rest of the turn: every later decision
 then pays for one decision's failure. Turning it off for just the retry is a weaker fix than a bigger
@@ -10,7 +10,7 @@ production one did.
 (Each model call has an output budget, its *room*: reasoning and answer share it. A decision "runs out
 of room" when reasoning uses all of it.)
 
-**The evidence.** We ran all three fixes in a production agent. Reasoning off for the rest of the turn
+**The evidence.** I ran all three fixes in my production agent. Reasoning off for the rest of the turn
 lasted three hours. Off for the one retry lasted two weeks. A bigger budget with reasoning on is what
 runs now.
 
@@ -21,9 +21,9 @@ runs now.
 - **Off for the one retry claimed work that never happened.** Its last production failure answered, in
   text, that a meeting record was saved and two promises booked. Nothing was.
 - **In a reproducible experiment, off for the turn got less done on the default model and did no
-  better than reasoning on with any model.** V4.1 Flash finished 41 of 90 turns with it, against 58 with a bigger budget and 59 with
-  reasoning on throughout. On V4 Flash 0731 the fixes were within one turn of each other; on Qwen3.6
-  every fix trailed reasoning-on.
+  better than reasoning on with any model.** V4.1 Flash finished 41 of 90 turns with it, against 58
+  with a bigger budget and 59 with reasoning on throughout. On V4 Flash 0731 the fixes were within
+  one turn of each other; on Qwen3.6 every fix trailed reasoning-on.
 - **A bigger budget costs almost nothing:** one extra call per turn, about $0.00005 on V4.1 Flash.
 
 **What the experiment does not show.** It did not reproduce the repeated calls, and false claims were
@@ -41,9 +41,9 @@ returns neither an answer nor a tool call.
 
 | Date | Rule for a decision that ran out of room | What happened |
 |---|---|---|
-| until 10-06 | 2,400 tokens, then doubled, then once with reasoning off | 17 chat decisions in two weeks reasoned through 2,400 and 4,800 tokens. The room was raised to 16,384 |
+| until 10-06 | 2,400 tokens, then doubled, then once with reasoning off | 17 chat decisions in two weeks reasoned through 2,400 and 4,800 tokens. I raised the room to 16,384 |
 | 10-07 | Ask that decision again with reasoning off, then on again | Fixed the single call. On a captured rewrite decision, reasoning on ran out 3 of 3 times on both models; off, 0 of 6 ran out and 6 of 6 called the tool. But the next decision often re-read the article and ran out again: 10 times in 3 test runs, about 25 of 57 minutes |
-| 10-07 | Keep reasoning off for the rest of the turn | Each turn ran out once, but V4.1 Flash sent a refused document update 19 and 23 times, and V4 Flash 0731 created the same file 29 times. Reverted three hours later |
+| 10-07 | Keep reasoning off for the rest of the turn | Each turn ran out once, but V4.1 Flash sent a refused document update 19 and 23 times, and V4 Flash 0731 created the same file 29 times. I reverted it three hours later |
 | 10-07 to 10-21 | Off for that one decision only | Kept. A retry with no reasoning was the fast path out of a decision that did not converge |
 | 10-21 | Removed | A decision that would write a meeting record reasoned through its whole 17,408 tokens. The retry, with no reasoning, answered in text: once that the record was saved and two promises booked (nothing was), once that the record was someone else's to write |
 | 10-21 | The same decision again, reasoning on, with the route's whole room (131,072 tokens) | 16 of 20 retries answered in 1,800 to 17,000 tokens. 4 reasoned through all of it for nothing, at $0.16 and 3 to 5 minutes each |
@@ -55,7 +55,7 @@ Two more production numbers back the position:
   replaced the loop's request for it. Over 14 days 697 of 3,917 background steps (17.8%) repeated the
   previous call exactly, against 1.3% in chat on the same model with reasoning on. Most of the
   repeats sat in seven runs, each sending one call 13 to 79 times.
-- **The same decisions, replayed.** We asked the model again at those runs' real decisions, with
+- **The same decisions, replayed.** I asked the model again at those runs' real decisions, with
   their real history. Where a run first repeated, reasoning off repeated 1 of 18 times and on 0 of 17.
   Where it had already repeated three times, off repeated 4 of 21 times and on 0 of 20. Without
   reasoning a model already in a loop stays in it.
@@ -67,15 +67,15 @@ whole output on reasoning, and those go to the retry.
 
 A minimal tool-calling loop (`turn.py`) on 15 synthetic tasks (`cases.py`). Each task is a request to
 an operations assistant at an invented firm, after three earlier turns that bring the prompt to about
-9,000 tokens (median 8,637). Seventeen tools stand over a small world of records. In every task one call the request
-leads to is refused, and refused the same way every time it is sent unchanged:
+9,000 tokens (median 8,637). Seventeen tools stand over a small world of records. In every task the
+tools refuse one call the request leads to, the same way every time the model sends it unchanged:
 
 - **10 tasks with a readable refusal**, half naming what to do instead ("locked for direct edits;
   suggest_edit adds a tracked suggestion"), half only naming what is wrong ("refused: owner_only",
   "refused: name_taken (f_212)", an empty search).
 - **5 tasks with an opaque, permanent failure** ("Request contains an invalid argument.", "503 backend
   unavailable", "internal"). One copies the production case: shorten a newsletter intro, then the
-  document update and the suggestion are both rejected with the same opaque error.
+  tools reject both the document update and the suggestion with the same opaque error.
 
 Arms. The squeeze sends the turn's second decision with 8 tokens of room, so the model reasons through
 all of it and answers nothing, the production failure made on purpose:
@@ -88,8 +88,8 @@ all of it and answers nothing, the production failure made on purpose:
 | `turn_off` | reasoning off, normal room | reasoning off |
 | `decision_bigger` | reasoning on, normal room | reasoning on |
 
-Every turn has at most 14 model calls. Reasoning is not passed back between decisions, as in
-production now. Models: DeepSeek V4.1 Flash and DeepSeek V4 Flash 0731, the production chat models,
+Every turn has at most 14 model calls. The loop does not pass reasoning back between decisions, as
+in production now. Models: DeepSeek V4.1 Flash and DeepSeek V4 Flash 0731, the production chat models,
 and Qwen3.6 35B-A3B, an open model with a thinking switch. All through OpenRouter with
 `reasoning: {enabled: true|false}`. Six repetitions per task and arm, 450 turns per model.
 
@@ -97,11 +97,11 @@ and Qwen3.6 35B-A3B, an open model with a thinking switch. All through OpenRoute
 
 - *done*: what the person needed happened (the suggestion added, the draft saved, the slot booked).
 - *handed back*: the turn ended with a reply, without doing it, and without claiming it.
-- *false claim*: a reply saying the refused action itself was done. A judge model (V4.1 Flash) is
-  asked one yes-no question, only of turns where that action never went through.
+- *false claim*: a reply saying the refused action itself was done. I ask a judge model (V4.1
+  Flash) one yes-no question, only of turns where that action never went through.
 - *unfinished*: the turn hit 14 model calls.
 - *repeated failed calls*: calls identical, name and arguments, to an earlier call in the turn that
-  was refused or came back empty.
+  the tools refused or that came back empty.
 
 ### Results
 
@@ -148,11 +148,11 @@ times of 270, so a third of its squeezed turns never took the retry path.
   attempt: one extra call, $0.00005 a turn on V4.1 Flash and under $0.0005 on the others, and one
   fewer step under the cap.
 - **No arm repeated refused calls more with reasoning off.** Repeats were a property of the task and
-  the model. On the DeepSeek models most were retries of a "503 backend unavailable", made more with
-  reasoning on and followed by a saved draft: a fair retry, not a loop. The one real loop is the
-  opaque newsletter task: on every Qwen arm (11 to 17 repeats, up to 6 turns at the cap), and on V4
-  Flash 0731 only in the arms that reason after the refusal (3 or 4 turns at the cap; none with
-  reasoning off).
+  the model. On the DeepSeek models most were retries of a "503 backend unavailable", which the models
+  made more often with reasoning on and which ended in a saved draft: a fair retry, not a loop. The
+  one real loop is the opaque newsletter task: on every Qwen arm (11 to 17 repeats, up to 6 turns at
+  the cap), and on V4 Flash 0731 only in the arms that reason after the refusal (3 or 4 turns at the
+  cap; none with reasoning off).
 - **False claims are rare and slightly commoner with reasoning on** (V4 Flash 0731: 5 of 56 with it
   on, 1 of 66 for the rest of the turn off). The production incident behind removing the off retry
   was a 17,000-token decision; nothing here reasons that long.
@@ -162,11 +162,11 @@ times of 270, so a third of its squeezed turns never took the retry path.
 The production repeats came from turns with prompts averaging 64,000 to 81,000 tokens, many steps, and a
 model that had already repeated two or three times. The replay above shows the effect is mostly there:
 at a first repeat, off and on barely differ (1 of 18, 0 of 17); three repeats in, off stays in the loop
-(4 of 21, 0 of 20). Our synthetic turns are short and rarely reach a second repeat on the DeepSeek
-models. We did not build a longer run; this study does not reproduce the 19 and 23 repeats.
+(4 of 21, 0 of 20). My synthetic turns are short and rarely reach a second repeat on the DeepSeek
+models. I did not build a longer run; this study does not reproduce the 19 and 23 repeats.
 
 What it does reproduce is the other half of the production decision: without reasoning the agent
-does less of what was asked, and turning reasoning off for the rest of the turn makes every later
+does less of what the person asked, and turning reasoning off for the rest of the turn makes every later
 decision pay for one decision's failure.
 
 ## The simple alternative
@@ -175,8 +175,8 @@ decision pay for one decision's failure.
 captured rewrite decision ran out 3 of 3 times with reasoning on and the same room.
 
 **Lower the effort for every decision.** In production, low effort still ran out 2 of 3 times on the
-rewrite decision, and on another decision it turned a tool call into text. A reasoning `max_tokens`
-was not honoured (11,103 reasoning tokens under a 4,000 cap).
+rewrite decision, and on another decision it turned a tool call into text. The provider did not honour
+a reasoning `max_tokens` (11,103 reasoning tokens under a 4,000 cap).
 
 **Turn reasoning off everywhere.** Cheapest by far: $0.00073 per turn on V4.1 Flash against
 $0.00204. It did 35 of 90 turns against 59.
@@ -190,7 +190,7 @@ $0.00204. It did 35 of 90 turns against 59.
   answer saying a record was saved. If you keep an off retry, check that the reply's claims match the
   calls that ran.
 - **Do not let a per-task setting override the loop's reasoning.** The 17.8% background repeats came
-  from a model setting chosen on single-answer tests, silently replacing the loop's request.
+  from a model setting I chose on single-answer tests, which silently replaced the loop's request.
 - **Count a retry of a transient failure separately from a loop.** Sending a call again after a 503 is
   a fair retry. Repeating a call refused for what it says is not.
 
@@ -206,10 +206,10 @@ OPENROUTER_API_KEY=... python3 turn.py run --model deepseek/deepseek-v4.1-flash 
 python3 turn.py report --reps 6     # replays every turn from the cache, no calls
 ```
 
-Tasks and checks were written before any model ran. After a first single run of the ten readable
-tasks showed no repeats in any arm, we added the five opaque tasks and the earlier conversation, then
-froze the set; the results above are the frozen set's only full run. The squeeze was lowered from
-32 tokens to 8 at the same point, because at 32 a short tool call often fitted.
+I wrote the tasks and checks before any model ran. After a first single run of the ten readable
+tasks showed no repeats in any arm, I added the five opaque tasks and the earlier conversation, then
+froze the set; the results above are the frozen set's only full run. At the same point I lowered the
+squeeze from 32 tokens to 8, because at 32 a short tool call often fitted.
 
 ## Related work
 
@@ -218,7 +218,7 @@ froze the set; the results above are the frozen set's only full run. The squeeze
 - Yang et al., "Ares: Adaptive Reasoning Effort Selection for Efficient LLM Agents", arXiv
   2603.07915. https://arxiv.org/abs/2603.07915. A small router picks the reasoning effort for each
   agent step; one fixed low effort for every step loses accuracy, and per-step selection cuts reasoning
-  tokens by up to 52.7%. The same unit as ours: the step, not the task.
+  tokens by up to 52.7%. The same unit as mine: the step, not the task.
 - Anthropic, "Extended thinking". https://platform.claude.com/docs/en/build-with-claude/extended-thinking.
   Adaptive thinking lets the model decide "whether and how much to think on each request"; changing
   the thinking setting between requests invalidates the prompt cache, so a per-decision switch has a
@@ -237,8 +237,8 @@ froze the set; the results above are the frozen set's only full run. The squeeze
 
 - Cuadron et al., "The Danger of Overthinking: Examining the Reasoning-Action Dilemma in Agentic
   Tasks", 2025. https://arxiv.org/abs/2502.08235. Reasoning models in agent loops reason instead of
-  acting, and resolve fewer issues as they do. Our decisions that ran out of room are the extreme case.
-  Its remedy, several low-effort tries and the best one, keeps reasoning on.
+  acting, and resolve fewer issues as they do. My agent's decisions that ran out of room are the
+  extreme case. Its remedy, several low-effort tries and the best one, keeps reasoning on.
 - Wang et al., "Thoughts Are All Over the Place: On the Underthinking of o1-Like LLMs", 2025.
   https://arxiv.org/abs/2501.18585. Reasoning that switches paths too often without finishing one; the
   rewrite decision that counted words, tightened and counted again looked like this.
@@ -249,7 +249,7 @@ froze the set; the results above are the frozen set's only full run. The squeeze
 
 - Hou et al., "When Agents Do Not Stop: Uncovering Infinite Agentic Loops in LLM Agents", arXiv
   2607.01641. https://arxiv.org/abs/2607.01641. Loops arise where a feedback path has no effective
-  bound; 68 confirmed in 47 open repositories. Our 14-call cap is that bound in the experiment.
+  bound; 68 confirmed in 47 open repositories. My 14-call cap is that bound in the experiment.
 - Zhang et al., "MIRAGE-Bench: LLM Agent is Hallucinating and Where to Find Them", 2025.
   https://arxiv.org/abs/2507.21017. Actions unfaithful to the execution history, which includes acting
   as if a failed step had worked.

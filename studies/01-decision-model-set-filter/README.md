@@ -1,13 +1,13 @@
 # 01 · Decision models as a set-reading tool
 
-**Our position.** When an agent has to answer a question about a whole set (1,500 mail threads, 600
+**My position.** When an agent has to answer a question about a whole set (1,500 mail threads, 600
 open promises, 800 accounts), give it a set-filter tool. The agent writes one yes-no question, a
 decision model answers it for every item in parallel, and the agent reads the top of the ranked list.
 Keyword search misses what people write without the keyword. Embeddings blur the distinction the agent
-actually asked about. A decision model gets it right for a few cents per thousand items.
+asked about. A decision model gets it right for a few cents per thousand items.
 
 A *decision model* is a small hosted model that answers one typed question, here yes or no, with a
-probability. We tested Jev 1.13 and 1.14 (TypeSafe), Clef and Clef Flash (Cloudflare), and Laya, an
+probability. I tested Jev 1.13 and 1.14 (TypeSafe), Clef and Clef Flash (Cloudflare), and Laya, an
 open checkpoint that runs on a CPU.
 
 **The evidence.**
@@ -36,7 +36,7 @@ Standard library only. `python3 bench.py --help` lists the scorers and how to po
 
 ## Corpus
 
-Everything is invented: a fictional consulting firm, 26 fictional clients, `.example` addresses.
+Everything here is fictional: a consulting firm, 26 clients, `.example` addresses.
 
 | Set | Items | Questions | Held-out positives |
 |---|---|---|---|
@@ -48,10 +48,10 @@ Everything is invented: a fictional consulting firm, 26 fictional clients, `.exa
 - **Near-misses** share the keywords or the topic: a web-domain renewal, a vendor's subscription price,
   the client's own competitors, a lab-equipment distributor, a clinic that sends all tests out.
 - **Negations** state the opposite ("we are not talking to any other consultants").
-- **Split.** Every item was assigned to `dev` or `held` by the seed before any model was asked.
-  Thresholds are fitted on `dev` and reported on `held`. The question wordings and one rewording of each
-  were frozen before the first held-out run.
-- **Labels** are the generator's intent. They have not been independently relabelled.
+- **Split.** The seed assigned every item to `dev` or `held` before I asked any model. I fit thresholds
+  on `dev` and report on `held`. I froze the question wordings and one rewording of each before the
+  first held-out run.
+- **Labels** are the generator's intent. Nobody has independently relabelled them.
 
 Positives are rare by design (2 to 6 per question in the held-out half), as they are in a real mailbox.
 Each per-question number therefore rests on a handful of items. Read the pooled figures first.
@@ -85,8 +85,8 @@ Held-out half. Each cell is positives found in the top 10 out of positives, with
 | BM25 | 3/6 (0.689) | 4/5 (0.968) | 1/3 (0.743) | 1/2 (0.982) | 2/2 (1.000) | 1/2 (0.972) | 4/6 (0.830) | **16/26** | 18/26 |
 | Keyword substring | 1/6 | 1/5 | 1/3 | 2/2 | 2/2 | 2/2 | 0/6 | **9/26** | 9/26 |
 
-Hosted models were called through OpenRouter on 2026-11-15, one `noul` question per item, 10,700 calls each
-(held-out, dev and the reworded held-out pass):
+I called the hosted models through OpenRouter on 2026-11-15, one `noul` question per item, 10,700 calls
+each (held-out, dev and the reworded held-out pass):
 
 | Scorer | Latency p50 / p95 | Mean input tokens | Cost for 10,700 calls | Answers flipped by rewording, at the fitted thresholds |
 |---|---|---|---|---|
@@ -101,7 +101,7 @@ What these runs show:
 - **Every decision model beats the retrieval baselines on this corpus**, and keyword search finds about a third of what they find.
 - **The corpus does not separate the decision models on ranking.** All four are within one item of each other. It is too easy for that purpose; harder items are the next addition.
 - **They differ in how stable a cut-off is.** Thresholds fitted on `dev` ranged from 0.19 to 0.99 across questions and models. Rewording one question (competitor mentioned) moved 20 answers across the threshold for Jev 1.14 and 23 for Clef Flash, and 1 for Clef, while AUROC stayed at 0.998 or above for all three. The ranking survives rewording; a fixed cut-off does not.
-- **The keyword row is not a ranking.** A substring match gives 0 or 1, and ties are broken against the scorer, so a common term such as "lab" places no positive in the top 10.
+- **The keyword row is not a ranking.** A substring match gives 0 or 1, and the report breaks ties against the scorer, so a common term such as "lab" places no positive in the top 10.
 - **Laya, the open checkpoint, does as well as the hosted models on direct factual questions** (renewal
   price, clinical lab) and falls behind on judgement and on comparing two texts. It found none of the
   three at-risk clients in its top 10, and on one of the promise questions its ranking was no better
@@ -110,12 +110,12 @@ What these runs show:
   its fitted thresholds sat between 0.24 and 0.60, much closer together than the hosted models'.
   Laya's own model card warns that it ships over-confident and needs a temperature refit.
 
-A local LLM read through its answer probabilities has not been run.
+I have not run a local LLM read through its answer probabilities.
 
 ### First run (2026-10-18)
 
-The benchmark was first run with Jev 1.13 on 2026-10-18: 25 of 26 in the top 10 and 26 of 26 in the
-top 25. Its per-item answers were not kept. The Jev 1.13 row above is a fresh run and gives the same
+I first ran the benchmark with Jev 1.13 on 2026-10-18: 25 of 26 in the top 10 and 26 of 26 in the
+top 25. I did not keep its per-item answers. The Jev 1.13 row above is a fresh run and gives the same
 two figures.
 
 Misses in both runs follow the same pattern: a promise on the same topic for a different client scores
@@ -124,7 +124,7 @@ plant manager had left).
 
 ### Observation from a production agent (not reproducible here)
 
-The same operator was offered as a tool to a private tool-calling agent (DeepSeek V4.1 Flash) over this
+I offered the same operator as a tool to a private tool-calling agent (DeepSeek V4.1 Flash) over this
 corpus loaded into a scratch mailbox. One trial per arm and request:
 
 | Arm | Agent used the tool | Planted items found, three mailbox-wide requests |
@@ -134,11 +134,11 @@ corpus loaded into a scratch mailbox. One trial per arm and request:
 | Tool absent | — | 23 of 30 |
 
 When the set was small enough to filter by client, the agent did not use the tool in any arm, which is
-the behaviour wanted. With the tool, each request cost one to three cents more in total: the agent's own
+the behaviour I want. With the tool, each request cost one to three cents more in total: the agent's own
 spend fell 15% to 46%, and the decision model added about $0.03 per 1,500 threads.
 
-This is one system, one model and one trial per cell. It is reported because the comparison of a listed
-tool against a searchable one has been asked for elsewhere (see related work) and we found no published
+This is one system, one model and one trial per cell. I report it because others have asked for the
+comparison of a listed tool against a searchable one (see related work) and I found no published
 measurement.
 
 ## Building the tool
@@ -147,8 +147,8 @@ measurement.
   0.19 to 0.99 across questions and models, and rewording one question moved up to 23 answers across
   its threshold while the ranking held.
 - **Let the agent write the question.** In production the agent's own wording was often better than
-  ours, and it chose not to use the tool when a filter by client was enough.
-- **List the tool.** Reachable only through tool search, it was never used.
+  mine, and it chose not to use the tool when a filter by client was enough.
+- **List the tool.** When the tool was reachable only through tool search, the agent never used it.
 - **Mind the item length.** Items here are short (about 70 tokens); a real thread costs more per item
   and leaves more for the model to read past. Clip each item to what the question needs.
 - **Pick the model by stability, not only ranking.** On this corpus the hosted models rank alike; Clef
@@ -157,8 +157,8 @@ measurement.
 
 ## Related work
 
-The operator is not new. What this study adds is one corpus on which the hosted, open and local
-scorers can be compared with the cheap baselines, and the listed-against-searchable observation above.
+The operator is not new. What this study adds is one corpus on which anyone can compare the hosted,
+open and local scorers with the cheap baselines, and the listed-against-searchable observation above.
 
 **Semantic filters and pointwise yes-no scoring**
 
@@ -178,10 +178,10 @@ scorers can be compared with the cheap baselines, and the listed-against-searcha
 **Tools an agent can see against tools it must search for**
 
 - Anthropic, "Introducing advanced tool use", 2025-11-24. https://www.anthropic.com/engineering/advanced-tool-use. Advises keeping the three to five most-used tools loaded and deferring the rest.
-- anthropics/claude-code issue #84312, 2026-08-05. https://github.com/anthropics/claude-code/issues/84312. Reports deferred tools being reached for less reliably and proposes the loaded-against-deferred comparison.
+- anthropics/claude-code issue #84312, 2026-08-05. https://github.com/anthropics/claude-code/issues/84312. Reports that agents reach for deferred tools less reliably and proposes the loaded-against-deferred comparison.
 - Gan and Sun, "RAG-MCP", 2025. https://arxiv.org/abs/2505.03275. Fei, Zheng, Feng, "MCP-Zero", 2025. https://arxiv.org/abs/2506.01056
 
 **Where a decision model sits in an agent system**
 
-- Pernelle, "Jev in Production: What Worked, What We Rolled Back", 2026-09-22. https://audiala.com/blog/jev-in-production/. A decision-model router in front of the agent was rolled back; a per-candidate scorer was kept.
+- Pernelle, "Jev in Production: What Worked, What We Rolled Back", 2026-09-22. https://audiala.com/blog/jev-in-production/. The team rolled back a decision-model router in front of the agent and kept a per-candidate scorer.
 - Runkle and Lovell (LangChain), "Building a Harness with Jev", 2026-09-17. https://www.langchain.com/blog/building-a-harness-with-jev. The decision model as middleware before the model call.

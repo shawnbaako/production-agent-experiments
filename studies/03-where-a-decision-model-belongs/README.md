@@ -1,6 +1,6 @@
 # 03 · Where a decision model belongs: in the agent's hands
 
-**Our position.** A decision model belongs in the agent's tool list, as a tool the agent decides to
+**My position.** A decision model belongs in the agent's tool list, as a tool the agent decides to
 call. Put it anywhere else (in front of the agent, on its output, inside its tool results, after the
 run) and it makes decisions without the agent's context, and the system ends up working around it.
 Accuracy does not settle this. Placement does: where the model sits and who acts on its answer.
@@ -8,9 +8,9 @@ Accuracy does not settle this. Placement does: where the model sits and who acts
 A *decision model* is a small model that answers a typed question (yes or no, one of several options,
 a score) with a probability, for a fraction of a cent.
 
-**The evidence.** We tried a decision model in nine places in a production agent and kept it in one.
+**The evidence.** I tried a decision model in nine places in a production agent and kept it in one.
 
-- Four uses measured well and went into production on the same day. Three were removed within eight
+- Four uses measured well and went into production on the same day. I removed three within eight
   days.
 - Every removed use was a fixed step the agent could not choose: a step before it ran, a check on what
   it wrote, a reading added to its tool results, or a review after it finished.
@@ -19,15 +19,15 @@ a score) with a probability, for a fraction of a cent.
 
 **Status.** Design position, with production data. Two parts are reproducible: the set filter in
 [study 01](../01-decision-model-set-filter/), and the routing experiment's synthetic cases in
-[`routing/`](routing/). The checker that was removed is rebuilt, with the fix, in
-[study 04](../04-what-the-checker-sees/). The other numbers are aggregates from the production system.
+[`routing/`](routing/). [Study 04](../04-what-the-checker-sees/) rebuilds the checker I removed, with
+the fix. The other numbers are aggregates from the production system.
 
 ## Setting
 
 - **The agent:** a tool-calling loop working in chat and in background runs. Production model: DeepSeek V4.1 Flash.
 - **The decision model:** TypeSafe Jev 1.13 through OpenRouter. The surviving use now runs on Jev 1.14.
 - **The experiments:** 2026-10-18, each with a frozen question wording, a development split for fitting thresholds and a held-out split for the reported numbers. Total spend about $6.30, of which Jev itself was under $1.
-- **Labels:** reference labels were careful readings of each case; a spot audit of 24 labels in one experiment found no disagreement.
+- **Labels:** reference labels were my careful readings of each case; a spot audit of 24 labels in one experiment found no disagreement.
 
 ## Timeline
 
@@ -58,22 +58,21 @@ a score) with a probability, for a fraction of a cent.
 ## Why the ones that measured well were removed
 
 **The output checker** flagged about a quarter of all sentences once it ran on real drafts. The
-experiment had already shown why. In real research dossiers 59% of sentences were unsupported by the
-sources the checker was given, and most of those (46% of all sentences) were grounded in things the
-agent had read through other tools: account history, earlier correspondence, a page that returned an
-error. They were correctly "not in these sources" and wrong as flags. A checker that sees only the
-cited pages is checking a different evidence set from the one the writer used. Meanwhile a person
-already read every draft before it was sent, so the checker added noise beside a boundary that did not
-move.
+experiment had already shown why. In real research dossiers 59% of sentences had no support in the
+sources the checker received, and most of those (46% of all sentences) came from things the agent had
+read through other tools: account history, earlier correspondence, a page that returned an error.
+They were correctly "not in these sources" and wrong as flags. A checker that sees only the cited
+pages is checking a different evidence set from the one the writer used. Meanwhile a person already
+read every draft before it went out, so the checker added noise beside a boundary that did not move.
 
 **The "already done?" reading** found three times as many repeats as the exact-id rule, and it
 over-flagged. It was one of four repeat guards stacked on the same symptom. The repeats came from several
-background runs each deciding without the others' pending work in view. The fix chosen was to
-remove that cause (one agent, with everything pending in view) and not to add a better guard.
+background runs each deciding without the others' pending work in view. I chose to remove that cause
+(one agent, with everything pending in view) rather than add a better guard.
 
 **The run review** ran for a week in production: 27 runs reviewed, 4 flagged. The flags went to an
-operations page and to no one else. The choice written down at the time was to deliver a flag into the
-next run of the same work as a recorded fact, or to delete the review. It was deleted.
+operations page and to no one else. The choice I wrote down at the time was to deliver a flag into the
+next run of the same work as a recorded fact, or to delete the review. I deleted it.
 
 **Model routing** was accurate and pointless. In production only two of the profiles were eligible
 for a tool-using sub-task, so the only decision it could make was between the default and one costlier
@@ -108,7 +107,7 @@ native format (a top-level `assets` map and an opt-in header) through a gateway 
 and `questions` only. Every request returned 200 with a usage receipt. Requests with invalid image
 data, an unreferenced image or no opt-in header also returned 200. Input tokens with two images were
 the same as for text alone, which is the cheapest check: compare the token count with and without the
-image. The gateway's own image format works; the failure was the silent acceptance of the other one.
+image. The gateway's own image format works; the failure was that it silently accepted the other one.
 
 **A good ranking is not a usable threshold.** Rewording the "already done?" question flipped 27 of 86
 answers. In study 01, thresholds fitted per question ranged from 0.19 to 0.99, and rewording one
@@ -119,24 +118,24 @@ cut-off inherits that; a ranking shown to the agent does not.
 
 - **Put the decision model in the agent's tool list, not in its path.** If the agent cannot choose
   whether to ask, the model is deciding for it.
-- **Make the tool visible.** Our set filter was used for every mailbox-wide request when listed and
-  never when it was reachable only through tool search.
+- **Make the tool visible.** The agent used my set filter for every mailbox-wide request when it was
+  listed and never when it was reachable only through tool search.
 - **Return a ranking, not a cut.** Thresholds move with wording; the ranking does not. Let the agent
   read the top of the list.
-- **Give a checker what the writer read.** Our output checker was removed for its false flags; study 04
+- **Give a checker what the writer read.** I removed my output checker for its false flags; study 04
   shows they disappear when it sees the same evidence as the agent.
-- **A flag nobody acts on is waste.** Our run review flagged correctly and its flags went to a page
+- **A flag nobody acts on is waste.** My run review flagged correctly and its flags went to a page
   nobody read. Feed a finding into the next run or do not compute it.
 - **Before adding a guard, remove the split.** The "already done?" check was one of four repeat guards
   on a symptom of separate agents not seeing each other's work. One agent removed the symptom (study 05).
-- **Do not route with a model when a rule or a default will do.** Our router chose the default every
+- **Do not route with a model when a rule or a default will do.** My router chose the default every
   time; a keyword rule was within a few points of it.
 
 ## Related work
 
 **Placement of a decision model in an agent system**
 
-- Pernelle, "Jev in Production: What Worked, What We Rolled Back", 2026-09-22. https://audiala.com/blog/jev-in-production/. The nearest published account: a router in front of the agent scored 27 of 28 offline and was rolled back in production; a per-candidate scorer inside retrieval was kept.
+- Pernelle, "Jev in Production: What Worked, What We Rolled Back", 2026-09-22. https://audiala.com/blog/jev-in-production/. The nearest published account: a router in front of the agent scored 27 of 28 offline and the team rolled it back in production; they kept a per-candidate scorer inside retrieval.
 - Runkle and Lovell (LangChain), "Building a Harness with Jev", 2026-09-17. https://www.langchain.com/blog/building-a-harness-with-jev. The decision model as middleware before the model call or tool execution.
 - Zhu et al., "JevAgentHarness", arXiv 2610.21412. https://arxiv.org/abs/2610.21412. Shared control between an agent and a decision model; delegating without a fitted threshold cost 19 points.
 - Schluntz and Zhang (Anthropic), "Building effective agents", 2024. https://www.anthropic.com/engineering/building-effective-agents. Defines the routing workflow and advises the simplest solution possible.

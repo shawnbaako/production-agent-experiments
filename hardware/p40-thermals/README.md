@@ -1,23 +1,23 @@
 # Tesla P40 at a 125 W limit: clock, power and temperature over ten weeks
 
-These numbers come from one P40 that served a dense 27B model around the clock. Nothing was run
-for this note. The data is a 30 s `nvidia-smi` sampler (about 190k rows, 2026-09-03 to
+These numbers come from one P40 that served a dense 27B model around the clock, under its normal
+load; I added no benchmark runs for this note. The data is a 30 s `nvidia-smi` sampler (about 190k rows, 2026-09-03 to
 2026-11-15) joined with llama-server's own `print_timing` lines.
 
-## What we found
+## What I found
 
 - **At the power limit, heat costs clock speed well before the card throttles.** With power pinned
   at about 120 W, the SM clock under load holds about 1230 MHz up to 65 °C. It then falls to
   1139 MHz at 70–74 °C and 1075 MHz at 80–84 °C, about 13% down. That is far below the card's
   92 °C slowdown. The likely cause is that hotter silicon leaks more, so the same power budget
   buys a lower clock.
-- **The idle downclock matters most.** Forced to P8 when idle, the card sits at 31 °C and 11 W.
-  Left at P0 with the model loaded, it idles at 60 °C and 55 W. Each burst of work then starts
-  that much closer to the range where it loses clock.
+- **The idle downclock matters most.** With nvidia-pstated forcing P8 at idle, the card sits at
+  31 °C and 11 W. Left at P0 with the model loaded, it idles at 60 °C and 55 W. Each burst of work
+  then starts that much closer to the range where it loses clock.
 - **Below 65 °C, speed does not depend on temperature:** about 186 tok/s prefill on a 12k-token
   prompt and about 16 tok/s decode with an MTP draft.
 - **Speed above 65 °C is unmeasured.** None of the requests with timings ran hotter than 69 °C.
-  The clock loss above that is measured, but we have not measured the matching loss in tokens per
+  The clock loss above that is measured, but I have not measured the matching loss in tokens per
   second.
 
 ## Setup
@@ -47,7 +47,7 @@ The table covers every sample at 90% utilisation or more.
 | 80-84 | 777 | 1050 | 28% | 116.8 |
 | 85-89 | 1145 | 544 | 92% | 91.2 |
 
-Above 84 °C our watchdog caps the clock (see below), so the last two rows mostly show that cap.
+Above 84 °C my watchdog caps the clock (see below), so the last two rows mostly show that cap.
 Leaving the capped samples out, the median is 1075 MHz at 80–84 °C. At 125 W the card never comes
 near its 1531 MHz maximum boost.
 
@@ -60,7 +60,7 @@ The table covers every sample at 0% utilisation.
 | P8 via nvidia-pstated | 167,906 | 31 | 40 | 11.0 |
 | P0, model loaded | 16,102 | 60 | 74 | 55.5 |
 
-We run `nvidia-pstated` only while the card is idle. A file watch on the llama-server log stops it
+I run `nvidia-pstated` only while the card is idle. A file watch on the llama-server log stops it
 on the next request. Left to its own load detection, pstated kept the card at P8 under 100%
 utilisation.
 
@@ -85,7 +85,7 @@ A systemd timer checks temperature every 20 s:
 - **80 °C:** it logs a warning.
 - **84 °C:** it runs `nvidia-smi -ac 3615,544`, which keeps memory at full clock and caps the SM
   clock at 544 MHz. Power drops to 82–92 W, but under sustained load the card still heats up.
-- **88 °C:** it stops the server. The server restarts at 72 °C, and the cap is lifted at 74 °C.
+- **88 °C:** it stops the server. It restarts the server at 72 °C and lifts the cap at 74 °C.
   The median stop-to-restart gap was 140 s.
 
 An SM clock cap is what prevents bus drops. Before the cap existed, back-to-back `llama-bench` runs

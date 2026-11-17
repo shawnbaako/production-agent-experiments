@@ -5,7 +5,7 @@ out), each labelled with the kind of specialist it needs, and three ways of choo
 its place as the router.
 
 **Result.** It routes well, and a keyword rule routes almost as well. In the production system these
-cases came from, the only choice the router could actually make was between the default and one
+cases came from, the only choice the router could make was between the default and one
 alternative, and it picked the default every time.
 
 ## Held-out results (76 cases)
@@ -42,15 +42,15 @@ question changed by at most one answer under reordering.
 
 ## What this shows
 
-- **The question matters more than the model.** Moving from the production wording to the second question took both Jev versions from about 91% to 100% on the `prod` set. The second question was written on the development split and frozen before the held-out pass.
+- **The question matters more than the model.** Moving from the production wording to the second question took both Jev versions from about 91% to 100% on the `prod` set. I wrote the second question on the development split and froze it before the held-out pass.
 - **A keyword rule is within a few points of the best selector**, at no cost and with nothing to replay when it is wrong.
-- **Routing accuracy was not what decided the outcome.** See study 03: the router was removed because the only choice available to it in production was one it never needed to make.
+- **Routing accuracy was not what decided the outcome.** See study 03: I removed the router because the only choice available to it in production was one it never needed to make.
 
 ## Limits
 
-- Synthetic cases, written and labelled by us and not independently relabelled.
+- Synthetic cases, which I wrote and labelled; nobody has independently relabelled them.
 - 76 held-out cases; one case is 1.3 points.
-- The original experiment (2026-10-18, Jev 1.13) also scored 9 real production assignments, which are not included here. On its 85 held-out cases it measured 91.8% (v1) and 100% (v2) on `prod`, and 97.6% for the keyword rule.
+- The original experiment (2026-10-18, Jev 1.13) also scored 9 real production assignments, which this folder does not include. On its 85 held-out cases it measured 91.8% (v1) and 100% (v2) on `prod`, and 97.6% for the keyword rule.
 
 ## Files
 
