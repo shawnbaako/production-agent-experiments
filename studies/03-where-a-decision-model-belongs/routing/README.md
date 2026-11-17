@@ -1,7 +1,7 @@
 # Routing a delegated task with a decision model
 
-The reproducible part of [study 03](../): 114 synthetic assignments, each labelled with the kind of
-specialist it needs, and three ways of choosing one. The question is whether a decision model earns
+The reproducible part of [study 03](../): 114 synthetic assignments (38 for development, 76 held
+out), each labelled with the kind of specialist it needs, and three ways of choosing one. The question is whether a decision model earns
 its place as the router.
 
 **Result.** It routes well, and a keyword rule routes almost as well. In the production system these
@@ -48,7 +48,7 @@ question changed by at most one answer under reordering.
 
 ## Limits
 
-- Synthetic cases written and labelled by an LLM agent, not a person.
+- Synthetic cases, written and labelled by us and not independently relabelled.
 - 76 held-out cases; one case is 1.3 points.
 - The original experiment (2026-10-18, Jev 1.13) also scored 9 real production assignments, which are not included here. On its 85 held-out cases it measured 91.8% (v1) and 100% (v2) on `prod`, and 97.6% for the keyword rule.
 

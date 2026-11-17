@@ -1,33 +1,37 @@
 # 07 · Reasoning off for one decision, not for the turn
 
 **Our position.** Reasoning belongs to a single decision, not to a whole turn. When one decision
-reasons through all its output room and answers nothing, ask that decision again with more room and
-reasoning still on. Do not turn reasoning off for the rest of the turn. Turning it off for one retry
-fixes that one call but is the weaker fix: a reply written without reasoning is the one most likely to
-claim work it did not do.
+reasons through its whole output budget and answers nothing, ask that decision again with a bigger
+budget and reasoning still on. Never turn reasoning off for the rest of the turn: every later decision
+then pays for one decision's failure. Turning it off for just the retry is a weaker fix than a bigger
+budget, because a reply written without reasoning can claim work that never happened, and in
+production one did.
 
-We used all three fixes in a production agent. Off for the rest of the turn lasted three hours. Off
-for one decision lasted two weeks. A bigger room with reasoning on is what runs now.
+(Each model call has an output budget, its *room*: reasoning and answer share it. A decision "runs out
+of room" when reasoning uses all of it.)
 
-**Status.** Design position, with production data and a small reproducible experiment (synthetic
-data, every response committed, $2.41 for all hosted runs).
+**The evidence.** We ran all three fixes in a production agent. Reasoning off for the rest of the turn
+lasted three hours. Off for the one retry lasted two weeks. A bigger budget with reasoning on is what
+runs now.
 
-**Short version.**
+- **Off for the rest of the turn made the agent repeat itself in production.** DeepSeek V4.1 Flash sent
+  a rejected document update 19 and 23 times; DeepSeek V4 Flash 0731 created the same file 29 times. In
+  background runs where reasoning was off by mistake, 17.8% of steps repeated the previous call exactly,
+  against 1.3% in chat, where it was on.
+- **Off for the one retry claimed work that never happened.** Its last production failure answered, in
+  text, that a meeting record was saved and two promises booked. Nothing was.
+- **In a reproducible experiment, off for the turn got less done on the default model and did no
+  better than reasoning on with any model.** V4.1 Flash finished 41 of 90 turns with it, against 58 with a bigger budget and 59 with
+  reasoning on throughout. On V4 Flash 0731 the fixes were within one turn of each other; on Qwen3.6
+  every fix trailed reasoning-on.
+- **A bigger budget costs almost nothing:** one extra call per turn, about $0.00005 on V4.1 Flash.
 
-- **In production, a model kept without reasoning for the rest of a turn sent one call again and
-  again without reading its result.** DeepSeek V4.1 Flash sent a rejected document update 19 and 23
-  times; DeepSeek V4 Flash 0731 created the same file 29 times. In background runs where reasoning
-  was off by mistake, 17.8% of steps repeated the previous call exactly, against 1.3% in chat, where
-  reasoning was on.
-- **Turning reasoning off for the turn also gets less done.** In the experiment DeepSeek V4.1 Flash
-  finished 41 of 90 turns with reasoning off from the second decision on, against 54 with the retry
-  off for one decision and 58 with the retry given more room. With reasoning on throughout it
-  finished 59.
-- **A bigger room for that one decision cost almost nothing extra.** It finished what reasoning-on
-  finished (58 against 59 of 90) for one extra call per turn, about $0.00005.
-- **The experiment did not reproduce the repeated calls.** In turns of about 9,000 tokens no model
-  repeated a refused call more with reasoning off than with it on. The repetition figures above are
-  from production, where prompts averaged 64,000 to 81,000 tokens.
+**What the experiment does not show.** It did not reproduce the repeated calls, and false claims were
+rare in every arm, slightly commoner with reasoning on. Its turns were about 9,000 tokens; the
+production loops came from prompts of 64,000 to 81,000. Those two findings rest on production.
+
+**Status.** Design position, with production data and a small reproducible experiment (synthetic data,
+every response committed, $2.41 for all hosted runs).
 
 ## What happened in production
 

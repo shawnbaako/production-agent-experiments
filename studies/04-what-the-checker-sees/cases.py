@@ -30,9 +30,9 @@ invented_promise, wrong_person, reversed_fact or claim_not_made.
 
 Everything is invented: the firm (Larkspur Advisory, larkspur.example), its
 people, every client, prospect, person, product, price and place. All domains
-end in ``.example``. The labels are the author's intent, written by an LLM
-agent (Claude, 2026-11-15) together with the cases; no person relabelled them
-and no model under test was consulted.
+end in ``.example``. The labels are the author's intent, written on 2026-11-15
+together with the cases; they were not independently relabelled and no model
+under test was consulted.
 
 Split rule: case cNN is in the development split when NN is even (c02, c04,
 ..., c48) and held out when NN is odd. Thresholds are fitted on the

@@ -11,7 +11,7 @@ The model under test never wrote it; it is seeded into the history the way any
 earlier reply is replayed, as an assistant message.
 
 Everything is invented: the firm (Larkspur Advisory, larkspur.example), its
-people, accounts and tasks. Written by an LLM agent (Claude, 2026-11-15).
+people, accounts and tasks. Written on 2026-11-15.
 """
 from __future__ import annotations
 

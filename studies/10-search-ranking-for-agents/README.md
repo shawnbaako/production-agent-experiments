@@ -1,22 +1,29 @@
-# 10 · Search ranking for agents: one question per listing, a top score that says "none", and gates in every language
+# 10 · Search ranking for agents: a top score that can say "none"
 
 **Our position.** When an assistant searches a catalogue for a person, order the candidates with a
 decision model asked one yes-no question per listing ("does listing N match what the traveler asked
-for?"), and give the assistant its top probability as a fact: under 0.5, nothing here fully matches.
-A cross-encoder reranker orders listings reasonably, but its scores can't say when nothing fits, and
-on both data sets here it ranked no better than the multilingual embedding it would have reranked.
-Test the embedding in every language the assistants will search in: an English-only gate passes a
-model that, at its similarity floor, finds no relevant listing at all in Mandarin, Japanese, Korean,
-Arabic or Hindi.
+for?"), and hand the assistant its top probability as a fact: under 0.5, nothing here fully matches.
+An assistant that knows nothing fits can say so, ask, or widen the search instead of selling the
+closest wrong thing. A cross-encoder reranker can't give it that: its scores carry no notion of
+absence. And test every embedding in every language your assistants search in, because an English
+eval will pass a model that finds nothing in five scripts.
 
-We measured this on a production travel search that assistants call in their users' languages, then
-rebuilt the experiment on public Wikivoyage listings so anyone can rerun it. The replica agrees on the
-ranking, on the cross-encoder and on the embeddings. It disagrees on one thing, and that changes how the
-"nothing matches" signal should be read. In production every search with a match had a listing that
-fully matched, and the decision model's top score fell under 0.5 on 1 of 152 of them. In the replica
-many searches had only partial fits (the right kind of thing, a stated wish not evidenced). The top
-score fell under 0.5 on 20 of 40 of those, and on 4 of 56 searches with a full match. The signal means
-"nothing fully matches", not "nothing related is here".
+**The evidence.** A production travel search that assistants call in their users' languages, and a
+rebuild on public Wikivoyage listings in 11 languages that anyone can rerun:
+
+- **The decision model ranked best in both,** by about 0.15 NDCG@10 over the cross-encoder
+  (bge-reranker-v2-m3). The cross-encoder ranked no better than the multilingual embedding it would
+  have reranked.
+- **Its top score said "nothing matches" when nothing did:** under 0.5 on 40 of 40 no-match searches in
+  production and 94 of 96 in the replica, and on 1 of 152 and 4 of 56 searches with a full match. The
+  cross-encoder's top score was under 0.5 on half or more of the searches that did have a match.
+- **The signal means "nothing fully matches", not "nothing related".** The replica had 40 searches with
+  only partial fits (the right kind of thing, a stated wish not evidenced); the top score fell under 0.5
+  on half of them.
+- **An English-only gate would have kept the wrong embedding.** At its similarity floor, Nomic v1.5
+  found no relevant listing at all in Mandarin, Japanese, Korean, Arabic or Hindi, in either data set.
+
+The headline numbers:
 
 |  | Production (152 ranked test searches) | Public replica (96 ranked test searches) |
 |---|---|---|
@@ -38,13 +45,13 @@ The replica spent $0.143 of a $5 cap.
 ## What was tested
 
 Twelve candidate pools: activities in Rome, Tokyo, Kyoto, Bangkok, New York, Lisbon, Marrakech and Rio
-de Janeiro, and hotels in Tokyo, New York, Lisbon and Dubai. Five English requests per pool, written by
-our agent in the style an assistant sends: two precise ("floating market half-day trip"), one vague ("a
+de Janeiro, and hotels in Tokyo, New York, Lisbon and Dubai. Five English requests per pool, written in
+the style an assistant sends: two precise ("floating market half-day trip"), one vague ("a
 calm, pampering day after a long flight"), one with an exclusion ("see the temples without a tuk tuk
 ride") and one meant to have nothing in the pool ("Muay Thai boxing class"). GLM 5.3 translated each
 request into 3 of 10 other languages in rotation (Spanish, Mandarin, German, French, Japanese, Brazilian
-Portuguese, Korean, Italian, Arabic, Hindi). That is 240 searches. Our agent read all 180 translations
-and corrected two. One request per pool, rotating the kind, is the development split (48 searches);
+Portuguese, Korean, Italian, Arabic, Hindi). That is 240 searches. We read all 180 translations and
+corrected two. One request per pool, rotating the kind, is the development split (48 searches);
 every number here is on the other 192.
 
 **Labels.** GLM 5.3 (`z-ai/glm-5.3`) graded every (English request, listing) pair 0 to 3, all of a
@@ -151,6 +158,10 @@ shares no word with English listing text.
 | Precise | 72 / 36 | – / 0.833 | 0.949 / 0.800 | 0.983 / 0.922 |
 | Vague | 40 / 28 | – / 0.737 | 0.757 / 0.706 | 0.969 / 0.922 |
 | With an exclusion | 40 / 24 | – / 0.729 | 0.631 / 0.791 | 0.948 / 0.932 |
+| Meant to have no match, but had one | 0 / 8 | – / 0.878 | – / 0.818 | – / 0.858 |
+
+The last row is the 8 replica searches written to have nothing in the pool that turned out to have a
+match. It is the one kind where the decision model trailed the embedding.
 
 Production's bge ranked excluded listings first: hop-on hop-off bus tours for "not on a bus", hotels in
 the neighbouring emirates for "in Dubai itself, not Sharjah or Ajman". The replica can't show this. Its
@@ -301,14 +312,14 @@ $0.190.
 ## Pitfalls
 
 - **Judge-generated labels.** One LLM judge wrote every grade, and Jev is also a language model, so the
-  two may share a sense of "match" that bge does not. Our hand check of 43 replica grades (15 requests
+  two may share a sense of "match" that bge does not. Our spot check of 43 replica grades (15 requests
   drawn with a fixed seed, then 5 more; one listing per grade the judge used) matched exactly on 31,
   within one grade on 42, and on the same side of the relevant line on 38. In all 12 disagreements the
   judge graded higher than we did. Production's check: 37 of 47 exact, 47 within one, 43 on the same
   side. The judge is lenient about unmet must-haves ("hotel with a golf course": 20 hotels at grade 2),
   and that leniency is what made Jev's "none" look wrong on partial fits.
-- **Agent-written requests and machine translation.** 60 requests, written by our agent, translated by a
-  model and checked by the same agent, not by native speakers. Each language has 6 to 15 ranked searches.
+- **Our own requests and machine translation.** 60 requests, written by us, translated by a model and
+  checked by us, not by native speakers. Each language has 6 to 15 ranked searches.
   No traveler or operator labeled anything.
 - **Pools built without the query.** Both data sets rank fixed pools of up to 30 listings, not the
   candidates a real retrieval would hand the reranker, which would be likelier to be relevant and harder
@@ -353,11 +364,11 @@ revisions instead of the pinned ones and will build different pools. Production 
 ## Files
 
 - `pools.py`: the Wikivoyage reader and the selection rule. `run.py`: the judge, every arm, the
-  injection test, the hand-check sample and the report.
+  injection test, the spot-check sample and the report.
 - `data/pools.json`: the 346 listings with page and revision; `data/pages.json`: every page read and its
-  revision; `data/queries_en.json`, `data/translations.json`: the requests (with the two hand
-  corrections); `data/labels.json`: the judge's grades; `data/spotcheck.json`: our hand grades with
-  notes. `data/LICENSE-DATA`: Wikivoyage text is CC BY-SA 4.0.
+  revision; `data/queries_en.json`, `data/translations.json`: the requests (with the two
+  corrections); `data/labels.json`: the judge's grades; `data/spotcheck.json`: our spot-check grades
+  with notes. `data/LICENSE-DATA`: Wikivoyage text is CC BY-SA 4.0.
 - `results/arm_*.json`, `results/jev.json`, `results/jev_rerun.json`: every score for every search;
   `results/injection.json`; `results/summary.json` and `summary.md`: every replica number above.
 - `production/`: production's pools as ordered lists of opaque candidate ids (the first 12 hex

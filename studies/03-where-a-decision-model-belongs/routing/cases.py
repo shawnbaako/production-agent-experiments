@@ -2,8 +2,8 @@
 
 Every firm, person and address is invented (`.example` domains). Each case is
 (reference, assignment, required_output). The reference is the specialty the
-assignment needs by the definitions below, labelled by an LLM agent (Claude,
-2026-10-18), not by what any router chose:
+assignment needs by the definitions below, labelled on 2026-10-18, not by what
+any router chose:
 
 - research: reconcile evidence into a sourced dossier, list or recommendation
 - draft:    compose correspondence a person will review and send

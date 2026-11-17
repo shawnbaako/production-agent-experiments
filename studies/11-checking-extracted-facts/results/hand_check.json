@@ -1,5 +1,5 @@
 {
- "method": "40 scored facts drawn with random.Random(40): 5 of each injected error type and 25 labelled correct. Each was read against its listing by the study author (an LLM agent, Claude), not by a person.",
+ "method": "40 scored facts drawn with random.Random(40): 5 of each injected error type and 25 labelled correct. Each was read against its listing.",
  "ground_truth": [
   {
    "id": "wv-078:inj0:price_minor",

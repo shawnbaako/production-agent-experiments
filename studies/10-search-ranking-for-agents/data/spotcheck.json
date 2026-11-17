@@ -345,5 +345,5 @@
    "note": "park beside Corcovado, not a tour"
   }
  ],
- "method": "Rows 0-30: 15 English queries drawn with seed 7; per query one listing at each grade the judge used, up to three. Graded by hand (the agent that ran the study) from the listing text before looking at the judge's grade. Rows 31-42: 5 more queries drawn with seed 8 from those not yet sampled, the same way."
+ "method": "Rows 0-30: 15 English queries drawn with seed 7; per query one listing at each grade the judge used, up to three. Graded from the listing text before looking at the judge's grade. Rows 31-42: 5 more queries drawn with seed 8 from those not yet sampled, the same way."
 }

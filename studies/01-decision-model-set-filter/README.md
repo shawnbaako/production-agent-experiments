@@ -1,19 +1,26 @@
 # 01 · Decision models as a set-reading tool
 
 **Our position.** When an agent has to answer a question about a whole set (1,500 mail threads, 600
-open promises, 800 accounts), give it a set-filter tool: the agent writes one yes-no question, a small
+open promises, 800 accounts), give it a set-filter tool. The agent writes one yes-no question, a
 decision model answers it for every item in parallel, and the agent reads the top of the ranked list.
-Keyword search misses what people write without the keyword, and embeddings blur the distinction the
-agent actually asked about. A decision model ranks the right items to the top for a few cents per
-thousand items.
+Keyword search misses what people write without the keyword. Embeddings blur the distinction the agent
+actually asked about. A decision model gets it right for a few cents per thousand items.
 
-**Result.** On a synthetic corpus with hard near-misses, every hosted decision model put 25 or 26 of
-the 26 planted items in its top 10. Embeddings found 18, BM25 16 and keyword search 9. A production
-agent given the tool found 30 of 30 planted items on mailbox-wide questions, against 22 to 23 without
-it.
+A *decision model* is a small hosted model that answers one typed question, here yes or no, with a
+probability. We tested Jev 1.13 and 1.14 (TypeSafe), Clef and Clef Flash (Cloudflare), and Laya, an
+open checkpoint that runs on a CPU.
 
-Everything is reproducible from this folder: the corpus, the harness and every per-item answer from Jev
-1.13 and 1.14, Clef, Clef Flash, Laya and the baselines. Next: a local LLM read through its answer
+**The evidence.**
+
+- On a synthetic corpus with hard near-misses, every hosted decision model put 25 or 26 of the 26
+  planted items in its top 10. Embeddings found 18, BM25 16 and keyword search 9.
+- A production agent given the tool found 30 of 30 planted items on mailbox-wide questions, against
+  22 to 23 without it. When the tool was reachable only through tool search, the agent never used it.
+- The ranking survives a reworded question; a fixed cut-off does not. Return the ranking to the
+  agent, not a yes-no verdict.
+
+**Status.** Reproducible from this folder: the corpus, the harness and every per-item answer from each
+model and baseline. About $0.88 for all hosted runs. Next: a local LLM read through its answer
 probabilities, and harder items.
 
 ## What is here
@@ -44,7 +51,7 @@ Everything is invented: a fictional consulting firm, 26 fictional clients, `.exa
 - **Split.** Every item was assigned to `dev` or `held` by the seed before any model was asked.
   Thresholds are fitted on `dev` and reported on `held`. The question wordings and one rewording of each
   were frozen before the first held-out run.
-- **Labels** are the generator's intent, written by an LLM agent. No person has relabelled them.
+- **Labels** are the generator's intent. They have not been independently relabelled.
 
 Positives are rare by design (2 to 6 per question in the held-out half), as they are in a real mailbox.
 Each per-question number therefore rests on a handful of items. Read the pooled figures first.
@@ -54,8 +61,9 @@ Each per-question number therefore rests on a handful of items. Read the pooled 
 Each scorer gives every item a score for the question. The report then asks how many planted positives
 are in the top 10 and top 25 of the ranking, with ties broken against the scorer.
 
-- **Decision model** (`systemone`): one yes-no (`noul`) question per item over the Jev-style
-  `/v1/systemone` protocol. The score is the returned probability of yes.
+- **Decision model** (`systemone`): one yes-no question per item over the System One protocol
+  (`/v1/systemone`), where `noul` is the yes-no question type. The score is the returned probability
+  of yes.
 - **Local LLM** (`logprob`): one chat request per item, one output token, scored as P(yes) / (P(yes) + P(no))
   from the token log-probabilities.
 - **Embeddings**: cosine similarity between the question (for promises, the new email) and the item.
@@ -94,7 +102,6 @@ What these runs show:
 - **The corpus does not separate the decision models on ranking.** All four are within one item of each other. It is too easy for that purpose; harder items are the next addition.
 - **They differ in how stable a cut-off is.** Thresholds fitted on `dev` ranged from 0.19 to 0.99 across questions and models. Rewording one question (competitor mentioned) moved 20 answers across the threshold for Jev 1.14 and 23 for Clef Flash, and 1 for Clef, while AUROC stayed at 0.998 or above for all three. The ranking survives rewording; a fixed cut-off does not.
 - **The keyword row is not a ranking.** A substring match gives 0 or 1, and ties are broken against the scorer, so a common term such as "lab" places no positive in the top 10.
-
 - **Laya, the open checkpoint, does as well as the hosted models on direct factual questions** (renewal
   price, clinical lab) and falls behind on judgement and on comparing two texts. It found none of the
   three at-risk clients in its top 10, and on one of the promise questions its ranking was no better
@@ -104,7 +111,6 @@ What these runs show:
   Laya's own model card warns that it ships over-confident and needs a temperature refit.
 
 A local LLM read through its answer probabilities has not been run.
-<!-- results:end -->
 
 ### First run (2026-10-18)
 

@@ -1,28 +1,37 @@
-# 13 · Photo facts from the embedding you already have: small heads, agent labels, a small fine-tune, and facts not to read from photos
+# 13 · Photo facts from the embedding you already have
 
-**Our position.** To read facts from photos at catalogue scale, train small heads on the image
-vectors your search already computes, with labels from a strong model checked against people. Gate
-every answer on a held-out lower bound, not on a point estimate, because small samples make a head or
-a fine-tune look ready when it isn't. And don't infer from photos the facts people rely on for
-safety: ask the party responsible for them.
+**Our position.** To read facts from photos at catalogue scale, don't call a vision model per photo.
+Train small heads on the image vectors your search already computes, label with a strong model, and
+check those labels against people. Ship an answer only when the 95% lower bound on its held-out
+precision clears your bar, because small samples make a head or a fine-tune look ready when it isn't.
+And never infer from photos the facts people rely on for safety, such as step-free access: ask the
+party responsible for them.
 
-We built this for a production travel catalogue, where assistants ask what a place or an activity
-looks like and who it suits, then rebuilt it on public photos with human labels so the parts that
-production could only measure against agent labels can be checked against people. The replica agrees
-on the design: linear heads over EmbeddingGemma 2 image vectors answer the common facts (indoor or
-outdoor, people in the photo, the kind of room or scene) well, a gate on the 95% lower bound passes
-only those, and the same rare cues fail it in both. It adds what production could not
-measure. Agent labels agreed with people on objects and drifted on cues whose definition is a
-judgment (stairs: Cohen's kappa 0.38 for our labeller, 0.70 for a second model); most disagreements
-were about what counts as stairs, a handrail or a boat, not about what was in the photo. Heads trained
-on 324 agent-labelled photos matched heads trained on the human labels of the same photos on objects
-and people, and fell behind on scenes and on stairs. Across 20 re-drawn splits, the stairs head looked
-ready by its point precision in 15 and passed the lower-bound gate in 4. A LoRA fine-tune of
-Qwen3.5-2B, about $0.70 and half an hour on one GPU, was the only arm to pass a cue (stairs, 26 of 26)
-and failed it on the re-drawn split (22 of 23). In production the same fine-tune raised precision on
-handrails, stairs and lifts three to four times; what it learned was mostly the labeller's
-definitions and when to stay quiet, which makes it a good label miner and a test worth running in any
-domain where a fact is visible, local and defined by you.
+**The evidence.** We built this for a production travel catalogue, where assistants ask what a place
+looks like and who it suits, then rebuilt it on public photos with human labels:
+
+- **Linear heads on EmbeddingGemma 2 image vectors answer the common facts well:** subject 87% and 92%
+  of all photos, setting 97% and 96% (production, replica). Zero-shot matching against option text is
+  well behind.
+- **Agent labels match people on objects and drift on definitions.** Stairs agreed at Cohen's kappa
+  0.38 for our labeller and 0.70 for a second model. Most disagreements were about what counts as
+  stairs, a handrail or a boat, not about what was in the photo.
+- **Point estimates lie at this scale.** Across 20 re-drawn splits, the stairs head looked ready by its
+  point precision in 15 and passed the lower-bound gate in 4. Only answers with 50 or more held-out
+  examples passed on every draw.
+- **A $0.70 fine-tune of Qwen3.5-2B is a good label miner, not a product.** In production it raised
+  precision on handrails, stairs and lifts three to four times, mostly by learning the labeller's
+  definitions and when to stay quiet. It passed the gate on one cue in one replica split, and on
+  nothing in the other.
+
+**Status.** Reproducible: the photo ids, human labels, both agents' labels, the image vectors, every
+Qwen answer and the spend ledger are in this folder, and `uv run --frozen python run.py report`
+recomputes every replica number without a network call or a GPU. Photos are not redistributed;
+`run.py fetch` downloads them. Production figures are aggregates, with per-photo agent labels, head
+scores and Qwen answers under opaque ids in [`production/`](production/). The replica spent $2.46 of a
+$10 cap.
+
+Production and the replica side by side:
 
 |  | Production (travel catalogue) | Public replica (Open Images V7, Places365) |
 |---|---|---|
@@ -40,14 +49,7 @@ domain where a fact is visible, local and defined by you.
 
 Production precision is agreement with agent labels; replica precision is agreement with people.
 "Gate" everywhere means: at least 5 right calls, right at least 90% of the time on held-out groups,
-and a 95% Wilson lower bound of at least 80%.
-
-**Status.** Reproducible: the photo ids, human labels, both agents' labels, the EG2 vectors, every
-Qwen answer and the spend ledger are in this folder, and `uv run --frozen python run.py report`
-recomputes every replica number without a network call or a GPU. Photos are not redistributed;
-`run.py fetch` downloads them. Production figures are aggregates, with per-photo agent labels, head
-scores and Qwen answers under opaque ids in [`production/`](production/). The replica spent
-$2.46 of a $10 cap.
+and a 95% Wilson lower bound of at least 80%. EG2 is EmbeddingGemma 2.
 
 ## What was tested
 
@@ -97,7 +99,7 @@ size section use seeds 10,000 onward, 300 each.
 **Agent labels.** 324 photos drawn at random from split a's training side (73 from Places365) were
 labelled twice:
 
-- by us, a Claude agent session (Claude Opus 5.5, `claude-opus-5-5`), viewing 36 contact sheets of 9
+- by us, with Claude Opus 5.5 (`claude-opus-5-5`) in an agent session, viewing 36 contact sheets of 9
   photos with the file-reading tool, in batches of four sheets, following [`LABEL_GUIDE.md`](LABEL_GUIDE.md):
   production's guide with the offer field removed. Production's guide asks for full-size photos where
   a cue might be present; we labelled from the sheets (320-pixel cells) and opened none, which is
@@ -344,7 +346,7 @@ The replica ran the split-a fine-tune over 1,000 Open Images photos it had never
 from photos people had tagged with a listing-like class (building, house, room, interior, bathroom,
 bedroom, kitchen, living room, lobby, pool, restaurant, street, boat, beach), in 15 minutes for $0.27.
 Few of them carry a verified access label, so flagged photos nobody verified were checked by us (the
-same agent session, from contact sheets; `data/agent_labels_mine/`):
+same way, from contact sheets; `data/agent_labels_mine/`):
 
 | Cue | Flagged per 1,000 | Present (people verified / our check) | Absent | Present per 1,000 screened |
 |---|---|---|---|---|
@@ -473,6 +475,13 @@ for what helps someone choose; ask for what someone will rely on.
 - **Joint vectors evaluated only on text-led queries.** A photo vector can't win on queries that never
   ask about appearance; build the queries the photo is meant to answer before deciding.
 - **Absence of evidence.** A head that never says "ramp" is not saying there is no ramp.
+- **Outside clients keep the schema they cached.** Assistants that call a service over MCP cache its
+  tool list and output schemas, sometimes for a long time. When production removed photo-fact fields
+  that a tool's output schema had marked required, clients holding the old schema rejected valid
+  results. The fix was to publish those fields as optional. ChatGPT also kept an old tool list until
+  the person pressed "Refresh tools" in its settings. Only add optional output fields; never remove,
+  rename, narrow or make required a field clients have seen, and keep a snapshot of published schemas
+  that a check compares against.
 
 ## How to rerun
 

@@ -1,15 +1,26 @@
 # 06 · What a tool search returns: schemas, a plain miss, and loops
 
-**Our position.** When an agent finds tools through a search tool, every hit should carry the tool's
-full input schema, so the agent can call what it found. The search should say plainly when there is
-nothing more: no further page and, if none of these fits, no tool here does it. Two shapes make models
-loop. Names and descriptions without schemas leave the model to guess arguments and search again. A
-note that "less close matches follow" turns a missing capability into a ranking for the model to page
-through.
+**Our position.** When an agent finds tools through a search tool, every hit must carry the tool's full
+input schema, and every result must end by saying plainly that there is nothing more: no further page,
+and if none of these fits, no tool here does it. Two common shapes make models loop. Names and
+descriptions without schemas leave the model to guess arguments and search again. A note that "less
+close matches follow" turns a missing capability into a ranking for the model to page through. This
+puts us against the Model Context Protocol's client guidance, which recommends returning names first.
 
-Both mistakes ran in a production agent. A small reproducible experiment shows the same effects on a
-synthetic catalogue. It also shows the price of saying "no tool here does it": when the first page
-misses a tool that does exist, the agent believes the search and gives up.
+**The evidence.**
+
+- **In production, both shapes looped.** Without schemas the agent searched for one tool by its exact
+  name 124 times in a turn. With "more follow", one request no tool could serve took 109 searches and
+  $0.386; with a plain end, 13 to 29 searches and $0.033 to $0.067.
+- **In a reproducible experiment, the plain miss is what stops the search.** Across three models, the
+  agent said it could not do a task no tool served in 66 of 72 runs with the plain end, against 42 with
+  schemas and no note and 31 with "more follow".
+- **The price is recall on the first page.** When the right tool missed the closest five, one model
+  believed the search and gave up. Tasks with a tool were done in 92 of 108 runs with the plain end,
+  against 98 with schemas alone.
+
+**Status.** Reproducible, with production data: 100 synthetic tools, four result shapes, three models,
+every response committed, $1.35.
 
 ## What happened in production
 
@@ -75,8 +86,9 @@ limit, without a write that would only pretend to do the job (archiving one of t
 ## Results
 
 Successes are out of 36 (12 tasks with a tool, three repeats) and 24 (8 without, three repeats).
-Searches are per run. Every run that hit the limit was still searching or calling, so the search counts
-for the looping shapes are floors.
+Searches are per run. A model call can send several searches at once, so a run can make more searches
+than its 16 model calls. Every run that hit the limit was still searching or calling, so the search
+counts for the looping shapes are floors.
 
 **When no tool does the job**
 
@@ -126,7 +138,9 @@ $0.01 for pilots that are not in the results.
   pages per missing task in the `paged` shape and said it could not in 8 of 24, the fewest of any shape.
   It was cut off in 15. This is the production loop: the result promises something further down, so the
   model goes looking.
-- **Without schemas the model guesses, and the guesses are repaired by error messages.** With only names,
+- **Without schemas the model guesses, and the guesses are repaired by error messages.** On tasks with a
+  tool, the default model even finished all 36 with names only, more than with schemas (31). It got
+  there by trial and error. With only names,
   every model made more failed calls: 1.3 per task for both DeepSeek models, against 0 to 0.08 with
   schemas, and 2.25 for Gemma against 0.08. Because the validator here says what is wrong, the DeepSeek
   models still finished. Gemma completed 27 of 36 against 31 with schemas, and repeated identical
@@ -161,15 +175,6 @@ $0.01 for pilots that are not in the results.
 - **Do not assume a found tool joins the tool list.** Production removed schemas on that assumption, and
   when the list was full the tool never joined. The result's promise ("join your next tool list") made it
   worse: the agent searched for the same exact name 124 times.
-- **Outside clients keep the schema they cached, not the one you just published.** The same rule as
-  above, seen from an MCP server that other people's assistants call. They cache your tool list and
-  your output schemas, sometimes for a long time. In production, removing photo-fact fields that a tool's
-  output schema had marked required broke clients holding the old schema: they rejected valid results
-  that no longer matched what they had stored. The fix was to publish those fields as optional. ChatGPT also kept an old tool list until the
-  person pressed "Refresh tools" in the app settings. Only add optional output fields. Never remove,
-  rename, narrow or make required a field clients have seen; add a new field and keep the old one. Don't
-  assume a new tool reaches a client before it refreshes, and record published schemas in a snapshot
-  that a check compares against.
 - **Watch for loops that have nothing to do with search.** The default DeepSeek model emitted hundreds of
   identical `list_tasks` calls in single steps on one purchase-order task (up to 3,616 calls in one run).
   Gemma repeated a primary read until the limit on the mailing-list task in every shape, and on the deal

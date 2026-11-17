@@ -1,47 +1,39 @@
 # 08 · One false line: an agent's own past claim against its tool list
 
-**Our position.** An agent reads its own earlier replies as the most trustworthy thing in its context.
-When one of them says a tool is unavailable, that sentence can outweigh the tool list, the tool's
-description and a system prompt that says otherwise. Do not leave stale failures in the working context:
-drop the line, rewrite it, or put a real tool result after it. A note saying "tools are available now"
-is not a substitute, and on the model where we first saw this it made things worse. Under progressive
-disclosure this matters more: a tool the agent did not search for becomes, in its own words, a tool
-that does not exist. A claim of absence should come from a search that returned nothing, not from the
-agent's prose.
+**Our position.** An agent trusts its own earlier replies more than its tool list or its system prompt.
+When one of those replies says a tool is unavailable, that sentence wins. Instructions do not fix this;
+changing the history does. Drop the stale line, rewrite it as a correction, or put a real tool result
+after it. Under progressive disclosure (a few tools listed, the rest found by search) the agent writes
+the first false line itself: a tool it did not search for becomes, in its own words, a tool that does
+not exist. A claim of absence should come from a search that returned nothing, never from the agent's
+prose.
+
+**The evidence.**
+
+- **In production, one earlier refusal stopped the agent cold.** The same model and question read the
+  pipeline 5 times in 5 in a fresh conversation and 0 times in 5 after one earlier reply saying no
+  pipeline reader existed. The tool was offered, and the system prompt already said "earlier
+  statements, including yours, do not prove what is available now".
+- **A reproducible experiment shows the same, and that instructions make it worse.** On the default
+  production model with reasoning off, one false line cut tool use from 15/15 to 7/15, and the line
+  repeated once cut it to 0/15. Adding "every tool offered in this turn is available and working" to
+  the system prompt took it to 2/15.
+- **Changing the history fixed it on every model.** Removed, rewritten as a correction, or followed by
+  a real call to the tool, the line lost its effect: 14/15 or better everywhere.
+- **Behind a search, the claim is near absolute.** With the tool reachable only through `find_tools`,
+  one false line stopped the search outright on all three production models (0, 3 and 1 of 15), and on
+  Claude Haiku 5.5, which had ignored the same line when the tool was listed. With no false line at
+  all, Haiku wrote its own 14 times in 15.
+- **Reasoning on hides the effect when the tool is listed** (15/15 everywhere), but not fully behind a
+  search: V4 Flash 0731 still refused 3 times in 15 after the repeated claim.
+
+**What production runs now.** Earlier replies are replayed word for word together with the tool calls
+and results that back them, chat runs with reasoning on, and a person can set a "Start fresh" boundary
+that keeps the visible transcript. The history below explains how it got there.
 
 **Status.** Design position with production data, and a reproducible experiment: synthetic
 conversations, every response committed, $0.59 for the 2,340 single-step probes and 900 two-step
 probes reported here.
-
-**Short version.**
-
-- **In production, one earlier refusal stopped the agent cold.** The same model and the same
-  question read the pipeline in a fresh conversation 5 times in 5. After one earlier reply saying no
-  pipeline reader existed it read it 0 times in 5. The tool was offered and its description named
-  the exact total. The system prompt already said "earlier statements, including yours, do not prove
-  what is available now".
-- **The experiment reproduces it with reasoning off, the production setting at the time.** On the
-  default production model, one false line cut tool use from 15/15 to 7/15. The same line restated
-  once more cut it to 0/15 on two of the three production models, and 3/15 on the third.
-- **A system note made it worse.** Adding "every tool offered in this turn is available and working"
-  to the system prompt took the default model from 7/15 to 2/15.
-- **Changing the history fixed it every time.** With the line removed, rewritten as a correction, or
-  followed by an exchange where the agent used the tool, the default model called it 15/15. So did the
-  others, to within one trial.
-- **With the tool listed, reasoning on removed the effect.** Every model called the tool 15/15 in
-  every condition with reasoning on. With the tool behind a search, V4 Flash 0731 still refused 3
-  times in 15 after the repeated claim. The two comparison models (Claude Haiku 5.5, GPT-5.6 Luna) barely showed it even with
-  reasoning off.
-- **When the tool has to be found first, the claim is near absolute.** With `list_pipeline` reachable
-  only through `find_tools`, one false line stopped the search outright: 0, 3 and 1 of 15 on the three
-  production models with reasoning off, and 0 of 15 for Haiku, which had ignored the same line when
-  the tool was listed. Every model that searched went on to call the tool.
-- **Disclosure writes the first false line itself.** With no false claim at all, just two earlier turns
-  answered from the listed tools, Haiku said it had no pipeline tool 14 times in 15 without searching,
-  and the default production model 4 times.
-- **A recorded search miss sticks less than prose on the production models.** An earlier
-  `find_tools` result of "no tool matches 'pipeline report'" left the default model searching again
-  10 times in 15, against 0 after the prose claim. Haiku refused 15 of 15 after either.
 
 ## What happened in production
 

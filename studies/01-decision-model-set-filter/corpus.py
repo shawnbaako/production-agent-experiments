@@ -15,8 +15,8 @@ clients, prospects and people on `.example` domains. Nothing here is real. Three
   near-misses (lab suppliers, research labs, clinics that send tests out).
 
 Reference labels are the generator's intent: each planted item was written to be a
-positive, a near-miss or a negation for a named question, by an LLM agent (Claude,
-2026-10-18), and has not been relabelled by a person. Every item has a stable id and
+positive, a near-miss or a negation for a named question (2026-10-18), and has not
+been independently relabelled. Every item has a stable id and
 a split (`dev` or `held`), assigned by the seed before any model was asked. The
 question wordings and their rewordings below were frozen before the first held-out run.
 """
