@@ -305,7 +305,7 @@ always red tells you nothing, and every agent that reads its output learns that 
 | Median pull request | 20 files, 1,600 lines | 13.5 files, 727 lines | — | — |
 | Browser, staging and outside-assistant actions per 1,000 tool calls | — | — | 12 | 139 |
 | Agent input tokens per commit | — | — | 12.9M | 8.9M |
-| Median age of a bug when fixed | — | — | 2.3–68 days | 5 hours |
+| Median age of a bug when fixed | — | — | 3.7 days | 3.7 hours |
 
 — means not measured in that codebase.
 
@@ -418,7 +418,11 @@ agent-written tests lack.
   a month inspected job by job.
 - **Defects.** All 89 codebase-2 defect write-ups were read against their commits. For fixes since the
   change, the discovery channel comes from the fix's description. Bug age is the median `git blame` age
-  of the product lines each fix replaced.
+  of the product lines each fix replaced, then the median across fixes in each period: 3.7 days for
+  the 39 fixes before 25 October, 1.0 day for the 68 in the middle period, and 3.7 hours for the 201
+  after 4 November. The 76 fixes that replaced no product lines are left out. The mean moved much less
+  (30 days to 26): old defects still surface, but most fixes now land within hours of the code they
+  correct. Per-fix figures are in [`codebase-2/data/fix_pr_bug_age.csv`](codebase-2/data/fix_pr_bug_age.csv).
 - **Cost.** Input tokens from the harnesses' own usage records, divided by sessions and by commits on
   `main` in the same period.
 
